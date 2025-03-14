@@ -5,7 +5,7 @@ services:
   db:
     image: postgres
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=secret
@@ -35,7 +35,7 @@ services:
   app:
     build: .
     ports:
-      - "8000:8000"
+      - "8001:8000"
     depends_on:
       - init-db
     environment:
