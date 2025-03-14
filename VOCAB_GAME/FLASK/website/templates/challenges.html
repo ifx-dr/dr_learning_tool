@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Challenges{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/challenges.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+{% endblock %}
+
+{% block content %}
+<!-- Mobile Navigation Bar -->
+<div class="navigation-bar">
+    <div class="toggle_btn">
+        <i class="bi bi-list"></i>
+    </div>
+    <div class="dropdown_menu">
+        <li><a href="/"><i class="bi bi-house-door-fill"></i></a></li>
+        <li><a href="/leaderboard"><i class="bi bi-trophy-fill"></i></a></li>
+        <li><a href="/logout"><i class="bi bi-box-arrow-right"></i></a></li>
+    </div>
+</div>
+
+<!-- Title of the page -->
+<h1 class="scale-in-center">OntoQuest Challenges</h1>
+
+
+<div class="section">
+    <!-- Challenges section -->
+    <div class="challenges">
+        <p class="challenge">Define or validate 5 terms in the 3 different ontologies</p>
+        <p class="challenge">Add a new definition based on a specific domain or topic</p>
+        <p class="challenge">Define a specific term in 2 different ontologies</p>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Department{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/department.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+{% endblock %}
+
+{% block content %}
+<!-- Sidebar navigation -->
+<nav class="sidebar-navigation">
+    <ul>
+        <li class="active">
+            <a href="/">
+                <i class="bi bi-house-door"></i>
+                <span class="tooltip">Home</span>
+            </a>
+        </li>
+        <li class="active">
+            <button class="backButton" onclick="goBack()">
+                <i class="bi bi-caret-left"></i>
+                <span class="tooltip">Back</span>
+            </button>
+        </li>
+    </ul>
+</nav>
+<!-- Mobile Navigation Bar -->
+<div class="navigation-bar">
+    <div class="toggle_btn">
+        <i class="bi bi-list"></i>
+    </div>
+    <div class="dropdown_menu">
+        <li><a href="/"><i class="bi bi-house-door-fill"></i></a></li>
+        <li><button class="backButton" onclick="goBack()"><i class="bi bi-caret-left-fill"></i></button></li>
+        <li><a href="/logout"><i class="bi bi-box-arrow-right"></i></a></li>
+    </div>
+</div>
+
+<!-- Page content -->
+<div class="content">
+    <h1>Digital Reference</h1>
+    <p>The Digital Reference originates from the Ecsel project Productive4.0, which aims to create a B2B digital platform to connnect End to End semiconductor activities and supply chains containing semiconductors using the Semantic Web and ontologies. The model organizes more than 1000 relevant classes into "lobes", that represent specific aspects serving as knowledge bases for both humans and machines alike. At the application stage the Digital Reference provides resilience by enabling fast actions based on enhanced visibility, enables high knowlege based AI applications and a "truer demand" for the industry and its suppliers, thus enabling a more resilient supply to the customers.</p>
+
+    <br>
+    <br>
+
+
+    <!-- Department selection button -->
+    <form method="POST">
+        <div class="selection-container">
+            <!-- Next button to navigate to another page -->
+            <img style="margin-left: 5%;" src="{{ url_for('static', filename='picture/ontologies_pictures/Lobesv1.png') }}" alt="Lobesv1">
+            <button type="submit" class="next-button" style="position: relative; top: 0; left: 0; transform: none; margin: 20px auto;">Next</button>
+            <select name="departments" id="department-select" autocomplete="on" hidden>
+                <option value="" disabled>--Please choose an option--</option>
+                <option value="CSC (Corporate Supply Chain)" selected>CSC (Corporate Supply Chain)</option>
+                <!-- <option value="GIP (Green Industrial Power)">GIP (Green Industrial Power)</option> -->
+                <!-- <option value="PSS (Power & Sensor Systems)">PSS (Power & Sensor Systems)</option> -->
+                <!-- When adding a new department, add an option with the department's name that you entered in the DB as value -->
+            </select>
+        </div>
+
+    </form>
+</div>
+
+
+{% endblock %}

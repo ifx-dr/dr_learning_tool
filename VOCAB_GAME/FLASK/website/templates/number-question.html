@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Number of Questions{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/number-question.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Sidebar navigation -->
+<nav class="sidebar-navigation">
+    <ul>
+        <li class="active">
+            <a href="/">
+                <i class="bi bi-house-door"></i>
+                <span class="tooltip">Home</span>
+            </a>
+        </li>
+        <li class="active">
+            <button class="backButton" onclick="goBack()">
+                <i class="bi bi-caret-left"></i>
+                <span class="tooltip">Back</span>
+            </button>
+        </li>
+    </ul>
+</nav>
+<div class="navigation-bar">
+    <div class="toggle_btn">
+        <i class="bi bi-list"></i>
+    </div>
+    <div class="dropdown_menu">
+        <li><a href="/"><i class="bi bi-house-door-fill"></i></a></li>
+        <li><button class="backButton" onclick="goBack()"><i class="bi bi-caret-left-fill"></i></button></li>
+        <li><a href="/logout"><i class="bi bi-box-arrow-right"></i></a></li>
+    </div>
+</div>
+<!-- Page content -->
+<h1 class="title">Number Of Classes To Be Learned</h1>
+<form method="POST">
+    <div class="slider-container">
+        <input type="range" min="0" max="50" value="5" step="5" class="slider" name="numberRange" id="numberRange" oninput="rangeValue.innerText = this.value">
+        <div class="sliderticks">
+            {% for i in range(0, 11) %}
+                <span>{{ i*5}}</span>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Next button to navigate to another page -->
+    <button type="submit" class="next-button" name="nextPage">Start</button>
+</form>
+
+
+{% endblock %}

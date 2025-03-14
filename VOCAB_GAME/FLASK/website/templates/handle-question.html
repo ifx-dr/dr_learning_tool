@@ -1,0 +1,549 @@
+{% extends "base.html" %}
+
+{% block title %}Question {{question_number}}{% endblock %}
+
+{% block styles %}
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/handle-question.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Sidebar navigation -->
+<a class="nav-item nav-link" id="home" href="/"><i class="bi bi-house-door-fill"></i></a>
+<div class="navigation-bar">
+    <div class="toggle_btn">
+        <i class="bi bi-list"></i>
+    </div>
+    <div class="dropdown_menu">
+        <li><a href="/"><i class="bi bi-house-door-fill"></i></a></li>
+        <li><a href="/logout"><i class="bi bi-box-arrow-right"></i></a></li>
+    </div>
+</div>
+<!-- Progress bar section -->
+<div class="progress-bar-section">
+    <div class="progress-bar">
+        <div class="progress-bar-fill" style="width: {{ rounded_percentage }}%;"></div>
+    </div>
+    <div class="progress-percentage">{{ rounded_percentage }}%</div>
+</div>
+<!-- Question and visualization section for mobile -->
+<div class="mobile-section">
+    <div class="tab">
+        <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Term')"><i class="bi bi-chat-square-text"></i></button>
+        <button class="tablinks" onclick="openTab(event, 'Information')"><i class="bi bi-info-square"></i></i></button>
+    </div>
+
+    <div id="Term" class="tabcontent">
+        <div class="question-content">
+            <h3>{{ word }}</h3>
+            <p>{{ definition }}</p>
+        </div>
+    </div>
+
+    <div id="Information" class="tabcontent">
+        <div class="information">
+            <h3>Information</h3>
+            <ul>
+                <li>
+                    <span>Alternative Names:</span> {{ alternative_names[:3] | join(", ") }}
+                    {% if alternative_names|length > 3 %}, ...{% endif %}
+                </li>
+                <li>
+                    <span>Abbreviations:</span> {{ abbreviations[:3] | join(", ") }}
+                    {% if abbreviations|length > 3 %}, ...{% endif %}
+                </li>
+                <li>
+                    <span>Examples:</span> {{ examples[:3] | join(", ") }}
+                    {% if examples|length > 3 %}, ...{% endif %}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mobile-visualization">
+        <a href="{{ url_for('views.mobile_term_visualization') }}"><i class="bi bi-zoom-in"></i></a>
+    </div>
+</div>
+
+<!-- Question and visualization section -->
+<div class="section">
+
+    <div class="visualization">
+        <div class="visualization-content">
+            <div id="graph-container" class="graph-container">
+                <!-- The interactive ontology graph visualization will be rendered here -->
+            </div>
+        </div>
+        <div class="zoom-buttons">
+            <button class="zoom-element" id="zoom-out-btn">&#8722;</button>
+            <button class="zoom-element" id="zoom-in-btn">+</button>
+            <button class="zoom-element" id="zoom-reset-btn">⌖</button>
+        </div>
+        <a href="{{ url_for('views.term_visualization') }}" class="next-button">Detailled Visualization</a>
+    </div>
+
+    <div class="question-content flip-in-ver-left">
+        <h3>{{ word }}</h3>
+        <p>{{ definition }}</p>
+    </div>
+    
+    <div class="information" style="visibility:hidden;">
+        <h3>Information</h3>
+        <ul>
+            <li>
+                <span>Alternative Names:</span> {{ alternative_names[:3] | join(", ") }}
+                {% if alternative_names|length > 3 %}, ...{% endif %}
+            </li>
+            <li>
+                <span>Abbreviations:</span> {{ abbreviations[:3] | join(", ") }}
+                {% if abbreviations|length > 3 %}, ...{% endif %}
+            </li>
+            <li>
+                <span>Examples:</span> {{ examples[:3] | join(", ") }}
+                {% if examples|length > 3 %}, ...{% endif %}
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- Response form -->
+<form method="POST" id="responseForm">
+    {% if definition == "No definition available" %}
+    <div class="response-options">
+        <button type="submit" name="validationResponse" value="pass" id="maybe-btn" title="You don’t know the term">Pass</button>
+        <button type="submit" name="enterDefinition" value="enter" id="enter-btn" title="Enter your own definition" class="next-button">Enter your own definition</button>
+    </div>
+    {% else %}
+        <div class="response-options">
+            <button type="submit" name="validationResponse" value="pass" id="pass-btn" title="Continue">I understand</button>
+            <!--<button type="submit" name="validationResponse" value="agree" id="agree-btn" title="You agree with the definition">True</button>-->
+            <!--<button type="submit" name="validationResponse" value="disagree" id="disagree-btn" title="You don’t agree with the definition or not sure about the definition">False</button>-->
+        </div>
+    {% endif %}
+</form>
+
+<!-- Modal for providing additional information -->
+<div class="modal" id="additionalInfoModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Provide Additional Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-explanation">
+                    <p>You have the option to add additional information, or you can choose to skip this step.</p>
+                </div>
+                <form id="additionalInfoForm">
+                    <div class="form-group">
+                        <label for="alternativeName">Alternative Names:</label>
+                        <input type="text" class="form-control" id="alternativeName" name="alternativeName">
+                        <label for="abbreviation">Abbreviation:</label>
+                        <input type="text" class="form-control" id="abbreviation" name="abbreviation">
+                        <label for="example">Example:</label>
+                        <input type="text" class="form-control" id="example" name="example">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-skip" onclick="closeAndNext()">Skip</button>
+                <button type="button" class="btn-submit" onclick="submitAdditionalInfo()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var responseForm = document.getElementById('responseForm');
+        var additionalInfoModal = new bootstrap.Modal(document.getElementById('additionalInfoModal'));
+        var clickedButton = null;
+        var btntexts = ["I understand", "Got it", "Oh, interesting", "Let's continue"];
+
+        // Event listeners for response buttons
+        var agreeButton = document.getElementById('agree-btn');
+        var disagreeButton = document.getElementById('disagree-btn');
+        var passButton = document.getElementById('pass-btn');
+
+        var enterButton = document.getElementById('enter-btn');
+        var maybeButton = document.getElementById('maybe-btn');
+
+        function setRandomBtnText() {
+            var randomIndex = Math.floor(Math.random() * btntexts.length);
+            passButton.textContent = btntexts[randomIndex];
+        }
+
+        setRandomBtnText();
+
+        if (agreeButton) {
+            agreeButton.addEventListener('click', function() {
+                console.log('Agree button clicked');
+                clickedButton = 'agree';
+                additionalInfoModal.show();
+                event.preventDefault(); // Prevent default form submission
+            });
+        }
+        if (disagreeButton) {
+            disagreeButton.addEventListener('click', function() {
+                console.log('Disagree button clicked');
+                clickedButton = 'disagree';
+                additionalInfoModal.show();
+                event.preventDefault();
+            });
+        }
+        if (passButton) {
+            document.getElementById('pass-btn').addEventListener('click', function() {
+                console.log('Pass button clicked');
+                clickedButton = 'pass';
+            });
+        }
+        if (enterButton) {
+            document.getElementById('enter-btn').addEventListener('click', function() {
+                console.log('Enter definition button clicked');
+                clickedButton = 'enter';
+                additionalInfoModal.show();
+                event.preventDefault();
+            });
+        }
+
+        if (maybeButton) {
+            document.getElementById('maybe-btn').addEventListener('click', function() {
+                console.log('Pass button clicked');
+                clickedButton = 'pass';
+            });
+        }
+
+        // Function to handle submission of additional information
+        window.submitAdditionalInfo = function() {
+            // Retrieve user input for additional information
+            var alternativeName = document.getElementById('alternativeName').value;
+            var abbreviation = document.getElementById('abbreviation').value;
+            var example = document.getElementById('example').value;
+
+            // Add the user-input data as hidden input fields to the response form
+            var input = document.createElement("input");
+            input.setAttribute("type", "hidden");
+            input.setAttribute("name", "alternativeName");
+            input.setAttribute("value", alternativeName);
+            responseForm.appendChild(input);
+
+            input = document.createElement("input");
+            input.setAttribute("type", "hidden");
+            input.setAttribute("name", "abbreviation");
+            input.setAttribute("value", abbreviation);
+            responseForm.appendChild(input);
+
+            input = document.createElement("input");
+            input.setAttribute("type", "hidden");
+            input.setAttribute("name", "example");
+            input.setAttribute("value", example);
+            responseForm.appendChild(input);
+
+            // Add the clicked button value
+            input = document.createElement("input");
+            input.setAttribute("type", "hidden");
+            input.setAttribute("name", "validationResponse");
+            input.setAttribute("value", clickedButton);
+            responseForm.appendChild(input);
+
+            // Manually trigger the form submission after handling the additional information
+            responseForm.submit();
+            // Hide the additional information modal
+            additionalInfoModal.hide();
+        };
+
+        window.closeAndNext = function() {
+            // Add the clicked button value as a hidden input field to the response form
+            var input = document.createElement("input");
+            input.setAttribute("type", "hidden");
+            input.setAttribute("name", "validationResponse");
+            input.setAttribute("value", clickedButton);
+            responseForm.appendChild(input);
+
+            // Manually trigger the form submission after handling the additional information
+            responseForm.submit();
+            // Hide the additional information modal
+            additionalInfoModal.hide();
+        };
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Retrieve the JSON data for the ontology graph from the Flask route
+        var graphData = {{ ontology_graph | safe }};
+
+        // Define the dimensions of the SVG container
+        var width = 300;
+        var height = 300;
+
+        // Create an SVG container for the graph visualization
+        var svg = d3.select("#graph-container")
+                    .append("svg")
+                    .attr("width", width)
+                    .attr("height", height);
+
+
+        // Define the zoom behavior with scale extent and event handling
+        var zoom = d3.zoom()
+                     .scaleExtent([0.5, 4])  // Set the minimum and maximum scale extent
+                     .on("zoom", zoomed);
+
+        svg.call(zoom);  // Apply the zoom behavior to the SVG element
+
+        // Initialize the zoom scale
+        var zoomScale = 1;
+
+        function zoomed(event) {
+            svg.selectAll("circle")  // Select all nodes and apply the adjusted transformation
+                .attr("transform", event.transform);
+
+            svg.selectAll(".link")  // Select all links and apply the adjusted transformation
+                .attr("transform", event.transform);
+
+            svg.selectAll("text")  // Select all links and apply the adjusted transformation
+                .attr("transform", event.transform);
+            svg.selectAll("rect")  // Select all links and apply the adjusted transformation
+                .attr("transform", event.transform);
+
+        }
+
+        // Add event listeners to the zoom buttons for smooth zooming
+        d3.select(".zoom-buttons").select("#zoom-in-btn").on("click", function() {
+                    svg.transition().duration(500).call(zoom.scaleBy, 1.2);  // Smoothly increase the zoom scale on button click
+                });
+
+        d3.select(".zoom-buttons").select("#zoom-out-btn").on("click", function() {
+                    svg.transition().duration(500).call(zoom.scaleBy, 0.8);  // Smoothly decrease the zoom scale on button click
+                });
+
+        d3.select(".zoom-buttons").select("#zoom-reset-btn").on("click", function() {
+                    // Reset the zoom and graph position to their initial states
+                    svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
+                });
+
+        // Use D3.js to render the graph elements (nodes and links) based on the retrieved graph data
+        var nodes = graphData.nodes;
+        var links = graphData.links;
+
+        // Define and configure the simulation for the force-directed graph layout
+        var simulation = d3.forceSimulation(graphData.nodes)
+                        .force("link", d3.forceLink(graphData.links).id(d => d.id).distance(130))
+                        .force("charge", d3.forceManyBody().strength(-100)) // Adjust the charge strength to control the node repulsion
+                        .force("center", d3.forceCenter(width / 2, height / 2))
+                        .force("collide", d3.forceCollide(20).strength(0.5)) //
+                        .force("label", d3.forceManyBody().strength(-80).distanceMin(20)); // Add a repulsion force for the labels
+
+
+        // Append markers, links, nodes, and labels to the SVG for graph visualization
+        svg.append("defs").selectAll("marker")
+            .data(["end"]) // Differentiate markers by name
+            .enter().append("marker")
+            .attr("id", function(d) { return d; })
+            .attr("viewBox", "0 -5 10 10")
+            .attr("refX", 25)
+            .attr("refY", 0)
+            .attr("markerWidth", 6)
+            .attr("markerHeight", 6)
+            .attr("orient", "auto")
+            .append("path")
+            .attr("d", "M0,-5L10,0L0,5");
+
+        var link = svg.append("g")
+            .selectAll("line")
+            .data(graphData.links)
+            .enter().append("line")
+            .attr("class", "link")
+            .style("stroke-width", function(d) {
+                return d.label === "Subclass of" ? 1 : 1; // Adjust the stroke width based on the property type
+            })
+            .style("stroke", function(d) {
+                return d.label === "Subclass of" ? "black" : "black"; // Adjust the stroke color based on the property type
+            })
+            .style("stroke-dasharray", function(d) {
+                return d.label === "Subclass of" ? "4, 4" : "1, 0";  // Use a dashed line for "is_a" property, solid line for others
+            })
+            .attr("marker-end", "url(#end)"); // Add arrowhead to the end of the line
+
+        var node = svg.append("g")
+                    .selectAll("g.node")  // Select all nodes
+                    .data(graphData.nodes)
+                    .enter().append("g")
+                    .attr("class", "node")
+                    .style("stroke", "black")
+                    .call(d3.drag()  // Enable drag behavior
+                        .on("start", dragStarted)
+                        .on("drag", dragged)
+                        .on("end", dragEnded)
+                    );
+
+        // Append circles for nodes of type "owl:Class"
+        node.filter(d => d.type === "owl:Class")
+            .append("circle")
+            .attr("r", 10)
+            .style("fill", function(d) {
+                return d.id === "{{ word }}" ? "blueviolet" : "steelblue";  // Color based on condition
+            });
+
+        // Append rectangles for nodes of type "owl:DatatypeProperty"
+        node.filter(d => d.type === "owl:DatatypeProperty")
+            .append("rect")
+            .attr("x", -10)
+            .attr("y", -10)
+            .attr("width", 20)
+            .attr("height", 10)
+            .style("fill", "orange");  // Yellow color for DatatypeProperty nodes
+
+
+        var edgeLabels = svg.append("g")
+             .selectAll("text")
+             .data(graphData.links)
+             .enter()
+             .append("text")
+             .text(d => d.label)
+             .style("text-anchor", "middle")
+             .style("font-size", "8px")
+             .attr("dy", 12)
+             .style("pointer-events", "none")
+             .style("fill", "red");
+
+       // Save the dimensions of the text elements
+        edgeLabels.each(function(d) { d.bbox = this.getBBox(); });
+
+        // Remove the existing edgeLabels
+        edgeLabels.remove();
+
+        // Now add the rectangles, using the sizes we just added to the data
+        const xMargin = 2;
+        const yMargin = 2;
+        var edgeRects = svg.append("g")
+            .selectAll("rect")
+            .data(graphData.links)
+            .enter()
+            .append("rect")
+            .attr("x", d => d.bbox.x - xMargin)
+            .attr("y", d => d.bbox.y - d.bbox.height * 0.8 - yMargin)
+            .attr("width", d => d.bbox.width + 2 * xMargin)
+            .attr("height", d => d.bbox.height + 2 * yMargin)
+            .style("fill", d => {
+                if (d.label === "Subclass of") {
+                    return "white";  // Fill with white for "Subclass of" edges
+                } else if (d.type === "dataproperties") {
+                    return "green";  // Fill with green for "dataproperties" edges
+                } else {
+                    return "steelblue";  // Fill with steelblue for other edges
+                }
+            });
+
+
+
+        // Re-add the text, this time with positioning
+        edgeLabels = svg.append("g")
+            .selectAll("text")
+            .data(graphData.links)
+            .enter()
+            .append("text")
+            .text(d => d.label)
+            .attr("x", d => d.bbox.x)
+            .attr("y", d => d.bbox.y)
+            .style("text-anchor", "middle")
+            .style("font-size", "8px")
+            .style("fill", d => d.label === "Subclass of" ? "black" : "white")
+
+        var nodeLabels = svg.append("g")
+            .selectAll("text")
+            .data(graphData.nodes)
+            .enter()
+            .append("text")
+            .text(d => d.name)
+            .style("text-anchor", "middle")
+            .style("font-size", "12px")
+            .attr("dy", -12)
+            .style("pointer-events", "none")
+            .style("fill", "black")
+
+
+        simulation.on("tick", () => {
+            link.attr("x1", d => d.source.x)
+                .attr("y1", d => d.source.y)
+                .attr("x2", d => d.target.x)
+                .attr("y2", d => d.target.y);
+
+            node.selectAll("circle")  // Select circles within nodes
+                .attr("cx", d => d.x)
+                .attr("cy", d => d.y);
+
+            node.selectAll("rect")  // Select rectangles within nodes
+                .attr("x", d => d.x-10)
+                .attr("y", d => d.y-5);
+
+            nodeLabels.attr("x", d => d.x)
+                      .attr("y", d => d.y - 10);
+
+            edgeLabels.attr("x", d => (d.source.x + d.target.x) / 2)
+                      .attr("y", d => (d.source.y + d.target.y) / 2)
+                      .each(function(d) {
+                  d.bbox = this.getBBox();
+              });
+
+            edgeRects.attr("x", d => d.bbox.x - xMargin)
+             .attr("y", d => d.bbox.y -  yMargin);
+        });
+
+        // Define and configure drag behavior for the nodes
+        function dragStarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+
+        function getTextBox(selection) {
+        selection.each(function(d) { d.bbox = this.getBBox(); })
+        }
+
+        function dragEnded(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+        }
+    });
+</script>
+
+<script>
+function openTab(evt, name) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the link that opened the tab
+  document.getElementById(name).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+<script>
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+{% endblock %}

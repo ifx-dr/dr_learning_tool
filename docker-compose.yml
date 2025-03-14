@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=secret
+    volumes:
+      - ./VOCAB_GAME/FLASK/website/database.sql:/database.sql
+    #command: ["bash", "psql -U root < database.sql"]
+    #command: ["bash", "-c", "ls -a"]
+    #entrypoint: ["bash", "-c", "sleep 10 && cd .. && ls -a && psql -U root < /database.sql"]
+    networks:
+      - mynet
+
+  init-db:
+    image: postgres
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=secret
+      - PGPASSWORD=secret
+    volumes:
+      - ./VOCAB_GAME/FLASK/website/database.sql:/database.sql
+    entrypoint: ["bash", "-c"]
+    command: ["until psql -U $$DB_USER -h $$DB_HOST -p 5432 -d postgres -W -c 'SELECT 1'; do sleep 1; done; psql -U $$DB_USER -h $$DB_HOST -p 5432 -d root -f /database.sql"]
+    networks:
+      - mynet
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - init-db
+    environment:
+      - SQLALCHEMY_DATABASE_URI=postgresql://root:secret@db:5432
+    networks:
+      - mynet
+
+networks:
+  mynet:
+    driver: bridge

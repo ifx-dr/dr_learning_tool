@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="file://C:\Users\BarbierN\PycharmProjects\pythonProject\VOCAB GAME\FLASK\website\static\ontologies\YOUR_ONTOLOGY.rdf"
+         xmlns="file://C:\Users\BarbierN\PycharmProjects\pythonProject\VOCAB GAME\FLASK\website\static\ontologies\YOUR_ONTOLOGY.rdf#">
+
+<owl:Ontology rdf:about="file://C:\Users\BarbierN\PycharmProjects\pythonProject\VOCAB GAME\FLASK\website\static\ontologies\YOUR_ONTOLOGY.rdf"/>
+
+<owl:Class rdf:about="#Sensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TemperatureSensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#InfraredTemperatureSensor">
+  <rdfs:subClassOf rdf:resource="#TemperatureSensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ThermocoupleTemperatureSensor">
+  <rdfs:subClassOf rdf:resource="#TemperatureSensor"/>
+</owl:Class>
+
+
+</rdf:RDF>

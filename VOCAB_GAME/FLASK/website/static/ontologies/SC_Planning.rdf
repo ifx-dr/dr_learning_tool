@@ -1,0 +1,450 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.w3id.org/ecsel-dr-SCP"
+         xmlns="http://www.w3id.org/ecsel-dr-SCP#"
+         xmlns:x_1.1="http://purl.org/dc/elements/1.1/">
+
+<owl:Ontology rdf:about="http://www.w3id.org/ecsel-dr-SCP">
+  <x_1.1:description xml:lang="en">undefined</x_1.1:description>
+  <x_1.1:title xml:lang="en">undefined</x_1.1:title>
+</owl:Ontology>
+
+<owl:ObjectProperty rdf:about="#calculate">
+  <rdfs:domain rdf:resource="#SupplyDemandMatch"/>
+  <rdfs:range rdf:resource="#SupplyPicture"/>
+  <rdfs:label xml:lang="iri-based">calculate</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#calculateBased">
+  <rdfs:domain rdf:resource="#OrdersReschedule"/>
+  <rdfs:range rdf:resource="#SupplyPicture"/>
+  <rdfs:label xml:lang="iri-based">calculateBased</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#calculateBasedOn">
+  <rdfs:domain rdf:resource="#MarketingDemands"/>
+  <rdfs:range rdf:resource="#SalesDemands"/>
+  <rdfs:label xml:lang="iri-based">calculateBasedOn</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#consistOf">
+  <rdfs:domain rdf:resource="#OrderLineItem"/>
+  <rdfs:range rdf:resource="#OpenOrderBook"/>
+  <rdfs:label xml:lang="iri-based">consistOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#constitute">
+  <rdfs:domain rdf:resource="#Orders"/>
+  <rdfs:range rdf:resource="#SalesDemands"/>
+  <rdfs:label xml:lang="iri-based">constitute</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#consume">
+  <rdfs:domain rdf:resource="#OrderLineItem"/>
+  <rdfs:range rdf:resource="#ATP"/>
+  <rdfs:label xml:lang="iri-based">consume</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#contribute">
+  <rdfs:domain rdf:resource="#Orders"/>
+  <rdfs:range rdf:resource="#PrioritizedOrders"/>
+  <rdfs:label xml:lang="iri-based">contribute</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#create">
+  <rdfs:domain rdf:resource="#CLM"/>
+  <rdfs:range rdf:resource="#PrioritizedOrders"/>
+  <rdfs:label xml:lang="iri-based">create</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#enterTo">
+  <rdfs:domain rdf:resource="#Orders"/>
+  <rdfs:range rdf:resource="#CLM"/>
+  <rdfs:label xml:lang="iri-based">enterTo</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#figureOutFrom">
+  <rdfs:domain rdf:resource="#TargetAllocation"/>
+  <rdfs:range rdf:resource="#AATP"/>
+  <rdfs:label xml:lang="iri-based">figureOutFrom</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#generate">
+  <rdfs:domain rdf:resource="#OrderLineItem"/>
+  <rdfs:range rdf:resource="#OpenOrderBook"/>
+  <rdfs:label xml:lang="iri-based">generate</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#goesTo">
+  <rdfs:domain rdf:resource="#OrderLineItem"/>
+  <rdfs:range rdf:resource="#ordersScheduleLine"/>
+  <rdfs:label xml:lang="iri-based">goesTo</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasInput">
+  <rdfs:domain rdf:resource="#Stocks"/>
+  <rdfs:range rdf:resource="#SupplyDemandMatch"/>
+  <rdfs:label xml:lang="iri-based">hasInput</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasInputin">
+  <rdfs:domain rdf:resource="#PrioritizedOrders"/>
+  <rdfs:range rdf:resource="#OperationalDemand"/>
+  <rdfs:label xml:lang="iri-based">hasInputin</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasResult">
+  <rdfs:domain rdf:resource="#MarketingDemands"/>
+  <rdfs:range rdf:resource="#OperationalDemand"/>
+  <rdfs:label xml:lang="iri-based">hasResult</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isPartOf">
+  <rdfs:domain rdf:resource="#Forecast"/>
+  <rdfs:range rdf:resource="#OperationalDemand"/>
+  <rdfs:label xml:lang="iri-based">isPartOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isPlaceOrders">
+  <rdfs:domain rdf:resource="#Customers"/>
+  <rdfs:range rdf:resource="#Orders"/>
+  <rdfs:label xml:lang="iri-based">isPlaceOrders</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isResultOf">
+  <rdfs:domain rdf:resource="#nEWs"/>
+  <rdfs:range rdf:resource="#OrdersReschedule"/>
+  <rdfs:label xml:lang="iri-based">isResultOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isTransferTo">
+  <rdfs:domain rdf:resource="#OrderLineItem"/>
+  <rdfs:range rdf:resource="#ordersScheduleLine"/>
+  <rdfs:label xml:lang="iri-based">isTransferTo</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#match">
+  <rdfs:domain rdf:resource="#CapacityBottleneck"/>
+  <rdfs:range rdf:resource="#SupplyDemandMatch"/>
+  <rdfs:label xml:lang="iri-based">match</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#matchIn">
+  <rdfs:domain rdf:resource="#PrioritizedDemand"/>
+  <rdfs:range rdf:resource="#SupplyDemandMatch"/>
+  <rdfs:label xml:lang="iri-based">matchIn</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#matchTO">
+  <rdfs:domain rdf:resource="#AggregatedCapacity"/>
+  <rdfs:range rdf:resource="#MarketingDemands"/>
+  <rdfs:label xml:lang="iri-based">matchTO</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#obtainFrom">
+  <rdfs:domain rdf:resource="#Forecast"/>
+  <rdfs:range rdf:resource="#SalesDemands"/>
+  <rdfs:label xml:lang="iri-based">obtainFrom</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#provide">
+  <rdfs:domain rdf:resource="#CLM"/>
+  <rdfs:range rdf:resource="#Promise"/>
+  <rdfs:label xml:lang="iri-based">provide</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#resultIn">
+  <rdfs:domain rdf:resource="#OpenOrderBook"/>
+  <rdfs:range rdf:resource="#OrdersReschedule"/>
+  <rdfs:label xml:lang="iri-based">resultIn</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#resultTo">
+  <rdfs:domain rdf:resource="#BottleneckResource"/>
+  <rdfs:range rdf:resource="#CapacityBottleneck"/>
+  <rdfs:label xml:lang="iri-based">resultTo</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sendTo">
+  <rdfs:domain rdf:resource="#nEWs"/>
+  <rdfs:range rdf:resource="#CLM"/>
+  <rdfs:label xml:lang="iri-based">sendTo</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sortTo">
+  <rdfs:domain rdf:resource="#Orders"/>
+  <rdfs:range rdf:resource="#OrderLineItem"/>
+  <rdfs:label xml:lang="iri-based">sortTo</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#transfer">
+  <rdfs:domain rdf:resource="#Promise"/>
+  <rdfs:range rdf:resource="#Confirmation"/>
+  <rdfs:label xml:lang="iri-based">transfer</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#transferTo">
+  <rdfs:domain rdf:resource="#OperationalDemand"/>
+  <rdfs:range rdf:resource="#PrioritizedDemand"/>
+  <rdfs:label xml:lang="iri-based">transferTo</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#use">
+  <rdfs:domain rdf:resource="#CLM"/>
+  <rdfs:range rdf:resource="#OrderLineItem"/>
+  <rdfs:label xml:lang="iri-based">use</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#useIn">
+  <rdfs:domain rdf:resource="#BottleneckResource"/>
+  <rdfs:range rdf:resource="#ResourceCapacity"/>
+  <rdfs:label xml:lang="iri-based">useIn</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#useUp">
+  <rdfs:domain rdf:resource="#OrderLineItem"/>
+  <rdfs:range rdf:resource="#AATP"/>
+  <rdfs:label xml:lang="iri-based">useUp</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#ConfirmedDate">
+  <rdfs:domain rdf:resource="#OpenOrderBook"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  <rdfs:label xml:lang="iri-based">ConfirmedDate</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#ConfirmedQuantity">
+  <rdfs:domain rdf:resource="#OpenOrderBook"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdfs:label xml:lang="iri-based">ConfirmedQuantity</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#CustomerLocation">
+  <rdfs:domain rdf:resource="#Customers"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:label xml:lang="iri-based">CustomerLocation</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#CustomersID">
+  <rdfs:domain rdf:resource="#Customers"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdfs:label xml:lang="iri-based">CustomersID</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Granularity">
+  <rdfs:domain rdf:resource="#Customers"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  <rdfs:label xml:lang="iri-based">Granularity</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+
+<owl:Class rdf:about="#SupplyDemandMatch">
+  <rdfs:label xml:lang="iri-based">SupplyDemandMatch</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SupplyPicture">
+  <rdfs:label xml:lang="iri-based">SupplyPicture</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#OrdersReschedule">
+  <rdfs:label xml:lang="iri-based">OrdersReschedule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#MarketingDemands">
+  <rdfs:label xml:lang="iri-based">MarketingDemands</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SalesDemands">
+  <rdfs:label xml:lang="iri-based">SalesDemands</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#OrderLineItem">
+  <rdfs:label xml:lang="iri-based">OrderLineItem</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#OpenOrderBook">
+  <rdfs:label xml:lang="iri-based">OpenOrderBook</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Orders">
+  <rdfs:label xml:lang="iri-based">Orders</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#ATP">
+  <rdfs:label xml:lang="iri-based">ATP</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#PrioritizedOrders">
+  <rdfs:label xml:lang="iri-based">PrioritizedOrders</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#CLM">
+  <rdfs:label xml:lang="iri-based">CLM</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#TargetAllocation">
+  <rdfs:label xml:lang="iri-based">TargetAllocation</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#AATP">
+  <rdfs:label xml:lang="iri-based">AATP</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#ordersScheduleLine">
+  <rdfs:label xml:lang="iri-based">ordersScheduleLine</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Stocks">
+  <rdfs:label xml:lang="iri-based">Stocks</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#OperationalDemand">
+  <rdfs:label xml:lang="iri-based">OperationalDemand</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Forecast">
+  <rdfs:subClassOf rdf:resource="#OperationalDemand"/>
+  <rdfs:label xml:lang="iri-based">Forecast</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Customers">
+  <rdfs:label xml:lang="iri-based">Customers</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#nEWs">
+  <rdfs:label xml:lang="iri-based">nEWs</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#CapacityBottleneck">
+  <rdfs:label xml:lang="iri-based">CapacityBottleneck</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#PrioritizedDemand">
+  <rdfs:label xml:lang="iri-based">PrioritizedDemand</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#AggregatedCapacity">
+  <rdfs:label xml:lang="iri-based">AggregatedCapacity</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Promise">
+  <rdfs:label xml:lang="iri-based">Promise</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#BottleneckResource">
+  <rdfs:subClassOf rdf:resource="#ResourceCapacity"/>
+  <rdfs:label xml:lang="iri-based">BottleneckResource</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Confirmation">
+  <rdfs:label xml:lang="iri-based">Confirmation</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#ResourceCapacity">
+  <rdfs:subClassOf rdf:resource="#AggregatedCapacity"/>
+  <rdfs:label xml:lang="iri-based">ResourceCapacity</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#AP_FCST">
+  <rdfs:subClassOf rdf:resource="#Forecast"/>
+  <rdfs:label xml:lang="iri-based">AP_FCST</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#BufferStockOrders">
+  <rdfs:subClassOf rdf:resource="#Orders"/>
+  <rdfs:label xml:lang="iri-based">BufferStockOrders</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#ConsignmentOrders">
+  <rdfs:subClassOf rdf:resource="#Orders"/>
+  <rdfs:label xml:lang="iri-based">ConsignmentOrders</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#DB">
+  <rdfs:subClassOf rdf:resource="#Stocks"/>
+  <rdfs:label xml:lang="iri-based">DB</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#DC">
+  <rdfs:subClassOf rdf:resource="#Stocks"/>
+  <rdfs:label xml:lang="iri-based">DC</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#EDIForecast">
+  <rdfs:subClassOf rdf:resource="#Orders"/>
+  <rdfs:label xml:lang="iri-based">EDIForecast</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#GeneralCustomers">
+  <rdfs:subClassOf rdf:resource="#Customers"/>
+  <rdfs:label xml:lang="iri-based">GeneralCustomers</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#HP_Forecast">
+  <rdfs:subClassOf rdf:resource="#Forecast"/>
+  <rdfs:label xml:lang="iri-based">HP_Forecast</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#MaxStock">
+  <rdfs:subClassOf rdf:resource="#SSO_Stocks"/>
+  <rdfs:label xml:lang="iri-based">MaxStock</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SSO_Stocks">
+  <rdfs:subClassOf rdf:resource="#OperationalDemand"/>
+  <rdfs:label xml:lang="iri-based">SSO_Stocks</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#MinStock">
+  <rdfs:subClassOf rdf:resource="#SSO_Stocks"/>
+  <rdfs:label xml:lang="iri-based">MinStock</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#NP_Forecast">
+  <rdfs:subClassOf rdf:resource="#Forecast"/>
+  <rdfs:label xml:lang="iri-based">NP_Forecast</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#OP_Forecast">
+  <rdfs:subClassOf rdf:resource="#Forecast"/>
+  <rdfs:label xml:lang="iri-based">OP_Forecast</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#PrivateCustomers">
+  <rdfs:subClassOf rdf:resource="#Customers"/>
+  <rdfs:label xml:lang="iri-based">PrivateCustomers</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#RampUpStock">
+  <rdfs:subClassOf rdf:resource="#SSO_Stocks"/>
+  <rdfs:label xml:lang="iri-based">RampUpStock</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#RetainedStock">
+  <rdfs:subClassOf rdf:resource="#SSO_Stocks"/>
+  <rdfs:label xml:lang="iri-based">RetainedStock</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SafetyStock">
+  <rdfs:subClassOf rdf:resource="#SSO_Stocks"/>
+  <rdfs:label xml:lang="iri-based">SafetyStock</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#StandardOrders">
+  <rdfs:subClassOf rdf:resource="#Orders"/>
+  <rdfs:label xml:lang="iri-based">StandardOrders</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#WIP">
+  <rdfs:subClassOf rdf:resource="#Stocks"/>
+  <rdfs:label xml:lang="iri-based">WIP</rdfs:label>
+</owl:Class>
+
+
+</rdf:RDF>

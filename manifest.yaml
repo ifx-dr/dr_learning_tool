@@ -1,0 +1,59 @@
+# We define a deployment called "ontoquest".
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ontoquest
+
+# We specify the number of replicas we want (3 in this case).
+spec:
+  replicas: 3
+
+  # We select the pods that have the tag "app: ontoquest".
+  selector:
+    matchLabels:
+      app: ontoquest
+
+  # We define the template for the pods
+  template:
+    metadata:
+      labels:
+        app: ontoquest
+
+    # We define the container to run in each pod.
+    spec:
+      containers:
+      - name: ontoquest
+        # We use the image "ontoquest:latest" for the container.
+        image: ontoquest:latest
+        imagePullPolicy: Never
+
+        # We expose the port 8000 of the container.
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            cpu: 1000m
+          limits:
+            cpu: 1000m
+            memory: 512Mi
+
+---
+# We define a service called "ontoquest".
+apiVersion: v1
+kind: Service
+metadata:
+  name: ontoquest
+
+# We select the pods that have the tag "app: ontoquest".
+spec:
+  selector:
+    app: ontoquest
+
+  # We define the port to be exposed in the service.
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8000
+
+  # Service type: LoadBalancer (creates a load balancer)
+  type: LoadBalancer

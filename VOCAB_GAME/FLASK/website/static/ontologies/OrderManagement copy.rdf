@@ -1,0 +1,657 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.w3id.org/ecsel-dr-OM"
+         xmlns="http://www.w3id.org/ecsel-dr-OM#">
+
+<owl:Ontology rdf:about="http://www.w3id.org/ecsel-dr-OM">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology deals with the domain order management. To be more specific, this ontology should be implemented in order management where IFX communicates with its customers via Web Portals. It will cover the process of reconfirming and rescheduling of open orders. Whereby, it not only considers the data in the Web Portal but also the one retrieved and inserted from IFX SAP SD tool.</rdfs:comment>
+</owl:Ontology>
+
+<owl:ObjectProperty rdf:about="#Allocates">
+  <owl:inverseOf rdf:resource="#isAllocatedBy"/>
+  <rdfs:domain rdf:resource="#Allocation"/>
+  <rdfs:range rdf:resource="#Supply"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isAllocatedBy">
+  <rdfs:domain rdf:resource="#Allocation"/>
+  <rdfs:range rdf:resource="#Supply"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#belongsToOpenOrder">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="#Open_Order"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#consistsOfOrderLineItem">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <owl:inverseOf rdf:resource="#isPartOfOpenOrder"/>
+  <rdfs:domain rdf:resource="#Open_Order"/>
+  <rdfs:range rdf:resource="#Order_Line_Item"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isPartOfOpenOrder">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#consitsOfOpenOrder">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <owl:inverseOf rdf:resource="#isPartOfOpenOrderBook"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isPartOfOpenOrderBook">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Open_Order"/>
+  <rdfs:range rdf:resource="#Open_Order_Book"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#containsContactPersonData">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="#Contact_Person_Data"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#containsCustomerData">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="#Customer_Data"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#containsCustomerPlantData">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="#Customer_Plant_Data"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#containsOrderLineItem">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="#Order_Line_Item"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#containsSupplierData">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="#Supplier_Data"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#describesCustomer">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <owl:inverseOf rdf:resource="#isDescribedByCustomerData"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Customer_Data"/>
+  <rdfs:range rdf:resource="#Customer"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isDescribedByCustomerData">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#describesCustomerPlant">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <owl:inverseOf rdf:resource="#isDescribedByCustomerPlantData"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Customer_Plant_Data"/>
+  <rdfs:range rdf:resource="#Customer_Plant"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isDescribedByCustomerPlantData">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#describesSupplier">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <owl:inverseOf rdf:resource="#isDescribedBySupplierData"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Supplier_Data"/>
+  <rdfs:range rdf:resource="#Supplier"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isDescribedBySupplierData">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAllocated">
+  <owl:inverseOf rdf:resource="#isAllocatedTo"/>
+  <rdfs:domain rdf:resource="#Order_Line_Item"/>
+  <rdfs:range rdf:resource="#Supply"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isAllocatedTo">
+  <rdfs:domain rdf:resource="#Supply"/>
+  <rdfs:range rdf:resource="#Order_Line_Item"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isDeliveredToCustomerPlant">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Open_Order"/>
+  <rdfs:range rdf:resource="#Customer_Plant"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isOwnedByCustomer">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <owl:inverseOf rdf:resource="#ownsCustomerPlant"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ownsCustomerPlant">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Customer"/>
+  <rdfs:range rdf:resource="#Customer_Plant"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isReconciledOrderChangeRequest">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Line_Item"/>
+  <rdfs:range rdf:resource="#Order_Change_Request"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isReconciledOrderLineItem">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Change_Request"/>
+  <rdfs:range rdf:resource="#Order_Line_Item"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isRequestedByCustomer">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <owl:inverseOf rdf:resource="#requestsOrderChangeRequest"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#requestsOrderChangeRequest">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Customer"/>
+  <rdfs:range rdf:resource="#Order_Change_Request"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#requiresAction">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Change_Request"/>
+  <rdfs:range rdf:resource="#Action"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#requiresUserAction">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Change_Request"/>
+  <rdfs:range rdf:resource="#UserAction"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#hasConfirmedDeliveryDate">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Line_Item"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasConfirmedQuantity">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Line_Item"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasCurrentDockDate">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Change_Request"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasCustomerAddress">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="#Customer_Data"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasCustomerNo">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Customer_Data"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasCustomerPartNumber">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasCustomerReferenceNo">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasCustomerRequestedDate">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Line_Item"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasDepartment">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Contact_Person_Data"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasEmail">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Contact_Person_Data"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasFax">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="#Contact_Person_Data"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasIcoterms">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasItemNo">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasItemPrice">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasLineIDOCR">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Change_Request"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasLineIDOLI">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Line_Item"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasModeOfTransport">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasName">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Contact_Person_Data"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasOpenQuantityOCR">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Change_Request"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasOpenQuantityOLI">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Line_Item"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasPONumberOCR">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Change_Request"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasPONumberOO">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Open_Order"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasPartialCancelQuantityQuantityBuyer">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Change_Request"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasPartialCancelQuantitySupplier">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Change_Request"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasPlantAddress">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="#Customer_Plant_Data"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasPromisedDockDate">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Change_Request"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasRequestedDockDate">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Change_Request"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasRequestedQuantity">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasResponseDate">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasSupplierAddress">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="#Supplier_Data"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasSupplierComments">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Change_Request"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasSupplierReasonCode">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Change_Request"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasSupplierReferenceNo">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasTelephone">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="#Contact_Person_Data"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasTotalConfirmedOpenQuantity">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasTotalConfirmedQuantity">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasTotalDeliveredQuantity">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasTotalOpenQuantity">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasTotalRequestedQuantity">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasTotalUnconfirmedOpenQuantity">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasUnitPrice">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Allocation">
+  <rdfs:comment xml:lang="en">Allocation is a process used in order management in times when demand exceeds available supply.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Supply">
+  <rdfs:comment xml:lang="en">This is the total amount of specific products that is available to customers. Supply has the dimensions quantity, time, location, product, including aggregation of all dimensions. Supply is defined as inventory or plan replenishment.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Order_Confirmation">
+  <rdfs:comment xml:lang="en">A notification  that an order has been received and accepted</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Open_Order">
+  <rdfs:comment xml:lang="en">An order that has been placed, but not yet fulfilled or completed</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Order_Line_Item">
+  <rdfs:comment xml:lang="en">A single item  that is part of a larger order. It represents a specific product or service that a customer has ordered, along with its associated details.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Open_Order_Book">
+  <rdfs:comment xml:lang="en">A continuously updated  record of all outstanding sell orders</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Contact_Person_Data">
+  <rdfs:comment xml:lang="en">Data of the contact person</rdfs:comment>
+  <rdfs:label xml:lang="en">Contact Person Data</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Customer_Data">
+  <rdfs:comment xml:lang="en">Customer data such as address and company name</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Customer_Plant_Data">
+  <rdfs:label xml:lang="en">Data of the cusomers' plant such as location</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Supplier_Data">
+  <rdfs:comment xml:lang="en">Data about the supplier such as name, location, address</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Customer">
+  <rdfs:comment xml:lang="en">A customer is an business that purchases another company's goods or services.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Customer_Plant">
+  <rdfs:comment xml:lang="en">Manufacturing site where the cusomer procuces goods</rdfs:comment>
+  <rdfs:label xml:lang="en"></rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Supplier">
+  <rdfs:comment xml:lang="en">A supplier is a company or organization that provides goods, services, or materials to another entity</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Order_Change_Request">
+  <rdfs:comment xml:lang="en">A request to modify an existing order that has not yet been fulfilled</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Action">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:oneOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Pull"/>
+        <rdf:Description rdf:about="#Push"/>
+        <rdf:Description rdf:about="#Reconfirm"/>
+      </owl:oneOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:comment xml:lang="en">The process of doing something</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#UserAction">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:oneOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Accepted"/>
+        <rdf:Description rdf:about="#AcceptedWithChange"/>
+        <rdf:Description rdf:about="#Rejected"/>
+      </owl:oneOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:comment xml:lang="en">Activity taken by user</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Demand_Fulfillment">
+  <rdfs:comment xml:lang="en">The process of meeting a customer’s demand for product or services by fulfilling their request.</rdfs:comment>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#Pull">
+  <rdf:type rdf:resource="#Action"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Push">
+  <rdf:type rdf:resource="#Action"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Reconfirm">
+  <rdf:type rdf:resource="#Action"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Accepted"/>
+
+<owl:NamedIndividual rdf:about="#AcceptedWithChange">
+  <rdf:type rdf:resource="#UserAction"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Rejected">
+  <rdf:type rdf:resource="#UserAction"/>
+</owl:NamedIndividual>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Action"/>
+    <rdf:Description rdf:about="#Allocation"/>
+    <rdf:Description rdf:about="#Contact_Person_Data"/>
+    <rdf:Description rdf:about="#Customer"/>
+    <rdf:Description rdf:about="#Customer_Data"/>
+    <rdf:Description rdf:about="#Customer_Plant"/>
+    <rdf:Description rdf:about="#Customer_Plant_Data"/>
+    <rdf:Description rdf:about="#Demand_Fulfillment"/>
+    <rdf:Description rdf:about="#Open_Order"/>
+    <rdf:Description rdf:about="#Open_Order_Book"/>
+    <rdf:Description rdf:about="#Order_Change_Request"/>
+    <rdf:Description rdf:about="#Order_Confirmation"/>
+    <rdf:Description rdf:about="#Order_Line_Item"/>
+    <rdf:Description rdf:about="#Supplier"/>
+    <rdf:Description rdf:about="#Supplier_Data"/>
+    <rdf:Description rdf:about="#Supply"/>
+    <rdf:Description rdf:about="#UserAction"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Action"/>
+    <rdf:Description rdf:about="#Contact_Person_Data"/>
+    <rdf:Description rdf:about="#Customer"/>
+    <rdf:Description rdf:about="#Customer_Data"/>
+    <rdf:Description rdf:about="#Customer_Plant"/>
+    <rdf:Description rdf:about="#Customer_Plant_Data"/>
+    <rdf:Description rdf:about="#Open_Order"/>
+    <rdf:Description rdf:about="#Open_Order_Book"/>
+    <rdf:Description rdf:about="#Order_Change_Request"/>
+    <rdf:Description rdf:about="#Order_Confirmation"/>
+    <rdf:Description rdf:about="#Order_Line_Item"/>
+    <rdf:Description rdf:about="#Supplier"/>
+    <rdf:Description rdf:about="#Supplier_Data"/>
+    <rdf:Description rdf:about="#UserAction"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Allocation"/>
+    <rdf:Description rdf:about="#Contact_Person_Data"/>
+    <rdf:Description rdf:about="#Customer"/>
+    <rdf:Description rdf:about="#Customer_Data"/>
+    <rdf:Description rdf:about="#Customer_Plant"/>
+    <rdf:Description rdf:about="#Customer_Plant_Data"/>
+    <rdf:Description rdf:about="#Demand_Fulfillment"/>
+    <rdf:Description rdf:about="#Open_Order"/>
+    <rdf:Description rdf:about="#Open_Order_Book"/>
+    <rdf:Description rdf:about="#Order_Change_Request"/>
+    <rdf:Description rdf:about="#Order_Confirmation"/>
+    <rdf:Description rdf:about="#Order_Line_Item"/>
+    <rdf:Description rdf:about="#Supplier"/>
+    <rdf:Description rdf:about="#Supplier_Data"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Contact_Person_Data"/>
+    <rdf:Description rdf:about="#Customer"/>
+    <rdf:Description rdf:about="#Customer_Data"/>
+    <rdf:Description rdf:about="#Customer_Plant"/>
+    <rdf:Description rdf:about="#Customer_Plant_Data"/>
+    <rdf:Description rdf:about="#Open_Order"/>
+    <rdf:Description rdf:about="#Open_Order_Book"/>
+    <rdf:Description rdf:about="#Order_Change_Request"/>
+    <rdf:Description rdf:about="#Order_Confirmation"/>
+    <rdf:Description rdf:about="#Order_Line_Item"/>
+    <rdf:Description rdf:about="#Supplier"/>
+    <rdf:Description rdf:about="#Supplier_Data"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+
+</rdf:RDF>

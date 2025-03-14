@@ -1,0 +1,538 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/rogetdeaysa/ontologies/2021/0/untitled-ontology-14"
+         xmlns="http://www.semanticweb.org/rogetdeaysa/ontologies/2021/0/untitled-ontology-14#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/rogetdeaysa/ontologies/2021/0/untitled-ontology-14"/>
+
+<owl:ObjectProperty rdf:about="#PP_to">
+  <rdfs:subPropertyOf rdf:resource="#which_provides"/>
+  <rdfs:domain rdf:resource="#Plan_Order"/>
+  <rdfs:range rdf:resource="#Production_Schedule"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#and_sends_it_to">
+  <rdfs:subPropertyOf rdf:resource="#dm_provides"/>
+  <rdfs:domain rdf:resource="#Supply_Picture"/>
+  <rdfs:range rdf:resource="#DF"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#can_be">
+  <rdfs:subPropertyOf rdf:resource="#is_divided_5_sub-processes"/>
+  <rdfs:domain rdf:resource="#Capacity_Planning"/>
+  <rdfs:domain rdf:resource="#Demand_Planning"/>
+  <rdfs:range rdf:resource="#Operational:_Production_Plan:_Production_Program"/>
+  <rdfs:range rdf:resource="#Tactical:_BIZ_Scenario"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#checks">
+  <rdfs:subPropertyOf rdf:resource="#composed_by"/>
+  <rdfs:domain rdf:resource="#Production_Schedule"/>
+  <rdfs:range rdf:resource="#Capacity_&amp;_Material"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#composed_by">
+  <rdfs:subPropertyOf rdf:resource="#is_divided_into"/>
+  <rdfs:domain rdf:resource="#Make"/>
+  <rdfs:range rdf:resource="#Detailed_Schedule"/>
+  <rdfs:range rdf:resource="#Production_Dispatch"/>
+  <rdfs:range rdf:resource="#Production_Schedule"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#creates">
+  <rdfs:subPropertyOf rdf:resource="#s_uses_tools"/>
+  <rdfs:domain rdf:resource="#DM"/>
+  <rdfs:range rdf:resource="#Master_Planning"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#cust_to"/>
+
+<owl:ObjectProperty rdf:about="#dm_provides">
+  <rdfs:subPropertyOf rdf:resource="#s_uses_tools"/>
+  <rdfs:domain rdf:resource="#DM"/>
+  <rdfs:range rdf:resource="#Supply_Picture"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#does_a">
+  <rdfs:subPropertyOf rdf:resource="#composed_by"/>
+  <rdfs:domain rdf:resource="#Production_Schedule"/>
+  <rdfs:range rdf:resource="#Site_Check"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#enters">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Customer"/>
+  <rdfs:range rdf:resource="#Order"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#for">
+  <rdfs:subPropertyOf rdf:resource="#composed_by"/>
+  <rdfs:domain rdf:resource="#Site_Check"/>
+  <rdfs:range rdf:resource="#Deviations_=_Production_EW"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#generates">
+  <rdfs:subPropertyOf rdf:resource="#o_uses_tools"/>
+  <rdfs:domain rdf:resource="#DF"/>
+  <rdfs:range rdf:resource="#Allocation_Planning"/>
+  <rdfs:range rdf:resource="#Order_Management_EW"/>
+  <rdfs:range rdf:resource="#Order_Promising"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#gives">
+  <rdfs:subPropertyOf rdf:resource="#composed_by"/>
+  <rdfs:domain rdf:resource="#Detailed_Schedule"/>
+  <rdfs:range rdf:resource="#Feedback"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#in_the">
+  <rdfs:subPropertyOf rdf:resource="#generates"/>
+  <rdfs:domain rdf:resource="#Order_Management_EW"/>
+  <rdfs:range rdf:resource="#EW_Report"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#into">
+  <rdfs:subPropertyOf rdf:resource="#enters"/>
+  <rdfs:domain rdf:resource="#Order"/>
+  <rdfs:range rdf:resource="#SAP_SD"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_divided_4_planning_processes">
+  <rdfs:subPropertyOf rdf:resource="#is_divided_into"/>
+  <rdfs:domain rdf:resource="#Plan"/>
+  <rdfs:range rdf:resource="#Execution:_FEST/BEST"/>
+  <rdfs:range rdf:resource="#Operational:_Production_Plan:_Production_Program"/>
+  <rdfs:range rdf:resource="#Strategic:_MinMax"/>
+  <rdfs:range rdf:resource="#Tactical:_BIZ_Scenario"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_divided_5_sub-processes">
+  <rdfs:subPropertyOf rdf:resource="#is_divided_into"/>
+  <rdfs:domain rdf:resource="#Plan"/>
+  <rdfs:range rdf:resource="#Capacity_Planning"/>
+  <rdfs:range rdf:resource="#Demand_Planning"/>
+  <rdfs:range rdf:resource="#Order_Management"/>
+  <rdfs:range rdf:resource="#Production_Management"/>
+  <rdfs:range rdf:resource="#Supply_Planning"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_divided_into">
+  <rdfs:subPropertyOf rdf:resource="#uses"/>
+  <rdfs:domain rdf:resource="#SCOR-model"/>
+  <rdfs:range rdf:resource="#Deliver"/>
+  <rdfs:range rdf:resource="#Make"/>
+  <rdfs:range rdf:resource="#Plan"/>
+  <rdfs:range rdf:resource="#Return"/>
+  <rdfs:range rdf:resource="#Source"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#like">
+  <rdfs:subPropertyOf rdf:resource="#1_for"/>
+  <rdfs:domain rdf:resource="#last_minute_changes"/>
+  <rdfs:range rdf:resource="#CoR/CoP"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#looking_for">
+  <rdfs:subPropertyOf rdf:resource="#does_a"/>
+  <rdfs:domain rdf:resource="#Site_Check"/>
+  <rdfs:range rdf:resource="#Deviations_=_Production_EW"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#o_uses_tools">
+  <rdfs:subPropertyOf rdf:resource="#is_divided_5_sub-processes"/>
+  <rdfs:domain rdf:resource="#Order_Management"/>
+  <rdfs:range rdf:resource="#DF"/>
+  <rdfs:range rdf:resource="#SAP_SD"/>
+  <rdfs:range rdf:resource="#TAS_UI"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#provides">
+  <rdfs:subPropertyOf rdf:resource="#composed_by"/>
+  <rdfs:domain rdf:resource="#Detailed_Schedule"/>
+  <rdfs:range rdf:resource="#Detailed_Plan"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#s_can_be">
+  <rdfs:subPropertyOf rdf:resource="#is_divided_5_sub-processes"/>
+  <rdfs:domain rdf:resource="#Supply_Planning"/>
+  <rdfs:range rdf:resource="#Operational:_Production_Plan:_Production_Program"/>
+  <rdfs:range rdf:resource="#Strategic:_MinMax"/>
+  <rdfs:range rdf:resource="#Tactical:_BIZ_Scenario"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#s_uses_tools">
+  <rdfs:subPropertyOf rdf:resource="#is_divided_5_sub-processes"/>
+  <rdfs:domain rdf:resource="#Supply_Planning"/>
+  <rdfs:range rdf:resource="#DM"/>
+  <rdfs:range rdf:resource="#RAP_UI"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sap_for">
+  <rdfs:subPropertyOf rdf:resource="#o_uses_tools"/>
+  <rdfs:domain rdf:resource="#SAP_SD"/>
+  <rdfs:range rdf:resource="#Order_Confirmation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sap_gives">
+  <rdfs:subPropertyOf rdf:resource="#o_uses_tools"/>
+  <rdfs:domain rdf:resource="#SAP_SD"/>
+  <rdfs:range rdf:resource="#Orders_and_Reservations"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sends">
+  <rdfs:subPropertyOf rdf:resource="#o_uses_tools"/>
+  <rdfs:domain rdf:resource="#Customer_Order"/>
+  <rdfs:range rdf:resource="#DF"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sends_it_to">
+  <rdfs:subPropertyOf rdf:resource="#composed_by"/>
+  <rdfs:domain rdf:resource="#Capacity_&amp;_Material"/>
+  <rdfs:range rdf:resource="#Detailed_Schedule"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shown_in_the">
+  <rdfs:subPropertyOf rdf:resource="#like"/>
+  <rdfs:domain rdf:resource="#CoR/CoP"/>
+  <rdfs:range rdf:resource="#CoR/CoP_Report"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#to">
+  <rdfs:subPropertyOf rdf:resource="#composed_by"/>
+  <rdfs:domain rdf:resource="#Feedback"/>
+  <rdfs:range rdf:resource="#Production_Schedule"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#to_the">
+  <rdfs:subPropertyOf rdf:resource="#sap_for"/>
+  <rdfs:domain rdf:resource="#Order_Confirmation"/>
+  <rdfs:range rdf:resource="#Customer"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#used">
+  <rdfs:subPropertyOf rdf:resource="#o_uses_tools"/>
+  <rdfs:domain rdf:resource="#TAS_UI"/>
+  <rdfs:range rdf:resource="#Allocation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#used_for">
+  <rdfs:subPropertyOf rdf:resource="#s_uses_tools"/>
+  <rdfs:domain rdf:resource="#RAP_UI"/>
+  <rdfs:range rdf:resource="#Commit_Process"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#uses">
+  <rdfs:domain rdf:resource="#IFX_Supply_Chain_Management"/>
+  <rdfs:range rdf:resource="#SCOR-model"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#which_provides">
+  <rdfs:subPropertyOf rdf:resource="#is_divided_4_planning_processes"/>
+  <rdfs:domain rdf:resource="#Operational:_Production_Plan:_Production_Program"/>
+  <rdfs:range rdf:resource="#Plan_Order"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#(O&amp;R)_to">
+  <rdfs:subPropertyOf rdf:resource="#sap_gives"/>
+  <rdfs:domain rdf:resource="#Orders_and_Reservations"/>
+  <rdfs:range rdf:resource="#DM"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#(OP)_to">
+  <rdfs:subPropertyOf rdf:resource="#generates"/>
+  <rdfs:domain rdf:resource="#Order_Promising"/>
+  <rdfs:range rdf:resource="#SAP_SD"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#1_for">
+  <rdfs:subPropertyOf rdf:resource="#is_divided_4_planning_processes"/>
+  <rdfs:domain rdf:resource="#Execution:_FEST/BEST"/>
+  <rdfs:range rdf:resource="#last_minute_changes"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#2_for">
+  <rdfs:subPropertyOf rdf:resource="#is_divided_4_planning_processes"/>
+  <rdfs:domain rdf:resource="#Operational:_Production_Plan:_Production_Program"/>
+  <rdfs:range rdf:resource="#short_term_changes"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#3_for">
+  <rdfs:subPropertyOf rdf:resource="#is_divided_4_planning_processes"/>
+  <rdfs:domain rdf:resource="#Strategic:_MinMax"/>
+  <rdfs:range rdf:resource="#long_term_changes"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#4_for">
+  <rdfs:subPropertyOf rdf:resource="#is_divided_4_planning_processes"/>
+  <rdfs:domain rdf:resource="#Tactical:_BIZ_Scenario"/>
+  <rdfs:range rdf:resource="#mid_term_changes"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Allocation">
+  <rdfs:subClassOf rdf:resource="#TAS_UI"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Allocation_Planning">
+  <rdfs:subClassOf rdf:resource="#DF"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Capacity_Planning">
+  <rdfs:subClassOf rdf:resource="#Plan"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Commit_Process">
+  <rdfs:subClassOf rdf:resource="#RAP_UI"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Customer">
+  <owl:disjointWith rdf:resource="#IFX_Supply_Chain_Management"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Customer_Order">
+  <rdfs:subClassOf rdf:resource="#SAP_SD"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DF">
+  <rdfs:subClassOf rdf:resource="#Order_Management"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DM">
+  <rdfs:subClassOf rdf:resource="#Supply_Planning"/>
+  <owl:disjointWith rdf:resource="#RAP_UI"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Deliver">
+  <rdfs:subClassOf rdf:resource="#SCOR-model"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Demand_Planning">
+  <rdfs:subClassOf rdf:resource="#Plan"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Detailed_Plan">
+  <rdfs:subClassOf rdf:resource="#Detailed_Schedule"/>
+  <owl:disjointWith rdf:resource="#Feedback"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Detailed_Schedule">
+  <rdfs:subClassOf rdf:resource="#Make"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EW_Report">
+  <rdfs:subClassOf rdf:resource="#Order_Management_EW"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Feedback">
+  <rdfs:subClassOf rdf:resource="#Detailed_Schedule"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IFX_Supply_Chain_Management"/>
+
+<owl:Class rdf:about="#Make">
+  <rdfs:subClassOf rdf:resource="#SCOR-model"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Master_Planning">
+  <rdfs:subClassOf rdf:resource="#DM"/>
+  <owl:disjointWith rdf:resource="#Supply_Picture"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Order">
+  <rdfs:subClassOf rdf:resource="#Customer"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Order_Confirmation">
+  <rdfs:subClassOf rdf:resource="#SAP_SD"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Order_Management">
+  <rdfs:subClassOf rdf:resource="#Plan"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Order_Management_EW">
+  <rdfs:subClassOf rdf:resource="#DF"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Order_Promising">
+  <rdfs:subClassOf rdf:resource="#DF"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Orders_and_Reservations">
+  <rdfs:subClassOf rdf:resource="#SAP_SD"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Plan">
+  <rdfs:subClassOf rdf:resource="#SCOR-model"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Plan_Order">
+  <rdfs:subClassOf rdf:resource="#Operational:_Production_Plan:_Production_Program"/>
+  <owl:disjointWith rdf:resource="#short_term_changes"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Production_Dispatch">
+  <rdfs:subClassOf rdf:resource="#Make"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Production_Management">
+  <rdfs:subClassOf rdf:resource="#Plan"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Production_Schedule">
+  <rdfs:subClassOf rdf:resource="#Make"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RAP_UI">
+  <rdfs:subClassOf rdf:resource="#Supply_Planning"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Return">
+  <rdfs:subClassOf rdf:resource="#SCOR-model"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SAP_SD">
+  <rdfs:subClassOf rdf:resource="#Order_Management"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SCOR-model">
+  <rdfs:subClassOf rdf:resource="#IFX_Supply_Chain_Management"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Site_Check">
+  <rdfs:subClassOf rdf:resource="#Production_Schedule"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Source">
+  <rdfs:subClassOf rdf:resource="#SCOR-model"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Supply_Picture">
+  <rdfs:subClassOf rdf:resource="#DM"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Supply_Planning">
+  <rdfs:subClassOf rdf:resource="#Plan"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TAS_UI">
+  <rdfs:subClassOf rdf:resource="#Order_Management"/>
+</owl:Class>
+
+<owl:Class rdf:about="#last_minute_changes">
+  <rdfs:subClassOf rdf:resource="#Execution:_FEST/BEST"/>
+</owl:Class>
+
+<owl:Class rdf:about="#long_term_changes">
+  <rdfs:subClassOf rdf:resource="#Strategic:_MinMax"/>
+</owl:Class>
+
+<owl:Class rdf:about="#mid_term_changes">
+  <rdfs:subClassOf rdf:resource="#Tactical:_BIZ_Scenario"/>
+</owl:Class>
+
+<owl:Class rdf:about="#short_term_changes">
+  <rdfs:subClassOf rdf:resource="#Operational:_Production_Plan:_Production_Program"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Capacity_&amp;_Material">
+  <rdfs:subClassOf rdf:resource="#Production_Schedule"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CoR/CoP">
+  <rdfs:subClassOf rdf:resource="#last_minute_changes"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CoR/CoP_Report">
+  <rdfs:subClassOf rdf:resource="#CoR/CoP"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Deviations_=_Production_EW">
+  <rdfs:subClassOf rdf:resource="#Site_Check"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Execution:_FEST/BEST">
+  <rdfs:subClassOf rdf:resource="#Plan"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Operational:_Production_Plan:_Production_Program">
+  <rdfs:subClassOf rdf:resource="#Plan"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Strategic:_MinMax">
+  <rdfs:subClassOf rdf:resource="#Plan"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Tactical:_BIZ_Scenario">
+  <rdfs:subClassOf rdf:resource="#Plan"/>
+</owl:Class>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Execution:_FEST/BEST"/>
+    <rdf:Description rdf:about="#Operational:_Production_Plan:_Production_Program"/>
+    <rdf:Description rdf:about="#Strategic:_MinMax"/>
+    <rdf:Description rdf:about="#Tactical:_BIZ_Scenario"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Detailed_Schedule"/>
+    <rdf:Description rdf:about="#Production_Dispatch"/>
+    <rdf:Description rdf:about="#Production_Schedule"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Deliver"/>
+    <rdf:Description rdf:about="#Make"/>
+    <rdf:Description rdf:about="#Plan"/>
+    <rdf:Description rdf:about="#Return"/>
+    <rdf:Description rdf:about="#Source"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#DF"/>
+    <rdf:Description rdf:about="#SAP_SD"/>
+    <rdf:Description rdf:about="#TAS_UI"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Customer_Order"/>
+    <rdf:Description rdf:about="#Order_Confirmation"/>
+    <rdf:Description rdf:about="#Orders_and_Reservations"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Capacity_Planning"/>
+    <rdf:Description rdf:about="#Demand_Planning"/>
+    <rdf:Description rdf:about="#Order_Management"/>
+    <rdf:Description rdf:about="#Production_Management"/>
+    <rdf:Description rdf:about="#Supply_Planning"/>
+    <rdf:Description rdf:about="#Execution:_FEST/BEST"/>
+    <rdf:Description rdf:about="#Operational:_Production_Plan:_Production_Program"/>
+    <rdf:Description rdf:about="#Strategic:_MinMax"/>
+    <rdf:Description rdf:about="#Tactical:_BIZ_Scenario"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Allocation_Planning"/>
+    <rdf:Description rdf:about="#Order_Management_EW"/>
+    <rdf:Description rdf:about="#Order_Promising"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+
+</rdf:RDF>

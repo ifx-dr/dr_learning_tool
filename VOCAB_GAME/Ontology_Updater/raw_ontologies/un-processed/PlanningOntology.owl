@@ -1,0 +1,3358 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/sc3/ontologies/2022/0/Planning-Ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/sc3/ontologies/2022/0/Planning-Ontology">
+    <Prefix name="" IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/Planning-Ontology"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology</Import>
+    <Import>http://www.w3.org/2006/time#2016</Import>
+    <Declaration>
+        <Class IRI="#Activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Automated"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Autonomous"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AvailableCapacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BillOfMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bin"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Binning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Capacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComponentPart"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Criteria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DecisionMakerType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DecisionMakingInitiative"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DecisionMakingUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DecisonMakingUnitCharacter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dependent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DistributedHierarchicalSituation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Edge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FrozenFence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HeterarchicalSituation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HierarchicalSituation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Human"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#In-TransitInventory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Inventory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InventoryPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LotSizingRule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MacroOperation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Order"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Owner"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Part"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PerformanceMeasure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Plan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlanExecutuon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlaningPurpose"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlanningApproach"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlanningConstraint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlanningDecision"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlanningFunction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlanningInstance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlanningObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlanningProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlanningSituation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductAggregate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductHierarchy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProjectedWip"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReplanningDegree"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RequiredCapacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Resource-Availability-Constraints"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Resource-Compatibility-Constraints"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Route"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SemiAutomated"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StrictHierarchicalSituation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Substitution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SupplyInformation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Target"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Temporal-Constraints"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Trigger"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vertex"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Yield"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasActivities"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBillOfMaterial"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBin"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCapacity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasChildProductAggregate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasComponentLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasComponentPart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasComponentProcess"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConnection"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConstraint"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCriterias"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDMUa"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDMUb"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDecisionMakerType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDecisionMakingInitiative"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDecisionMakingUnit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDecisionMakingUnitCharcters"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDefined"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEarliestReleaseDate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEventTrigger"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFrozenFence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasHierarchicalSituation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInvolvedPlanningObjects"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasObjectives"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOperations"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOrder"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOwner"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasParentProductAggregate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPerformanceMeasures"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPeriodicTrigger"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPlan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPlanningConstraints"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPlanningInstance"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPlanningObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPlanningObjects"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPlanningProcess"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPlanningPurpose"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPredecessor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProcess"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProduct"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasReceivingLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasReplanningDegree"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasResources"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasScope"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSetOfPlanningObjects"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubProcesses"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubstitutes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSuccessor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSupplyingLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTargets"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTrigger"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasVertex"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasYield"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usesPlanningApproach"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAnticipationCapabilities"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAvailabilityDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBinningPercentage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCapacityUnit"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCommitDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasConsumedQuantity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCosts"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCurrentStockLevel"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDecision-Rights"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDecisionTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDemandClass"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDistribution"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDueDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEarliestReleaseDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEffectiveDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEffectiveStartDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEndDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEndTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasFeasibilityStatus"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasHardConstraints"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasIdentifier"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasInformationStatus"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLeadTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLevel"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMaximumCapacity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMaximumComputingTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMaximumLotSize"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMaximumSupply"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMinimumCapacity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMinimumLotSize"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMinimumSupply"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasOffsetPeriods"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasOrigin"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPartType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPenalityCosts"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPerformanceCriteria"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPerformanceMeasure"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPeriod"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPlanningPeriod"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPlanningWindow"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPriority"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasProjectedDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasProjectedQuantity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasQuantity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasReleaseDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasRequestedDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasRevenue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSafetyStockLevel"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSafetyStockTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSetOfConnections"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSoftConstraints"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasStartDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasStartTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSubstitutionQuantity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasWeights"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#numberOfOperationsOnSameResource"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Activity_Etching"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Activity_Oxide"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Activity_Photo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Activity_UV_Bake"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#All_Planning_Objects_have_to_be_positive"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AvailableCap1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AvailableCap2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AvailableCap3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AvailableCap4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AvailableCap5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bom_Product_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Borderless_FE1_zu_FE2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Capacity_Restriction_Equation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FE1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FE1_CostMinimization"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FE2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FE_Aligner"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FE_Backlog"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FE_Implanter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FE_Inventory"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FE_Stepper_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FE_Stepper_2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FE_Wip"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FE_X"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FE_Y"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Frontend_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Frontend_2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Inventory_Balance_Equation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Inventory_DB"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Material_Flow_Equation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Minimization"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MinimizeBacklog"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MinimizeInventoryLevel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MinimizeWipCosts"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Part1_Product_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Part2_Product_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Part3_Product_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Part4_Product_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Part5_Product_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PeriodLength"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PlanningInstance_Frontend_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Process_Product_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Product_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Product_2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RequiredCap1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RequiredCap2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RequiredCap3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RequiredCap4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SimulationHorizon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Wip_Balance_Equation"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#sc3:formula"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:duration"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Automated"/>
+        <Class IRI="#DecisionMakerType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Autonomous"/>
+        <Class IRI="#DecisionMakingInitiative"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AvailableCapacity"/>
+        <Class IRI="#Capacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComponentPart"/>
+        <Class IRI="#Part"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dependent"/>
+        <Class IRI="#DecisionMakingInitiative"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DistributedHierarchicalSituation"/>
+        <Class IRI="#HierarchicalSituation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HeterarchicalSituation"/>
+        <Class IRI="#HierarchicalSituation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Human"/>
+        <Class IRI="#DecisionMakerType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RequiredCapacity"/>
+        <Class IRI="#Capacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Resource-Availability-Constraints"/>
+        <Class IRI="#PlanningConstraint"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Resource-Compatibility-Constraints"/>
+        <Class IRI="#PlanningConstraint"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SemiAutomated"/>
+        <Class IRI="#DecisionMakerType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StrictHierarchicalSituation"/>
+        <Class IRI="#HierarchicalSituation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Temporal-Constraints"/>
+        <Class IRI="#PlanningConstraint"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Resource-Availability-Constraints"/>
+        <Class IRI="#Resource-Compatibility-Constraints"/>
+        <Class IRI="#Temporal-Constraints"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Activity"/>
+        <NamedIndividual IRI="#Activity_Etching"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Activity"/>
+        <NamedIndividual IRI="#Activity_Oxide"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Activity"/>
+        <NamedIndividual IRI="#Activity_Photo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Activity"/>
+        <NamedIndividual IRI="#Activity_UV_Bake"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlanningConstraint"/>
+        <NamedIndividual IRI="#All_Planning_Objects_have_to_be_positive"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AvailableCapacity"/>
+        <NamedIndividual IRI="#AvailableCap1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AvailableCapacity"/>
+        <NamedIndividual IRI="#AvailableCap2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AvailableCapacity"/>
+        <NamedIndividual IRI="#AvailableCap3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AvailableCapacity"/>
+        <NamedIndividual IRI="#AvailableCap4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AvailableCapacity"/>
+        <NamedIndividual IRI="#AvailableCap5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#BillOfMaterial"/>
+        <NamedIndividual IRI="#Bom_Product_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlanningObject"/>
+        <NamedIndividual IRI="#Borderless_FE1_zu_FE2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlanningConstraint"/>
+        <NamedIndividual IRI="#Capacity_Restriction_Equation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Owner"/>
+        <NamedIndividual IRI="#FE1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlaningPurpose"/>
+        <NamedIndividual IRI="#FE1_CostMinimization"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Owner"/>
+        <NamedIndividual IRI="#FE2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Resource"/>
+        <NamedIndividual IRI="#FE_Aligner"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlanningObject"/>
+        <NamedIndividual IRI="#FE_Backlog"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Resource"/>
+        <NamedIndividual IRI="#FE_Implanter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlanningObject"/>
+        <NamedIndividual IRI="#FE_Inventory"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Resource"/>
+        <NamedIndividual IRI="#FE_Stepper_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Resource"/>
+        <NamedIndividual IRI="#FE_Stepper_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlanningObject"/>
+        <NamedIndividual IRI="#FE_Wip"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlanningObject"/>
+        <NamedIndividual IRI="#FE_X"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlanningObject"/>
+        <NamedIndividual IRI="#FE_Y"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Location"/>
+        <NamedIndividual IRI="#Frontend_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Location"/>
+        <NamedIndividual IRI="#Frontend_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlanningConstraint"/>
+        <NamedIndividual IRI="#Inventory_Balance_Equation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Inventory"/>
+        <NamedIndividual IRI="#Inventory_DB"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlanningConstraint"/>
+        <NamedIndividual IRI="#Material_Flow_Equation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Criteria"/>
+        <NamedIndividual IRI="#Minimization"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Part"/>
+        <NamedIndividual IRI="#Part1_Product_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Part"/>
+        <NamedIndividual IRI="#Part2_Product_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Part"/>
+        <NamedIndividual IRI="#Part3_Product_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Part"/>
+        <NamedIndividual IRI="#Part4_Product_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Part"/>
+        <NamedIndividual IRI="#Part5_Product_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.w3.org/2006/time#Interval"/>
+        <NamedIndividual IRI="#PeriodLength"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlanningInstance"/>
+        <NamedIndividual IRI="#PlanningInstance_Frontend_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Product"/>
+        <NamedIndividual IRI="#Product_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Product"/>
+        <NamedIndividual IRI="#Product_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RequiredCapacity"/>
+        <NamedIndividual IRI="#RequiredCap1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RequiredCapacity"/>
+        <NamedIndividual IRI="#RequiredCap2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RequiredCapacity"/>
+        <NamedIndividual IRI="#RequiredCap3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RequiredCapacity"/>
+        <NamedIndividual IRI="#RequiredCap4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.w3.org/2006/time#Duration"/>
+        <NamedIndividual IRI="#SimulationHorizon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlanningConstraint"/>
+        <NamedIndividual IRI="#Wip_Balance_Equation"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCapacity"/>
+        <NamedIndividual IRI="#Activity_Etching"/>
+        <NamedIndividual IRI="#RequiredCap1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasResources"/>
+        <NamedIndividual IRI="#Activity_Etching"/>
+        <NamedIndividual IRI="#FE_Aligner"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCapacity"/>
+        <NamedIndividual IRI="#Activity_Oxide"/>
+        <NamedIndividual IRI="#RequiredCap2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasResources"/>
+        <NamedIndividual IRI="#Activity_Oxide"/>
+        <NamedIndividual IRI="#FE_Implanter"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCapacity"/>
+        <NamedIndividual IRI="#Activity_Photo"/>
+        <NamedIndividual IRI="#RequiredCap3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasResources"/>
+        <NamedIndividual IRI="#Activity_Photo"/>
+        <NamedIndividual IRI="#FE_Stepper_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCapacity"/>
+        <NamedIndividual IRI="#Activity_UV_Bake"/>
+        <NamedIndividual IRI="#RequiredCap4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasResources"/>
+        <NamedIndividual IRI="#Activity_UV_Bake"/>
+        <NamedIndividual IRI="#FE_Stepper_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#Bom_Product_1"/>
+        <NamedIndividual IRI="#Frontend_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#Bom_Product_1"/>
+        <NamedIndividual IRI="#Product_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasActivities"/>
+        <NamedIndividual IRI="#Borderless_FE1_zu_FE2"/>
+        <NamedIndividual IRI="#Activity_Photo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#Borderless_FE1_zu_FE2"/>
+        <NamedIndividual IRI="#Frontend_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOwner"/>
+        <NamedIndividual IRI="#Borderless_FE1_zu_FE2"/>
+        <NamedIndividual IRI="#FE1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#Borderless_FE1_zu_FE2"/>
+        <NamedIndividual IRI="#Product_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCriterias"/>
+        <NamedIndividual IRI="#FE1_CostMinimization"/>
+        <NamedIndividual IRI="#Minimization"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPerformanceMeasures"/>
+        <NamedIndividual IRI="#FE1_CostMinimization"/>
+        <NamedIndividual IRI="#MinimizeBacklog"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPerformanceMeasures"/>
+        <NamedIndividual IRI="#FE1_CostMinimization"/>
+        <NamedIndividual IRI="#MinimizeInventoryLevel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPerformanceMeasures"/>
+        <NamedIndividual IRI="#FE1_CostMinimization"/>
+        <NamedIndividual IRI="#MinimizeWipCosts"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPlanningObjects"/>
+        <NamedIndividual IRI="#FE1_CostMinimization"/>
+        <NamedIndividual IRI="#FE_Backlog"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPlanningObjects"/>
+        <NamedIndividual IRI="#FE1_CostMinimization"/>
+        <NamedIndividual IRI="#FE_Inventory"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPlanningObjects"/>
+        <NamedIndividual IRI="#FE1_CostMinimization"/>
+        <NamedIndividual IRI="#FE_Wip"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPlanningObjects"/>
+        <NamedIndividual IRI="#FE1_CostMinimization"/>
+        <NamedIndividual IRI="#FE_X"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPlanningObjects"/>
+        <NamedIndividual IRI="#FE1_CostMinimization"/>
+        <NamedIndividual IRI="#FE_Y"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCapacity"/>
+        <NamedIndividual IRI="#FE_Aligner"/>
+        <NamedIndividual IRI="#AvailableCap1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#FE_Aligner"/>
+        <NamedIndividual IRI="#Frontend_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#FE_Backlog"/>
+        <NamedIndividual IRI="#Frontend_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#FE_Backlog"/>
+        <NamedIndividual IRI="#Frontend_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#FE_Backlog"/>
+        <NamedIndividual IRI="#Product_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCapacity"/>
+        <NamedIndividual IRI="#FE_Implanter"/>
+        <NamedIndividual IRI="#AvailableCap2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#FE_Implanter"/>
+        <NamedIndividual IRI="#Frontend_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#FE_Inventory"/>
+        <NamedIndividual IRI="#Frontend_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#FE_Inventory"/>
+        <NamedIndividual IRI="#Frontend_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#FE_Inventory"/>
+        <NamedIndividual IRI="#Product_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#FE_Inventory"/>
+        <NamedIndividual IRI="#Product_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCapacity"/>
+        <NamedIndividual IRI="#FE_Stepper_1"/>
+        <NamedIndividual IRI="#AvailableCap3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#FE_Stepper_1"/>
+        <NamedIndividual IRI="#Frontend_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCapacity"/>
+        <NamedIndividual IRI="#FE_Stepper_2"/>
+        <NamedIndividual IRI="#AvailableCap4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#FE_Stepper_2"/>
+        <NamedIndividual IRI="#Frontend_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#FE_Wip"/>
+        <NamedIndividual IRI="#Frontend_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#FE_Wip"/>
+        <NamedIndividual IRI="#Frontend_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#FE_Wip"/>
+        <NamedIndividual IRI="#Product_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#FE_Wip"/>
+        <NamedIndividual IRI="#Product_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#FE_X"/>
+        <NamedIndividual IRI="#Frontend_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#FE_X"/>
+        <NamedIndividual IRI="#Frontend_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#FE_X"/>
+        <NamedIndividual IRI="#Product_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#FE_X"/>
+        <NamedIndividual IRI="#Product_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#FE_Y"/>
+        <NamedIndividual IRI="#Frontend_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#FE_Y"/>
+        <NamedIndividual IRI="#Frontend_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#FE_Y"/>
+        <NamedIndividual IRI="#Product_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#FE_Y"/>
+        <NamedIndividual IRI="#Product_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#Frontend_1"/>
+        <NamedIndividual IRI="#Product_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#Frontend_2"/>
+        <NamedIndividual IRI="#Frontend_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#Frontend_2"/>
+        <NamedIndividual IRI="#Product_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#Inventory_DB"/>
+        <NamedIndividual IRI="#Frontend_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#Inventory_DB"/>
+        <NamedIndividual IRI="#Frontend_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#Inventory_DB"/>
+        <NamedIndividual IRI="#Product_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#Inventory_DB"/>
+        <NamedIndividual IRI="#Product_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPlanningObject"/>
+        <NamedIndividual IRI="#Part1_Product_1"/>
+        <NamedIndividual IRI="#Borderless_FE1_zu_FE2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#Part1_Product_1"/>
+        <NamedIndividual IRI="#Product_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPlanningObject"/>
+        <NamedIndividual IRI="#Part2_Product_1"/>
+        <NamedIndividual IRI="#Borderless_FE1_zu_FE2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#Part2_Product_1"/>
+        <NamedIndividual IRI="#Product_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#Part3_Product_1"/>
+        <NamedIndividual IRI="#Product_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#Part4_Product_1"/>
+        <NamedIndividual IRI="#Product_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#Part5_Product_1"/>
+        <NamedIndividual IRI="#Product_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasConstraint"/>
+        <NamedIndividual IRI="#PlanningInstance_Frontend_1"/>
+        <NamedIndividual IRI="#Capacity_Restriction_Equation"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasConstraint"/>
+        <NamedIndividual IRI="#PlanningInstance_Frontend_1"/>
+        <NamedIndividual IRI="#Inventory_Balance_Equation"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasConstraint"/>
+        <NamedIndividual IRI="#PlanningInstance_Frontend_1"/>
+        <NamedIndividual IRI="#Material_Flow_Equation"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasConstraint"/>
+        <NamedIndividual IRI="#PlanningInstance_Frontend_1"/>
+        <NamedIndividual IRI="#Wip_Balance_Equation"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasActivities"/>
+        <NamedIndividual IRI="#Product_1"/>
+        <NamedIndividual IRI="#Activity_Etching"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasActivities"/>
+        <NamedIndividual IRI="#Product_1"/>
+        <NamedIndividual IRI="#Activity_Oxide"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasActivities"/>
+        <NamedIndividual IRI="#Product_1"/>
+        <NamedIndividual IRI="#Activity_Photo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasActivities"/>
+        <NamedIndividual IRI="#Product_1"/>
+        <NamedIndividual IRI="#Activity_UV_Bake"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#Product_1"/>
+        <NamedIndividual IRI="#Frontend_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProcess"/>
+        <NamedIndividual IRI="#Product_1"/>
+        <NamedIndividual IRI="#Process_Product_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProduct"/>
+        <NamedIndividual IRI="#Product_1"/>
+        <NamedIndividual IRI="#Product_1"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDueDate"/>
+        <NamedIndividual IRI="#Borderless_FE1_zu_FE2"/>
+        <Literal>1 week</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasQuantity"/>
+        <NamedIndividual IRI="#Borderless_FE1_zu_FE2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">10</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCosts"/>
+        <NamedIndividual IRI="#FE1_CostMinimization"/>
+        <Literal>backlog=150</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCosts"/>
+        <NamedIndividual IRI="#FE1_CostMinimization"/>
+        <Literal>inventory=15</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCosts"/>
+        <NamedIndividual IRI="#FE1_CostMinimization"/>
+        <Literal>wip=50</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPlanningWindow"/>
+        <NamedIndividual IRI="#FE1_CostMinimization"/>
+        <Literal>12 weeks</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPeriod"/>
+        <NamedIndividual IRI="#FE_Backlog"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.w3.org/2006/time#day"/>
+        <NamedIndividual IRI="#FE_Backlog"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPeriod"/>
+        <NamedIndividual IRI="#FE_Inventory"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.w3.org/2006/time#day"/>
+        <NamedIndividual IRI="#FE_Inventory"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPeriod"/>
+        <NamedIndividual IRI="#FE_Wip"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.w3.org/2006/time#day"/>
+        <NamedIndividual IRI="#FE_Wip"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPeriod"/>
+        <NamedIndividual IRI="#FE_X"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.w3.org/2006/time#day"/>
+        <NamedIndividual IRI="#FE_X"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPeriod"/>
+        <NamedIndividual IRI="#FE_Y"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.w3.org/2006/time#day"/>
+        <NamedIndividual IRI="#FE_Y"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPeriod"/>
+        <NamedIndividual IRI="#Inventory_DB"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.w3.org/2006/time#day"/>
+        <NamedIndividual IRI="#Inventory_DB"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDueDate"/>
+        <NamedIndividual IRI="#Part1_Product_1"/>
+        <Literal>1 week</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDueDate"/>
+        <NamedIndividual IRI="#Part2_Product_1"/>
+        <Literal>1 week</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDueDate"/>
+        <NamedIndividual IRI="#Part3_Product_1"/>
+        <Literal>3 weeks</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDueDate"/>
+        <NamedIndividual IRI="#Part4_Product_1"/>
+        <Literal>4 weeks</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDueDate"/>
+        <NamedIndividual IRI="#Part5_Product_1"/>
+        <Literal>5 weeks</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.w3.org/2006/time#days"/>
+        <NamedIndividual IRI="#PeriodLength"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.w3.org/2006/time#weeks"/>
+        <NamedIndividual IRI="#SimulationHorizon"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">26</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasActivities"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasComponentPart"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConnection"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDMUa"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDMUb"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDecisionMakerType"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDecisionMakingInitiative"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDecisionMakingUnit"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDecisionMakingUnitCharcters"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDefined"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasEarliestReleaseDate"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasEventTrigger"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFrozenFence"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasHierarchicalSituation"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasInvolvedPlanningObjects"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasLocation"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasOwner"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPerformanceMeasures"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPeriodicTrigger"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPlan"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPlanningConstraints"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPlanningInstance"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPlanningObjects"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPlanningProcess"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasReplanningDegree"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasResources"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasScope"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSetOfPlanningObjects"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTargets"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesPlanningApproach"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasActivities"/>
+        <Class IRI="#PlanningObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasActivities"/>
+        <Class IRI="#RequiredCapacity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasActivities"/>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Product"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBillOfMaterial"/>
+        <Class IRI="#Part"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBillOfMaterial"/>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Product"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBin"/>
+        <Class IRI="#Binning"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCapacity"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCapacity"/>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Resource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasChildProductAggregate"/>
+        <Class IRI="#ProductHierarchy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasComponentLocation"/>
+        <Class IRI="#BillOfMaterial"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasComponentPart"/>
+        <Class IRI="#BillOfMaterial"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasComponentPart"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasComponentProcess"/>
+        <Class IRI="#BillOfMaterial"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConnection"/>
+        <Class IRI="#DecisionMakingUnit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConnection"/>
+        <Class IRI="#PlanningProcess"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCriterias"/>
+        <Class IRI="#PlaningPurpose"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDMUa"/>
+        <Class IRI="#Vertex"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDMUb"/>
+        <Class IRI="#Edge"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDecisionMakerType"/>
+        <Class IRI="#DecisionMakingUnit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDecisionMakingInitiative"/>
+        <Class IRI="#DecisionMakingUnit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDecisionMakingUnit"/>
+        <Class IRI="#PlanningSituation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDecisionMakingUnit"/>
+        <Class IRI="#Vertex"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDecisionMakingUnitCharcters"/>
+        <Class IRI="#PlanningSituation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDefined"/>
+        <Class IRI="#PlanExecutuon"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEarliestReleaseDate"/>
+        <Class IRI="#PlanningObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEventTrigger"/>
+        <Class IRI="#PlanningProcess"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFrozenFence"/>
+        <Class IRI="#PlanningProcess"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasHierarchicalSituation"/>
+        <Class IRI="#PlanningSituation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasInvolvedPlanningObjects"/>
+        <Class IRI="#PlanningInstance"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#BillOfMaterial"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#Binning"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#Capacity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#FrozenFence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#Inventory"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#InventoryPolicy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#LotSizingRule"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#PlanningObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#ProjectedWip"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#Substitution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#SupplyInformation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#Yield"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Product"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasObjectives"/>
+        <Class IRI="#PlanningProcess"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOperations"/>
+        <Class IRI="#Route"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOrder"/>
+        <Class IRI="#In-TransitInventory"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOwner"/>
+        <Class IRI="#PlanningObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasParentProductAggregate"/>
+        <Class IRI="#ProductHierarchy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPart"/>
+        <Class IRI="#Bin"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPart"/>
+        <Class IRI="#Binning"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPart"/>
+        <Class IRI="#ProjectedWip"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPart"/>
+        <Class IRI="#Yield"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPerformanceMeasures"/>
+        <Class IRI="#PlaningPurpose"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPeriodicTrigger"/>
+        <Class IRI="#PlanningProcess"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPlan"/>
+        <Class IRI="#PlanningProcess"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPlanningConstraints"/>
+        <Class IRI="#PlanningInstance"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPlanningInstance"/>
+        <Class IRI="#PlanningProcess"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPlanningObject"/>
+        <Class IRI="#FrozenFence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPlanningObjects"/>
+        <Class IRI="#Part"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPlanningObjects"/>
+        <Class IRI="#PlaningPurpose"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPlanningProcess"/>
+        <Class IRI="#DecisionMakingUnit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPlanningPurpose"/>
+        <Class IRI="#PlanningProcess"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPredecessor"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProcess"/>
+        <Class IRI="#BillOfMaterial"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProcess"/>
+        <Class IRI="#Binning"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProcess"/>
+        <Class IRI="#RequiredCapacity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProcess"/>
+        <Class IRI="#Yield"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProduct"/>
+        <Class IRI="#BillOfMaterial"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProduct"/>
+        <Class IRI="#Binning"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProduct"/>
+        <Class IRI="#Capacity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProduct"/>
+        <Class IRI="#In-TransitInventory"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProduct"/>
+        <Class IRI="#Inventory"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProduct"/>
+        <Class IRI="#InventoryPolicy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProduct"/>
+        <Class IRI="#LotSizingRule"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProduct"/>
+        <Class IRI="#Part"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProduct"/>
+        <Class IRI="#PlanningObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProduct"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProduct"/>
+        <Class IRI="#ProductAggregate"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProduct"/>
+        <Class IRI="#ProjectedWip"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProduct"/>
+        <Class IRI="#Substitution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProduct"/>
+        <Class IRI="#SupplyInformation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProduct"/>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Demand"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasReceivingLocation"/>
+        <Class IRI="#In-TransitInventory"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasReplanningDegree"/>
+        <Class IRI="#PlanningProcess"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasResources"/>
+        <Class IRI="#Capacity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasResources"/>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Product"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasScope"/>
+        <Class IRI="#DecisionMakingUnit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSetOfPlanningObjects"/>
+        <Class IRI="#Plan"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubProcesses"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubstitutes"/>
+        <Class IRI="#Substitution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSuccessor"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSupplyingLocation"/>
+        <Class IRI="#In-TransitInventory"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTargets"/>
+        <Class IRI="#PlaningPurpose"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTrigger"/>
+        <Class IRI="#PlanningProcess"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasVertex"/>
+        <Class IRI="#PlanningSituation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasYield"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usesPlanningApproach"/>
+        <Class IRI="#PlanningProcess"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasActivities"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBillOfMaterial"/>
+        <Class IRI="#BillOfMaterial"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBin"/>
+        <Class IRI="#Bin"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCapacity"/>
+        <Class IRI="#AvailableCapacity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasChildProductAggregate"/>
+        <Class IRI="#ProductHierarchy"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasComponentLocation"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasComponentPart"/>
+        <Class IRI="#ComponentPart"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasComponentProcess"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConnection"/>
+        <Class IRI="#Edge"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCriterias"/>
+        <Class IRI="#Criteria"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDMUa"/>
+        <Class IRI="#DecisionMakingUnit"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDMUb"/>
+        <Class IRI="#DecisionMakingUnit"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDecisionMakerType"/>
+        <Class IRI="#DecisionMakerType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDecisionMakingInitiative"/>
+        <Class IRI="#DecisionMakingInitiative"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDecisionMakingUnit"/>
+        <Class IRI="#DecisionMakingUnit"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDecisionMakingUnitCharcters"/>
+        <Class IRI="#DecisonMakingUnitCharacter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDefined"/>
+        <Class IRI="#PerformanceMeasure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEarliestReleaseDate"/>
+        <Class IRI="http://www.w3.org/2006/time#TemporalDuration"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEventTrigger"/>
+        <Class IRI="#Trigger"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFrozenFence"/>
+        <Class IRI="#PlanningDecision"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasHierarchicalSituation"/>
+        <Class IRI="#HierarchicalSituation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasInvolvedPlanningObjects"/>
+        <Class IRI="#PlanningObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasObjectives"/>
+        <Class IRI="#PlaningPurpose"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOperations"/>
+        <Class IRI="#MacroOperation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOrder"/>
+        <Class IRI="#Order"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOwner"/>
+        <Class IRI="#Owner"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasParentProductAggregate"/>
+        <Class IRI="#ProductHierarchy"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPart"/>
+        <Class IRI="#Part"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPerformanceMeasures"/>
+        <Class IRI="#PerformanceMeasure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPeriodicTrigger"/>
+        <Class IRI="#Trigger"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPlan"/>
+        <Class IRI="#Plan"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPlanningConstraints"/>
+        <Class IRI="#PlanningConstraint"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPlanningInstance"/>
+        <Class IRI="#PlanningInstance"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPlanningObject"/>
+        <Class IRI="#PlanningObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPlanningObjects"/>
+        <Class IRI="#PlanningObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPlanningProcess"/>
+        <Class IRI="#PlanningProcess"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPlanningPurpose"/>
+        <Class IRI="#PlaningPurpose"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPredecessor"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProcess"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProduct"/>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Product"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasReceivingLocation"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasReplanningDegree"/>
+        <Class IRI="#ReplanningDegree"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasResources"/>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Resource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasScope"/>
+        <Class IRI="#PlanningFunction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSetOfPlanningObjects"/>
+        <Class IRI="#PlanningObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubProcesses"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubstitutes"/>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Product"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSuccessor"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSupplyingLocation"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTargets"/>
+        <Class IRI="#Target"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTrigger"/>
+        <Class IRI="#Trigger"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasVertex"/>
+        <Class IRI="#Vertex"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasYield"/>
+        <Class IRI="#Yield"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usesPlanningApproach"/>
+        <Class IRI="#PlanningApproach"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <Class IRI="http://www.w3.org/2006/time#TemporalEntity"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasAnticipationCapabilities"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasCosts"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasDecision-Rights"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasDecisionTime"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasDueDate"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEndTime"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasFeasibilityStatus"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasHardConstraints"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasIdentifier"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasInformationStatus"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasLevel"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasMaximumComputingTime"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasPenalityCosts"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasPlanningPeriod"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasPlanningWindow"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasPriority"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasQuantity"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasReleaseDate"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasRevenue"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasSetOfConnections"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasSoftConstraints"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasStartTime"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasTime"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasWeights"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasAnticipationCapabilities"/>
+        <Class IRI="#DecisionMakingUnit"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasAvailabilityDate"/>
+        <Class IRI="#SupplyInformation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasBinningPercentage"/>
+        <Class IRI="#Process"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasCapacityUnit"/>
+        <Class IRI="#Capacity"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasCommitDate"/>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Demand"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasConsumedQuantity"/>
+        <Class IRI="#RequiredCapacity"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasCosts"/>
+        <Class IRI="#PlaningPurpose"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasCosts"/>
+        <Class IRI="#Substitution"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasCurrentStockLevel"/>
+        <Class IRI="#Inventory"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDecision-Rights"/>
+        <Class IRI="#DecisionMakingUnit"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDecisionTime"/>
+        <Class IRI="#DecisionMakingUnit"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDemandClass"/>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Demand"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDistribution"/>
+        <Class IRI="#Binning"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDueDate"/>
+        <Class IRI="#Activity"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDueDate"/>
+        <Class IRI="#Part"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDueDate"/>
+        <Class IRI="#PlanningObject"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDueDate"/>
+        <Class IRI="#SupplyInformation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEarliestReleaseDate"/>
+        <Class IRI="#Part"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEffectiveDate"/>
+        <Class IRI="#Yield"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEffectiveStartDate"/>
+        <Class IRI="#Capacity"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEndDate"/>
+        <Class IRI="#Binning"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEndDate"/>
+        <Class IRI="#FrozenFence"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEndDate"/>
+        <Class IRI="#InventoryPolicy"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEndDate"/>
+        <Class IRI="#LotSizingRule"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEndDate"/>
+        <Class IRI="#Substitution"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEndTime"/>
+        <Class IRI="#PlanningConstraint"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasFeasibilityStatus"/>
+        <Class IRI="#Plan"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasHardConstraints"/>
+        <Class IRI="#PlanningConstraint"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasIdentifier"/>
+        <Class IRI="#PlanningObject"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasInformationStatus"/>
+        <Class IRI="#DecisionMakingUnit"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasLeadTime"/>
+        <Class IRI="#Process"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasLevel"/>
+        <Class IRI="#Edge"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasLevel"/>
+        <Class IRI="#PlanningSituation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasMaximumCapacity"/>
+        <Class IRI="#AvailableCapacity"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasMaximumComputingTime"/>
+        <Class IRI="#PlanningProcess"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasMaximumLotSize"/>
+        <Class IRI="#LotSizingRule"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasMaximumSupply"/>
+        <Class IRI="#SupplyInformation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasMinimumCapacity"/>
+        <Class IRI="#AvailableCapacity"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasMinimumLotSize"/>
+        <Class IRI="#LotSizingRule"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasMinimumSupply"/>
+        <Class IRI="#SupplyInformation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasOffsetPeriods"/>
+        <Class IRI="#RequiredCapacity"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasOrigin"/>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Demand"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPartType"/>
+        <Class IRI="#ProjectedWip"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPenalityCosts"/>
+        <Class IRI="#PlaningPurpose"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPerformanceCriteria"/>
+        <Class IRI="#PlaningPurpose"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPerformanceMeasure"/>
+        <Class IRI="#PlaningPurpose"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPlanningPeriod"/>
+        <Class IRI="#PlanningInstance"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPlanningWindow"/>
+        <Class IRI="#PlaningPurpose"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPlanningWindow"/>
+        <Class IRI="#PlanningInstance"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPriority"/>
+        <Class IRI="#PlanningObject"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasProjectedDate"/>
+        <Class IRI="#In-TransitInventory"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasProjectedDate"/>
+        <Class IRI="#ProjectedWip"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasProjectedQuantity"/>
+        <Class IRI="#In-TransitInventory"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasProjectedQuantity"/>
+        <Class IRI="#ProjectedWip"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasQuantity"/>
+        <Class IRI="#PlanningObject"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasQuantity"/>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Demand"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasReleaseDate"/>
+        <Class IRI="#Activity"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasReleaseDate"/>
+        <Class IRI="#PlanningObject"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasRequestedDate"/>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Demand"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasRevenue"/>
+        <Class IRI="#PlaningPurpose"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSafetyStockLevel"/>
+        <Class IRI="#InventoryPolicy"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSafetyStockTime"/>
+        <Class IRI="#InventoryPolicy"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSetOfConnections"/>
+        <Class IRI="#PlanningSituation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSoftConstraints"/>
+        <Class IRI="#PlanningConstraint"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasStartDate"/>
+        <Class IRI="#Binning"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasStartDate"/>
+        <Class IRI="#InventoryPolicy"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasStartDate"/>
+        <Class IRI="#LotSizingRule"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasStartDate"/>
+        <Class IRI="#Substitution"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasStartTime"/>
+        <Class IRI="#PlanningConstraint"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSubstitutionQuantity"/>
+        <Class IRI="#Substitution"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasTime"/>
+        <Class IRI="#PlanningObject"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasType"/>
+        <Class IRI="#InventoryPolicy"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasType"/>
+        <Class IRI="#Order"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasType"/>
+        <Class IRI="#SupplyInformation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasWeights"/>
+        <Class IRI="#PlaningPurpose"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#numberOfOperationsOnSameResource"/>
+        <Class IRI="http://www.semanticweb.org/sc3/ontologies/2022/0/ozone-ontology#Product"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAnticipationCapabilities"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAvailabilityDate"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasBinningPercentage"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasCapacityUnit"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasCommitDate"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasConsumedQuantity"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasCosts"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasCurrentStockLevel"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDecision-Rights"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDecisionTime"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDemandClass"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDistribution"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDueDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEarliestReleaseDate"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEffectiveDate"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEffectiveStartDate"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEndDate"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEndTime"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasFeasibilityStatus"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasHardConstraints"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasIdentifier"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasInformationStatus"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasLeadTime"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasLevel"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMaximumCapacity"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMaximumComputingTime"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMaximumLotSize"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMaximumSupply"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMinimumCapacity"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMinimumLotSize"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMinimumSupply"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasOffsetPeriods"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasOrigin"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPartType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPenalityCosts"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPerformanceCriteria"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPerformanceMeasure"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPeriod"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPlanningPeriod"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPlanningWindow"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPriority"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasProjectedDate"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasProjectedQuantity"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasQuantity"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasReleaseDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasRequestedDate"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasRevenue"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSafetyStockLevel"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSafetyStockTime"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSetOfConnections"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSoftConstraints"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasStartDate"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasStartTime"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSubstitutionQuantity"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasTime"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasWeights"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#numberOfOperationsOnSameResource"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#sc3:formula"/>
+        <IRI>#All_Planning_Objects_have_to_be_positive</IRI>
+        <Literal>forall($g in Products, $t in PlanningHorizon, $j in Frontends) -&gt; FE_Y($j, $g, $t) &gt;= 0;
+forall($g in Products, $t in PlanningHorizon, $j in Frontends) -&gt; FE_X($j, $g, $t) &gt;= 0;
+forall($g in Products, $t in PlanningHorizon, $j in Frontends) -&gt; FE_Wip($j, $g, $t) &gt;= 0;
+forall($g in Products, $t in PlanningHorizon) -&gt; FE_Inventory($g, $t) &gt;= 0;
+forall($g in Products, $t in PlanningHorizon) -&gt; FE_Backlog($g, $t) &gt;= 0;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AvailableCapacity</IRI>
+        <Literal>: The AVAILABLE CAPACITY describes the ability of a resource within a period of time to perform activities or processes. Elmaghraby (2011) refers to this as operational capacity, i.e. the productive capacity that is obtained from the nominal capacity by subtracting the anticipated and unavoidable loss in productivity, for instance, due to machine breakdowns in a wafer fab.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BillOfMaterial</IRI>
+        <Literal>A BILL OF MATERIALS (BOM) describes the component products used to make another product. Substitution, often associated with binning, is based on the possibility that alternative items might be used to finish a process step.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Binning</IRI>
+        <Literal>BINNING refers to the process of testing and categorizing parts against defined measures and sort them into different bins (Degbotse 2013). Each bin belongs to certain levels of defined measures (e.g. chip speed, current, voltage, energy consumption). Binning is often combined with SUBSTITUTION.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#sc3:formula"/>
+        <IRI>#Capacity_Restriction_Equation</IRI>
+        <Literal>forall($k in WorkCenters, $j in Frontends, t in PlanningHorizon) sum($g in Products, $l in OperationCountOnWorkCenter($j, $k, $g) -&gt;
+		FE_Y($j, $g, $t, OperationsOnWorkCenter($j, $k, $g, $l)) * alpha($j, $g, OperationsOnWorkCenter($j, $k, $g, $l)) &lt;= WorkCenterCapacity($t, $j, $k);
+	
+
+WorkCenters (Resources)=FE_Aligner, FE_Stepper_2, FE_Stepper_1, FE_Implanter
+Frontends= Frontend_1, Frontend_2;
+Products= Product_1;
+OperationCountOnWorkCenter=Product($numberOfOperationsOnSameResource);
+alpha= Activity($hasRequiredCapacity(Product($hasActivities)));
+WorkCenterCapacity= FE_Aligner($hasAvailableCapacity, $hasLocation), FE_Stepper_2($hasAvailableCapacity, $hasLocation), FE_Stepper_1($hasAvailableCapacity, $hasLocation), FE_Implanter($hasAvailableCapacity, $hasLocation);</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Criteria</IRI>
+        <Literal>Typical criteria are maximization, minimization, i.e. if an optimization problem is considered, or larger or smaller than a prescribed value of the certain performance measure, a so-called target, i.e. if a satisfaction problem is solved. In a multi-criteria setting, the dominance concept for plans is of interest.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DecisionMakerType</IRI>
+        <Literal>We distinguish human decision-makers (human DECISION-MAKING UNITS) from fully automated DECISION-MAKING UNITS where computers make fully automated decisions. Between these two extremes there are semi-automated decisions, where a computer provides several decision alternatives and a human decision-maker chooses among them. Note that the decision-maker type can change over time.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DecisionMakingInitiative</IRI>
+        <Literal>We distinguish fully autonomous DECISION-MAKING UNITS from DECISION-MAKING UNITS where the decision-making activities are triggered by other DECISION-MAKING UNITS. Note that the decision-making initiative can change over time in a situation-dependent manner.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DecisionMakingUnit</IRI>
+        <Literal>The DECISION-MAKING UNIT specifies an instance that makes decisions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DecisonMakingUnitCharacter</IRI>
+        <Literal>In an ANTAGO¬NISTIC SETTING, the different DECISION-MAKING UNITS try to meet their own objectives which are in conflict. In a non-antagonistic setting, the DECISION-MAKING UNITS do not exploit their private knowledge in an opportunistic way.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DistributedHierarchicalSituation</IRI>
+        <Literal>In this situation, edges referring to instructions and reactions are possible.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#sc3:formula"/>
+        <IRI>#FE1_CostMinimization</IRI>
+        <Literal>sum($g in Products, $t in PlanningHorizon)--&gt; sum($j in Frontends) (WipCosts($g, $t) * FE_Wip($j, $g, $t)) + InventoryCosts($g, $t) * FE_Inventory($g, $t) + BacklogCosts($g, $t) * FE_Backlog($g, $t);
+
+Frontends= Frontend_1, Frontend_2;
+Products= Product_1;
+InventoryCosts= $(hasCosts($inventory));
+BacklogCosts= $(hasCosts($backlog));
+WipCosts= $(hasCosts($wip));</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FrozenFence</IRI>
+        <Literal>FROZEN FENCE is used to set a frozen interval  in which decision making is not allowed to change the previously determined values.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HeterarchicalSituation</IRI>
+        <Literal>All the vertices have level 1.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#In-TransitInventory</IRI>
+        <Literal>The IN-TRANSIT INVENTORY describes the quantity of a certain product that is shipped from one location to another. This quantity has left the inventory of one location, but has not yet been received into the inventory of the receiving location.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Inventory</IRI>
+        <Literal>The INVENTORY describes the quantity of a certain product that is available in stock to be used to meet demand.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#InventoryPolicy</IRI>
+        <Literal>An INVENTORY POLICY indicates how much earlier or how much more (safety stock) needs to be built than that required to satisfy demand on time. Inventory Policies define the rules which have to be implemented at a specific inventory location such as safety stock or product mix for supporting the production process flow as well as fulfilling customer demand.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#sc3:formula"/>
+        <IRI>#Inventory_Balance_Equation</IRI>
+        <Literal>forall($g in Products, $t in PlanningHorizon) -&gt; FE_Inventory($p, $t) = FE_Inventory($g, $t-1) + sum(j in Frontends)(FE_Y($j,$g,$t) - FE_Backlog($g, $t-1) + FE_Backlog($g, $t) + sum(j in Frontends)(Inventory_DB($j, $g, $t) - Demand($g, $t);
+
+Frontends= Frontend_1, Frontend_2;
+Products= Product_1;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Location</IRI>
+        <Literal></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LotSizingRule</IRI>
+        <Literal>A LOT SIZING RULE defines a rule to specify the lot size for a specific part. The lot size on the other hand defines the number of pieces belonging to a part. The lot size is the result of applying lot sizing rules.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#sc3:formula"/>
+        <IRI>#Material_Flow_Equation</IRI>
+        <Literal>forall($g in Products, $j in Frontends, $t in PlanningHorizon, $l in Steps($j, $g) -&gt; FE_Y($j, $g, $t, $l) = FE_X($j, $g, $t - LeadTime($g, $l));
+			
+
+Frontends= Frontend_1, Frontend_2;
+Products= Product_1;
+Steps= Product($hasActivities);
+LeadTime= Product($hasLeadTime);</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Part</IRI>
+        <Literal>A PART represents a physical instance of a product in the manufacturing process. It therefore realizes a product. A part moves through the system and is manufactured according to its product specification. A part is associated to exactly one product. During the production process it is typically tested several times. The binning rules of the associated product specification can be applied to the respective part. A part can be substituted by another part according to the associated product specification</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PerformanceMeasure</IRI>
+        <Literal>Each measure is defined by a calculation procedure. Performance measures can be blended using weights to express the importance of the different measures.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Plan</IRI>
+        <Literal>A PLAN is an activity specification with an intended purpose.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PlanExecutuon</IRI>
+        <Literal>A PLAN EXECUTION is related to performing the activities according to a PLAN either directly in the base system, for instance, releasing lots into a wafer fab, or as instructions for another DECISION-MAKING UNIT.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PlaningPurpose</IRI>
+        <Literal></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PlaningPurpose</IRI>
+        <Literal>The PLANNING PURPOSE specifies the objectives of a certain planning activity. It is given by a set of performance measures that are related to a set of PLANNING OBJECTS.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PlanningApproach</IRI>
+        <Literal>Specific planning algorithm which is used in a deticated planning process</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PlanningConstraint</IRI>
+        <Literal>A PLANNING CONSTRAINT restricts the action space. This space is formed by alternative actions that are a result of the planning decisions (Schneeweis 2003). In the planning domain, PLANNING CONSTRAINTS, often the capacity offered by resources, limit the quantities that are assigned to the PLANNING OBJECTS or impact the temporal properties of PLANNING OBJECTS.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PlanningDecision</IRI>
+        <Literal>Decisions determined by a Decision Making Unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PlanningFunction</IRI>
+        <Literal>Describes the different functions and its properies follwing the supply chain planning matrix.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PlanningInstance</IRI>
+        <Literal>A PLANNING INSTANCE specifies the PLANNING OBJECTS and the values of related PLANNING CONSTRAINTS that form the basis for a planning decision.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PlanningObject</IRI>
+        <Literal>A PLANNING OBJECT specifies what has to be planned as an atomic unit. A single PLANNING OBJECT typically represents a quantity of a certain product or product aggregate to be released or completed within a certain period in a certain node of the semiconductor supply chain. Other PLANNING OBJECTS can be orders or lots. Values are assigned to the attributes of a PLANNING OBJECT as a result of a planning decision.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PlanningProcess</IRI>
+        <Literal>The PLANNING PROCESS specifies under which circumstances which (re)planning activities are performed by a DECISION-MAKING UNIT.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PlanningSituation</IRI>
+        <Literal>The PLANNING SITUATION describes the organization of several DECISION-MAKING UNITS and also its environment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Process</IRI>
+        <Literal>A PROCESS specifies a method of making a product at a location. The process is expressed at a coarse level of granularity suitable for use in production planning.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ProductAggregate</IRI>
+        <Literal>A PRODUCT AGGREGATE combines individual products into a few logical products groups. This results in a reduction of complexity, which enables a better overview.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ProductHierarchy</IRI>
+        <Literal>A PRODUCT HIERARCHY characterizes the top-down and bottom-up relationship between different product aggregates. It organizes the product aggregates according to defined criteria. A product aggregate is used to group different products based on certain criteria. The grouping criteria depend on the planning purpose (e.g. controlling, production). It is a certain view on a set of products.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ProjectedWip</IRI>
+        <Literal>The PROJECTED WIP describes the quantity of a certain product that is anticipated to be received into inventory at a particular location at a particular time.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ReplanningDegree</IRI>
+        <Literal>The degree distinguishes replanning from scratch and repair of existing plans (Vieria et al. 2003).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Resource-Availability-Constraints</IRI>
+        <Literal>This type of constraints has an impact on the assignment of activities to RESOURCES and to START/END TIMES to ACTIVITIES.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Resource-Compatibility-Constraints</IRI>
+        <Literal>This type of constraints ensures that only allowed activities are performed using a given RESOURCE.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SemiAutomated</IRI>
+        <Literal>Between these two extremes there are semi-automated decisions, where a computer provides several decision alternatives and a human decision-maker chooses among them.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StrictHierarchicalSituation</IRI>
+        <Literal>There are only edges between vertices of level k and vertices of level k-1, where k≥2.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Substitution</IRI>
+        <Literal>SUBSTITUTION refers to using alternative parts. Depending on the product, each one could be replaced by using specific alternatives at the same stage of production, e.g. final product, raw material, or semi-finished products (Degbotse 2013) in order to complete a manufacturing step or fulfill a customer order.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SupplyInformation</IRI>
+        <Literal>SUPPLY INFORMATION provides information of the used and unused supply of a supply chain network.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Target</IRI>
+        <Literal>Targets are prescribed values for the different performance measures.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Temporal-Constraints</IRI>
+        <Literal>This type of constraints restricts the values of temporal attributes, modeled by the property TIME, that belong to PLANNING OBJECTS. For instance, there might be a minimum amount of time between two consecutive operations of a certain product.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Trigger</IRI>
+        <Literal>A mechanism that initiates an action when an event occurs such as reaching a certain time or date or upon receiving some type of input. A trigger generally causes a program routine to be executed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#sc3:formula"/>
+        <IRI>#Wip_Balance_Equation</IRI>
+        <Literal>forall($g in Products, $t in PlanningHorizon, $j in Frontends) -&gt; FE_Wip($j, $g, $t) = FE_X($j, $g, $t) - FE_Y($j, $g, $t) + FE_Wip($j, $g, $t-1)
+
+Frontends= Frontend_1, Frontend_2;
+Products= Product_1;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Yield</IRI>
+        <Literal>YIELD could be the fraction (percentage) of good dies resulting from total dies released.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasActivities</IRI>
+        <Literal>This property describes the set of activities that must be carried out to produce the goods that are associated with the PLANNING OBJECT.
+
+Moreover, there are additional parameters for most types of PLANNING OBJECTS.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAnticipationCapabilities</IRI>
+        <Literal>Anticipatory activities are used by a DECISION-MAKING UNIT to take into account the characteristics and the situation of other DECISION-MAKING UNITs in course of its own decision making (Schneeweiss 2003).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasBillOfMaterial</IRI>
+        <Literal>A set of potentially alternative BOMs can be used to meet the demand of a certain product</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasConnection</IRI>
+        <Literal>If a vertex provides instruction or a reaction to another vertex than the two vertices are connected by a directed edge.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCosts</IRI>
+        <Literal>Cost refers to the amount of money that is needed to do a certain action for a unit of a certain good, for instance, store or produce a unit of a product.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCriterias</IRI>
+        <Literal>A criterion is assigned to each performance measure that belongs to a PLANNING PURPOSE. Typical criteria are maximization, minimization, i.e. if an optimization problem is considered, or larger or smaller than a prescribed value of the certain performance measure, a so-called target, i.e. if a satisfaction problem is solved. In a multi-criteria setting, the dominance concept for plans is of interest.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDMUa</IRI>
+        <Literal>First DMU of the Vertex</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDMUb</IRI>
+        <Literal>Second DMU of the Vertex</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDecision-Rights</IRI>
+        <Literal>This property will allow a DECISION-MAKING UNIT to negotiate the instruction provided by other DECISION-MAKING UNIT. In a conventional or strict hierarchical setting, negotiations of instruction provided by superior DECISION-MAKING UNITs are impossible. In a distributed hierarchical setting in the sense of Schneeweiss (2003) reactions of the DECISION-MAKING UNIT which can lead to negotiations are possible (Schneeweiss 2003).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDecisionMakerType</IRI>
+        <Literal>Specifies the concrete type of a DMU</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDecisionMakingInitiative</IRI>
+        <Literal>We distinguish fully autonomous DECISION-MAKING UNITS from DECISION-MAKING UNITS where the decision-making activities are triggered by other DECISION-MAKING UNITS. Note that the decision-making initiative can change over time in a situation-dependent manner.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDecisionMakingUnit</IRI>
+        <Literal>This property describes the set of DECISION-MAKING UNITS that constitutes the planning situation. We refer to the elements of the set as vertices.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDecisionTime</IRI>
+        <Literal>This property describes the point of time when a decision is made by the DECISION-MAKING UNIT.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDefined</IRI>
+        <Literal>Values for certain PERFORMANCE MEASURES can be computed after a plan is executed. This always requires that the consequences of a PLAN are assessed in the base system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDueDate</IRI>
+        <Literal>This is the latest time where the activities associated with a PLANNING OBJECT have to be finished. Note that the parameter DUE DATE is exogenous, i.e. given, in contrast to the property TIME.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasEarliestReleaseDate</IRI>
+        <Literal>This is the earliest time where the activities associated with a PLANNING OBJECT can start. Note that the parameter RELEASE DATE is exogenous, i.e. given, in contrast to the property TIME.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasEndTime</IRI>
+        <Literal>This is the latest point in time when the PLANNING CONSTRAINT is active.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasEventTrigger</IRI>
+        <Literal>This property determines which events result in replanning (Vieria et al. 2003). For instance, replanning can be the result of the breakdown of a bottleneck resource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasFeasibilityStatus</IRI>
+        <Literal>A PLAN is feasible if all PLANNING CONSTAINTS of the PLANNING INSTANCE on which the plan is based are fulfilled, otherwise, the plan is infeasible.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasFrozenFence</IRI>
+        <Literal>This property specifies which planning decisions are remain unchanged in the case of replanning activities.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasHardConstraints</IRI>
+        <Literal>PLANNING CONSTRAINTS with this property cannot be violated.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasIdentifier</IRI>
+        <Literal>Each PLANNING OBJECT has a unique identifier, abbreviated by ID.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasInformationStatus</IRI>
+        <Literal>This property describes the own internal, but also the external situation of the DECISION-MAKING UNIT. At the same time, it describes information about the internal and external situation of other DECISION-MAKING UNITs and their information status (Schneeweiss 2003).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasInvolvedPlanningObjects</IRI>
+        <Literal>This property specifies the involved PLANNING OBJECTS.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasLevel</IRI>
+        <Literal>Each vertex has a level. The highest level is assigned to vertices that do not receive instructions from other vertices. The vertices belonging to the second highest level receive instructions only from vertices of the highest level. This definition can be repeated in a recursive manner. Reactions are only possible from vertices of level k-1 to vertices of level k or level k-1.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasLocation</IRI>
+        <Literal>This property describes the place or places, for instance nodes of the semiconductor supply chain or specific machines of a work center where the ACTIVITIES associated with the PLANNING OBJECT have to be executed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasMaximumComputingTime</IRI>
+        <Literal>This property specifies which maximum time is allowed to perform a certain planning activity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasObjectives</IRI>
+        <Literal>: The property specifies the objectives of a certain planning activity.
+Moreover, there are additional parameters for most types of PLANNING PROCESS.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasOwner</IRI>
+        <Literal>A PLANNING OBJECT is rarely considered in isolation. Usually it belongs to a set of PLANNING OBJECTS, for example, a planning instance.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPenalityCosts</IRI>
+        <Literal>If CONSTRAINTS are violated by a plan penalties might be used to change the performance measure values to express that the violations are undesired.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPerformanceMeasures</IRI>
+        <Literal>Each PLANNING PURPOSE is determined by a set of performance measures. Each measure is defined by a calculation procedure. Performance measures can be blended using weights to express the importance of the different measures.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPeriodicTrigger</IRI>
+        <Literal>This property defines after which amount of time a replanning activity is initiated in a periodic manner (Vieria et al. 2003). Rolling horizon approaches are triggered by such a periodic approach.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPlan</IRI>
+        <Literal>Activities associated with a PLANNING PROCESS require an instance of the concept PLAN.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPlanningConstraints</IRI>
+        <Literal>This property specifies which constraints must be ensured.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPlanningInstance</IRI>
+        <Literal>Activities associated with PLANNING PROCESS require an instance of the concept PLANNING INSTANCE.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPlanningObjects</IRI>
+        <Literal>A set of planning objects is required to determine the performance measure values belonging to the PLANNING PURPOSE. The set of planning objects is often determined by the planning window.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPlanningPeriod</IRI>
+        <Literal>This property defines a certain fraction of a planning window. Equidistant periods are common for many supply chain planning problems.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPlanningProcess</IRI>
+        <Literal>This property specifies under which circumstances which (re)planning activities are performed by a DECISION-MAKING UNIT.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPlanningWindow</IRI>
+        <Literal>A planning window described for which amount of periods or which time span the performance measure values have to be calculated. In some situations, the planning window will determine the set of planning objects, for instance, lots completed within the planning window.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPriority</IRI>
+        <Literal>This property describes the relative importance of the PLANNING OBJECT. It provided the base for establishing a partial ordering of the importance of the set of planning objects.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasQuantity</IRI>
+        <Literal>This property describes given, i.e. fixed, size of a PLANNING OBJECT, for instance, the number of wafers that belong to a lot. Note that the parameter QUANTITY is exogenous, i.e. given, in contrast to the property QUANTITY where the amount of the quantity has to be decided.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasReplanningDegree</IRI>
+        <Literal>he degree distinguishes replanning from scratch and repair of existing plans (Vieria et al. 2003).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasResources</IRI>
+        <Literal>the  set  of  resources  that  can be  utilized  to  execute  various  ACTIVITIES  of  the PRODUCT  plan.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasRevenue</IRI>
+        <Literal>Revenue refers to the amount of income, earning generated by the sale of one unit of a certain good.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasScope</IRI>
+        <Literal>This property defines which planning function is addressed by the DECISION-MAKING UNIT (planning scope). It also described to which part of the base system the DECISION-MAKING UNIT belongs (physical scope).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSetOfPlanningObjects</IRI>
+        <Literal>This property specifies a set of planning objects from a given planning instance where all attributes are supplied with values that are determined as the result of a planning decisions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSoftConstraints</IRI>
+        <Literal>PLANNING CONSTRAINTS with this property can be violated. This means that the degree of violation is typically penalized in a related criterion or performance measure.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasStartTime</IRI>
+        <Literal>This is the earliest point in time when the PLANNING CONSTRAINT is active.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTime</IRI>
+        <Literal>This property is required to manage timing aspects of a PLANNING OBJECT. It can be a release time, a finishing time, a single start time, or a set of start time for certain ACTIVITIES to be fulfilled.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasWeights</IRI>
+        <Literal>Weights can be used to express preferences of the decision makers among the different performance measures and related criteria. This is, for instance, useful if a lexicographic approach is used.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#usesPlanningApproach</IRI>
+        <Literal>This property defines which algorithm is used to make the required decisions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>owl:topDataProperty</AbbreviatedIRI>
+        <Literal>This is the earliest time where the activities associated with a PLANNING OBJECT can start. Note that the parameter RELEASE DATE is exogenous, i.e. given, in contrast to the property TIME.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

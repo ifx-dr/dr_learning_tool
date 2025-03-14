@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h1 class="puff-in-center">OntoQuest</h1>
+    <h3 style="text-align: center; color: #ffffff; font-size: 24px; font-weight: bold; padding: 20px;">A game to develop the Digital Reference ontology</h3>
+    <form method="POST">
+        <div style="display: none;" class="form-group">
+            <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    value="demo@demo"
+                    placeholder="Enter Email"
+            />
+        </div>
+        <div style="display: none;" class="form-group">
+            <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    value="123456789"
+                    placeholder="Enter Password"
+            />
+        </div>
+        <p style="display: none;" class="create-account"><a id="passwordforgot" href="/forgot-password">Forgot password?</a></p>
+        <br />
+        <button type="submit" class="btn-primary">Play</button>
+        <p style="display: none;" class="create-account">Don't have an account? <a id="signup" href="/sign-up">Create one</a></p>
+    </form>
+</div>
+{% endblock %}

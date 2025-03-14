@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+
+{% block title %}Enter Definition{% endblock %}
+
+{% block styles %}
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/enter-definition.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Button to go back to the previous page -->
+<button onclick="goBack()" id="back">
+    <i class="bi bi-caret-left-fill"></i>
+    <span class="tooltip">Back</span>
+</button>
+
+<!-- Navigation link to home -->
+<a class="nav-item nav-link" id="home" href="/"><i class="bi bi-house-door-fill"></i></a>
+<!-- Mobile Navigation Bar -->
+<div class="navigation-bar">
+    <div class="toggle_btn">
+        <i class="bi bi-list"></i>
+    </div>
+    <div class="dropdown_menu">
+        <li><a href="/"><i class="bi bi-house-door-fill"></i></a></li>
+        <li><button class="backButton" onclick="goBack()"><i class="bi bi-caret-left-fill"></i></button></li>
+        <li><a href="/logout"><i class="bi bi-box-arrow-right"></i></a></li>
+    </div>
+</div>
+<!-- Title and subtitle for entering user's own definition -->
+<div class="title-container">
+    <h1 class="title">Enter Your Own Definition</h1>
+    <p class="subtitle">Your input plays a vital role in refining and enriching the vocabulary framework.</p>
+</div>
+<div id="loading-container">
+    <img src="{{ url_for('static', filename='picture/animated-loader-gif-n6b5x0-unscreen.gif') }}" alt="loading">
+    <p>Searching for the closest existing definition based on your input...</p>
+</div>
+<!-- Form for entering the user's own definition -->
+<form method="POST" id="responseForm">
+    <div class="content">
+        <!-- Textarea for entering user's own definition -->
+        <textarea name="enteredDefinition" placeholder="Enter your own definition" class="definition" id="user-defined-definition">{% if definition != "No definition available" %}{{ definition }}{% else %}Enter your own definition ...{% endif %}</textarea>
+        <input type="hidden" name="selectedClosestDefinition" id="selected-closest-definition" value="">
+        <input type="hidden" name="selectedEnteredDefinition" id="selected-entered-definition" value="">
+        <!-- Submit button for the entered definition -->
+        <button type="submit" name="btn-submit" value="submit" id="btn-submit">Submit</button>
+    </div>
+</form>
+
+<!-- Modal for choosing the closest definition -->
+<div class="modal" id="closestDefinitionModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Refine Your Definition</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-explanation">
+                    <p>Review the closest existing definition based on your input and choose to continue with your entry or select the existing definition.</p>
+                </div>
+                <p class="title">The closest definition found is:</p>
+                <p id="closest-definition"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-closest" onclick="chooseClosest()">Choose Closest Definition</button>
+                <button type="button" class="btn-entered" onclick="continueWithEntered()">Continue with Entered Definition</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // This JavaScript code handles form submission, fetches the closest definition, and provides functionality to continue with the entered definition or choose the closest definition.
+    document.addEventListener("DOMContentLoaded", function() {
+
+        var responseForm = document.getElementById('responseForm'); // Get the form element
+
+        // Event listener for form submission
+        responseForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const enteredDefinition = document.getElementById('user-defined-definition').value;
+            fetchClosestDefinition(enteredDefinition); // Call the function to fetch the closest definition
+        });
+
+        // Function to fetch the closest definition based on the entered user definition
+        function fetchClosestDefinition(enteredDefinition) {
+            const loadingContainer = document.getElementById('loading-container');
+            const textArea = document.getElementById('user-defined-definition');
+            loadingContainer.style.display = 'flex'; // Show the loading bar
+            textArea.style.display = 'none';
+            // Make a POST request to fetch the closest definition using the entered definition
+            fetch('/find-closest-definition', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ enteredDefinition: enteredDefinition })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+                loadingContainer.style.display = 'none';
+            })
+            .then(data => {
+
+                const closestDefinition = data.closestDefinition;
+                if (!closestDefinition){
+                    // If no closest definition is found, continue with the entered definition
+                    const enteredDefinition = document.getElementById('user-defined-definition').value;
+                    document.getElementById('selected-entered-definition').value = enteredDefinition;
+                    responseForm.submit();
+                } else {
+                    // Show the modal with the closest definition
+                    const closestDefinitionModal = new bootstrap.Modal(document.getElementById('closestDefinitionModal'));
+                    document.getElementById('closest-definition').innerText = closestDefinition;
+                    loadingContainer.style.display = 'none';
+                textArea.style.display = 'flex';
+                    closestDefinitionModal.show();
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching closest definition:', error);
+                loadingContainer.style.display = 'none';
+                // Handle any errors that occurred during the fetch
+            });
+        }
+
+        // Function to continue with the entered definition
+        window.continueWithEntered = function() {
+            console.log('continueWithEntered');
+            const enteredDefinition = document.getElementById('user-defined-definition').value;
+            document.getElementById('selected-entered-definition').value = enteredDefinition;
+            responseForm.submit(); // Trigger the form submission
+        }
+
+        // Function to choose the closest definition
+        window.chooseClosest = function() {
+            console.log('chooseClosest');
+            const closestDefinition = document.getElementById('closest-definition').innerText;
+            document.getElementById('selected-closest-definition').value = closestDefinition;
+            responseForm.submit(); // Trigger the form submission
+        }
+
+
+    });
+</script>
+
+<!-- JavaScript for adjusting textarea height -->
+<script>
+    // Automatically adjust the textarea height based on the content
+    document.addEventListener('DOMContentLoaded', function(event) {
+        const textarea = document.getElementById('user-defined-definition');
+        textarea.addEventListener('input', function (event) {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+
+        // Trigger an initial input event to set the initial height
+        textarea.dispatchEvent(new Event('input'));
+    });
+</script>
+
+{% endblock %}
+

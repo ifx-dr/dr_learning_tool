@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/barbiern/ontologies/2024/5/supplychain.rdf"
+         xmlns="http://www.semanticweb.org/barbiern/ontologies/2024/5/supplychain.rdf#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/barbiern/ontologies/2024/5/supplychain.rdf"/>
+
+<owl:ObjectProperty rdf:about="#hasCustomer">
+  <rdfs:domain rdf:resource="#Order"/>
+  <rdfs:range rdf:resource="#Customer"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasPlant">
+  <rdfs:domain rdf:resource="#Customer"/>
+  <rdfs:range rdf:resource="#CustomerPlant"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#includesProduct">
+  <rdfs:domain rdf:resource="#Order"/>
+  <rdfs:range rdf:resource="#Product"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#triggersReplenishment">
+  <rdfs:domain rdf:resource="#CustomerPlant"/>
+  <rdfs:range rdf:resource="#ReplenishmentOrder"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#hasExample"/>
+
+<owl:DatatypeProperty rdf:about="#hasGermanName"/>
+
+<owl:DatatypeProperty rdf:about="#hasAbbreviation"/>
+
+<owl:DatatypeProperty rdf:about="#hasAlternativeName"/>
+
+<owl:Class rdf:about="#Order">
+  <rdfs:subClassOf rdf:resource="#SupplyChain"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An order signifies a formal request or instruction for the procurement, distribution, or delivery of products or services within the supply chain. It encompasses customer orders, replenishment orders, or split orders initiated to fulfill demand, replenish inventory, or redistribute products.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In the supply chain context, an order represents a formal directive or request for the acquisition, distribution, or movement of products or services. It includes customer orders, replenishment orders, or split orders issued to meet demand, manage inventory, or facilitate product allocation.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Customer">
+  <rdfs:subClassOf rdf:resource="#SupplyChain"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A customer represents an individual, organization, or entity that purchases or engages with products or services offered within the supply chain. It encompasses buyers, end-users, retailers, or entities procuring goods or services within the supply chain network.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In the supply chain context, a customer signifies an individual, organization, or entity that procures, consumes, or engages with products or services. It includes wholesalers, retailers, end-users, or entities involved in the procurement and consumption of goods within the supply chain.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Customers (or consumers) are individuals or organizations that purchase and use a product or service. A customer may be an organization (a producer or distributor) that purchases a product in order to incorporate it into another product that they in turn sell to their customers (ultimate customers).</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#CustomerPlant">
+  <rdfs:subClassOf rdf:resource="#SupplyChain"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A customer plant denotes a physical location, facility, or entity operated by a customer within the supply chain. It encompasses distribution centers, manufacturing facilities, or operational sites managed by customers to facilitate order fulfillment and product management.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Within the supply chain, a customer plant represents a specific facility, warehouse, or operational site managed by a customer to handle order receipt, inventory management, and product distribution. It includes distribution centers, manufacturing plants, or fulfillment hubs operated by customers.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Product">
+  <rdfs:subClassOf rdf:resource="#SupplyChain"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A product refers to a physical item or service that is available for purchase, distribution, or utilization within the supply chain. It encompasses merchandise, parts, or services that are produced, exchanged, or utilized within the network of the supply chain.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A product represents a tangible item or service offered for sale, distribution, or use within the supply chain. It encompasses goods, components, or services that are manufactured, traded, or consumed within the supply chain network.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In the context of the supply chain, a product refers to a distinct item, part, or service involved in manufacturing, distribution, or consumption processes. It includes physical goods, components, or services that are integral to supply chain operations and customer fulfillment.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#ReplenishmentOrder">
+  <rdfs:subClassOf rdf:resource="#Order"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A replenishment order signifies a directive for the resupply or replenishment of products or inventory within the supply chain. It encompasses orders initiated by customer plants, distribution centers, or manufacturers to replenish stock, manage inventory levels, or fulfill supply chain requirements.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Within the supply chain, a replenishment order represents a formal instruction for restocking, refilling, or replenishing inventory levels. It includes orders issued by customer plants, distribution centers, or manufacturers to maintain adequate stock, manage inventory, or meet supply chain demands.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#SupplyChain"/>
+
+<owl:Class rdf:about="#CustomerOrder">
+  <rdfs:subClassOf rdf:resource="#Order"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A customer order represents a specific request placed by a customer for the procurement of products or services. It encompasses orders initiated by customers to fulfill demand, replenish inventory, or acquire goods for consumption or resale within the supply chain network.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In the supply chain context, a customer order denotes a formal request placed by a customer for the acquisition of products or services. It includes orders initiated by customers to meet demand, manage inventory, or fulfill procurement requirements within the supply chain.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#SplitOrder">
+  <rdfs:subClassOf rdf:resource="#Order"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A split order denotes a customized directive for the division or allocation of products or services into multiple segments or destinations within the supply chain. It encompasses tailored orders designed to distribute or allocate products to specific recipients, locations, or channels based on customized requirements.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In the supply chain context, a split order represents a specialized instruction for the partitioning, segregation, or allocation of products into distinct segments or destinations. It includes customized orders tailored to distribute or allocate products to specific recipients, locations, or channels based on specific requirements.</rdfs:comment>
+</owl:Class>
+
+
+</rdf:RDF>

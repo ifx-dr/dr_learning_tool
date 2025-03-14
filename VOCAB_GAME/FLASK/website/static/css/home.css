@@ -1,0 +1,473 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+.container{
+    width: 100%;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#information, #logout {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    text-decoration: none;
+    color: white;
+}
+
+#information:hover, #logout:hover {
+    background-color: white;
+    border: solid;
+    color: #46336e;
+}
+
+#logout {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #46336e;
+}
+
+#information {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #46336e;
+}
+
+
+h1 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 60px;
+    margin: 40px auto 60px;
+    padding: 0;
+}
+
+
+.section {
+    display: flex;
+    align-items: stretch; /* Ensure all items have the same height */
+    justify-content: center;
+}
+
+/* Style for the leaderboard section */
+.leaderboard {
+    position: relative;
+    width: 25%; /* Adjust the width as needed */
+    padding: 15px;
+    border: 4px solid white;
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    position: absolute;
+    top: -20px; /* Adjust the vertical position as needed */
+    left: 50%; /* Align the title horizontally */
+    transform: translateX(-50%); /* Center the title horizontally */
+    z-index: 1;
+    font-weight: bold;
+    border: 4px solid white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    background-color: #45336E;
+    font-size: 20px;
+}
+
+.leaderboard-container {
+    margin: auto 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-leaderboard {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.leaderboard-info {
+    margin-left: 10px;
+}
+
+.leaderboard-info p{
+    font-weight: bold;
+    font-size: 12px;
+    margin: 0;
+    line-height: 45px;
+}
+
+.leaderboard-container img {
+    width: 50px;
+}
+
+
+.user-profile {
+    flex: 1;
+    margin: 0 50px;
+    padding: 15px;
+    border: 4px solid #2B0730;
+    border-radius: 20px;
+    background-color: #45336E;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.profile-details {
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.profile-details h3 {
+    margin: 0 0 10px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.profile-picture-container {
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.profile-picture-container img {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    cursor: pointer;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+
+}
+
+.badges-section {
+    padding: 10px;
+}
+
+.badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.badge-container img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+/* Media query to control layout based on the number of badges */
+@media (max-width: 200px) {
+    .badge-container img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.progress-bar-section {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+}
+
+.level-container {
+  width: 100%;
+  text-align: center;
+}
+
+
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #6CE5E8;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.xp-level-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.xp-level-container p {
+  margin: 0;
+  line-height: 20px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #41B8D5;
+}
+
+
+.modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    max-height: 80%;
+    border: 4px solid #2B0730;
+    border-radius: 20px;
+    background-color: #45336E;
+    color: white;
+    padding: 10px;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.modal img {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+.close {
+    color: grey;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 2;
+
+}
+
+
+.close:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.challenges {
+    width: 25%;
+    padding: 15px;
+    border: 4px solid #2B0730;
+    border-radius: 20px;
+    background-color: #45336E;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.challenges h3 {
+    font-weight: bold;
+}
+
+.challenge {
+    background-color:#64203F;
+    border-radius: 25px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+#play {
+    font-size: 25px;
+    padding: 10px 10px;
+    background-color: #64203F;
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 35px;
+    font-weight: bold;
+    text-align: center;
+    width:20%;
+    display: block;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%); /* Center the button horizontally */
+}
+
+#play:hover {
+    background-color: #2b0731;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navigation-bar {
+    width: 90%;
+    margin: 20px auto ;
+    display: none;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #45336E;
+    border: 2px solid white;
+}
+
+.navigation-bar li {
+    list-style: none;
+
+}
+
+.navigation-bar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navigation-bar a:hover {
+    color: #2B0730;
+}
+
+.toggle_btn {
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    padding-left: 10px
+}
+
+.dropdown_menu {
+    position: absolute;
+    top: 225px;
+    height: 0px;
+    left: 50%;
+    transform: translateX(-50%); /* Center the button horizontally */
+    width: 90%;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 150px;
+}
+.dropdown_menu li {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+
+    .navigation-bar {
+        display: flex;
+    }
+    .toggle_btn{
+        display:block;
+    }
+    .dropdown_menu {
+        display: flex;
+        flex-direction: column;
+        align items: center;
+        justify-content: center;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 40px;
+        margin: 60px auto 0;
+        padding: 0;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column; /* Adjust layout for smaller screens */
+        align-items: center; /* Center items vertically */
+        justify-content:center
+    }
+
+    .leaderboard, .challenges, #logout {
+        display: none;
+    }
+
+    .user-profile {
+        width: 90%;
+        margin: 0 auto ;
+    }
+
+    .badge-container img {
+        width: 30px;
+        height: 30px;
+    }
+    .progress-bar-section {
+        padding: 10px; /* Example adjustment for padding */
+    }
+
+    #play {
+        width:50%;
+
+    }
+
+}
+
+.scale-in-center {
+	-webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}

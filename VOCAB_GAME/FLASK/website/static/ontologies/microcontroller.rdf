@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/barbiern/ontologies/2024/6/microcontroller.rdf"
+         xmlns="http://www.semanticweb.org/barbiern/ontologies/2024/6/microcontroller.rdf#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/barbiern/ontologies/2024/6/microcontroller.rdf"/>
+
+<owl:ObjectProperty rdf:about="#hasFeature">
+  <rdfs:domain rdf:resource="#Microcontroller"/>
+  <rdfs:range rdf:resource="#Microcontroller_Feature"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isUsedIn">
+  <rdfs:domain rdf:resource="#Microcontroller"/>
+  <rdfs:range rdf:resource="#Microcontroller_Application"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Microcontroller">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A microcontroller is a programmable device that integrates a processor, memory, and input/output interfaces to control and interact with external devices and systems.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A microcontroller is a small computer on a single integrated circuit (IC) that contains a processor, memory, and input/output peripherals.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Microcontroller_Feature">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A microcontroller feature is a hardware or software component of a microcontroller that enables it to perform a particular task or function, such as data conversion, communication, or control.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A microcontroller feature is a specific capability or functionality provided by a microcontroller, such as analog-to-digital conversion, serial communication, or pulse-width modulation.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Microcontroller_Application">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A microcontroller application is a software or firmware program that runs on a microcontroller to control and interact with external devices, sensors, and actuators.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A microcontroller application is a specific use case or project that utilizes a microcontroller to perform a particular function or set of functions.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Analog-to-Digital_Converter">
+  <rdfs:subClassOf rdf:resource="#Microcontroller_Feature"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An analog-to-digital converter is a device that translates continuous analog signals into discrete digital values, allowing microcontrollers to read and process analog data.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An analog-to-digital converter is a microcontroller feature that converts analog signals from sensors or other devices into digital signals that can be processed by the microcontroller.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Embedded_System">
+  <rdfs:subClassOf rdf:resource="#Microcontroller_Application"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An embedded system is a combination of computer hardware and software designed to perform a specific function or set of functions, often with real-time constraints.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An embedded system is a microcontroller-based system that is integrated into a larger device or system, such as a consumer appliance, industrial machine, or automotive system.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Industrial_Automation">
+  <rdfs:subClassOf rdf:resource="#Microcontroller_Application"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Industrial automation refers to the use of control systems, such as microcontrollers and programmable logic controllers (PLCs), to monitor and control industrial processes and machinery.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Serial_Peripheral_Interface">
+  <rdfs:subClassOf rdf:resource="#Microcontroller_Feature"/>
+</owl:Class>
+
+
+</rdf:RDF>

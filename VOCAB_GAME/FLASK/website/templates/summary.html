@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block title %}Summary{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/summary.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+{% endblock %}
+
+{% block content %}
+<!-- Title for the summary page -->
+<h1 class="title">Summary of the try</h1>
+<div class="content">
+    {% if number_validated !=0 %}
+    <!--<div class="carousel" style="display: none;">
+    <h3>Validated Definitions</h3>
+        <div class="container swiper">
+            <div class="slider-wrapper">
+                <div class="card-list swiper-wrapper">
+                    {% for definition in user_validated_definition %}
+                    <div class="card-item swiper-slide">
+                        <li class="definition_class">
+                            <span>{{ definition.profile_class }}:</span> {{ definition.profile_definition }}
+                        </li>
+                    </div>
+                    {% endfor %}
+
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-slide-button swiper-button-prev"></div>
+                <div class="swiper-slide-button swiper-button-next"></div>
+            </div>
+        </div>
+    </div>-->
+    {% else %}
+    <div class="carousel">
+    <h3>Hope you learned something new about Digital Reference!</h3>
+        <div class="container swiper">
+            <div class="slider-wrapper">
+                <div class="card-list swiper-wrapper">
+                    <div class="card-item swiper-slide">
+                        <!--<li class="definition_class">
+                            You haven't validated any definitions yet. Keep engaging with the game to contribute and enrich the vocabulary list!-->
+                            You have learnt about {{ total_question }} new concepts of the DR!
+                        <!--</li>-->
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-slide-button swiper-button-prev"></div>
+                <div class="swiper-slide-button swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!--{% if number_revised !=0 %}
+    <div class="carousel">
+    <h3>Unvalidated Definitions and Alternatives</h3>
+        <div class="container swiper">
+            <div class="slider-wrapper">
+                <div class="card-list swiper-wrapper">
+                    {% for definition in user_revised_definition %}
+                    <div class="card-item swiper-slide">
+                        <h5>Unvalidated Definition:</h5>
+                        <li class="definition_class">
+                            <span>{{ definition.profile_class }}:</span> {{ definition.profile_definition }}
+                        </li>
+                        <h5>Alternative Selection:</h5>
+                        <li class="definition_class">
+                            <span>{{ definition.profile_class }}:</span> {{ definition.revised_definition }}
+                        </li>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-slide-button swiper-button-prev"></div>
+                <div class="swiper-slide-button swiper-button-next"></div>
+            </div>
+        </div>
+    </div>-->
+    <!--{% else %}
+    <div class="carousel">
+    <h3>Unvalidated Definitions and Alternatives</h3>
+        <div class="container swiper">
+            <div class="slider-wrapper">
+                <div class="card-list swiper-wrapper">
+                    <div class="card-item swiper-slide">
+                        <li class="definition_class">
+                            You haven't disagreed with or selected alternatives for any definitions. Explore the definitions further to actively shape the vocabulary enrichment process!
+                        </li>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-slide-button swiper-button-prev"></div>
+                <div class="swiper-slide-button swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+    {% endif %}-->
+
+</div>
+
+<!--<div class="progress-bar-section">
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: {{vocab_score}}%;"></div>
+            </div>
+        </div>
+    <div class="score"><p>Vocabulary Enrichment Score: {{vocab_score}}%</p></div>-->
+<div class="bottom">
+    <a class="nav-item nav-link" id="home" href="/"><i class="bi bi-house-door-fill"></i></a>
+</div>
+
+  <!-- Linking SwiperJS script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Linking custom script -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}

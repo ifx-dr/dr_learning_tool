@@ -1,0 +1,308 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Ensure the body is relatively positioned */
+}
+.container{
+    width: 100%;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#back {
+    background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-align: inherit;
+  font: inherit;
+  border-radius: 0;
+  appearance: none;
+}
+
+#home, #back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    text-decoration: none;
+    color: white;
+}
+
+#home:hover, #back:hover {
+    background-color: white;
+    border: solid;
+    color: #46336e;
+}
+
+#home {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #46336e;
+}
+
+#back {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #46336e;
+}
+
+#home, #back {
+    width: 120px; /* Set the width of the buttons */
+    height: 40px; /* Set the height of the buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-container {
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 60px;
+    margin: 0;
+    padding: 20px 0 40px;
+}
+
+.section {
+    display: flex;              /* establish flex container */
+    flex-direction: column;     /* stack flex items vertically */
+    justify-content: center;    /* center items vertically, in this case */
+    align-items: center;
+    margin: 10px 0;
+
+}
+.visualization {
+    padding: 10px; /* Add padding to the visualization for a consistent spacing */
+    background-color: #2B0730;
+    border: 1px solid white;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+
+}
+
+.ontology {
+    display: flex;
+    flex-direction: column;
+
+}
+.sidebar {
+    width: 350px; /* Set the width of the sidebar */
+    padding-left: 15px;
+    max-height: 450px; /* Set a maximum height for the sidebar */
+
+}
+.scrollable-content {
+    max-height: 400px; /* Set a maximum height for the scrollable content */
+    overflow: auto; /* Enable vertical scrolling if the content exceeds the maximum height */
+    scrollbar-gutter: stable;
+}
+
+.scrollable-content::-webkit-scrollbar {
+    width: 10px; /* Set the width of the scroll bar */
+    height: 5px; /* Set the height of the scroll bar */
+}
+
+/* Customize the track (the area behind the thumb) */
+.scrollable-content::-webkit-scrollbar-track {
+    background: transparent; /* Set the background of the track */
+}
+
+/* Customize the thumb (the draggable handle) */
+.scrollable-content::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2); /* Set the color of the thumb */
+    border-radius: 5px; /* Add border radius for a rounded thumb */
+}
+
+/* Add hover effect to the thumb */
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4); /* Adjust the color on hover */
+}
+.sidebar h2 {
+    text-align: center;
+    font-size: 20px;
+}
+
+.graph-container {
+    width: 100%; /* Set the width to 100% */
+    background-color: white;
+    color: white;
+    position: relative;
+    overflow: hidden; /* Prevent overflow of the graph visualization */
+    color: red;
+}
+
+/* Ensure the height of the graph container matches the visualization image */
+.graph-container svg {
+    width: 100%;
+    fill: black; /* Adjust the fill color for better visibility */
+}
+.graph-container text {
+    z-index: 1; /* Ensure the text elements appear in front of other elements */
+    pointer-events: none; /* Disable pointer events on the text label */
+}
+
+.graph-container text.label-background {
+    background-color: rgba(255, 255, 255, 0.7); /* Add a semi-transparent white background to the text labels for better visibility */
+    padding: 3px 5px; /* Add padding to the text labels for a visually pleasing appearance */
+}
+
+.collapsible {
+  background-color: #64203F;
+  color: #818181;
+  cursor: pointer;
+  padding: 0 5px;
+  margin: 10px auto;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+
+
+}
+
+.active, .collapsible:hover {
+  color: white;
+}
+
+.collapsible:after {
+  content: '\25BE';
+  color: #818181;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+
+}
+
+.collapsible:hover:after {
+  color: white;
+  outline: none;
+}
+
+button:focus {outline:0;}
+
+.active:after {
+  content: "\25B4";
+  color: white;
+}
+
+.list-content {
+  padding: 0 10px;
+  max-height: 0;
+  height: auto;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #46336e;
+  display: block;
+  font-size: 13px;
+  text-align: justify;
+
+
+}
+
+.list-content p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.stat, .selected span {
+    font-style: italic;
+}
+
+.selected {
+    display: none;  /* Hide the elements with the "selected" class by default */
+}
+
+
+.list-content ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-content li {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.zoom-elements {
+    margin: 10px auto 0;
+    width: fit-content;
+
+
+}
+
+.zoom-buttons {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    height: auto;
+}
+
+.zoom-element {
+    height: 40px; /* Adjust the height of the range input as needed */
+    color: white;
+    background-color: #64203F; /* Element color */
+    cursor: pointer;
+    font-size: 25px; /* Adjust the font size as needed */
+    display: flex; /* Use flexbox to center the content horizontally and vertically */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    border: 1px solid white; /* Add border to the elements */
+
+}
+
+.zoom-elements button{
+    width: 40px; /* Adjust the width of the elements as needed */
+}
+
+.zoom-elements p{
+    padding: 2px 5px;
+    margin: 0;
+}
+
+.zoom-buttons button:hover {
+    background-color: white;
+    color: #64203F;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 150px;
+  height: 5px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 25px;
+  border-radius: 20%;
+  background: #2B0730;
+  cursor: pointer;
+}

@@ -1,0 +1,299 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Center the text content horizontally */
+}
+
+.container{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0;
+
+}
+
+
+h1 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 20px auto 20px ;
+    padding: 0;
+}
+
+
+h3 {
+    font-weight: bold;
+    color: white;
+    margin: 10px auto 20px;
+}
+
+h5 {
+   font-weight: bold;
+   margin: 10px auto;
+}
+
+.score p {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0 auto 20px;
+}
+
+.carousel {
+    width: 100%;
+    border: 2px solid black;
+    padding: 0 20px;
+    margin: 10px 0 40px;
+    background-color: #2B0730;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.slider-wrapper {
+  overflow: hidden;
+
+  margin: 0 70px 55px;
+
+}
+
+.swiper-wrapper {
+align-items: center;
+}
+
+.card-list .card-item {
+  color: #fff;
+  user-select: none;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  backdrop-filter: blur(30px);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  height: auto;
+}
+.card-list .card-item span{
+    font-weight: bold;
+}
+.slider-wrapper .swiper-pagination-bullet {
+  background: #fff;
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+}
+.slider-wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+.slider-wrapper .swiper-slide-button {
+  color: #fff;
+  margin-top: -55px;
+  transition: 0.2s ease;
+}
+.slider-wrapper .swiper-slide-button:hover {
+  color: #4658ff;
+}
+
+
+.progress-bar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 50px; /* Adjust padding as needed */
+}
+
+
+.progress-bar-section {
+        width: 80%;
+        display: flex;
+        margin: 10px auto;
+    }
+
+    .progress-bar {
+        position: relative; /* Set position to relative */
+        width: 100%;
+        height: 10px;
+        background-color: #45336E;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .progress-bar-fill {
+        position: absolute; /* Set position to absolute */
+        top: 0; /* Position the fill at the bottom of the progress bar */
+        height: 100%;
+        background-color: white;
+    }
+
+
+
+
+
+.definition_class {
+    background-color: #64203F;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+
+.bottom {
+    margin: 10px auto 10px;
+    display: flex;
+    justify-content: space-between; /* Center the buttons horizontally */
+    text-align: center;
+    width: 60%; /* Set the width to 100% to prevent button size change */
+    gap: 0px;
+}
+
+.bottom a {
+    width: 30%;
+    display: block;
+    margin:10px auto;
+    padding: 10px 0;
+    color: white;
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 35px;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+
+#home {
+    background-color: #2B0730;
+}
+
+#home:hover {
+    border: 2px solid #2B0730;
+    background-color: white;
+    text-decoration: none;
+    cursor: pointer;
+    color: #2B0730;
+}
+#detailed {
+    background-color:#45336E;
+}
+
+#detailed:hover {
+    border: 2px solid #45336E;
+    background-color: white;
+    text-decoration: none;
+    cursor: pointer;
+    color: #45336E;
+}
+
+#mobile-visualization, #visualization {
+    background-color: #64203F;
+
+}
+
+#visualization:hover {
+    border: 2px solid #64203F;
+    background-color: white;
+    text-decoration: none;
+    cursor: pointer;
+    color: #64203F;
+}
+
+#mobile-visualization {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    h1 {
+        text-align: center;
+        font-size: 30px;
+        margin: 20px auto 0;
+        padding: 0;
+        width: 90%;
+    }
+
+    .score p {
+        color: white;
+        font-weight: bold;
+        font-size: 17px;
+        margin: 0 auto 10px;
+    }
+
+
+    .carousel {
+    padding: 0;
+    }
+
+
+
+    .card-list .card-item {
+
+      padding: 10px;
+      align-items: normal;
+      word-wrap: break-word;
+    }
+
+    .slider-wrapper {
+        margin: 0 10px 40px;
+    }
+
+    .slider-wrapper .swiper-slide-button {
+        display: none;
+    }
+
+
+    .definition_class {
+        font-size: 13px;
+    }
+
+
+    .progress-bar-section {
+        width: 100%;
+        display: flex;
+        margin: 20px auto 10px;
+    }
+
+    .progress-bar {
+        position: relative; /* Set position to relative */
+        width: 100%;
+        height: 10px;
+        background-color: #45336E;
+        border-radius: 10px;
+    }
+
+    .progress-bar-fill {
+        position: absolute; /* Set position to absolute */
+        top: 0; /* Position the fill at the bottom of the progress bar */
+        height: 100%;
+        background-color: white;
+    }
+
+    .bottom {
+        margin: 0 auto 10px;
+        width: 100%;
+    }
+
+    #mobile-visualization {
+        display: block;
+    }
+
+
+    #visualization {
+        display: none;
+    }
+
+
+}

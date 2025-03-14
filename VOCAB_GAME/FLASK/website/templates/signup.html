@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/sign-up.css') }}">
+{% endblock %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+
+<form method="POST" class="form-container">
+    <h1 class="puff-in-center">Create an account</h1>
+    <div class="form-group">
+        <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Enter Email"
+        />
+    </div>
+    <div class="form-group">
+        <input
+                type="text"
+                class="form-control"
+                id="firstName"
+                name="firstName"
+                placeholder="Enter First Name"
+        />
+    </div>
+    <div class="form-group">
+        <input
+                type="password"
+                class="form-control"
+                id="password1"
+                name="password1"
+                placeholder="Enter Password"
+        />
+    </div>
+    <div class="form-group">
+        <input
+                type="password"
+                class="form-control"
+                id="password2"
+                name="password2"
+                placeholder="Confirm Password"
+        />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <p class="create-account">Already have an account? <a id="signup" href="/login">Sign in</a></p>
+</form>
+{% endblock %}

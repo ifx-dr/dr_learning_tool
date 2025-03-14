@@ -1,0 +1,22 @@
+<LifecycleConfiguration>
+<Rule>
+ <ID>yamls</ID>
+ <Filter>
+    <Prefix>metadata-yamls</Prefix>
+ </Filter>
+ <Status>Enabled</Status>
+ <Expiration>
+   <Days>21</Days>
+ </Expiration>
+</Rule>
+<Rule>
+ <ID>pgdump-backups</ID>
+ <Filter>
+    <Prefix>pgdump</Prefix>
+ </Filter>
+ <Status>Enabled</Status>
+ <Expiration>
+   <Days>21</Days>
+ </Expiration>
+</Rule>
+</LifecycleConfiguration>

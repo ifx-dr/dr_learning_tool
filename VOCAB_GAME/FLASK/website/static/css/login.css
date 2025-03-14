@@ -1,0 +1,170 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container{
+    width: 100%;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container{
+    width: 100%;
+}
+
+/* Style for the heading */
+h1 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 80px;
+    margin: 0 0 50px;
+    padding: 0;
+}
+
+
+/* Style for the form group */
+.form-group {
+    width: 40%;
+    color: white;
+    margin: 0 auto 20px;
+}
+
+/* Styles for form inputs */
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="email"]:focus{
+    outline: none;
+
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"] {
+    border-radius: 20px;
+    background-color: #2b0731;
+    color: white;
+    border: none;
+    font-size: 25px;
+    text-align:center;
+    padding: 25px;
+    margin: 20px 0;
+    box-sizing: border-box;
+}
+
+/* Styles for the primary button */
+.btn-primary {
+    background-color: #46336e;
+    color: white;
+    padding: 15px 20px;
+    margin: 4px auto 10px;
+    border: solid;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 25px;
+    width: 40%;
+    display: block;
+    text-align: center;
+}
+
+/* Hover effect for the primary button */
+.btn-primary:hover {
+    background-color: #2b0731;
+    border: solid;
+}
+
+/* Styles for the create-account message */
+.create-account {
+    color: white;
+    font-style: italic;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* Styles for the links in create-account message */
+.create-account a {
+    color: #ffffff;
+    margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 50px;
+        margin: 0 0 40px;
+    }
+
+    .form-group {
+        width: 70%;
+        margin: auto auto 10px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="password"],
+    .form-group input[type="firstName"],
+    .form-group input[type="email"] {
+    font-size: 18px;
+    padding: 15px;
+    margin: 15px 0;
+}
+    .btn-primary {
+    padding: 10px 20px;
+    margin: 0 auto 10px;
+    border-radius: 30px;
+    font-size: 18px;
+    width: 70%;
+    }
+
+    .create-account {
+    margin-top: 10px;
+    font-size: 15px;
+    }
+}
+
+/* Animation for the heading */
+.puff-in-center {
+    -webkit-animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+
+}
+
+@-webkit-keyframes puff-in-center {
+  0% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes puff-in-center {
+  0% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}Detailed Overview{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/detailed-overview.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+{% endblock %}
+
+{% block content %}
+<!-- Button to go back to the previous page -->
+<button onclick="goBack()" id="back">
+    <i class="bi bi-caret-left-fill"></i>
+    <span class="tooltip">Back</span>
+</button>
+
+<!-- Navigation link to home -->
+<a class="nav-item nav-link" id="home" href="/"><i class="bi bi-house-door-fill"></i></a>
+
+<!-- Mobile Navigation Bar -->
+<div class="navigation-bar">
+    <div class="toggle_btn">
+        <i class="bi bi-list"></i>
+    </div>
+    <div class="dropdown_menu">
+        <li><a href="/"><i class="bi bi-house-door-fill"></i></a></li>
+        <li><button class="backButton" onclick="goBack()"><i class="bi bi-caret-left-fill"></i></button></li>
+        <li><a href="/logout"><i class="bi bi-box-arrow-right"></i></a></li>
+    </div>
+</div>
+
+<!-- Title of the page -->
+<div class="title-container">
+    <h1 class="title">Vocabulary Engagement Overview</h1>
+</div>
+
+<!-- Content of the page -->
+<div class="content">
+    <!-- User Recap -->
+    <div class="user-recap">
+        <h3>Your Recap:</h3>
+        <div class="user-stat">
+            <ul>
+                <li id="validated-definition" title="Validated Definitions"><i class="bi bi-check-square-fill"></i></li>
+                <li>{{ number_validated}}</li>
+            </ul>
+            <ul>
+                <li id="revised-definition" title="Unvalidated Definitions"><i class="bi bi-x-square-fill"></i></li>
+                <li>{{ number_revised}}</li>
+            </ul>
+            <ul>
+                <li id="passed-definition" title="Passed Definitions"><i class="bi bi-arrow-right-square-fill"></i></li>
+                <li>{{ number_passed}}</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Definition Overview -->
+    <div class="def-stat">
+        <h3>Definitions Overview</h3>
+        {% for definitions in definition_information %}
+        <div class="swiper-item">
+            <h5>{{definitions[0].class_name}}</h5>
+            <div class="container swiper">
+                <div class="slider-wrapper">
+                    <div class="card-list swiper-wrapper">
+                        {% for definition in definitions %}
+                        <div class="card-item swiper-slide">
+                            {% if definition.definition in user_validated_definition  %}
+                            <div class="validated">
+                                <p>{{ definition.definition }}</p>
+                            </div>
+                            {% elif definition.definition in user_revised_definition  %}
+                            <div class="revised">
+                                <p>{{ definition.definition }}</p>
+                            </div>
+                            {% elif definition.definition in user_passed_definition  %}
+                            <div class="passed">
+                                <p>{{ definition.definition }}</p>
+                            </div>
+                            {% else %}
+                            <p class="passed">{{ definition.definition }}</p>
+                            {% endif %}
+                            <div class="def-stat">
+                                <ul>
+                                    <li title="Definition Engagement Count"><i class="bi bi-eye-fill"></i> {{ definition.agreements+ definition.disagreements}}</li>
+                                    <li title="Ratio of Agreements"><i class="bi bi-check2-square"></i> {% if (definition.disagreements+definition.agreements)>0 %}{{ ((definition.agreements/(definition.disagreements+definition.agreements))*100)|round|int}}{% else %}0{% endif %}%</li>
+                                </ul>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-slide-button swiper-button-prev"></div>
+                    <div class="swiper-slide-button swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+  <!-- Linking SwiperJS script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Linking custom script -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}

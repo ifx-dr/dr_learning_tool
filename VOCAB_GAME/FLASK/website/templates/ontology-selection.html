@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+
+{% block title %}Loading{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ontology-selection.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+{% endblock %}
+
+{% block content %}
+<!-- Sidebar navigation -->
+<nav class="sidebar-navigation">
+    <ul>
+        <li class="active">
+            <a href="/">
+                <i class="bi bi-house-door"></i>
+                <span class="tooltip">Home</span>
+            </a>
+        </li>
+        <li class="active">
+            <button class="backButton" onclick="goBack()">
+                <i class="bi bi-caret-left"></i>
+                <span class="tooltip">Back</span>
+            </button>
+        </li>
+        <li class="active">
+            <a href="/logout">
+                <i class="bi bi-box-arrow-right"></i>
+                <span class="tooltip">Logout</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<div class="navigation-bar">
+    <div class="toggle_btn">
+        <i class="bi bi-list"></i>
+    </div>
+    <div class="dropdown_menu">
+        <li><a href="/"><i class="bi bi-house-door-fill"></i></a></li>
+        <li><button class="backButton" onclick="goBack()"><i class="bi bi-caret-left-fill"></i></button></li>
+        <li><a href="/logout"><i class="bi bi-box-arrow-right"></i></a></li>
+    </div>
+</div>
+<div class="content">
+    <!-- Page content -->
+    <h1 class="title">Loading the ontology...</h1>
+    <div class="text">
+        <p>Please wait.</p>
+        <!--<p>Customize your learning experience by selecting from a range of relevant ontologies tailored to your domain. Get ready to delve into the immersive world of semiconductor vocabulary exploration.</p>-->
+    </div>
+
+<!-- Ontology selection form -->
+    <form method="POST" style="display: none;">
+        <input type="hidden" id="selectedOntologyId" name="selectedOntologyId">
+        <div class="ontology-container">
+            <button id="previousButton" onclick="showPreviousOntology()" class="ontologySelection"></button> <!-- Left arrow button -->
+            <div class="ontology-item">
+                <img src="{{ ontologies_json[0].image_url }}" alt="{{ ontologies_json[0].name }}">
+                <h3>{{ ontologies_json[0].name }}</h3>
+                <p>{{ ontologies_json[0].description }}</p>
+            </div>
+            <button  id="nextButton" onclick="showNextOntology()" class="ontologySelection"></button> <!-- Right arrow button -->
+        </div>
+        <!-- Next button to navigate to another page -->
+        <button type="submit" class="next-button" name="nextPage">Next</button>
+    </form>
+</div>
+
+<script>
+    // Define variables and event listeners for ontology selection
+    var currentOntologyIndex = 0;
+    var ontologies = {{ ontologies_json|tojson }};
+    var previousButton = document.getElementById('previousButton');
+    var nextButton = document.getElementById('nextButton');
+    var ontologyItem = document.querySelector('.ontology-item');
+    var selectedOntologyIndex = 0;
+
+    // Execute when the DOM content is fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        const selectedOntologyInput = document.getElementById('selectedOntologyId');
+
+        // Function to capture the selected ontology
+        function captureSelectedOntology() {
+            const selectedOntology = ontologies[selectedOntologyIndex];
+            selectedOntologyInput.value = selectedOntology.id;
+        }
+
+        // Capture the selected ontology when the page loads
+        captureSelectedOntology();
+        form.submit();
+
+        // Prevent the default form submission for the previous and next buttons
+        function preventFormSubmission(event) {
+            event.preventDefault();
+        }
+
+        // Add event listeners for the "Previous" and "Next" buttons to prevent form submission
+        document.getElementById('previousButton').addEventListener('click', preventFormSubmission);
+        document.getElementById('nextButton').addEventListener('click', preventFormSubmission);
+
+        // Handle form submission only when the "Next" button is clicked
+        document.querySelector('.next-button').addEventListener('click', function() {
+            form.submit();
+        });
+    });
+
+    // Function to display the previous ontology
+    function showPreviousOntology() {
+        if (currentOntologyIndex > 0) {
+            currentOntologyIndex--;
+            // Add the animation class to the ontology item
+            ontologyItem.classList.add('slide-in-blurred-left');
+            displayOntology(currentOntologyIndex);
+            nextButton.style.pointerEvents = 'auto';
+            nextButton.style.opacity = 1;
+        }
+        if (currentOntologyIndex === 0) {
+            previousButton.style.pointerEvents = 'none';
+            previousButton.style.opacity = 0;
+        }
+    }
+
+    // Function to display the next ontology
+    function showNextOntology() {
+        if (currentOntologyIndex < ontologies.length-1) {
+            currentOntologyIndex++;
+            ontologyItem.classList.add('slide-in-blurred-right');
+            displayOntology(currentOntologyIndex);
+            previousButton.style.pointerEvents = 'auto';
+            previousButton.style.opacity = 1;
+        }
+        if (currentOntologyIndex === ontologies.length - 1) {
+            nextButton.style.pointerEvents = 'none';
+            nextButton.style.opacity = 0;
+        }
+    }
+
+    // Function to display the selected ontology details
+    function displayOntology(index) {
+        var selectedOntology = ontologies[index];
+        selectedOntologyIndex = index;
+        // Remove the animation class after the animation completes
+        ontologyItem.addEventListener('animationend', function() {
+            ontologyItem.classList.remove('slide-in-blurred-left');
+            ontologyItem.classList.remove('slide-in-blurred-right');
+        });
+        ontologyItem.innerHTML = `
+            <img src="${selectedOntology.image_url}" alt="${selectedOntology.name}">
+            <h3>${selectedOntology.name}</h3>
+            <p>${selectedOntology.description}</p>
+        `;
+        document.getElementById('selectedOntologyId').value = selectedOntology.id;
+    }
+
+    // Initial button appearance based on the number of ontologies
+    if (ontologies.length <= 1) {
+        previousButton.style.display = 'none';
+        nextButton.style.display = 'none';
+    } else {
+        previousButton.style.pointerEvents = 'none';
+        previousButton.style.opacity = 0;
+    }
+</script>
+
+  <!-- Linking SwiperJS script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Linking custom script -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}

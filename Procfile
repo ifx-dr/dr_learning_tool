@@ -1,0 +1,1 @@
+web: cd VOCAB_GAME/FLASK && gunicorn app:app

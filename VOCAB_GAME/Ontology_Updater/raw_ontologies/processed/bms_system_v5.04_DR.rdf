@@ -1,0 +1,1963 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/infineon/ontologies/2023/6/e-car-traction-battery-ontology"
+         xmlns="http://www.semanticweb.org/infineon/ontologies/2023/6/e-car-traction-battery-ontology#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/infineon/ontologies/2023/6/e-car-traction-battery-ontology">
+  <owl:versionIRI rdf:resource="http://www.semanticweb.org/infineon/ontologies/2023/6/e-car-traction-battery-ontology/5.0.4"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Author version 4.xx: Marta Bonik
+
+Author version 5.xx: Hartwig Baumgaertel</rdfs:comment>
+  <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.04</owl:versionInfo>
+</owl:Ontology>
+
+<owl:ObjectProperty rdf:about="#contributes_to_battery_CO2_savings">
+  <rdfs:domain rdf:resource="#Battery_Management_System"/>
+  <rdfs:range rdf:resource="#Battery_CO2_Savings_Enabler"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contributes_to_battery_CO2_savings</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_BMS_Constructive_Block">
+  <rdfs:subPropertyOf rdf:resource="#has_Part"/>
+  <owl:inverseOf rdf:resource="#is_BMS_ConstructiveBlockOf"/>
+  <rdfs:domain rdf:resource="#Battery_Management_System"/>
+  <rdfs:range rdf:resource="#BMS_Constructive_Block"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_BMS_Constructive_Block</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Part">
+  <owl:inverseOf rdf:resource="#is_PartOf"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Part</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_BMS_ConstructiveBlockOf">
+  <rdfs:subPropertyOf rdf:resource="#is_PartOf"/>
+  <rdfs:domain rdf:resource="#BMS_Constructive_Block"/>
+  <rdfs:range rdf:resource="#Battery_Management_System"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_BMS_ConstructiveBlockOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_BMS_Functional_Block">
+  <rdfs:subPropertyOf rdf:resource="#has_Part"/>
+  <owl:inverseOf rdf:resource="#is_BMS_FunctionalBlockOf"/>
+  <rdfs:domain rdf:resource="#Battery_Management_System"/>
+  <rdfs:range rdf:resource="#BMS_Functional_Block"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_BMS_Functional_Block</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_BMS_FunctionalBlockOf">
+  <rdfs:subPropertyOf rdf:resource="#is_PartOf"/>
+  <rdfs:domain rdf:resource="#BMS_Functional_Block"/>
+  <rdfs:range rdf:resource="#Battery_Management_System"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_BMS_FunctionalBlockOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Battery">
+  <rdfs:subPropertyOf rdf:resource="#has_Part"/>
+  <owl:inverseOf rdf:resource="#is_BatteryOf"/>
+  <rdfs:domain rdf:resource="#Vehicle"/>
+  <rdfs:range rdf:resource="#Car_Battery"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Battery</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_BatteryOf">
+  <rdfs:subPropertyOf rdf:resource="#is_PartOf"/>
+  <rdfs:domain rdf:resource="#Car_Battery"/>
+  <rdfs:range rdf:resource="#Vehicle"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_BatteryOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_BatteryManagementSystem_Product">
+  <rdfs:subPropertyOf rdf:resource="#has_Product"/>
+  <owl:inverseOf rdf:resource="#is_BatteryManagementSystemProductOf"/>
+  <rdfs:domain rdf:resource="#BatteryManagementSystem_Company"/>
+  <rdfs:range rdf:resource="#Battery_Management_System"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_BMS_Product</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Product">
+  <owl:inverseOf rdf:resource="#is_ProductOf"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Product</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_BatteryManagementSystemProductOf">
+  <rdfs:subPropertyOf rdf:resource="#is_ProductOf"/>
+  <rdfs:domain rdf:resource="#Battery_Management_System"/>
+  <rdfs:range rdf:resource="#BatteryManagementSystem_Company"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_BMS_ProductOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Battery_Cell">
+  <rdfs:subPropertyOf rdf:resource="#has_Part"/>
+  <owl:inverseOf rdf:resource="#is_BatteryCellOf"/>
+  <rdfs:domain rdf:resource="#Battery_Module"/>
+  <rdfs:range rdf:resource="#Battery_Cell"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Battery_Cell</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_BatteryCellOf">
+  <rdfs:subPropertyOf rdf:resource="#is_PartOf"/>
+  <rdfs:domain rdf:resource="#Battery_Cell"/>
+  <rdfs:range rdf:resource="#Battery_Module"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_BatteryCellOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Battery_Cell_Product">
+  <rdfs:subPropertyOf rdf:resource="#has_Product"/>
+  <owl:inverseOf rdf:resource="#is_BatteryCellProductOf"/>
+  <rdfs:domain rdf:resource="#BatteryCell_Company"/>
+  <rdfs:range rdf:resource="#Battery_Cell"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Battery_Cell_Product</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_BatteryCellProductOf">
+  <rdfs:subPropertyOf rdf:resource="#is_ProductOf"/>
+  <rdfs:domain rdf:resource="#Battery_Cell"/>
+  <rdfs:range rdf:resource="#BatteryCell_Company"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_BatteryCellProductOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Battery_Management_System">
+  <rdfs:subPropertyOf rdf:resource="#has_Part"/>
+  <owl:inverseOf rdf:resource="#is_BMS_Of"/>
+  <rdfs:domain rdf:resource="#Battery_Pack"/>
+  <rdfs:range rdf:resource="#Battery_Management_System"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_BMS</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_BMS_Of">
+  <rdfs:subPropertyOf rdf:resource="#is_PartOf"/>
+  <rdfs:domain rdf:resource="#Battery_Management_System"/>
+  <rdfs:range rdf:resource="#Battery_Pack"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_BMS_Of</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Battery_Module">
+  <rdfs:subPropertyOf rdf:resource="#has_Part"/>
+  <owl:inverseOf rdf:resource="#is_BatteryModuleOf"/>
+  <rdfs:domain rdf:resource="#Battery_Pack"/>
+  <rdfs:range rdf:resource="#Battery_Module"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Battery_Module</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_BatteryModuleOf">
+  <rdfs:subPropertyOf rdf:resource="#is_PartOf"/>
+  <rdfs:domain rdf:resource="#Battery_Module"/>
+  <rdfs:range rdf:resource="#Battery_Pack"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_BatteryModuleOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Battery_Module_Housing">
+  <rdfs:subPropertyOf rdf:resource="#has_Part"/>
+  <owl:inverseOf rdf:resource="#is_BatteryModuleHousingOf"/>
+  <rdfs:domain rdf:resource="#Battery_Module"/>
+  <rdfs:range rdf:resource="#Battery_Module_Housing"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Battery_Module_Housing</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_BatteryModuleHousingOf">
+  <rdfs:subPropertyOf rdf:resource="#is_PartOf"/>
+  <rdfs:domain rdf:resource="#Battery_Module_Housing"/>
+  <rdfs:range rdf:resource="#Battery_Module"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_BatteryModuleHousingOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Battery_Module_Product">
+  <rdfs:subPropertyOf rdf:resource="#has_Product"/>
+  <owl:inverseOf rdf:resource="#is_BatteryModuleProductOf"/>
+  <rdfs:domain rdf:resource="#Battery_Module_Company"/>
+  <rdfs:range rdf:resource="#Battery_Module"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Battery_Module_Product</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_BatteryModuleProductOf">
+  <rdfs:subPropertyOf rdf:resource="#is_ProductOf"/>
+  <rdfs:domain rdf:resource="#Battery_Module"/>
+  <rdfs:range rdf:resource="#Battery_Module_Company"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_BatteryModuleProductOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Battery_Pack">
+  <rdfs:subPropertyOf rdf:resource="#has_Part"/>
+  <owl:inverseOf rdf:resource="#is_BatteryPackOf"/>
+  <rdfs:domain rdf:resource="#High_Voltage_Battery"/>
+  <rdfs:domain rdf:resource="#Traction_Battery"/>
+  <rdfs:range rdf:resource="#Battery_Pack"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Battery_Pack</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_BatteryPackOf">
+  <rdfs:subPropertyOf rdf:resource="#is_PartOf"/>
+  <rdfs:domain rdf:resource="#Battery_Pack"/>
+  <rdfs:range rdf:resource="#High_Voltage_Battery"/>
+  <rdfs:range rdf:resource="#Traction_Battery"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_BatteryPackOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Battery_Pack_Housing">
+  <rdfs:subPropertyOf rdf:resource="#has_Part"/>
+  <owl:inverseOf rdf:resource="#is_BatteryPackHousingOf"/>
+  <rdfs:domain rdf:resource="#Battery_Pack"/>
+  <rdfs:range rdf:resource="#Battery_Pack_Housing"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Battery_Pack_Housing</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_BatteryPackHousingOf">
+  <rdfs:subPropertyOf rdf:resource="#is_PartOf"/>
+  <rdfs:domain rdf:resource="#Battery_Pack_Housing"/>
+  <rdfs:range rdf:resource="#Battery_Pack"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_BatteryPackHousingOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Battery_Pack_Product">
+  <rdfs:subPropertyOf rdf:resource="#has_Product"/>
+  <owl:inverseOf rdf:resource="#is_BatteryPackProductOf"/>
+  <rdfs:domain rdf:resource="#Battery_Pack_Company"/>
+  <rdfs:range rdf:resource="#Battery_Pack"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Battery_Pack_Product</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_BatteryPackProductOf">
+  <rdfs:subPropertyOf rdf:resource="#is_ProductOf"/>
+  <rdfs:domain rdf:resource="#Battery_Pack"/>
+  <rdfs:range rdf:resource="#Battery_Pack_Company"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_BatteryPackProductOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Battery_Product">
+  <rdfs:subPropertyOf rdf:resource="#has_Product"/>
+  <owl:inverseOf rdf:resource="#is_BatteryProductOf"/>
+  <rdfs:domain rdf:resource="#Battery_Company"/>
+  <rdfs:range rdf:resource="#Battery_Type"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Battery_Product</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_BatteryProductOf">
+  <rdfs:subPropertyOf rdf:resource="#is_ProductOf"/>
+  <rdfs:domain rdf:resource="#Battery_Type"/>
+  <rdfs:range rdf:resource="#Battery_Company"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_BatteryProductOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Cooling_System">
+  <rdfs:subPropertyOf rdf:resource="#has_Part"/>
+  <owl:inverseOf rdf:resource="#is_CoolingSystemOf"/>
+  <rdfs:domain rdf:resource="#Battery_Pack"/>
+  <rdfs:range rdf:resource="#Battery_Cooling_System"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Cooling_System</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_CoolingSystemOf">
+  <rdfs:subPropertyOf rdf:resource="#is_PartOf"/>
+  <rdfs:domain rdf:resource="#Battery_Cooling_System"/>
+  <rdfs:range rdf:resource="#Battery_Pack"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_CoolingSystemOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Current_Sensor">
+  <rdfs:subPropertyOf rdf:resource="#has_Semiconductor"/>
+  <owl:inverseOf rdf:resource="#is_CurrentSensorOf"/>
+  <rdfs:domain rdf:resource="#Current_Sensing"/>
+  <rdfs:range rdf:resource="#Current_Sensor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Current_Sensor</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Semiconductor">
+  <rdfs:subPropertyOf rdf:resource="#has_Part"/>
+  <owl:inverseOf rdf:resource="#is_SemiconductorOf"/>
+  <rdfs:domain rdf:resource="#BMS_Functional_Block"/>
+  <rdfs:range rdf:resource="#Semiconductor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Semiconductor</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_CurrentSensorOf">
+  <rdfs:subPropertyOf rdf:resource="#is_SemiconductorOf"/>
+  <rdfs:domain rdf:resource="#Current_Sensor"/>
+  <rdfs:range rdf:resource="#Current_Sensing"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_High_Voltage_Class">
+  <rdfs:subPropertyOf rdf:resource="#has_Voltage_Class"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#High_Voltage_Battery"/>
+  <rdfs:domain rdf:resource="#Traction_Battery"/>
+  <rdfs:range rdf:resource="#High_Voltage_Class"/>
+  <owl:propertyDisjointWith rdf:resource="#has_Low_Voltage_Class"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_High_Voltage_Class</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Voltage_Class">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Car_Battery"/>
+  <rdfs:range rdf:resource="#Voltage_Class"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Voltage_Class</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Low_Voltage_Class">
+  <rdfs:subPropertyOf rdf:resource="#has_Voltage_Class"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Onboard_Electronics_Network_Battery"/>
+  <rdfs:range rdf:resource="#Low_Voltage_Class"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Low_Voltage_Class</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_High_Voltage_Component">
+  <rdfs:subPropertyOf rdf:resource="#has_Part"/>
+  <owl:inverseOf rdf:resource="#is_HV_ComponentOf"/>
+  <rdfs:domain rdf:resource="#Battery_High_Voltage_System"/>
+  <rdfs:range rdf:resource="#Battery_Pack_HV_System_Component"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_HV_Component</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_HV_ComponentOf">
+  <rdfs:subPropertyOf rdf:resource="#is_PartOf"/>
+  <rdfs:domain rdf:resource="#Battery_Pack_HV_System_Component"/>
+  <rdfs:range rdf:resource="#Battery_High_Voltage_System"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_HV_ComponentOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_High_Voltage_System">
+  <rdfs:subPropertyOf rdf:resource="#has_Part"/>
+  <owl:inverseOf rdf:resource="#is_HighVoltageSystemOf"/>
+  <rdfs:domain rdf:resource="#Battery_Pack"/>
+  <rdfs:range rdf:resource="#Battery_High_Voltage_System"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_HV_System</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_HighVoltageSystemOf">
+  <rdfs:subPropertyOf rdf:resource="#is_PartOf"/>
+  <rdfs:domain rdf:resource="#Battery_High_Voltage_System"/>
+  <rdfs:range rdf:resource="#Battery_Pack"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_HV_SystemOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_LFP_BMS_Constructive_Block">
+  <rdfs:subPropertyOf rdf:resource="#has_BMS_Constructive_Block"/>
+  <owl:inverseOf rdf:resource="#is_LFP_BMS_ConstructiveBlockOf"/>
+  <rdfs:domain rdf:resource="#Lithium-Ferrophosphate_Battery_Management_System"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_LFP_BMS_Constructive_Block</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_LFP_BMS_ConstructiveBlockOf">
+  <rdfs:subPropertyOf rdf:resource="#is_BMS_ConstructiveBlockOf"/>
+  <rdfs:range rdf:resource="#Lithium-Ferrophosphate_Battery_Management_System"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_LFP_BMS_ConstructiveBlockOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_LFP_Battery_Cell">
+  <rdfs:subPropertyOf rdf:resource="#has_Battery_Cell"/>
+  <owl:inverseOf rdf:resource="#is_LFP_BatteryCellOf"/>
+  <rdfs:domain rdf:resource="#Lithium-Ferrophosphate_Battery_Module"/>
+  <rdfs:range rdf:resource="#Lithium-Ferrophosphate_Battery_Cell"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_LFP_Battery_Cell</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_LFP_BatteryCellOf">
+  <rdfs:subPropertyOf rdf:resource="#is_BatteryCellOf"/>
+  <rdfs:domain rdf:resource="#Lithium-Ferrophosphate_Battery_Cell"/>
+  <rdfs:range rdf:resource="#Lithium-Ferrophosphate_Battery_Module"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_LFP_BatteryCellOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_LFP_Battery_Management_System">
+  <rdfs:subPropertyOf rdf:resource="#has_Battery_Management_System"/>
+  <owl:inverseOf rdf:resource="#is_LFP_BMS_Of"/>
+  <rdfs:domain rdf:resource="#Lithium-Ferrophosphate_Battery_Pack"/>
+  <rdfs:range rdf:resource="#Lithium-Ferrophosphate_Battery_Management_System"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_LFP_BMS</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_LFP_BMS_Of">
+  <rdfs:subPropertyOf rdf:resource="#is_BMS_Of"/>
+  <rdfs:domain rdf:resource="#Lithium-Ferrophosphate_Battery_Management_System"/>
+  <rdfs:range rdf:resource="#Lithium-Ferrophosphate_Battery_Pack"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_LFP_BMS_Of</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_LFP_Battery_Module">
+  <rdfs:subPropertyOf rdf:resource="#has_Battery_Module"/>
+  <owl:inverseOf rdf:resource="#is_LFP_BatteryModuleOf"/>
+  <rdfs:domain rdf:resource="#Lithium-Ferrophosphate_Battery_Pack"/>
+  <rdfs:range rdf:resource="#Lithium-Ferrophosphate_Battery_Module"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_LFP_Battery_Module</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_LFP_BatteryModuleOf">
+  <rdfs:subPropertyOf rdf:resource="#is_BatteryModuleOf"/>
+  <rdfs:domain rdf:resource="#Lithium-Ferrophosphate_Battery_Module"/>
+  <rdfs:range rdf:resource="#Lithium-Ferrophosphate_Battery_Pack"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_LFP_BatteryModuleOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_LFP_Battery_Pack">
+  <rdfs:subPropertyOf rdf:resource="#has_Battery_Pack"/>
+  <owl:inverseOf rdf:resource="#is_LFP_BatteryPackOf"/>
+  <rdfs:domain rdf:resource="#LFP_Traction_Battery"/>
+  <rdfs:range rdf:resource="#Lithium-Ferrophosphate_Battery_Pack"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_LFP_Battery_Pack</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_LFP_BatteryPackOf">
+  <rdfs:subPropertyOf rdf:resource="#is_BatteryPackOf"/>
+  <rdfs:domain rdf:resource="#Lithium-Ferrophosphate_Battery_Pack"/>
+  <rdfs:range rdf:resource="#LFP_Traction_Battery"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_LFP_BatteryPackOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Li-Ion_BMS_Constructive_Block">
+  <rdfs:subPropertyOf rdf:resource="#has_BMS_Constructive_Block"/>
+  <owl:inverseOf rdf:resource="#is_Li-Ion_BMS_ConstructiveBlockOf"/>
+  <rdfs:domain rdf:resource="#Li-Ion_Battery_Management_System"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Li-Ion_BMS_Constructive_Block</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_Li-Ion_BMS_ConstructiveBlockOf">
+  <rdfs:subPropertyOf rdf:resource="#is_BMS_ConstructiveBlockOf"/>
+  <rdfs:range rdf:resource="#Li-Ion_Battery_Management_System"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_Li-Ion_BMS_ConstructiveBlockOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Li-Ion_Battery_Cell">
+  <rdfs:subPropertyOf rdf:resource="#has_Battery_Cell"/>
+  <owl:inverseOf rdf:resource="#is_Li-Ion_BatteryCellOf"/>
+  <rdfs:domain rdf:resource="#Li-Ion_Battery_Module"/>
+  <rdfs:range rdf:resource="#Lithium-Ion_Battery_Cell"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Li-Ion_Battery_Cell</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_Li-Ion_BatteryCellOf">
+  <rdfs:subPropertyOf rdf:resource="#is_BatteryCellOf"/>
+  <rdfs:domain rdf:resource="#Lithium-Ion_Battery_Cell"/>
+  <rdfs:range rdf:resource="#Li-Ion_Battery_Module"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_Li-Ion_BatteryCellOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Li-Ion_Battery_Management_System">
+  <rdfs:subPropertyOf rdf:resource="#has_Battery_Management_System"/>
+  <owl:inverseOf rdf:resource="#is_Li-Ion_BMS_Of"/>
+  <rdfs:domain rdf:resource="#Lithium-Ion_Battery_Pack"/>
+  <rdfs:range rdf:resource="#Li-Ion_Battery_Management_System"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Li-Ion_BMS</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_Li-Ion_BMS_Of">
+  <rdfs:subPropertyOf rdf:resource="#is_BMS_Of"/>
+  <rdfs:domain rdf:resource="#Li-Ion_Battery_Management_System"/>
+  <rdfs:range rdf:resource="#Lithium-Ion_Battery_Pack"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_Li-Ion_BMS_Of</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Li-Ion_Battery_Module">
+  <rdfs:subPropertyOf rdf:resource="#has_Battery_Module"/>
+  <owl:inverseOf rdf:resource="#is_Li-Ion_BatteryModuleOf"/>
+  <rdfs:domain rdf:resource="#Lithium-Ion_Battery_Pack"/>
+  <rdfs:range rdf:resource="#Li-Ion_Battery_Module"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Li-Ion_Battery_Module</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_Li-Ion_BatteryModuleOf">
+  <rdfs:subPropertyOf rdf:resource="#is_BatteryModuleOf"/>
+  <rdfs:domain rdf:resource="#Li-Ion_Battery_Module"/>
+  <rdfs:range rdf:resource="#Lithium-Ion_Battery_Pack"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_Li-Ion_BatteryModuleOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Li-Ion_Battery_Pack">
+  <rdfs:subPropertyOf rdf:resource="#has_Battery_Pack"/>
+  <owl:inverseOf rdf:resource="#is_Li-Ion_BatteryPackOf"/>
+  <rdfs:domain rdf:resource="#Lithium-Ion_High_Voltage_Battery"/>
+  <rdfs:domain rdf:resource="#Lithium-Ion_Traction_Battery"/>
+  <rdfs:range rdf:resource="#Lithium-Ion_Battery_Pack"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Li-Ion_Battery_Pack</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_Li-Ion_BatteryPackOf">
+  <rdfs:subPropertyOf rdf:resource="#is_BatteryPackOf"/>
+  <rdfs:domain rdf:resource="#Lithium-Ion_Battery_Pack"/>
+  <rdfs:range rdf:resource="#Lithium-Ion_High_Voltage_Battery"/>
+  <rdfs:range rdf:resource="#Lithium-Ion_Traction_Battery"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_Li-Ion_BatteryPackOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Microcontroller">
+  <rdfs:subPropertyOf rdf:resource="#has_Semiconductor"/>
+  <owl:inverseOf rdf:resource="#is_MicroControllerOf"/>
+  <rdfs:domain rdf:resource="#Battery_Control_Unit"/>
+  <rdfs:range rdf:resource="#Microcontroller"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Microcontroller</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_MicroControllerOf">
+  <rdfs:subPropertyOf rdf:resource="#is_SemiconductorOf"/>
+  <rdfs:domain rdf:resource="#Microcontroller"/>
+  <rdfs:range rdf:resource="#Battery_Control_Unit"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Multichannel_Batterymonitor_IC">
+  <rdfs:subPropertyOf rdf:resource="#has_Semiconductor"/>
+  <owl:inverseOf rdf:resource="#is_MultiChannelBatteryMonitorICOf"/>
+  <rdfs:domain rdf:resource="#Cell_Supervision"/>
+  <rdfs:range rdf:resource="#Multichannel_Battery_Monitoring_Integrated_Circuit"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Multichannel_Batterymonitor_IC</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_MultiChannelBatteryMonitorICOf">
+  <rdfs:subPropertyOf rdf:resource="#is_SemiconductorOf"/>
+  <rdfs:domain rdf:resource="#Multichannel_Battery_Monitoring_Integrated_Circuit"/>
+  <rdfs:range rdf:resource="#Cell_Supervision"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Multichannel_Controller_IC">
+  <rdfs:subPropertyOf rdf:resource="#has_Semiconductor"/>
+  <owl:inverseOf rdf:resource="#is_MultiChannelControllerICOf"/>
+  <rdfs:domain rdf:resource="#Pack_Monitoring"/>
+  <rdfs:range rdf:resource="#Multichannel_Controller_Integrated_Circuit"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Multichannel_Controller_IC</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_MultiChannelControllerICOf">
+  <rdfs:subPropertyOf rdf:resource="#is_SemiconductorOf"/>
+  <rdfs:domain rdf:resource="#Multichannel_Controller_Integrated_Circuit"/>
+  <rdfs:range rdf:resource="#Pack_Monitoring"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Onboard_Electronics_Battery">
+  <rdfs:subPropertyOf rdf:resource="#has_Battery"/>
+  <owl:inverseOf rdf:resource="#is_OnboardElectronicsBatteryOf"/>
+  <rdfs:domain rdf:resource="#Vehicle"/>
+  <rdfs:range rdf:resource="#Onboard_Electronics_Network_Battery"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Every vehicle has at least one onboard electronics battery.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Onboard_Electronics_Battery</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_OnboardElectronicsBatteryOf">
+  <rdfs:subPropertyOf rdf:resource="#is_BatteryOf"/>
+  <rdfs:domain rdf:resource="#Onboard_Electronics_Network_Battery"/>
+  <rdfs:range rdf:resource="#Vehicle"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_OnboardElectronicsBatteryOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_PartOf">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_PartOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Power_Management_IC">
+  <rdfs:subPropertyOf rdf:resource="#has_Semiconductor"/>
+  <owl:inverseOf rdf:resource="#is_PowerManagementICOf"/>
+  <rdfs:domain rdf:resource="#Battery_Control_Unit"/>
+  <rdfs:range rdf:resource="#Power_Management_Integrated_Circuit"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Power_Management_IC</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_PowerManagementICOf">
+  <rdfs:subPropertyOf rdf:resource="#is_SemiconductorOf"/>
+  <rdfs:domain rdf:resource="#Power_Management_Integrated_Circuit"/>
+  <rdfs:range rdf:resource="#Battery_Control_Unit"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Pressure_Sensor">
+  <rdfs:subPropertyOf rdf:resource="#has_Semiconductor"/>
+  <owl:inverseOf rdf:resource="#is_PressureSensorOf"/>
+  <rdfs:domain rdf:resource="#Battery_Control_Unit"/>
+  <rdfs:range rdf:resource="#Pressure_Sensor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Pressure_Sensor</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_PressureSensorOf">
+  <rdfs:subPropertyOf rdf:resource="#is_SemiconductorOf"/>
+  <rdfs:domain rdf:resource="#Pressure_Sensor"/>
+  <rdfs:range rdf:resource="#Battery_Control_Unit"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_ProductOf">
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_ProductOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_SemiconductorOf">
+  <rdfs:subPropertyOf rdf:resource="#is_PartOf"/>
+  <rdfs:domain rdf:resource="#Semiconductor"/>
+  <rdfs:range rdf:resource="#BMS_Functional_Block"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_SemiconductorOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Semiconductor_Product">
+  <rdfs:subPropertyOf rdf:resource="#has_Product"/>
+  <owl:inverseOf rdf:resource="#is_SemiconductorProductOf"/>
+  <rdfs:domain rdf:resource="#Semiconductor_Company"/>
+  <rdfs:range rdf:resource="#Semiconductor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Semiconductor_Product</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_SemiconductorProductOf">
+  <rdfs:subPropertyOf rdf:resource="#is_ProductOf"/>
+  <rdfs:domain rdf:resource="#Semiconductor"/>
+  <rdfs:range rdf:resource="#Semiconductor_Company"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_SemiconductorProductOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Traction_Battery">
+  <rdfs:subPropertyOf rdf:resource="#has_Battery"/>
+  <owl:inverseOf rdf:resource="#is_TractionBatteryOf"/>
+  <rdfs:domain rdf:resource="#Electric_Vehicle"/>
+  <rdfs:range rdf:resource="#High_Voltage_Battery"/>
+  <rdfs:range rdf:resource="#Traction_Battery"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Only E-cars have traction batteries. This holds for all casses of E-cars, e.g. fully electric cars, plugin hybrid cars and hydrogen fuel cell batteries. 
+Traction batteries of fully electric cars are larger than traction batteries of hybrid or fuel cell batteries, as the latter have alternative tractions as well.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Traction_Battery</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_TractionBatteryOf">
+  <rdfs:subPropertyOf rdf:resource="#is_BatteryOf"/>
+  <rdfs:domain rdf:resource="#High_Voltage_Battery"/>
+  <rdfs:domain rdf:resource="#Traction_Battery"/>
+  <rdfs:range rdf:resource="#Electric_Passenger_Car"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_TractionBatteryOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_UART_Transceiver_IC">
+  <rdfs:subPropertyOf rdf:resource="#has_Semiconductor"/>
+  <owl:inverseOf rdf:resource="#is_UART_TranceiverICOf"/>
+  <rdfs:domain rdf:resource="#Isolated_Communication"/>
+  <rdfs:range rdf:resource="#UART_Transceiver_Integrated_Circuit"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_UART_Transceiver_IC</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_UART_TranceiverICOf">
+  <rdfs:subPropertyOf rdf:resource="#is_SemiconductorOf"/>
+  <rdfs:domain rdf:resource="#UART_Transceiver_Integrated_Circuit"/>
+  <rdfs:range rdf:resource="#Isolated_Communication"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Vehicle_Product">
+  <rdfs:subPropertyOf rdf:resource="#has_Product"/>
+  <owl:inverseOf rdf:resource="#is_VehicleProductOf"/>
+  <rdfs:domain rdf:resource="#Car_Company"/>
+  <rdfs:range rdf:resource="#Vehicle"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_Vehicle_Product</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_VehicleProductOf">
+  <rdfs:subPropertyOf rdf:resource="#is_ProductOf"/>
+  <rdfs:domain rdf:resource="#Vehicle"/>
+  <rdfs:range rdf:resource="#Car_Company"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_VehicleProductOf</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#hasBatteryCellAmount">
+  <rdfs:domain rdf:resource="#Battery_Module"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasBatteryModuleAmount">
+  <rdfs:domain rdf:resource="#Battery_Pack"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasBatteryPackAmount">
+  <rdfs:domain rdf:resource="#High_Voltage_Battery"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasModelName">
+  <rdfs:domain rdf:resource="#Electric_Passenger_Car"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This data property allows to specify a specific model or type name of an electric car, even if this name may by expressed by the name of the individual of the class E-Car that represents the specific car. 
+Maybe the naming convention of the ontology requires an adaptation of the original model or type name as name of the individual, so here the original name, stated by the car manufacturer, may be expressed as a string, like "ID.3" by VW or "Model 3" by Tesla.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Battery_Management_System">
+  <owl:disjointWith rdf:resource="#Battery_Module"/>
+  <owl:disjointWith rdf:resource="#Battery_Module_Construction_Type"/>
+  <owl:disjointWith rdf:resource="#Battery_Module_Housing"/>
+  <owl:disjointWith rdf:resource="#Battery_Pack"/>
+  <owl:disjointWith rdf:resource="#Battery_Pack_HV_System_Component"/>
+  <owl:disjointWith rdf:resource="#Battery_Pack_Housing"/>
+  <owl:disjointWith rdf:resource="#Battery_Type"/>
+  <owl:disjointWith rdf:resource="#Car_Battery"/>
+  <owl:disjointWith rdf:resource="#Industrial_Company"/>
+  <owl:disjointWith rdf:resource="#Semiconductor"/>
+  <owl:disjointWith rdf:resource="#Semiconductor_Company"/>
+  <owl:disjointWith rdf:resource="#Transportation_CO2_Savings_Enabler"/>
+  <owl:disjointWith rdf:resource="#Vehicle"/>
+  <owl:disjointWith rdf:resource="#Voltage_Class"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A battery management system is, according to Infineon´s definition, a set of "electronic control circuits that monitor and regulate the charging and discharge of batteries." It supervises parameters such as the temperature, voltages, capacity, state of charge, power consumption, charging cycles. (Source: https://www.infineon.com/cms/en/applications/solutions/battery-management-system/ )
+
+According to VDMA and RWTH Aachen, the Battery Management System controls the cooling system, the slave PCBs of the battery modules, and the high voltage system.
+
+These two definitions are compatible, as the first one determines the purpose of the BMS, and the second one the control hierarchy.
+
+BMS consist of one BMS master module which is a physcial part of the battery pack (beside the battery modules) and a set of BMS slave modules, one in each battery module.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BMS</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery_CO2_Savings_Enabler">
+  <owl:disjointWith rdf:resource="#Battery_High_Voltage_System"/>
+  <owl:disjointWith rdf:resource="#Battery_Management_System"/>
+  <owl:disjointWith rdf:resource="#Battery_Module"/>
+  <owl:disjointWith rdf:resource="#Battery_Module_Construction_Type"/>
+  <owl:disjointWith rdf:resource="#Battery_Module_Housing"/>
+  <owl:disjointWith rdf:resource="#Battery_Pack"/>
+  <owl:disjointWith rdf:resource="#Battery_Pack_HV_System_Component"/>
+  <owl:disjointWith rdf:resource="#Battery_Pack_Housing"/>
+  <owl:disjointWith rdf:resource="#Battery_Type"/>
+  <owl:disjointWith rdf:resource="#Car_Battery"/>
+  <owl:disjointWith rdf:resource="#Industrial_Company"/>
+  <owl:disjointWith rdf:resource="#Semiconductor"/>
+  <owl:disjointWith rdf:resource="#Transportation_CO2_Savings_Enabler"/>
+  <owl:disjointWith rdf:resource="#Vehicle"/>
+  <owl:disjointWith rdf:resource="#Voltage_Class"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CO2 Savings refers to several solutions that might reduce carbon emissions throughout the course of a Lithiu-Ion battery's lifespan.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HB (2023-06-25): 
+
+I renamed this class to ..._Enabler, as subclasses like longer lifespan enable CO2 savings, but they are not CO2 savings themselves. 
+
+The class hierarchy is an "isA"-Hierarchy: so every element of a subclass is automatically also an element of the superclass. 
+
+For this reason, I also removed the object property enables_CO2_saving, as the intention of this object property is already fulfilled by the class hierarchy here. 
+
+Furthermore, I introduced a new class Transportation_CO2_Savings_Enabler and moved the subclass Electric_Means_Transportation to this class. The justification for this is that electric means transportation is very different from the battery CO2 savings enablers.
+
+The whole topic of modelling CO2 savings in the context of e-Mobility needs to be further discussed!</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_CO2_Savings_Enabler</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#BMS_Constructive_Block">
+  <owl:disjointWith rdf:resource="#Battery_Management_System"/>
+  <owl:disjointWith rdf:resource="#Battery_Module_Construction_Type"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Battery Management System consists of a BMS master which is a physical part of the battery pack (outside and different from the battery modules) and BMS slaves, which are part of battery modules. 
+That is, a BMS of a battery pack consists of one BMS master and N BMS slaves where N is the number of battery modules of the battery pack.
+
+The constructive decomposition needs to be treates separately from the functional decomposition (functional blocks).</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BMS_Constructive_Block</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#BMS_Functional_Block">
+  <owl:disjointWith rdf:resource="#Battery_Cell"/>
+  <owl:disjointWith rdf:resource="#Battery_Company"/>
+  <owl:disjointWith rdf:resource="#Battery_Management_System"/>
+  <owl:disjointWith rdf:resource="#Battery_Module"/>
+  <owl:disjointWith rdf:resource="#Battery_Module_Construction_Type"/>
+  <owl:disjointWith rdf:resource="#Battery_Module_Housing"/>
+  <owl:disjointWith rdf:resource="#Battery_Pack"/>
+  <owl:disjointWith rdf:resource="#Battery_Pack_Housing"/>
+  <owl:disjointWith rdf:resource="#Battery_Type"/>
+  <owl:disjointWith rdf:resource="#Car_Battery"/>
+  <owl:disjointWith rdf:resource="#Industrial_Company"/>
+  <owl:disjointWith rdf:resource="#Semiconductor"/>
+  <owl:disjointWith rdf:resource="#Semiconductor_Company"/>
+  <owl:disjointWith rdf:resource="#Vehicle"/>
+  <owl:disjointWith rdf:resource="#Voltage_Class"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Functional Block is a component of the battery management system.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BMS_Functional_Block</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Vehicle">
+  <owl:disjointWith rdf:resource="#Voltage_Class"/>
+  <rdfs:comment xml:lang="en">A vehicle is a machine with wheels and an engine, used for transporting people or goods.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vehicle</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Car_Battery">
+  <owl:disjointWith rdf:resource="#Industrial_Company"/>
+  <owl:disjointWith rdf:resource="#Semiconductor"/>
+  <owl:disjointWith rdf:resource="#Semiconductor_Company"/>
+  <owl:disjointWith rdf:resource="#Vehicle"/>
+  <owl:disjointWith rdf:resource="#Voltage_Class"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Car_Battery</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#BatteryManagementSystem_Company">
+  <rdfs:subClassOf rdf:resource="#Battery_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://nuvationenergy.com/battery-management-systems/</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BMS_Company</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery_Module">
+  <owl:disjointWith rdf:resource="#Battery_Module_Housing"/>
+  <owl:disjointWith rdf:resource="#Battery_Pack_Housing"/>
+  <owl:disjointWith rdf:resource="#Battery_Type"/>
+  <owl:disjointWith rdf:resource="#Car_Battery"/>
+  <owl:disjointWith rdf:resource="#Industrial_Company"/>
+  <owl:disjointWith rdf:resource="#Semiconductor"/>
+  <owl:disjointWith rdf:resource="#Semiconductor_Company"/>
+  <owl:disjointWith rdf:resource="#Vehicle"/>
+  <owl:disjointWith rdf:resource="#Voltage_Class"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A battery module contains several battery cells. 
+A battery pack contains several battery modules and a BMS (and further components).</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_Module</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery_Cell">
+  <owl:disjointWith rdf:resource="#Battery_Management_System"/>
+  <owl:disjointWith rdf:resource="#Battery_Module"/>
+  <owl:disjointWith rdf:resource="#Battery_Module_Construction_Type"/>
+  <owl:disjointWith rdf:resource="#Battery_Module_Housing"/>
+  <owl:disjointWith rdf:resource="#Battery_Pack"/>
+  <owl:disjointWith rdf:resource="#Battery_Pack_Housing"/>
+  <owl:disjointWith rdf:resource="#Battery_Type"/>
+  <owl:disjointWith rdf:resource="#Car_Battery"/>
+  <owl:disjointWith rdf:resource="#Car_Company"/>
+  <owl:disjointWith rdf:resource="#Industrial_Company"/>
+  <owl:disjointWith rdf:resource="#Semiconductor"/>
+  <owl:disjointWith rdf:resource="#Semiconductor_Company"/>
+  <owl:disjointWith rdf:resource="#Transportation_CO2_Savings_Enabler"/>
+  <owl:disjointWith rdf:resource="#Vehicle"/>
+  <owl:disjointWith rdf:resource="#Voltage_Class"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cells are fundamental electrochemical unit, or assembly of electrodes, separators, electrolyte, container, and terminals, that serves as a source of electrical energy by directly converting chemical energy. In this case, the cells are all of the type Li-Ion.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_Cell</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#BatteryCell_Company">
+  <rdfs:subClassOf rdf:resource="#Battery_Company"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_Cell_Manufacturer</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery_Pack">
+  <owl:disjointWith rdf:resource="#Battery_Pack_Housing"/>
+  <owl:disjointWith rdf:resource="#Battery_Type"/>
+  <owl:disjointWith rdf:resource="#Car_Battery"/>
+  <owl:disjointWith rdf:resource="#Industrial_Company"/>
+  <owl:disjointWith rdf:resource="#Semiconductor"/>
+  <owl:disjointWith rdf:resource="#Semiconductor_Company"/>
+  <owl:disjointWith rdf:resource="#Vehicle"/>
+  <owl:disjointWith rdf:resource="#Voltage_Class"/>
+  <rdfs:comment xml:lang="en">A battery pack is a set of battery modules, a BMS and several further components.
+The main components of a battery pack are:
+- battery modules, including a BMS slave each
+- high-voltage module
+- Battery Management System Master 
+- cooling system
+- wiring 
+
+A battery pack has three main interfaces to outside systems: 
+- coolant connection
+- CAN interface
+- Service Plug and Power Supply.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_Pack</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery_Module_Housing">
+  <owl:disjointWith rdf:resource="#Battery_Pack"/>
+  <owl:disjointWith rdf:resource="#Battery_Pack_Housing"/>
+  <owl:disjointWith rdf:resource="#Battery_Type"/>
+  <owl:disjointWith rdf:resource="#Car_Battery"/>
+  <owl:disjointWith rdf:resource="#Car_Company"/>
+  <owl:disjointWith rdf:resource="#Industrial_Company"/>
+  <owl:disjointWith rdf:resource="#Semiconductor"/>
+  <owl:disjointWith rdf:resource="#Semiconductor_Company"/>
+  <owl:disjointWith rdf:resource="#Transportation_CO2_Savings_Enabler"/>
+  <owl:disjointWith rdf:resource="#Vehicle"/>
+  <owl:disjointWith rdf:resource="#Voltage_Class"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_Module_Housing</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery_Module_Company">
+  <rdfs:subClassOf rdf:resource="#Battery_Company"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_Module_Manufacturer</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#High_Voltage_Battery">
+  <rdfs:subClassOf rdf:resource="#Battery_Voltage_Class"/>
+  <owl:disjointWith rdf:resource="#Onboard_Electronics_Network_Battery"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HV_Battery</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Traction_Battery">
+  <rdfs:subClassOf rdf:resource="#Car_Battery"/>
+  <rdfs:subClassOf rdf:resource="#High_Voltage_Battery"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Traction Batteries are car batteries with high voltage, that supply the electric traction motors of e-cars. 
+Hence, traction batteries are both car batteries and high voltage batteries. This leads inevitably to a multiple inheritance situation for this class.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Traction_Battery</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery_Pack_Housing">
+  <owl:disjointWith rdf:resource="#Battery_Type"/>
+  <owl:disjointWith rdf:resource="#Car_Battery"/>
+  <owl:disjointWith rdf:resource="#Industrial_Company"/>
+  <owl:disjointWith rdf:resource="#Voltage_Class"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_Pack_Housing</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery_Pack_Company">
+  <rdfs:subClassOf rdf:resource="#Battery_Company"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_Pack_Manufacturer</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery_Company">
+  <rdfs:subClassOf rdf:resource="#Industrial_Company"/>
+  <owl:disjointWith rdf:resource="#Battery_Module_Housing"/>
+  <owl:disjointWith rdf:resource="#Battery_Pack_Housing"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_Company</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery_Type">
+  <owl:disjointWith rdf:resource="#Industrial_Company"/>
+  <owl:disjointWith rdf:resource="#Semiconductor"/>
+  <owl:disjointWith rdf:resource="#Semiconductor_Company"/>
+  <owl:disjointWith rdf:resource="#Vehicle"/>
+  <owl:disjointWith rdf:resource="#Voltage_Class"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_Type</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery_Cooling_System">
+  <owl:disjointWith rdf:resource="#Battery_Management_System"/>
+  <owl:disjointWith rdf:resource="#Battery_Module_Construction_Type"/>
+  <owl:disjointWith rdf:resource="#Industrial_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A battery cooling system is part of a battery pack. Its purpose is to cool, but also to heat if needed, the battery modules in the battery pack.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_Cooling_System</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Current_Sensing">
+  <rdfs:subClassOf rdf:resource="#BMS_Functional_Block"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Current_Sensing</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Current_Sensor">
+  <rdfs:subClassOf rdf:resource="#Semiconductor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Current_Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#High_Voltage_Class">
+  <rdfs:subClassOf rdf:resource="#Voltage_Class"/>
+  <owl:disjointWith rdf:resource="#Low_Voltage_Class"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">High_Voltage_Class</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery_High_Voltage_System">
+  <owl:disjointWith rdf:resource="#Industrial_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A battery high voltage system is part of a battery pack. 
+It consists of relay, fuses, pre-charge and current measuring system, insulation monitoring etc.
+
+The High-voltage system and the BMS are different entities, both physically and regarding their functionality. 
+However, there seem to exist strong interdependencies between these systems. 
+According to VDMA and RWTH Aachen the BMS controls the high-voltage system. 
+
+And, it seems that also the high-voltage system contains semiconductors!!</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_HV_System</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery_Pack_HV_System_Component">
+  <owl:disjointWith rdf:resource="#Industrial_Company"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_Pack_HV_System_Component</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Lithium-Ferrophosphate_Battery_Management_System">
+  <rdfs:subClassOf rdf:resource="#Battery_Management_System"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Full name: Lithium-Ferrophosphate Battery Management System</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LFP_BMS</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Lithium-Ferrophosphate_Battery_Module">
+  <rdfs:subClassOf rdf:resource="#Battery_Module"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LFP_Battery_Module</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Lithium-Ferrophosphate_Battery_Cell">
+  <rdfs:subClassOf rdf:resource="#Battery_Cell"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery cell of Lithium-Ferrophosphate batteries. 
+
+The cathodes of LiFePO4 batteries consist of Lithium-Ferrophosphate.
+
+Typical cell currency is 3.2 to 3.3 Volt.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LFP_Battery_Cell</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LiFePO4_Battery_Cell</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Lithium-Ferrophosphate_Battery_Pack">
+  <rdfs:subClassOf rdf:resource="#Battery_Pack"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LFP_Battery_Pack</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#LFP_Traction_Battery">
+  <rdfs:subClassOf rdf:resource="#Lithium-Ferrophosphate_Battery"/>
+  <rdfs:subClassOf rdf:resource="#Traction_Battery"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LFP batteries are not so widely used as traction batteries of cars as traditional Li-Ion batteries or Lithium-Polymere batteries. 
+The main disadvantage of LFP batteries is the lower cell voltage of 3.2 to 3.3 Volt compared to 3.6 V of Li-Ion cells with Lithium-Cobalt basis and 3.7 V of Lithium-Polymere cells). 
+But they have significant advantages in terms of safety, as they cannot come into a thermic interference ("thermisches Durchgehen") and hence cannot start to burn from thereselves. 
+
+Tesla tested LFP traction batteries for its Model 3, and BYD started to use them widely. BYD produces LFP cells by themselves. They also offer the first E-bus with LFP traction battery.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LFP_Traction_Battery</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Li-Ion_Battery_Management_System">
+  <rdfs:subClassOf rdf:resource="#Battery_Management_System"/>
+  <owl:disjointWith rdf:resource="#Lithium-Ferrophosphate_Battery_Management_System"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Li-Ion_BMS</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Li-Ion_Battery_Module">
+  <rdfs:subClassOf rdf:resource="#Battery_Module"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Li-Ion_Battery_Module</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Lithium-Ion_Battery_Cell">
+  <rdfs:subClassOf rdf:resource="#Battery_Cell"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The base technology in Lithium-Ion cells are cathods from Lithium-Cobalt(III)-Oxid (LiCoO2).
+
+Typical cell currency is 3.6 Volt.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Li-Ion_Battery_Cell</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Lithium-Ion_Battery_Pack">
+  <rdfs:subClassOf rdf:resource="#Battery_Pack"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Li-Ion_Battery_Pack</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Lithium-Ion_High_Voltage_Battery">
+  <rdfs:subClassOf rdf:resource="#High_Voltage_Battery"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Li-Ion_HV_Battery</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Lithium-Ion_Traction_Battery">
+  <rdfs:subClassOf rdf:resource="#Lithium-Ion_Battery"/>
+  <rdfs:subClassOf rdf:resource="#Traction_Battery"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Lithium-Ion traction battery of an e-car is both a traction battery and a Lithium-Ion battery. 
+Hence, this class is subclass of two different classes, on the one hand of a car battery and on the other hand of a battery type. 
+So it inherits properties from the "purpose" class as well as of the "type" class.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Li-Ion_Traction_Battery</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Onboard_Electronics_Network_Battery">
+  <rdfs:subClassOf rdf:resource="#Car_Battery"/>
+  <owl:disjointWith rdf:resource="#Traction_Battery"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Onboard_Electronics_Battery</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Low_Voltage_Class">
+  <rdfs:subClassOf rdf:resource="#Voltage_Class"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Low_Voltage_Class</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery_Control_Unit">
+  <rdfs:subClassOf rdf:resource="#BMS_Functional_Block"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_Control_Unit</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Microcontroller">
+  <rdfs:subClassOf rdf:resource="#Semiconductor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Microcontroller</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Cell_Supervision">
+  <rdfs:subClassOf rdf:resource="#BMS_Functional_Block"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cell_Supervision</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Multichannel_Battery_Monitoring_Integrated_Circuit">
+  <rdfs:subClassOf rdf:resource="#Semiconductor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Multichannel_Battery_Monitoring_IC</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Pack_Monitoring">
+  <rdfs:subClassOf rdf:resource="#BMS_Functional_Block"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_Pack_Monitoring</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Multichannel_Controller_Integrated_Circuit">
+  <rdfs:subClassOf rdf:resource="#Semiconductor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Multichannel_Controller_IC</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Power_Management_Integrated_Circuit">
+  <rdfs:subClassOf rdf:resource="#Semiconductor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Power_Management_IC</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Pressure_Sensor">
+  <rdfs:subClassOf rdf:resource="#Semiconductor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pressure_Sensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Semiconductor">
+  <owl:disjointWith rdf:resource="#Semiconductor_Company"/>
+  <owl:disjointWith rdf:resource="#Transportation_CO2_Savings_Enabler"/>
+  <owl:disjointWith rdf:resource="#Vehicle"/>
+  <owl:disjointWith rdf:resource="#Voltage_Class"/>
+  <rdfs:comment xml:lang="en">Semiconductor is an eletronic device which electrical conductivity value is between an insulator and a conductor. In this case, constitutes the battery management system.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Semiconductor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Semiconductor_Company">
+  <rdfs:subClassOf rdf:resource="#Industrial_Company"/>
+  <owl:disjointWith rdf:resource="#Vehicle"/>
+  <owl:disjointWith rdf:resource="#Voltage_Class"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Company responsible for the manufacturing of semiconductors.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Semiconductor_Company</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Electric_Vehicle">
+  <rdfs:subClassOf rdf:resource="#Vehicle"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Electric_Vehicle</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Isolated_Communication">
+  <rdfs:subClassOf rdf:resource="#BMS_Functional_Block"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Isolated_Communication</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#UART_Transceiver_Integrated_Circuit">
+  <rdfs:subClassOf rdf:resource="#Semiconductor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UART_Transceiver_IC</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Car_Company">
+  <rdfs:subClassOf rdf:resource="#Industrial_Company"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Car_Manufacturer</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Voltage_Class">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The voltage class is the most important property of batteries. It is often used to separate batteries into different classes, like HV battery for High Voltage battery. Hence, the voltage classes are modelled in this ontology explicitely.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Voltage_Class</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Electric_Passenger_Car">
+  <rdfs:subClassOf rdf:resource="#Electric_Vehicle"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E-Car</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Absorbant_Glass_Mat_Battery">
+  <rdfs:subClassOf rdf:resource="#Onboard_Electronics_Network_Battery"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The AGM battery is versatile, powerful and designed for high demands. At its core, the structure of an AGM is no different from that of a wet battery. However, the electrolyte in an AGM is no longer free-floating but bound in a special glass fiber separator - hence the name "absorbent glass mat". The large contact area achieved in this way contributes to the high power output and also makes the battery leak-proof. Due to its design, the battery is hermetically sealed. This special feature enables the internal recombination of oxygen and hydrogen, so that there is no loss of water. To protect against impermissible overpressure, the individual battery cells are equipped with a safety overpressure valve, so that safety is guaranteed even in the event of a fault.
+
+The AGM battery also has significant advantages over simple starter batteries in terms of service life. An AGM battery can handle three times as many charging cycles as a conventional starter battery. Another advantage of the AGM battery is that it is position-independent, since the material integration of the electrolyte means that no liquid can leak out. Even if the battery housing breaks, no battery acid can leak out.
+
+An AGM battery is the ideal energy storage system for vehicles with automatic start-stop systems with braking energy recovery (recuperation), since a conventional starter battery cannot meet the high performance requirements of these systems. But the AGM battery is also the right choice for cars that have a high energy demand and a large number of electrical consumers on board.
+
+Source: Varta (https://batteryworld.varta-automotive.com/de-de/batterietypen-sli-efb-agm-unterschiede)</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGM_Battery</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery_Module_Construction_Type">
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_Module_Construction_Type</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Industrial_Company">
+  <owl:disjointWith rdf:resource="#Semiconductor"/>
+  <owl:disjointWith rdf:resource="#Transportation_CO2_Savings_Enabler"/>
+  <owl:disjointWith rdf:resource="#Vehicle"/>
+  <owl:disjointWith rdf:resource="#Voltage_Class"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Industrial_Company</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#BMS_Master_Module">
+  <rdfs:subClassOf rdf:resource="#BMS_Constructive_Block"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BMS_Master_Module</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#BMS_Slave_Module">
+  <rdfs:subClassOf rdf:resource="#BMS_Constructive_Block"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A BMS slave module is physical part of a battery module and logically part of the Battery Management System of the battery pack. 
+The BMS consists of one BMS master and one BMS slave for each battery module.
+
+A BMS slave can either consist of a slave circuit board and several temperature and voltage sensors and a contacting unit, 
+or can be a completely integrated system. The latter is modeled in this ontology as class Semiconductor - Multichannel_Battery_Monitoring_IC with an Infineon product as instance.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BMS_Slave_Module</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Transportation_CO2_Savings_Enabler">
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transportation_CO2_Savings_Enabler</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery_Electric_Bus">
+  <rdfs:subClassOf rdf:resource="#Electric_Bus"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_Electric_Bus</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Electric_Bus">
+  <rdfs:subClassOf rdf:resource="#Electric_Vehicle"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E-Bus</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery_Electric_Truck">
+  <rdfs:subClassOf rdf:resource="#Electric_Truck"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_Electric_Truck</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Electric_Truck">
+  <rdfs:subClassOf rdf:resource="#Electric_Vehicle"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E-Truck</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Battery_Voltage_Class">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Class that allows to classify batteries according to their voltage. Most important sub class is High Voltage Battery (HV battery). But there are low voltage batteries as well.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battery_Voltage_Class</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Conventional_Bus">
+  <rdfs:subClassOf rdf:resource="#Conventional_Vehicle"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conventional_Bus</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Conventional_Vehicle">
+  <rdfs:subClassOf rdf:resource="#Vehicle"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conventional_Vehicle</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Conventional_Light_Commercial_Vehicle">
+  <rdfs:subClassOf rdf:resource="#Conventional_Vehicle"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conventional_Van</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Conventional_Passenger_Car">
+  <rdfs:subClassOf rdf:resource="#Conventional_Vehicle"/>
+  <owl:disjointWith rdf:resource="#Electric_Passenger_Car"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conventional_Passenger_Car</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Conventional_Truck">
+  <rdfs:subClassOf rdf:resource="#Conventional_Vehicle"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conventional_Truck</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Current_Measuring_System">
+  <rdfs:subClassOf rdf:resource="#Battery_Pack_HV_System_Component"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Current_Measuring_System</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Electric_Means_Transportation">
+  <rdfs:subClassOf rdf:resource="#Transportation_CO2_Savings_Enabler"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Electric_Means_Transportation</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Enhanced_Flooded_Battery">
+  <rdfs:subClassOf rdf:resource="#Onboard_Electronics_Network_Battery"/>
+  <rdfs:comment xml:lang="de">Die EFB-Batterie – viele Ladezyklen und lange Lebensdauer
+
+Die EFB-Batterie ist eine optimierte und leistungsgesteigerte Version der Nassbatterie. Das Kürzel „EFB“ steht für „enhanced flooded battery“. Auch hier sind die Platten mit einem mikroporösen Separator voneinander isoliert. Zwischen Platte und Separator befindet sich zudem ein Polyester-Scrim. Dieses Material hilft, das aktive Material der Platten zu stabilisieren und die Lebensdauer der Batterie zu verlängern. Die EFB-Batterie überzeugt durch eine hohe Zahl an möglichen Ladezyklen und bietet mehr als doppelt so hohe Teilentladungs- und Tiefentladungsleistung im Vergleich mit konventionellen Batterien.
+
+Oft wird die EFB-Batterie in Fahrzeugen mit einfacher Start-Stopp-Automatik verbaut. Aufgrund der überlegenen Leistung wird aber auch vermehrt beim Ersatz der herkömmlichen Blei-Säure zu einer Batterie mit EFB-Technologie gegriffen.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enhanced Flooded Batteries (EFB) are optimized and power-enhanced versions of SLI batteries.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EF_Battery</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Fuel_Cell_Electric_Bus">
+  <rdfs:subClassOf rdf:resource="#Electric_Bus"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel_Cell_Bus</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Fuel_Cell_Electric_Car">
+  <rdfs:subClassOf rdf:resource="#Electric_Passenger_Car"/>
+  <owl:disjointWith rdf:resource="#Fully_Electric_Car"/>
+  <owl:disjointWith rdf:resource="#Plugin_Hybrid_Car"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel_Cell_Car</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Fully_Electric_Car">
+  <rdfs:subClassOf rdf:resource="#Electric_Passenger_Car"/>
+  <owl:disjointWith rdf:resource="#Plugin_Hybrid_Car"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fully_Electric_Car</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Plugin_Hybrid_Car">
+  <rdfs:subClassOf rdf:resource="#Electric_Passenger_Car"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plugin_Hybrid_Car</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Fuel_Cell_Electric_Truck">
+  <rdfs:subClassOf rdf:resource="#Electric_Truck"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel_Cell_Truck</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Fuse">
+  <rdfs:subClassOf rdf:resource="#Battery_Pack_HV_System_Component"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuse</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Insulation_Monitoring">
+  <rdfs:subClassOf rdf:resource="#Battery_Pack_HV_System_Component"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Insulation_Monitoring_System</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#LFP_BMS_Master_Module">
+  <rdfs:subClassOf rdf:resource="#BMS_Master_Module"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LFP_BMS_Master_Module</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#LFP_BMS_Slave_Module">
+  <rdfs:subClassOf rdf:resource="#BMS_Slave_Module"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LFP_BMS_Slave_Module</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#LFP_Onboard_Electronics_Battery">
+  <rdfs:subClassOf rdf:resource="#Lithium-Ferrophosphate_Battery"/>
+  <rdfs:subClassOf rdf:resource="#Onboard_Electronics_Network_Battery"/>
+  <owl:disjointWith rdf:resource="#LFP_Traction_Battery"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LFP_Onboard_Electronics_Battery</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Lithium-Ferrophosphate_Battery">
+  <rdfs:subClassOf rdf:resource="#Battery_Type"/>
+  <owl:disjointWith rdf:resource="#Lithium-Ion_Battery"/>
+  <owl:disjointWith rdf:resource="#Nickel_Cadmium_Accumulator"/>
+  <owl:disjointWith rdf:resource="#Nickel_Metal_Hydride_Accumulator"/>
+  <rdfs:comment xml:lang="de">Lithium-Eisenphosphat-Batterien (LiFePO4):
+Die vielen technischen Vorteile der innovativen Lithium-Technologie waren bislang meist nur bei Versorgungsbatterien zu finden, so zum Beispiel auch bei der Traction-LFP-Serie von Accurat. Mit der Accurat Impulse LFP nutzen Sie diese innovative Technologie nun auch als Starterbatterie für ihr Fahrzeug.
+
+Die Lithium-Eisenphosphat-Batterien, kurz LiFePO4 oder LFP genannt, gelten als die sichersten Lithium-Batterien und setzen neue Maßstäbe im Bereich der Starterbatterien. In Standard-Batteriegehäusen sind diese Batterien sofort einsatzbereit und 1:1 gegen herkömmliche Blei-, EFB- oder AGM-Batterien austauschbar.
+
+Der extrem geringe Innenwiderstand der LFP-Batterien bewirkt eine einzigartige Hochstromfähigkeit. Hierdurch kann die Lichtmaschine ihres Fahrzeugs die Batterie in kürzerer Zeit mit deutlich höheren Strömen aufladen.
+
+Ob Leistungsabgabe, Ausdauer, Schnellladefähigkeit, Gewicht oder Kapazität – eine Accurat Impulse LFP punktet mit vielen technischen Vorzügen, die eine zuverlässige Stromversorgung garantieren.
+
+Accurat Impulse Batterien mit LFP-Technologie überzeugen mit ihrer Leistung, Gewicht – und Sicherheit. Dank ihrer Bauart und dem intelligenten Batterie-Management-System (BMS) sind alle Modelle geschützt vor Überladung, Kurzschluss und Überhitzung. Lithium-Batterien können Sie so überall problemlos verbauen – auch bei Umgebungstemperaturen von über 50 °C. Und dank ihrer geringen Selbstentladung lassen Sie sich ganz einfach lagern – garantiert ohne Gasung.
+
+Source: Accurat (https://www.autobatterienbilliger.de/Accurat-Impulse-I20L3-Lithium-Autobatterie-20Ah-LiFePO4)</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LFP_Battery</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Lead_Acid_Battery">
+  <rdfs:subClassOf rdf:resource="#Battery_Type"/>
+  <owl:disjointWith rdf:resource="#Lithium-Ferrophosphate_Battery"/>
+  <owl:disjointWith rdf:resource="#Lithium-Ion_Battery"/>
+  <owl:disjointWith rdf:resource="#Nickel_Cadmium_Accumulator"/>
+  <owl:disjointWith rdf:resource="#Nickel_Metal_Hydride_Accumulator"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lead-Acid-Batteries (Blei-Säure-Batterien) are traditional car onboard electronics batteries. 
+They are included in this ontology just as a second battery type different from Lithium-Ion batteries.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lead_Acid_Battery</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Lithium-Ion_Battery">
+  <rdfs:subClassOf rdf:resource="#Battery_Type"/>
+  <owl:disjointWith rdf:resource="#Nickel_Cadmium_Accumulator"/>
+  <owl:disjointWith rdf:resource="#Nickel_Metal_Hydride_Accumulator"/>
+  <rdfs:comment xml:lang="en">A Lithium-Ion Battery consists of a set of battery packs and a battery management system.
+
+The base technology in Lithium-Ion batteries are Lithium-Ion cells with Lithium-Cobalt(III)-Oxid (LiCoO2).</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Li-Ion_Battery</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Nickel_Cadmium_Accumulator">
+  <rdfs:subClassOf rdf:resource="#Battery_Type"/>
+  <owl:disjointWith rdf:resource="#Nickel_Metal_Hydride_Accumulator"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NiCd-Accu</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Nickel_Metal_Hydride_Accumulator">
+  <rdfs:subClassOf rdf:resource="#Battery_Type"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nickel_Metal_Hydride_Accumulator</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NiMH-Accu</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Lead_Acid_Onboard_Electronics_Battery">
+  <rdfs:subClassOf rdf:resource="#Lead_Acid_Battery"/>
+  <rdfs:subClassOf rdf:resource="#Starting_Lighting_Ignition_Battery"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lead_Acid_Onboard_Electronics_Battery</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Starting_Lighting_Ignition_Battery">
+  <rdfs:subClassOf rdf:resource="#Onboard_Electronics_Network_Battery"/>
+  <rdfs:comment xml:lang="de">Die Nassbatterie (SLI) – bewährt und wirtschaftlich
+
+Eine konventionelle Starterbatterie besteht aus sechs Batteriezellen. Eine Batteriezelle, auch Plattenblock genannt, besteht aus einem positiven und einem negativen Plattensatz, die wiederum aus mehreren Elektroden bestehen.
+Eine positive Elektrode setzt sich aus aktiver Masse aus Bleioxid und einem positiven Gitter aus einer Bleilegierung zusammen. Die Gittergerüste verleihen den Elektroden eine solide Struktur und dienen gleichzeitig als Stromleiter. Die aktive Masse ist in einen Elektrolyt, ein Gemisch aus Säure und destilliertem Wasser, getaucht.
+Eine negative Elektrode setzt sich ebenfalls aus aktiver Masse, hier jedoch bestehend aus purem Blei, und einem negativen Gitter zusammen. Getrennt werden die Elektroden unterschiedlicher Ladung von einem Separator. Durch eine Parallelschaltung der einzelnen Platten in den Zellen wird die benötigte Kapazität einer Batterie erreicht. Aus der Reihenschaltung der einzelnen Zellen ergibt sich die benötigte Spannungsladung von 12 Volt.
+
+Herkömmliche Batterien, wie Blei-Säure-Batterien, gehören zur gängigsten Batterietype. Diese Technologie wird häufig als SLI bezeichnet, was auf die Hauptaufgabe einer Batterie im Fahrzeug zurückgeht: Starting, Lighting, Ignition (Start, Licht, Zündung). Sie eigenen sich für Fahrzeuge ohne Start-Stopp-Technologie und einer moderaten Anzahl von elektrischen Verbrauchern.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SLI- (Starting, Lighting, Ignition) Batteries are the simplest types of car batteries. They are appropriate for cars without start-stopp technology and with low to medium number of electronic consumers.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SLI_Battery</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Li-Ion_BMS_Master_Module">
+  <rdfs:subClassOf rdf:resource="#BMS_Master_Module"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Li-Ion_BMS_Master_Module</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Li-Ion_BMS_Slave_Module">
+  <rdfs:subClassOf rdf:resource="#BMS_Slave_Module"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Li-Ion_BMS_Slave_Module</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Lithium-Ferrophosphate_High_Voltage_Battery">
+  <rdfs:subClassOf rdf:resource="#High_Voltage_Battery"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LFP_HV_Battery</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Lithium-Ion_Onboard_Electronics_Battery">
+  <rdfs:subClassOf rdf:resource="#Lithium-Ion_Battery"/>
+  <rdfs:subClassOf rdf:resource="#Onboard_Electronics_Network_Battery"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Li-Ion_Onboard_Electronics_Battery</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Longer_Lifespan">
+  <rdfs:subClassOf rdf:resource="#Battery_CO2_Savings_Enabler"/>
+  <rdfs:comment xml:lang="en">Longer life cycle refers to the number of extra cycles of the battery due good handling throught its lifecycle. It is a way of CO2 savings.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Longer_Lifespan</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Optimized_Charging">
+  <rdfs:subClassOf rdf:resource="#Battery_CO2_Savings_Enabler"/>
+  <rdfs:comment xml:lang="en">Second life means that the Lithium-Ion battery has ceased its main activity, in this case powering an electric car, however, it is still able to be used for other purposes.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Optimized_Charging</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Pouch_Cell_Battery_Module_Type">
+  <rdfs:subClassOf rdf:resource="#Battery_Module_Construction_Type"/>
+  <owl:disjointWith rdf:resource="#Prismatic_Cell_Battery_Module_Type"/>
+  <owl:disjointWith rdf:resource="#Round_Cell_Battery_Module_Type"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is important to note that the pouch cells expands/shrinks in its thickness during the charging or discharging cycle.
+● Each pouch cell is inserted into a frame.
+● Due to the swelling of the cells, the frames are arrested flexible by springs.
+● Cooling in a pouch module is optional and can be served by either convective or liquid coolant.
+● For example, pouch cells can be serial connected and cooled via U-profiles.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pouch_Cell_Module_Type</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Prismatic_Cell_Battery_Module_Type">
+  <rdfs:subClassOf rdf:resource="#Battery_Module_Construction_Type"/>
+  <owl:disjointWith rdf:resource="#Round_Cell_Battery_Module_Type"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prismatic cells can be installed without remaining gaps.
+● The individual cells are glued together.
+● The adhesive film serves both as electrical and thermal insulator in the event of an accident.
+● The cells are clamped with a bandage and/or a plastic or metal housing.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prismatic_Cell_Module_Type</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Round_Cell_Battery_Module_Type">
+  <rdfs:subClassOf rdf:resource="#Battery_Module_Construction_Type"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In the architecture of a round cell module, the cells are fixed by the module case.
+● The space between the cells can be used by a cooling system or direct cooling.
+● The metal housing prevents the cell from swelling.
+● At module level, the cells can be connected both serial and parallel.
+● The cells are contacted via a metal plate on both sides.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Round_Cell_Module_Type</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Pre_Charge_Measuring_System">
+  <rdfs:subClassOf rdf:resource="#Battery_Pack_HV_System_Component"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pre-charge_Measuring_System</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Relay">
+  <rdfs:subClassOf rdf:resource="#Battery_Pack_HV_System_Component"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relay</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Trolley_Bus">
+  <rdfs:subClassOf rdf:resource="#Electric_Bus"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A trolleybus (also known as trolley bus, trolley coach, trackless trolley, trackless tram – in the 1910s and 1920s[1] – or trolley[2][3]) is an electric bus that draws power from dual overhead wires (generally suspended from roadside posts) using spring-loaded trolley poles. Two wires, and two trolley poles, are required to complete the electrical circuit. This differs from a tram or streetcar, which normally uses the track as the return path, needing only one wire and one pole (or pantograph). They are also distinct from other kinds of electric buses, which usually rely on batteries. Power is most commonly supplied as 600-volt direct current, but there are exceptions.
+
+Currently, around 300 trolleybus systems are in operation, in cities and towns in 43 countries.[4] Altogether, more than 800 trolleybus systems have existed, but not more than about 400 concurrently</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trolley_Bus</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Trolley_Truck">
+  <rdfs:subClassOf rdf:resource="#Electric_Truck"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trolley_Truck</rdfs:label>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#AURIX_TC3xx">
+  <rdf:type rdf:resource="#Microcontroller"/>
+  <owl:differentFrom rdf:resource="#Infineon_Technologies_AG"/>
+  <owl:differentFrom rdf:resource="#KP256"/>
+  <owl:differentFrom rdf:resource="#OPTIREG_PMIC"/>
+  <owl:differentFrom rdf:resource="#PSoC_HVPA"/>
+  <owl:differentFrom rdf:resource="#TLE4972"/>
+  <owl:differentFrom rdf:resource="#TLE9012DQU"/>
+  <owl:differentFrom rdf:resource="#TLE9015DQU"/>
+  <owl:differentFrom rdf:resource="#1000V"/>
+  <owl:differentFrom rdf:resource="#12V"/>
+  <owl:differentFrom rdf:resource="#1200V"/>
+  <owl:differentFrom rdf:resource="#400V"/>
+  <owl:differentFrom rdf:resource="#48V"/>
+  <owl:differentFrom rdf:resource="#800V"/>
+  <is_MicroControllerOf rdf:resource="#Sample_Infineon_BCU_FB"/>
+  <is_SemiconductorProductOf rdf:resource="#Infineon_Technologies_AG"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Infineon’s AURIX™- TC3xx microcontroller family with its up to hexa-core high performance architecture and its advanced features for connectivity, security and functional safety, is ideally suited for a wide range of automotive and industrial applications. In addition to engine management and transmission control, targeted powertrain applications include new systems in electrical and hybrid drives. The combination of performance and a powerful safety architecture makes this family of microcontrollers (MCU) the ideal fit for ASIL-D compliant domain control and data fusion applications supporting the next levels of autonomous driving.
+(https://www.infineon.com/cms/en/product/microcontroller/32-bit-tricore-microcontroller/32-bit-tricore-aurix-tc3xx/)</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Infineon_Technologies_AG">
+  <rdf:type rdf:resource="#Semiconductor_Company"/>
+  <owl:differentFrom rdf:resource="#KP256"/>
+  <owl:differentFrom rdf:resource="#OPTIREG_PMIC"/>
+  <owl:differentFrom rdf:resource="#PSoC_HVPA"/>
+  <owl:differentFrom rdf:resource="#TLE4972"/>
+  <owl:differentFrom rdf:resource="#TLE9012DQU"/>
+  <owl:differentFrom rdf:resource="#TLE9015DQU"/>
+  <owl:differentFrom rdf:resource="#1000V"/>
+  <owl:differentFrom rdf:resource="#12V"/>
+  <owl:differentFrom rdf:resource="#1200V"/>
+  <owl:differentFrom rdf:resource="#400V"/>
+  <owl:differentFrom rdf:resource="#48V"/>
+  <owl:differentFrom rdf:resource="#800V"/>
+  <has_Semiconductor_Product rdf:resource="#AURIX_TC3xx"/>
+  <has_Semiconductor_Product rdf:resource="#KP256"/>
+  <has_Semiconductor_Product rdf:resource="#OPTIREG_PMIC"/>
+  <has_Semiconductor_Product rdf:resource="#PSoC_HVPA"/>
+  <has_Semiconductor_Product rdf:resource="#TLE4972"/>
+  <has_Semiconductor_Product rdf:resource="#TLE9012DQU"/>
+  <has_Semiconductor_Product rdf:resource="#TLE9015DQU"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#KP256">
+  <rdf:type rdf:resource="#Pressure_Sensor"/>
+  <owl:differentFrom rdf:resource="#OPTIREG_PMIC"/>
+  <owl:differentFrom rdf:resource="#PSoC_HVPA"/>
+  <owl:differentFrom rdf:resource="#TLE4972"/>
+  <owl:differentFrom rdf:resource="#TLE9012DQU"/>
+  <owl:differentFrom rdf:resource="#TLE9015DQU"/>
+  <owl:differentFrom rdf:resource="#1000V"/>
+  <owl:differentFrom rdf:resource="#12V"/>
+  <owl:differentFrom rdf:resource="#1200V"/>
+  <owl:differentFrom rdf:resource="#400V"/>
+  <owl:differentFrom rdf:resource="#48V"/>
+  <owl:differentFrom rdf:resource="#800V"/>
+  <is_PressureSensorOf rdf:resource="#Sample_Infineon_BCU_FB"/>
+  <is_SemiconductorProductOf rdf:resource="#Infineon_Technologies_AG"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The KP256 is a miniaturized Digital Barometric Air Pressure Sensor IC based on a capacitive principle. It is surface micromachined with a monolithic integrated signal conditioning circuit implemented in BiCMOS technology. The sensor converts a pressure into a 10-bit digital value and sends the information via the SPI interface. In addition, a temperature sensor is integrated on chip. Based on the received SPI command, the 10-bit temperature information will be transmitted via the SPI interface. A special reliability feature is the integrated diagnostic mode, which allows testing the sensor cells as well as the signal path. This diagnosis can be simply triggered with a SPI command. The chip is packaged in a “green” SMD housing. The sensor has been primarily developed for measuring barometric air pressure, but can also be used in other application fields. The high accuracy, high sensitivity and reliability features of the device makes it a perfect fit for advanced automotive applications as well as in industrial and consumer applications.
+(https://www.infineon.com/cms/en/product/sensor/pressure-sensors/barometric-bap-manifold-map-sensors/kp256/)</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#OPTIREG_PMIC">
+  <rdf:type rdf:resource="#Power_Management_Integrated_Circuit"/>
+  <owl:differentFrom rdf:resource="#PSoC_HVPA"/>
+  <owl:differentFrom rdf:resource="#TLE4972"/>
+  <owl:differentFrom rdf:resource="#TLE9012DQU"/>
+  <owl:differentFrom rdf:resource="#TLE9015DQU"/>
+  <owl:differentFrom rdf:resource="#1000V"/>
+  <owl:differentFrom rdf:resource="#12V"/>
+  <owl:differentFrom rdf:resource="#1200V"/>
+  <owl:differentFrom rdf:resource="#400V"/>
+  <owl:differentFrom rdf:resource="#48V"/>
+  <owl:differentFrom rdf:resource="#800V"/>
+  <is_PowerManagementICOf rdf:resource="#Sample_Infineon_BCU_FB"/>
+  <is_SemiconductorProductOf rdf:resource="#Infineon_Technologies_AG"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Infineon OPTIREG™ PMIC products are power management integrated circuits consisting of integrated, multi-rail supply solutions for demanding automotive systems in segments like chassis, safety, ADAS, powertrain, and drive train.
+This PMIC chipset has efficient, reliable and safe voltage regulation, including pre- and post-regulator architectures, and DCDC-, linear, and tracking regulators. Besides power supply, additional monitoring and supervision functions enable reliable and easy design of the safety concept for ECUs.
+(https://www.infineon.com/cms/en/product/power/power-management-ics-pmic-system-basis-chips-sbc/power-management-ics-pmic/optireg-pmic-automotive/)</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#PSoC_HVPA">
+  <rdf:type rdf:resource="#Multichannel_Controller_Integrated_Circuit"/>
+  <owl:differentFrom rdf:resource="#TLE4972"/>
+  <owl:differentFrom rdf:resource="#TLE9012DQU"/>
+  <owl:differentFrom rdf:resource="#TLE9015DQU"/>
+  <owl:differentFrom rdf:resource="#1000V"/>
+  <owl:differentFrom rdf:resource="#12V"/>
+  <owl:differentFrom rdf:resource="#1200V"/>
+  <owl:differentFrom rdf:resource="#400V"/>
+  <owl:differentFrom rdf:resource="#48V"/>
+  <owl:differentFrom rdf:resource="#800V"/>
+  <is_MultiChannelControllerICOf rdf:resource="#Sample_Infineon_Pack_Monitoring_FB"/>
+  <is_SemiconductorProductOf rdf:resource="#Infineon_Technologies_AG"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PSoC™ 4 HV Precision Analog (PA) is a fully integrated programmable embedded system for battery monitoring and management. The system features an Arm® Cortex® M0+ processor and programmable and reconfigurable analog and digital blocks. The PSoC™ 4 HV PA will be offered in a 32-QFN package with wettable flanks.
+
+The PSoC™ HVPA is Automotive Electronics Council (AEC)-Q100 qualified.
+(https://www.infineon.com/cms/en/product/microcontroller/32-bit-psoc-arm-cortex-microcontroller/32-bit-psoc-4-hv-arm-cortex-m0/psoc-4-hv-pa/ )</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#TLE4972">
+  <rdf:type rdf:resource="#Current_Sensor"/>
+  <owl:differentFrom rdf:resource="#TLE9012DQU"/>
+  <owl:differentFrom rdf:resource="#TLE9015DQU"/>
+  <owl:differentFrom rdf:resource="#1000V"/>
+  <owl:differentFrom rdf:resource="#12V"/>
+  <owl:differentFrom rdf:resource="#1200V"/>
+  <owl:differentFrom rdf:resource="#400V"/>
+  <owl:differentFrom rdf:resource="#48V"/>
+  <owl:differentFrom rdf:resource="#800V"/>
+  <is_CurrentSensorOf rdf:resource="#Sample_Infineon_Current_Sensing_FB"/>
+  <is_SemiconductorProductOf rdf:resource="#Infineon_Technologies_AG"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#TLE9012DQU">
+  <rdf:type rdf:resource="#Multichannel_Battery_Monitoring_Integrated_Circuit"/>
+  <owl:differentFrom rdf:resource="#TLE9015DQU"/>
+  <owl:differentFrom rdf:resource="#1000V"/>
+  <owl:differentFrom rdf:resource="#12V"/>
+  <owl:differentFrom rdf:resource="#1200V"/>
+  <owl:differentFrom rdf:resource="#400V"/>
+  <owl:differentFrom rdf:resource="#48V"/>
+  <owl:differentFrom rdf:resource="#800V"/>
+  <is_MultiChannelBatteryMonitorICOf rdf:resource="#Sample_Infineon_Cell_Supervision_FB"/>
+  <is_SemiconductorProductOf rdf:resource="#Infineon_Technologies_AG"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The TLE9012DQU is a multi-channel battery monitoring and balancing IC designed for Li-Ion battery packs used in many applications on the automotive world (electric vehicles of any kind MHEV, HEV, PHEV and BEV, etc ), industrial (Energy storage systems) and consumer (i.e. e-bike BMS, home energy storage, etc ). TLE9012DQU fulfills four main functions: cell voltage measurement, temperature measurement, cell balancing and isolated communication to main battery controller. Additionally, TLE9012DQU provides the necessary diagnostic tools to ensure proper function guaranteeing the safety of the persons around the controlled battery.
+(https://www.infineon.com/cms/en/product/battery-management-ics/tle9012dqu/ )</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#TLE9015DQU">
+  <rdf:type rdf:resource="#UART_Transceiver_Integrated_Circuit"/>
+  <owl:differentFrom rdf:resource="#1000V"/>
+  <owl:differentFrom rdf:resource="#12V"/>
+  <owl:differentFrom rdf:resource="#1200V"/>
+  <owl:differentFrom rdf:resource="#400V"/>
+  <owl:differentFrom rdf:resource="#48V"/>
+  <owl:differentFrom rdf:resource="#800V"/>
+  <is_SemiconductorProductOf rdf:resource="#Infineon_Technologies_AG"/>
+  <is_UART_TranceiverICOf rdf:resource="#Sample_Infineon_Isolated_Communication_FB"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The TLE9015DQU is a battery monitoring transceiver IC designed for connecting several TLE9012DQU devices in a daisy chain inside a Li-Ion battery. By means of its two UART and iso UART interface pairs it can support ring communication improving the availability of the system by a low cost.
+It also enables bidirectional information flow by including an error management unit including several inputs and outputs that are programmable on each TLE9012DQU.
+(https://www.infineon.com/cms/en/product/battery-management-ics/tle9015dqu/)</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#1000V">
+  <rdf:type rdf:resource="#High_Voltage_Class"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#12V">
+  <rdf:type rdf:resource="#Low_Voltage_Class"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#1200V">
+  <rdf:type rdf:resource="#High_Voltage_Class"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#400V">
+  <rdf:type rdf:resource="#High_Voltage_Class"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#48V">
+  <rdf:type rdf:resource="#Low_Voltage_Class"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#800V">
+  <rdf:type rdf:resource="#High_Voltage_Class"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sample_Infineon_BCU_FB">
+  <rdf:type rdf:resource="#Battery_Control_Unit"/>
+  <has_Microcontroller rdf:resource="#AURIX_TC3xx"/>
+  <has_Power_Management_IC rdf:resource="#OPTIREG_PMIC"/>
+  <has_Pressure_Sensor rdf:resource="#KP256"/>
+  <is_BMS_FunctionalBlockOf rdf:resource="#Sample_Infineon_BMS"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#AutomotiveCellsCompany_ACC">
+  <rdf:type rdf:resource="#BatteryCell_Company"/>
+  <rdf:type rdf:resource="#Battery_Company"/>
+  <rdf:type rdf:resource="#Battery_Pack_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomotiveCellsCompany (ACC) is a Joint venture by Opel, Mercedes and the french battery vendor Saft.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Blackstone">
+  <rdf:type rdf:resource="#BatteryCell_Company"/>
+  <rdf:type rdf:resource="#Battery_Company"/>
+  <rdf:type rdf:resource="#Battery_Pack_Company"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Bosch">
+  <rdf:type rdf:resource="#BatteryManagementSystem_Company"/>
+  <rdf:type rdf:resource="#Semiconductor_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bosch Corporation is a multinational engineering &amp; technology firm that operates within industrial technology &amp; energy, mobility (hardware &amp; software), and consumer goods. In 2020, the company generated a turnover of USD 50,424.12 million from its mobility solutions center, which accounted for 60% of the consolidated revenue. In 2021, it unveiled its passenger segment portfolio for electrification, which includes e-axel, advanced driving modules, battery management &amp; thermal management system, and fuel management &amp; cell systems. The company also announced that the production of these systems will initiate in 2022, followed by the launch of fuel-cell systems in 2023.
+Source: https://www.fortunebusinessinsights.com/blog/top-automotive-battery-management-system-suppliers-10644</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#BuildYourDreams_BYD">
+  <rdf:type rdf:resource="#BatteryCell_Company"/>
+  <rdf:type rdf:resource="#Battery_Company"/>
+  <rdf:type rdf:resource="#Battery_Pack_Company"/>
+  <rdf:type rdf:resource="#Car_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3rd largest traction battery producer in 2022, market share: 12%, produced capacity: 24GWh. 
+Country: China
+Customer: the company itself, as they are a car company as well.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#CALB">
+  <rdf:type rdf:resource="#BatteryCell_Company"/>
+  <rdf:type rdf:resource="#Battery_Company"/>
+  <rdf:type rdf:resource="#Battery_Pack_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CALB stands for China Aviation Lithium Battery Technology. 
+In 2021, they were on 7th rank of the largest battery producers with 9GWh, which corresponds to a market share of 4%.
+Country: China
+Customers (Car companies): Geely GAC</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#CATL">
+  <rdf:type rdf:resource="#BatteryCell_Company"/>
+  <rdf:type rdf:resource="#BatteryManagementSystem_Company"/>
+  <rdf:type rdf:resource="#Battery_Company"/>
+  <rdf:type rdf:resource="#Battery_Pack_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CATL stands for Contemporary Amperex Technology. 
+
+CATL is the largest chinese and world-wide producer of traction batteries for E-Cars. 
+Market share: 33%, produced capacity: 99GWh</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#CellForce">
+  <rdf:type rdf:resource="#BatteryCell_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CellForce is a joint venture of Porsche and CustomCells.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Continental_AG">
+  <rdf:type rdf:resource="#BatteryManagementSystem_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Continental AG is a Germany-based multinational manufacturing organization specializing in manufacturing interior electronics, powertrain &amp; chassis components, brake systems, automotive safety equipment, tires, and other parts. It serves various automotive and transportation sectors. The company generated a revenue of approximately USD 9,600 million in 2020 from the vehicle networking &amp; information sector, which marked as 21% of the total revenue. In August 2021, Continental AG and Varta announced a collaborative effort toward developing the next generation of powerful and effective batteries for two-wheelers. The development can be integrated into a two-wheeler application by combining an advanced BMS from CES.
+Source: https://www.fortunebusinessinsights.com/blog/top-automotive-battery-management-system-suppliers-10644</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Denso">
+  <rdf:type rdf:resource="#BatteryManagementSystem_Company"/>
+  <rdf:type rdf:resource="#Semiconductor_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Denso Corporation is a multinational automotive component manufacturer established in 1949 as Nippon Denso Co. Ltd. After separating from Toyota, it became an individual entity, which still owns 25% of the current organization. Denso Corporation operates 200 consolidated subsidiaries in Japan, North America, Europe, Asia, and Oceania. In October 2020, Denso developed the next-generation battery monitoring integrated IC for lithium-ion batteries. The battery IC aims to increase the efficiency of EVs and hybrid vehicles by extending the range. It was also touted as the world’s first IC to detect battery voltage while monitoring multiple cells.
+Source: https://www.fortunebusinessinsights.com/blog/top-automotive-battery-management-system-suppliers-10644</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Geely_GAC">
+  <rdf:type rdf:resource="#Car_Company"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guoxan">
+  <rdf:type rdf:resource="#BatteryCell_Company"/>
+  <rdf:type rdf:resource="#Battery_Company"/>
+  <rdf:type rdf:resource="#Battery_Pack_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">n 2021, Sunvoda was on 8th rank of the worlds largest battery companies. 
+Country: China
+Production volume 2021: 5 GWh
+Interest holders (among others): Volkswagen</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Hella">
+  <rdf:type rdf:resource="#BatteryManagementSystem_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HELLA’s lithium-ion battery management system consists of:
+
+    A scalable number of cell controllers for cell balancing, voltage and temperature measurement
+    A battery management unit, incl. battery monitoring algorithm
+    A shunt-based high voltage current sensor
+
+Company URL: hella.com
+
+Source: https://www.batterydesign.net/hardware/bms-hardware-suppliers/</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Intel">
+  <rdf:type rdf:resource="#BatteryManagementSystem_Company"/>
+  <rdf:type rdf:resource="#Semiconductor_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Intel Corporation was ranked 45th in the 2020 Fortune 500 list as one of the largest U.S. Corporations in revenue from 2007 to 2016. In 2019, Intel announced that it released the first Battery Management System’s (BMS) reference design &amp; application note in collaboration with the University of Pisa. The BMS integrates an FPGA-based real-time control that manufacturers can extend over other functions such as battery health monitoring and cell balancing. The system uses a Dual Extended Kalman Filter (DEKF) algorithm to estimate the SOC values for 96 cells by using a MAX 10 development kit.
+Source: https://www.fortunebusinessinsights.com/blog/top-automotive-battery-management-system-suppliers-10644</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Kia">
+  <rdf:type rdf:resource="#Car_Company"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#LG_Energy_Solution">
+  <rdf:type rdf:resource="#BatteryCell_Company"/>
+  <rdf:type rdf:resource="#BatteryManagementSystem_Company"/>
+  <rdf:type rdf:resource="#Battery_Company"/>
+  <rdf:type rdf:resource="#Battery_Pack_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Second largest traction battery producer in 2022. 
+Market share: 14%, produced capaciy: 28GWh
+Country: South Corea
+Customers (among others): Volkswagen</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Leclanche">
+  <rdf:type rdf:resource="#BatteryCell_Company"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#LithiumBalance">
+  <rdf:type rdf:resource="#BatteryManagementSystem_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LiTHIUM BALANCE was founded in 2006 as an ambitious start-up at the Danish Technological Institute. From the very beginning we were determined to push the battery-based electrification technology forward by developing, manufacturing and selling Battery Management Systems (BMS) for lithium ion battery technologies.
+We have been partaking in many of the industry’s innovations over the years and our BMS solutions have spread all over the world. With over 10 years of experience in a relatively young industry and over 700 customer projects, LiTHIUM BALANCE is a leading BMS solutions provider worldwide.
+LiTHIUM BALANCE is part of Sensata Technologies (NYSE: ST), a leading industrial technology company that develops sensors and sensor-based solutions with over 22,000 employees and 12 business centers worldwide.
+Source: https://lithiumbalance.com/about-us/</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Mercedes">
+  <rdf:type rdf:resource="#Car_Company"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#NXP">
+  <rdf:type rdf:resource="#BatteryManagementSystem_Company"/>
+  <rdf:type rdf:resource="#Semiconductor_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.nxp.com/applications/automotive/electrification-and-powertrain/battery-management-system-bms:BATTERY-MANAGEMENT-SYSTEM</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Northvolt_Drei">
+  <rdf:type rdf:resource="#BatteryCell_Company"/>
+  <rdf:type rdf:resource="#Battery_Company"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#NuvationEnergy">
+  <rdf:type rdf:resource="#BatteryManagementSystem_Company"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#OrionBMS">
+  <rdf:type rdf:resource="#BatteryManagementSystem_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Designed to meet the tough requirements of protecting and managing battery packs for electric vehicles (EV), plug-in hybrid (PHEV) and hybrid vehicles (HEV) with automotive grade quality.
+
+    Designed specifically for high EMI immunity
+    Low power sleep mode
+    Redundant design for improved reliability
+    Highly programmable / flexible
+
+Company URL: orionbms.com
+
+Source: https://www.batterydesign.net/hardware/bms-hardware-suppliers/</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sample_Infineon_Pack_Monitoring_FB">
+  <rdf:type rdf:resource="#Pack_Monitoring"/>
+  <has_Multichannel_Controller_IC rdf:resource="#PSoC_HVPA"/>
+  <is_BMS_FunctionalBlockOf rdf:resource="#Sample_Infineon_BMS"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Panasonic">
+  <rdf:type rdf:resource="#BatteryCell_Company"/>
+  <rdf:type rdf:resource="#BatteryManagementSystem_Company"/>
+  <rdf:type rdf:resource="#Battery_Company"/>
+  <rdf:type rdf:resource="#Battery_Pack_Company"/>
+  <rdf:type rdf:resource="#Semiconductor_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Panasonic Corporation is considered one of Japan’s superior electronic companies and currently offers electronic products and solutions. Its name until 1st October 2008 was Matsushita Electrical Industrial, which was later changed to Panasonic Corporation. In 2020, the company generated a revenue of USD 67,436 million, which decreased by USD 4,611 million, or around 6.3% from the previous year. In 2019, Panasonic Corporation developed a battery management technology for evaluating the residual value of lithium-ion batteries. It further developed a new Battery Monitoring Integrated Circuit (BMIC).
+Source: https://www.fortunebusinessinsights.com/blog/top-automotive-battery-management-system-suppliers-10644</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ranked as 4th largest traction battery producer in 2022. 
+Market share: 10%, produced capacity: 20 GWh
+Country: Japan</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Porsche">
+  <rdf:type rdf:resource="#Car_Company"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#SK_On">
+  <rdf:type rdf:resource="#BatteryCell_Company"/>
+  <rdf:type rdf:resource="#Battery_Company"/>
+  <rdf:type rdf:resource="#Battery_Pack_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ranked as 5th largest battery producer in 2022.
+Country: South Corea
+Customers: Volkswagen Noth America</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#SVolt">
+  <rdf:type rdf:resource="#BatteryCell_Company"/>
+  <rdf:type rdf:resource="#Battery_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SVolt is a subsidary of the chinese car company Great Wall Motor.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sample_HV_System">
+  <rdf:type rdf:resource="#Battery_High_Voltage_System"/>
+  <is_HighVoltageSystemOf rdf:resource="#Sample_Li-Ion_Battery_Pack"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sample_Li-Ion_Battery_Pack">
+  <rdf:type rdf:resource="#Lithium-Ion_Battery_Pack"/>
+  <has_Battery_Module rdf:resource="#Sample_Li-Ion_Battery_Module"/>
+  <has_Battery_Pack_Housing rdf:resource="#Sample_Li-Ion_BatteryPack_Housing"/>
+  <has_Li-Ion_Battery_Management_System rdf:resource="#Sample_Infineon_BMS"/>
+  <is_Li-Ion_BatteryPackOf rdf:resource="#Sample_Li-Ion_Traction_Battery"/>
+  <hasBatteryModuleAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasBatteryModuleAmount>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sample_Infineon_BMS">
+  <rdf:type rdf:resource="#Li-Ion_Battery_Management_System"/>
+  <has_BMS_Functional_Block rdf:resource="#Sample_Infineon_BCU_FB"/>
+  <has_BMS_Functional_Block rdf:resource="#Sample_Infineon_Cell_Supervision_FB"/>
+  <has_BMS_Functional_Block rdf:resource="#Sample_Infineon_Current_Sensing_FB"/>
+  <has_BMS_Functional_Block rdf:resource="#Sample_Infineon_Isolated_Communication_FB"/>
+  <has_BMS_Functional_Block rdf:resource="#Sample_Infineon_Pack_Monitoring_FB"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sample_Infineon_Cell_Supervision_FB">
+  <rdf:type rdf:resource="#Cell_Supervision"/>
+  <has_Multichannel_Batterymonitor_IC rdf:resource="#TLE9012DQU"/>
+  <is_BMS_FunctionalBlockOf rdf:resource="#Sample_Infineon_BMS"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sample_Infineon_Current_Sensing_FB">
+  <rdf:type rdf:resource="#Current_Sensing"/>
+  <has_Current_Sensor rdf:resource="#TLE4972"/>
+  <is_BMS_FunctionalBlockOf rdf:resource="#Sample_Infineon_BMS"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sample_Infineon_Isolated_Communication_FB">
+  <rdf:type rdf:resource="#Isolated_Communication"/>
+  <has_UART_Transceiver_IC rdf:resource="#TLE9015DQU"/>
+  <is_BMS_FunctionalBlockOf rdf:resource="#Sample_Infineon_BMS"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sample_Li-Ion_BatteryModule_Housing">
+  <rdf:type rdf:resource="#Battery_Module_Housing"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sample_Li-Ion_BatteryPack_Housing">
+  <rdf:type rdf:resource="#Battery_Pack_Housing"/>
+  <is_BatteryPackHousingOf rdf:resource="#Sample_Li-Ion_Battery_Pack"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sample_Li-Ion_Battery_Cell">
+  <rdf:type rdf:resource="#Lithium-Ion_Battery_Cell"/>
+  <is_Li-Ion_BatteryCellOf rdf:resource="#Sample_Li-Ion_Battery_Module"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sample_Li-Ion_Battery_Module">
+  <rdf:type rdf:resource="#Li-Ion_Battery_Module"/>
+  <has_Battery_Module_Housing rdf:resource="#Sample_Li-Ion_BatteryModule_Housing"/>
+  <is_BatteryModuleOf rdf:resource="#Sample_Li-Ion_Battery_Pack"/>
+  <hasBatteryCellAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasBatteryCellAmount>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sample_Li-Ion_Traction_Battery">
+  <rdf:type rdf:resource="#Lithium-Ion_Traction_Battery"/>
+  <has_Li-Ion_Battery_Pack rdf:resource="#Sample_Li-Ion_Battery_Pack"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sample_Pack_Cooling_System">
+  <rdf:type rdf:resource="#Battery_Cooling_System"/>
+  <is_CoolingSystemOf rdf:resource="#Sample_Li-Ion_Battery_Pack"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Samsung_SDI">
+  <rdf:type rdf:resource="#BatteryCell_Company"/>
+  <rdf:type rdf:resource="#BatteryManagementSystem_Company"/>
+  <rdf:type rdf:resource="#Battery_Company"/>
+  <rdf:type rdf:resource="#Battery_Pack_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ranked as 6th largest battery producer in 2022. 
+Country: South Corea</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sunvoda">
+  <rdf:type rdf:resource="#BatteryCell_Company"/>
+  <rdf:type rdf:resource="#Battery_Company"/>
+  <rdf:type rdf:resource="#Battery_Pack_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In 2021, Sunvoda was on 9th rank of the worlds largest battery companies. 
+Country: China
+Production volume 2021: 3 GWh</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Tesla">
+  <rdf:type rdf:resource="#BatteryCell_Company"/>
+  <rdf:type rdf:resource="#Battery_Company"/>
+  <rdf:type rdf:resource="#Battery_Pack_Company"/>
+  <rdf:type rdf:resource="#Car_Company"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Toyota">
+  <rdf:type rdf:resource="#Car_Company"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Varta">
+  <rdf:type rdf:resource="#BatteryCell_Company"/>
+  <rdf:type rdf:resource="#BatteryManagementSystem_Company"/>
+  <rdf:type rdf:resource="#Battery_Company"/>
+  <rdf:type rdf:resource="#Battery_Pack_Company"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Visteon">
+  <rdf:type rdf:resource="#BatteryManagementSystem_Company"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Visteon ist ein US-amerikanischer Automobilzulieferer, der im Juni 2000 aus der Ford Motor Company ausgegliedert wurde und sich heute primär auf Fahrzeugelektronik fokussiert. Die Unternehmenszentrale befindet sich seit 2005 in der Van Buren Township in Michigan in den Vereinigten Staaten. Visteon notiert an der New Yorker Börse NYSE. Die Ausgliederung von Visteon verlief ähnlich wie die der Delphi Corporation aus General Motors oder von Denso aus Toyota.
+Source: https://de.wikipedia.org/wiki/Visteon</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Visteon offers advanced Battery Management System (BMS) solutions designed to enhance battery performance and extend battery life. Our cutting-edge technology utilizes real-time monitoring and advanced control drivers to optimize battery charging and discharging patterns. Our systems are designed for flexibility and scalability, enabling continuous monitoring of the battery temperature, voltage, current, and other sensors across multiple vehicle lines and architectures.
+Visteon’s Energy Management, Conversion and Connection (EMC2) is the heart of the electrified vehicle’s high voltage system. Optimization of this energy management, conversion, and connection unit is critical for improving the range, charging speed, and reliability of EVs.  It consists of a flexible hardware and software feature set developed for physically and functionally integrated power electronics converters and distribution components to enable the next-gen EV HV architecture.
+Switchable Junction Box: Optimized as part of Energy Management, Conversion and Connection (EMC2) system, the Switchable Junction Box provides a packaging-efficient and reliable solution for battery bank switching. This scalable solution can support a wide range of battery packs and supports bank switching between 400V and 800V battery pack configurations.
+
+Source: https://www.visteon.com/products/electrification/</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Volkswagen">
+  <rdf:type rdf:resource="#Car_Company"/>
+</owl:NamedIndividual>
+
+<owl:Axiom>
+  <owl:annotatedSource rdf:resource="#Li-Ion_Battery_Management_System"/>
+  <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#disjointWith"/>
+  <owl:annotatedTarget rdf:resource="#Lithium-Ferrophosphate_Battery_Management_System"/>
+  <rdfs:comment xml:lang="de">Bereits vorhandene Batteriemanagementsysteme, Balancer und Ladegeräte für die Anwendung bei Lithium-Ionen-Akkus auf Cobalt-Basis lassen sich nur selten auf LiFePO4-Akku umkonfigurieren.
+Source: Wikipedia (https://de.wikipedia.org/wiki/Lithium-Eisenphosphat-Akkumulator)</rdfs:comment>
+</owl:Axiom>
+
+
+</rdf:RDF>

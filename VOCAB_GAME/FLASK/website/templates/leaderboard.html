@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/leaderboard.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+{% endblock %}
+
+{% block content %}
+<!-- Mobile Navigation Bar -->
+<div class="navigation-bar">
+    <div class="toggle_btn">
+        <i class="bi bi-list"></i>
+    </div>
+    <div class="dropdown_menu">
+        <li><a href="/"><i class="bi bi-house-door-fill"></i></a></li>
+        <li><a href="/challenges"><i class="bi bi-map-fill"></i></a></li>
+        <li><a href="/logout"><i class="bi bi-box-arrow-right"></i></a></li>
+    </div>
+</div>
+
+<h1 class="scale-in-center">OntoQuest Leaderboard</h1>
+
+
+
+<div class="section">
+    <!-- Leaderboard section -->
+    <div class="leaderboard">
+
+        <div class="leaderboard-container">
+            {% for i in range(1, 4) %}
+            <div class="user-leaderboard">
+                <img src="{{ url_for('static', filename='picture/leaderboard/' ~ i ~ '-place.png') }}" alt="{{ i }}-place">
+                <img src="{{ url_for('static', filename=leaderboard_profiles[i-1].profile_picture) }}" alt="{{ i }} Picture">
+                <div class="leaderboard-info">
+                    <p>{{leaderboard_profiles[i-1].username}} | Level {{leaderboard_profiles[i-1].level}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

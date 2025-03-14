@@ -1,0 +1,768 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.w3id.org/ecsel-dr-PWR"
+         xmlns="http://www.w3id.org/ecsel-dr-PWR#">
+
+<owl:Ontology rdf:about="http://www.w3id.org/ecsel-dr-PWR"/>
+
+<owl:ObjectProperty rdf:about="#Acting_As"/>
+
+<owl:ObjectProperty rdf:about="#Has_Voltage">
+  <rdfs:domain rdf:resource="#The_Application_Voltage"/>
+  <rdfs:range rdf:resource="#Drain_Voltagea"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is a Volatge of</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#Is_Working_As">
+  <rdfs:subPropertyOf rdf:resource="#Acting_As"/>
+  <rdfs:domain rdf:resource="#Depletion_Mode"/>
+  <rdfs:range rdf:resource="#Variable_Resistance"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Depletion Mode Is Working As</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#Power_loss_Calculated_by">
+  <rdfs:domain rdf:resource="#On-State_Power_loss"/>
+  <rdfs:range rdf:resource="#DrainCurrent"/>
+  <rdfs:range rdf:resource="#On-State_Resistance"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has a Power Loss Calculated by Multiplicatoin of</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#The_Enhansment_Mode_Is_Working_As">
+  <rdfs:subPropertyOf rdf:resource="#Acting_As"/>
+  <rdfs:domain rdf:resource="#Enhancement"/>
+  <rdfs:range rdf:resource="#Switcher"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#The_Temperature_Must_Not_Exceed">
+  <rdfs:domain rdf:resource="#Infineon_Device"/>
+  <rdfs:range rdf:resource="#Maximum_Junction_Temperature"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Temperature Must Not Exceed</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#amplified_by">
+  <rdfs:domain rdf:resource="#The_method_of_the_device_function"/>
+  <rdfs:range rdf:resource="#Infineon_Device"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Act of The Switching</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#are">
+  <rdfs:domain rdf:resource="#Semiconductors"/>
+  <rdfs:range rdf:resource="#Products"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAdimension">
+  <rdfs:domain rdf:resource="#Products"/>
+  <rdfs:range rdf:resource="#GeometricDimension"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAnApplicationArea">
+  <rdfs:domain rdf:resource="#Products"/>
+  <rdfs:range rdf:resource="#ApplicationArea"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasControlMethod">
+  <rdfs:domain rdf:resource="#Infineon_Device"/>
+  <rdfs:range rdf:resource="#Control_Method"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasIndustrySector">
+  <rdfs:subPropertyOf rdf:resource="#are"/>
+  <rdfs:domain rdf:resource="#Infineon_Device"/>
+  <rdfs:range rdf:resource="#Semiconductors"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_A_Configuration">
+  <rdfs:domain rdf:resource="#Infineon_Device"/>
+  <rdfs:range rdf:resource="#Device_Configuration"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has A Configuration</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_A_Voltage">
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has A Voltage</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_Properties">
+  <rdfs:domain rdf:resource="#Infineon_Device"/>
+  <rdfs:range rdf:resource="#Property"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has Properties</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_The_Elements">
+  <rdfs:domain rdf:resource="#Infineon_Device"/>
+  <rdfs:range rdf:resource="#Device_Elements"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has The Elements</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_The_Propeties_of">
+  <rdfs:domain rdf:resource="#SemiconductorProduct(its_name)_DataSheet"/>
+  <rdfs:range rdf:resource="#Infineon_Device"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has The Propeties of</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_a_Voltage_Equals_or_Greater_Than">
+  <rdfs:domain rdf:resource="#On-State_Voltage"/>
+  <rdfs:range rdf:resource="#Threshold_Voltage"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has a Voltage Equals or Greater Than</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_an_Operation_Modes">
+  <rdfs:domain rdf:resource="#Infineon_Device"/>
+  <rdfs:range rdf:resource="#Enhancement"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has an Operation Modes</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_an_Operation_Region">
+  <rdfs:domain rdf:resource="#Infineon_Device"/>
+  <rdfs:range rdf:resource="#Region_of_Operation"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has an Operation Region</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_an_Output_Current">
+  <rdfs:domain rdf:resource="#SiC_MOSFET"/>
+  <rdfs:range rdf:resource="#DrainCurrent"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has an Output Current</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_deployment">
+  <rdfs:domain rdf:resource="#System"/>
+  <rdfs:range rdf:resource="#Deployment"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_information_object">
+  <rdfs:domain rdf:resource="#Infineon_Device"/>
+  <rdfs:range rdf:resource="#SemiconductorProduct(its_name)_DataSheet"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">States that the devices have ona or more information objects, which can be a sensor data sheet for the sensors.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IFX</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has information object</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_input">
+  <rdfs:domain rdf:resource="#Process"/>
+  <rdfs:range rdf:resource="#Process_Input"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has input</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_output">
+  <rdfs:domain rdf:resource="#Process"/>
+  <rdfs:range rdf:resource="#Process_Output"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has output</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#in_deployment">
+  <rdfs:domain rdf:resource="#Platform"/>
+  <rdfs:range rdf:resource="#Deployment"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation between a Platform and a Deployment, recording that the object was used as a platform for a system/ a device (sensor/power converter) for a particular deployment: as in this PhysicalObject is acting as a Platform inDeployment Deployment.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">World Wide Web Consortium SSN
+http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#inDeployment</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in deployment</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_a_Product_of">
+  <rdfs:domain rdf:resource="#SiC_MOSFET"/>
+  <rdfs:range rdf:resource="#Products"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is a Product of</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_produced_by">
+  <rdfs:domain rdf:resource="#TheDeviceOutput"/>
+  <rdfs:range rdf:resource="#Infineon_Device"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is produced by</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#made_(the_method_name,_e.g.:_observation,_and_amlification)">
+  <rdfs:domain rdf:resource="#Infineon_Device"/>
+  <rdfs:range rdf:resource="#The_method_of_the_device_function"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Makes Switching</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#The_Application_Voltage">
+  <rdfs:subClassOf rdf:resource="#Process_Input"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Application Voltage</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Drain_Voltagea">
+  <rdfs:subClassOf rdf:resource="#Process_Input"/>
+  <rdfs:subClassOf rdf:resource="#Property"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gate-Source Voltage</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Depletion_Mode">
+  <rdfs:subClassOf rdf:resource="#Operation_Mode"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Depletion Mode</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Variable_Resistance">
+  <rdfs:subClassOf rdf:resource="#Resistance"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Variable Resistance</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#On-State_Power_loss">
+  <rdfs:subClassOf rdf:resource="#Property"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">On-State Power Loss</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#DrainCurrent">
+  <rdfs:subClassOf rdf:resource="#Property"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Drain Current</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#On-State_Resistance">
+  <rdfs:subClassOf rdf:resource="#Property"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">On-State Resistance</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Enhancement">
+  <rdfs:subClassOf rdf:resource="#Operation_Mode"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enhancement Mode</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Switcher">
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Switcher</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Infineon_Device">
+  <owl:equivalentClass rdf:resource="#SiC_MOSFET"/>
+  <rdfs:subClassOf rdf:resource="#Device"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Should defined as its function for example:
+
+-Sensor
+-Power Converter 
+-Microcontroller 
+
+Then must be defined what the device it is, for exmaple:
+-A sensing device is a device that implments sensing.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Amplication (switching) Device</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Maximum_Junction_Temperature">
+  <rdfs:subClassOf rdf:resource="#Junction_Temperature"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maximum Junction Temperature</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#The_method_of_the_device_function">
+  <rdfs:subClassOf rdf:resource="#Situation"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The function of the devices has a method ( Procedure to estimate or calculate a value), for example:
+The Senor its function is the sensing, the sensing method is the observation
+The Boost converter ( a type of the power converter) its function is boosting, the boosting method is the amplification.  
+
+Act of carrying out an (the method) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. Links to an the methodProperty to describe what the result is an estimate of, and to a FeatureOfInterest to detail what that proeprty was associated with.
+
+Example: The activity of estimating the intensity of an earthquake using the Mercalli intensity scale is an Observation as is measuring the moment magnitude, i.e., the energy released by said earthquake."</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Switching</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Semiconductors">
+  <rdfs:subClassOf rdf:resource="#Semiconductors&amp;SemiconductorEquipment"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Products">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The superclass of all classes describing products or services types, either by nature or purpose. Examples for such subclasses are "TV set", "vacuum cleaner", etc. An instance of this class can be either an actual product or service (gr:Individual), a placeholder instance for unknown instances of a mass-produced commodity (gr:SomeItems), or a model / prototype specification (gr:ProductOrServiceModel). When in doubt, use gr:SomeItems.
+
+Examples: 
+a) MyCellphone123, i.e. my personal, tangible cell phone (gr:Individual)
+b) Siemens1234, i.e. the Siemens cell phone make and model 1234 (gr:ProductOrServiceModel)
+c) dummyCellPhone123 as a placeholder for actual instances of a certain kind of cell phones (gr:SomeItems)</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Web Vocabulary for E-Commerce Good Relations
+http://www.heppnetz.de/ontologies/goodrelations/v1.html#ProductOrService</rdfs:isDefinedBy>
+</owl:Class>
+
+<owl:Class rdf:about="#GeometricDimension">
+  <rdfs:subClassOf rdf:resource="#Information_Object"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"Describes the Dimensions of any Physical Object (Length, Wisth, Height)"</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DefinedBy "IFX"</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Geometric Dimension</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#ApplicationArea">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The different application ares that the product can be used.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Control_Method">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the method used to turn on, turn off , increaseing, and decreasing output current/voltage.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Power Electronic book</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Control Method</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Device_Configuration">
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Device Configuration</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Property">
+  <rdfs:subClassOf rdf:resource="#Quality"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Device_Elements">
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Device Elements</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SemiconductorProduct(its_name)_DataSheet">
+  <rdfs:subClassOf rdf:resource="#Documents"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SiC MOSFET DataSheet</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#On-State_Voltage">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#has_A_Configuration"/>
+          <owl:allValuesFrom rdf:resource="#N-Channel_Configuration"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#has_A_Voltage"/>
+          <owl:allValuesFrom rdf:resource="#Postive_(+)"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#has_A_Configuration"/>
+          <owl:allValuesFrom rdf:resource="#P-channel_Configuration"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#has_A_Voltage"/>
+          <owl:allValuesFrom rdf:resource="#Negative_(-)"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Property"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">On-State Voltage</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Threshold_Voltage">
+  <rdfs:subClassOf rdf:resource="#Property"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Threshold Voltage</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Region_of_Operation">
+  <rdfs:subClassOf rdf:resource="#Operating_Property"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Region of Operation</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SiC_MOSFET">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Silicon Carbide Metal Oxide Semiconductor Field Effect Transistor (SiC MOSFET): It is a transistor: It is used for switching or amplifying the electronics signals or electric power.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SiC MOSFET</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#System">
+  <rdfs:subClassOf rdf:resource="#Physical_Object"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System is a unit of abstraction for pieces of infrastructure that implements procedure. A System may have components, its subsystems, which are other systems."</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">World Wide Web Consortium SSN
+http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#System"</rdfs:isDefinedBy>
+</owl:Class>
+
+<owl:Class rdf:about="#Deployment">
+  <rdfs:subClassOf rdf:resource="#Deployment-related_Process"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ongoing Process of Entities (for the purposes of this ontology, mainly the Infineon device) deployed for a particular purpose. For example, a particular Sensor deployed on a Platform, or a whole network of Sensors deployed for an observation campaign. The deployment may have sub processes, such as installation, maintenance, addition, and decomissioning and removal.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">World Wide Web Consortium SSN
+http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Deployment</rdfs:isDefinedBy>
+</owl:Class>
+
+<owl:Class rdf:about="#Process">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process has an output and possibly inputs, and for a compositive process, describes the temporal and dataflow dependencies and relationships amongst its parts.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">World Wide Web Consortium SSN
+http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Process</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Process</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Process_Input">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any information that is provided a Procedure for its use.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">World Wide Web Consortium SSN
+http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#ProcessInput</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Process Input</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Process_Output">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any information that is reported from a Procedure.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">World Wide Web Consortium SSN
+http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#ProcessOutput</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Process Output</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Platform">
+  <rdfs:subClassOf rdf:resource="#Physical_Object"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An Entity to which other Entities can be attached - particularly semiconductor products and other platforms.
+
+Example: A post might act as the platform, a body might act as a platform for an attached device.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rdfs:isDefinedBy "World Wide Web Consortium SSN
+http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Platform"</rdfs:isDefinedBy>
+</owl:Class>
+
+<owl:Class rdf:about="#TheDeviceOutput">
+  <rdfs:subClassOf rdf:resource="#Information_Object"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the device output is a piece of information (value), the value itself being represented by an The device function value.</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SiC MOSFET Output</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Abstract">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any Entity that cannot be located in space-time.
+
+Example: mathematical entities: formal semantics elements, regions within dimensional spaces, etc."</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">World Wide Web Consortium SSN DUL
+https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Abstract"</rdfs:isDefinedBy>
+</owl:Class>
+
+<owl:Class rdf:about="#Entity">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anything: real, possible, or imaginary, which some modeller wants to talk about for some purpose.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">World Wide Web Consortium SSN DUL
+https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Entity</rdfs:isDefinedBy>
+</owl:Class>
+
+<owl:Class rdf:about="#Blocking_Capability">
+  <rdfs:subClassOf rdf:resource="#Property"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Blocking Capability</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Blocking_Voltage">
+  <rdfs:subClassOf rdf:resource="#Property"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Break Down/Blocking Voltage</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#CommunicationServices">
+  <rdfs:subClassOf rdf:resource="#IndutrialSector"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IndutrialSector">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The collection of all localized groups of enterprises that are producers of industrial commodities, in which each such group together forms the major industrial sector for the region. 'Industrial commodities' includes MechanicalDevices and basic industrial materials. Examples include 'the world industrial sector', the 'industrial sector of China'. The Chinese water pump industry would not be an exemplar of IndustrialEconomicSector but would rather be a sub-industry (see subIndustries) of it. On the other hand, chinese water pump manufacturers would be considered groupMembers of 'the industrial sector of China'.
+
+This classification is done by The Global Industry Classification Standard (GICS) is an industry taxonomy developed in 1999 by MSCI and Standard &amp; Poor's (S&amp;P) for use by the global financial community. The GICS structure consists of 11 sectors, 24 industry groups, 68 industries and 157 sub-industries[1] into which S&amp;P has categorized all major public companies</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://umbel.org/umbel/rc/</rdfs:isDefinedBy>
+</owl:Class>
+
+<owl:Class rdf:about="#Constant_Resistance">
+  <rdfs:subClassOf rdf:resource="#Resistance"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Resistance"/>
+
+<owl:Class rdf:about="#ConsumerDiscretionary">
+  <rdfs:subClassOf rdf:resource="#IndutrialSector"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConsumerStaples">
+  <rdfs:subClassOf rdf:resource="#IndutrialSector"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Operation_Mode">
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Operation Mode</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Deployment-related_Process">
+  <rdfs:subClassOf rdf:resource="#Process"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Place to group all the various Processes related to Deployment. For example, as well as Deployment, installation, maintenance, deployment of the further devices and the like would all be classified under DeploymentRelatedProcess.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">World Wide Web Consortium SSN
+http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#DeploymentRelatedProcess</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deployment-related Process</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Device">
+  <rdfs:subClassOf rdf:resource="#System"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A device is a physical piece of technology - a system in a box. Devices may of course be build of smaller devices and software components."</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rdfs:isDefinedBy "World Wide Web Consortium SSN
+http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Device"</rdfs:isDefinedBy>
+</owl:Class>
+
+<owl:Class rdf:about="#Documents">
+  <rdfs:subClassOf rdf:resource="#Information_Object"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The document class presents those things which are, broadly conceived, "documents''. It should contain the manuals and the data sheet of the devices.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Friend of a friend ontology
+http://xmlns.com/foaf/spec/#term_Document"</rdfs:isDefinedBy>
+</owl:Class>
+
+<owl:Class rdf:about="#Information_Object">
+  <rdfs:subClassOf rdf:resource="#InformationEntity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A piece of information, such as a musical composition, a text, a word, a picture, independently from how it is concretely realized.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"World Wide Web Consortium SSN DUL
+https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#InformationObject"</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Information Object</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Drain">
+  <rdfs:subClassOf rdf:resource="#Device_Elements"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Drain-Source_Voltage">
+  <rdfs:subClassOf rdf:resource="#Property"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Drain-Source Voltage</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Electric_Vehicle_Charging">
+  <rdfs:subClassOf rdf:resource="#ApplicationArea"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Electric Vehicle Charging</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#ElectronicComponents">
+  <rdfs:subClassOf rdf:resource="#ElectronicEquipment,Instruments&amp;Components"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ElectronicEquipment,Instruments&amp;Components">
+  <rdfs:subClassOf rdf:resource="#TechnologyHardware&amp;Equipment"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ElectronicEquipment,Instruments&amp;Components</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Energy">
+  <rdfs:subClassOf rdf:resource="#IndutrialSector"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Energy_Storage">
+  <rdfs:subClassOf rdf:resource="#ApplicationArea"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Energy Storage</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Financial">
+  <rdfs:subClassOf rdf:resource="#IndutrialSector"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Gate">
+  <rdfs:subClassOf rdf:resource="#Device_Elements"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GateDriver"/>
+
+<owl:Class rdf:about="#Healthcare">
+  <rdfs:subClassOf rdf:resource="#IndutrialSector"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Height">
+  <rdfs:subClassOf rdf:resource="#GeometricDimension"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Industrials">
+  <rdfs:subClassOf rdf:resource="#IndutrialSector"/>
+</owl:Class>
+
+<owl:Class rdf:about="#InformationEntity">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">World Wide Web Consortium SSN DUL
+https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#InformationEntity"</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Information Entity</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#InformationTechnology">
+  <rdfs:subClassOf rdf:resource="#IndutrialSector"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Interface">
+  <rdfs:subClassOf rdf:resource="#Physical_Object"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A common boundary or interconnection between systems, equipment, concepts, or human beings</rdfs:comment>
+  <owl:incompatibleWith rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IFX</owl:incompatibleWith>
+</owl:Class>
+
+<owl:Class rdf:about="#Physical_Object">
+  <rdfs:subClassOf rdf:resource="#Object"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Physical Object</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Junction_Temperature">
+  <rdfs:subClassOf rdf:resource="#Property"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Junction Temperature</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Leakage_Current">
+  <rdfs:subClassOf rdf:resource="#Property"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Leakage Current</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Length">
+  <rdfs:subClassOf rdf:resource="#GeometricDimension"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Materials">
+  <rdfs:subClassOf rdf:resource="#IndutrialSector"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Microcontroller">
+  <rdfs:subClassOf rdf:resource="#Semiconductors"/>
+</owl:Class>
+
+<owl:Class rdf:about="#N-Channel_Configuration">
+  <rdfs:subClassOf rdf:resource="#Device_Configuration"/>
+  <owl:disjointWith rdf:resource="#P-channel_Configuration"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">N-Channel Configuration</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#P-channel_Configuration">
+  <rdfs:subClassOf rdf:resource="#Device_Configuration"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P-Channel Configuration</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Object">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any physical, social, or mental object, or a substance</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">World Wide Web Consortium SSN DUL
+https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Object"</rdfs:isDefinedBy>
+</owl:Class>
+
+<owl:Class rdf:about="#Off-State_Region">
+  <rdfs:subClassOf rdf:resource="#Region_of_Operation"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Off-State Region</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#On-State_Region">
+  <rdfs:subClassOf rdf:resource="#Region_of_Operation"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">On-State Region</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Postive_(+)">
+  <rdfs:subClassOf rdf:resource="#Voltage"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Positive (+)</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Negative_(-)">
+  <rdfs:subClassOf rdf:resource="#Voltage"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Negative (-)</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Operating_Property">
+  <rdfs:subClassOf rdf:resource="#Property"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Operating Property</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Package">
+  <rdfs:subClassOf rdf:resource="#Physical_Object"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A package is the housing for a chip (or several chips) and provides electrical contacts. It is an interconnect in between chip-pads and the interface to the PCB board. A package is characterized by its outline (drawing) and its materials.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IFX</rdfs:isDefinedBy>
+</owl:Class>
+
+<owl:Class rdf:about="#PowerConverters">
+  <rdfs:subClassOf rdf:resource="#Semiconductors"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Price">
+  <rdfs:subClassOf rdf:resource="#Information_Object"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Quality">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any aspect of an Entity (but not a part of it), which cannot exist without that Entity. For example, the way the surface of a specific PhysicalObject looks like is a Quality, while the encoding of that Quality into e.g. a PhysicalAttribute should be modeled as a Region. From the design viewpoint, the Quality-Region distinction is useful only when individual aspects of an Entity are considered in a domain of discourse. For example, in an automotive context, it would be irrelevant to consider the aspects of car windows for a specific car, unless the factory wants to check a specific window against design parameters (anomaly detection). On the other hand, in an antiques context, the individual aspects for a specific piece of furniture are a major focus of attention, and may constitute the actual added value, because the design parameters for old furniture are often not fixed, and may not be viewed as 'anomalies'.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">World Wide Web Consortium SSN DUL
+https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Quality</rdfs:isDefinedBy>
+</owl:Class>
+
+<owl:Class rdf:about="#RealEstate">
+  <rdfs:subClassOf rdf:resource="#IndutrialSector"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Saturation_Region">
+  <rdfs:subClassOf rdf:resource="#On-State_Region"/>
+  <owl:disjointWith rdf:resource="#Triode/Constant_Resistance_Region"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saturation Region</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Triode/Constant_Resistance_Region">
+  <rdfs:subClassOf rdf:resource="#On-State_Region"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#Acting_As"/>
+      <owl:allValuesFrom rdf:resource="#Constant_Resistance"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Triode/Constant Resistance Region</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Semiconductors&amp;SemiconductorEquipment">
+  <rdfs:subClassOf rdf:resource="#InformationTechnology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sensors">
+  <rdfs:subClassOf rdf:resource="#Semiconductors"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Situation">
+  <rdfs:subClassOf rdf:resource="#Social_Object"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A view, consistent with ('satisfying') a Description, on a set of entities. It can also be seen as a 'relational context' created by an observer on the basis of a 'frame' (i.e. a Description). For example, a PlanExecution is a context including some actions executed by agents according to certain parameters and expected tasks to be achieved from a Plan; a DiagnosedSituation is a context of observed entities that is interpreted on the basis of a Diagnosis, etc. Situation is also able to represent reified n-ary relations, where isSettingFor is the top-level relation for all binary projections of the n-ary relation. If used in a transformation pattern for n-ary relations, the designer should take care of creating only one subclass of Situation for each n-ary relation, otherwise the 'identification constraint' (Calvanese et al., IJCAI 2001) could be violated.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">World Wide Web Consortium SSN DUL
+https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Situation</rdfs:isDefinedBy>
+</owl:Class>
+
+<owl:Class rdf:about="#Social_Object">
+  <rdfs:subClassOf rdf:resource="#Object"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. Links to an ObservableProperty to describe what the result is an estimate of, and to a FeatureOfInterest to detail what that proeprty was associated with.
+
+Example: The activity of estimating the intensity of an earthquake using the Mercalli intensity scale is an Observation as is measuring the moment magnitude, i.e., the energy released by said earthquake.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">World Wide Web COnsortium SSN
+http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Observation</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Social Object</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Solar_Energy">
+  <rdfs:subClassOf rdf:resource="#ApplicationArea"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solar Energy</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Source">
+  <rdfs:subClassOf rdf:resource="#Device_Elements"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SwitchingValue">
+  <rdfs:subClassOf rdf:resource="#Abstract"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The value of the result of the method (procedures) of the device function. The result is an information object that encodes some value for a feature. 
+For example:
+-If we consider the observation is the method used for sensing of the sensors, then the observation has a result which is the output of the sensor,
+-If -If we consider the amplification is the method used for boosting of the power converter, then the amplification has a result which is the output of the  power converter,</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SwitchingValue</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Switching_Frequency">
+  <rdfs:subClassOf rdf:resource="#Property"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Switching Frequency</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#The_process_name_of_the_device_function">
+  <rdfs:subClassOf rdf:resource="#Process"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a process that results in the estimation, or calculation, of the value of a device output. 
+Usually it derived from the name of the device for example:
+Sensor process: sensing: Sensing is a process that results in the estimation, or calculation, of the value of a phenomenon.
+
+Boost Converter process: boosting: is a process that results in the estimation, or calculation, of the value of a amplified voltage.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Only the defintion of the Sensor process: sensing (Sensing is a process that results in the estimation, or calculation, of the value of a phenomenon.) is defined by W3C SSN 
+http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Sensing</rdfs:isDefinedBy>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Process used in the Device Function</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Utilities">
+  <rdfs:subClassOf rdf:resource="#IndutrialSector"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Voltage"/>
+
+<owl:Class rdf:about="#Voltage-Controlled">
+  <rdfs:subClassOf rdf:resource="#Control_Method"/>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">by applying the voltage between Gate and Sourcet o turn on, turn off the MOSFET, and  increaseing, decreasing  the MOSFET output current.</rdfs:isDefinedBy>
+  <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rdfs:isDefinedBy</rdfs:isDefinedBy>
+</owl:Class>
+
+<owl:Class rdf:about="#Weight">
+  <rdfs:subClassOf rdf:resource="#Information_Object"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Width">
+  <rdfs:subClassOf rdf:resource="#GeometricDimension"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TechnologyHardware&amp;Equipment">
+  <rdfs:subClassOf rdf:resource="#InformationTechnology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Software&amp;Services">
+  <rdfs:subClassOf rdf:resource="#InformationTechnology"/>
+</owl:Class>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Drain"/>
+    <rdf:Description rdf:about="#Gate"/>
+    <rdf:Description rdf:about="#Source"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+
+</rdf:RDF>

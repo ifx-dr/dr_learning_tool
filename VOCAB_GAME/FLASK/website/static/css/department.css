@@ -1,0 +1,309 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+.container{
+    width: 100%;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.sidebar-navigation {
+    width: 5%;
+    background-color: #64203F;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Adjusted to stretch the items to fill the width */
+}
+
+.sidebar-navigation ul {
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+}
+
+.sidebar-navigation ul li {
+    padding: 20px 0;
+    cursor: pointer;
+    transition: all ease-out 120ms;
+    position: relative;
+    text-align: center;
+}
+
+.sidebar-navigation ul li i {
+    display: block;
+    margin: -10px auto;
+    padding: 10px;
+    font-size: 24px;
+    transition: all ease 450ms;
+}
+
+.sidebar-navigation ul li .tooltip {
+    display: inline-block;
+    position: absolute;
+    background-color: #64203F;
+    padding: 8px 15px;
+    border-radius: 3px;
+    margin-top: -26px;
+    margin-left: 60%;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: white;
+    z-index: 1;
+    transition: all ease 0.3s;
+}
+
+.sidebar-navigation ul li .tooltip:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -4px;
+    top: 10px;
+    transform: rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background-color: inherit;
+}
+
+.sidebar-navigation ul li:hover {
+    background-color: #2b0730;
+}
+
+.sidebar-navigation ul li:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.sidebar-navigation ul li.active i {
+    color: white;
+}
+
+.sidebar-navigation button{
+    background: none;
+	color: white;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+
+h1 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 60px;
+    margin: 40px auto 20px ;
+    padding: 0;
+}
+
+
+p {
+    color: white;
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    font-style: italic;
+}
+
+.selection-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#department-select {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 25%;
+    padding: 10px;
+    border: 2px solid #000000;
+    font-size: 16px;
+    color: white;
+    font-style: italic;
+    margin: 20px auto;
+    display: block;
+    background-color: #2B0730;
+     /* Style the arrow */
+    -webkit-appearance: none; /* Remove default arrow on Chrome and Safari */
+    -moz-appearance: none; /* Remove default arrow on Firefox */
+    appearance: none; /* Remove default arrow on other browsers */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18px" height="18px"><path d="M7 10l5 5 5-5z"/></svg>'); /* Custom arrow icon */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Position the arrow icon */
+    background-size: 18px; /* Set the size of the arrow icon */
+    padding-right: 40px; /* Adjust padding to accommodate the arrow icon */
+}
+
+.next-button {
+    display: block;
+    margin:30px auto 0px;
+    padding: 10px 20px;
+    background-color: #45336E;
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 35px;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    width: 20%;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%); /* Center the button horizontally */
+}
+
+.next-button:hover {
+    background-color: #2b0731;
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+
+.navigation-bar {
+    width: 90%;
+    margin: 20px auto ;
+    display: none;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #45336E;
+    border: 2px solid white;
+}
+
+.navigation-bar li {
+    list-style: none;
+
+}
+
+.navigation-bar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navigation-bar a:hover {
+    color: #2B0730;
+}
+
+.toggle_btn {
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    padding-left: 10px
+}
+
+.dropdown_menu {
+    position: absolute;
+    top: 70px;
+    height: 0px;
+    left: 50%;
+    transform: translateX(-50%); /* Center the button horizontally */
+    width: 90%;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 150px;
+}
+.dropdown_menu li {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.dropdown_menu button{
+    background: none;
+	color: white;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+
+@media (max-width: 768px) {
+
+
+    .navigation-bar {
+        display: flex;
+    }
+    .toggle_btn{
+        display:block;
+    }
+    .dropdown_menu {
+        display: flex;
+        flex-direction: column;
+        align items: center;
+        justify-content: center;
+    }
+
+    .sidebar-navigation {
+        display: none;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 40px;
+        margin: 0 auto;
+        padding: 0;
+        width: 90%;
+    }
+
+    p {
+
+    width: 90%;
+    margin: 20px auto ;
+    font-size: 12px;
+    }
+
+    .selection-container {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #department-select{
+        width: auto;
+    }
+
+    option {
+        align-items: center;
+        font-size: 12px;
+    }
+
+    .next-button {
+    width:50%;
+    }
+
+}

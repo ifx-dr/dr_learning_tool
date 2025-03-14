@@ -1,0 +1,39 @@
+body {
+    background-image: url('../picture/light-abstract-colourful.jpg');
+    background-color: #cccccc;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: "Open Sans"
+}
+
+h1, h3 {
+    font-family: "Barlow"
+
+}
+
+.alert-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9999; /* Ensure alerts are above other elements */
+}
+
+.close {
+    position: relative;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1;
+    color: inherit;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 0.5;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 0;
+}
+.close:hover {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.75;
+}

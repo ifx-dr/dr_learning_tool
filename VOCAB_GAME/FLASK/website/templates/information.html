@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+
+{% block title %}Information{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/information.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+{% endblock %}
+
+{% block content %}
+<!-- Navigation link to home -->
+<a class="nav-item nav-link" id="home" href="/"><i class="bi bi-house-door-fill"></i></a>
+
+<h1 class="scale-in-center">Ontoquest Guide</h1>
+<div class="content">
+    <div class="tab">
+        <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'information')"><i class="bi bi-info-square"></i></button>
+        <button class="tablinks" onclick="openTab(event, 'gamePreparation')"><i class="bi bi-gear-wide-connected"></i></button>
+        <button class="tablinks" onclick="openTab(event, 'question')"><i class="bi bi-question-square"></i></button>
+        <button class="tablinks" onclick="openTab(event, 'summary')"><i class="bi bi-card-list"></i></i></button>
+        <button class="tablinks" onclick="openTab(event, 'visualization')"><i class="bi bi-zoom-in"></i></button>
+    </div>
+
+    <div id="information" class="tabcontent">
+        <div class="tab-information">
+            <h3>Vocabulary Management & Game Overview</h3>
+            <div class="scrollable-content">
+                <div class="tab-text">
+                    <h5>Challenges in Vocabulary Management:</h5>
+                    <div class="text">
+                        <p>In a diverse company like Infineon Technologies, spanning various divisions such as Automotive, Green Industrial Power, Power & Sensor Systems, and Connected Secure Systems, the sheer volume of specific terminology can be overwhelming. Each domain has its own set of vocabulary, often leading to misunderstandings and discrepancies, especially when communication occurs across departments or functional areas.</p>
+                    </div>
+                    <h5>Significance of the Game:</h5>
+                    <div class="text">
+                        <p>The game addresses these vocabulary complexities by introducing a standardized Infineon vocabulary list, contributing to coherence and consistency in communication and documentation. It provides comprehensive coverage of terms, their definitions, and contextual relationships, fostering common consensus across the organization. Additionally, the game ensures dynamic expansion and adaptation of ontological structures based on user input, continually incorporating new terms and refining existing definitions.</p>
+                    </div>
+                    <h5>The Game Process - Overview:</h5>
+                    <div class="text">
+                        <ul>
+                            <li>
+                                <p><span>Initial Engagement: </span> Begin by selecting your department, choosing the ontology, and specifying the quantity of questions you'd like to engage with.</p>
+                            </li>
+                            <li>
+                                <p><span>Vocabulary Validation: </span> You'll be presented with terms and their definitions, and you'll have the opportunity to validate the definitions through your choices of agreement, uncertainty, or disagreement.</p>
+                            </li>
+                            <li>
+                                <p><span>Summary of Your Contributions: </span> At the end, the game will provide a recap of the definitions and terms you engaged with, along with a score that quantifies your contributions to the vocabulary list.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="gamePreparation" class="tabcontent">
+        <div class="tab-information">
+            <h3>Preparation & Setup</h3>
+            <div class="scrollable-content">
+                <div class="tab-text">
+                    <h5>Department Selection:</h5>
+                    <img src="{{ url_for('static', filename='picture/information/department_selection.png') }}" alt="department">
+                    <div class="text">
+                        <p>Begin by selecting your domain or department of interest from a list specifically curated for the semiconductor industry and Infineon departments. It ensures that the game experience is aligned with your area of expertise and interest within the semiconductor domain.</p>
+                    </div>
+                    <h5>Ontology Selection:</h5>
+                    <img src="{{ url_for('static', filename='picture/information/ontology_selection.png') }}" alt="ontology">
+                    <div class="text">
+                        <p>Navigate through the ontology selection interface, where you'll find relevant ontologies accompanied by brief descriptions. This interface provides a clear and concise overview of the available ontologies to help you make an informed selection based on your preferences and objectives.</p>
+                    </div>
+                    <h5>Number of Questions Selection:</h5>
+                    <img src="{{ url_for('static', filename='picture/information/number_selection.png') }}" alt="number">
+                    <div class="text">
+                        <p>Specify the quantity of questions you'd like to interact with. This step allows you to customize your game experience by determining the extent of your engagement, ensuring that the game aligns with your preferred level of participation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="question" class="tabcontent">
+        <div class="tab-information">
+            <h3>Interactive Question</h3>
+            <div class="scrollable-content">
+                <div class="tab-text">
+                    <h5>Term and Definition Presentation:</h5>
+                    <img src="{{ url_for('static', filename='picture/information/question_page.png') }}" alt="question page">
+                    <div class="text">
+                        <p>Engage with an interface displaying a random word and its definition, accompanied by a visual representation of the ontology structure and a panel with related information. Progress through the question with the help of a question progression bar, and choose from three response options: True (Agree with definition), Maybe (Don't know the term), or False (Disagree or unsure with the definition).</p>
+                    </div>
+                    <h5>Term Visualization and Information:</h5>
+                    <div class="pictures">
+                        <img src="{{ url_for('static', filename='picture/information/question_visualization.png') }}" id="question-visualization" alt="visualization">
+                        <img src="{{ url_for('static', filename='picture/information/question_information.png') }}" id="question-information" alt="information">
+                    </div>
+                    <div class="text">
+                        <ul>
+                            <li>
+                                <p><span>Visualization: </span>Explore an ontology visualization of the term, allowing you to view its relationships with other terms. Optionally, access a detailed visualization of the term with additional information and details by clicking on <span>"Detailed Visualization"</span>, empowering you to gain deeper insights.</p>
+                            </li>
+                            <li>
+                                <p><span>Information: </span>Access a panel displaying comprehensive information about the term, including alternative names, German names, examples, and acronyms. These details are provided to enhance your understanding and facilitate informed decision-making when making your choice.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <h5>Disagreement case:</h5>
+                    <div class="two-pictures">
+                        <img src="{{ url_for('static', filename='picture/information/disagreement_1.png') }}" alt="disagreement">
+                        <img src="{{ url_for('static', filename='picture/information/disagreement_2.png') }}" alt="entered definition">
+                    </div>
+                    <div class="text">
+                        <ul>
+                            <li>
+                                <p><span>Disagreement: </span>In the event of disagreement with a given definition, you'll be presented with alternative definitions, enabling you to select the most suitable one or even enter your own definition.</p>
+                            </li>
+                            <li>
+                                <p><span>Entered Definition: </span>You have the opportunity to contribute to the refinement of the ontology by adding your own definition when appropriate. When entering a definition, you can choose the closest alternative or continue with the entered definition, ensuring that your inputs are accurately reflected in the ontology structure.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="summary" class="tabcontent">
+        <div class="tab-information">
+            <h3>Engagement Summary</h3>
+            <div class="scrollable-content">
+                <div class="tab-text">
+                    <h5>Summary of the Definitions:</h5>
+                    <div class="two-pictures">
+                        <img src="{{ url_for('static', filename='picture/information/summary_1.png') }}" alt="disagreement">
+                        <img src="{{ url_for('static', filename='picture/information/summary_2.png') }}" alt="entered definition">
+                    </div>
+                    <div class="text">
+                        <ul>
+                            <li>
+                                <p><span>Contributions Recap: </span>At the summary page, you'll encounter an interface showcasing a recap of the definitions you've validated and revised, providing a comprehensive overview of the contributions you've made. This page introduces a vocabulary enrichment score that quantifies your contributions to enhancing and enriching the vocabulary list</p>
+                            </li>
+                            <li>
+                                <p><span>Ontology Visualization: </span>You have the option to click on the zooming button to visualize the entire ontology you played with and access detailed information about the ontology, contributing to a deeper understanding of your engagement with the game.</p>
+                            </li>
+                            <li>
+                                <p><span>Detailed Recap: </span>You also have the option to click on the statistic button to access a recap of your game with more detailed information about the term you engaged with.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <h5>Detailed Recap:</h5>
+                    <img src="{{ url_for('static', filename='picture/information/detailed_overview.png') }}" alt="stat page">
+                    <div class="text">
+                        <ul>
+                            <li>
+                                <p><span>Term Engagement Overview: </span>View the total number of terms you validated, unvalidated, and passed, providing a comprehensive summary of your interactions with the vocabulary.</p>
+                            </li>
+                            <li>
+                                <p><span>Detailed Term Insights: </span>Explore each term you engaged with and access all the existing definitions, along with their number of engagements and the ratio of agreements, fostering a deeper understanding of your impact on the vocabulary.</p>
+                            </li>
+                            <li>
+                                <p><span>Visual Representation of Actions: </span>See the definitions presented to you, color-coded to reflect your actions—validated, unvalidated, or passed—providing a clear and visual representation of your contributions.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="visualization" class="tabcontent">
+        <div class="tab-information">
+            <h3>Ontology Explorer</h3>
+            <div class="scrollable-content">
+                <div class="tab-text">
+                    <h5>Visualization Guide:</h5>
+                    <img src="{{ url_for('static', filename='picture/information/visualization.png') }}" alt="department">
+                    <div class="text">
+                        <ul>
+                            <li>
+                                <p><span>Detailed Visualizations: </span>Access detailed visualizations of specific terms by clicking on <span>"detailed visualization"</span> on the question page or visualize the entire ontology by clicking the zoom button on the summary page.</p>
+                            </li>
+                            <li>
+                                <p><span>Comprehensive Information: </span>Explore the current definition of the term or the description of the ontology, and gain access to informative statistics, including the number of classes, object properties, and more.</p>
+                            </li>
+                            <li>
+                                <p><span>Interactive Exploration: </span>Interact with the ontology visualization by zooming in/out and accessing detailed information about different classes through user-friendly click and select features.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function openTab(evt, name) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the link that opened the tab
+  document.getElementById(name).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+<script>
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+{% endblock %}

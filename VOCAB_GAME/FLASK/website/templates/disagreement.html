@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Disagreement{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/disagreement.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Navigation link to home -->
+<a class="nav-item nav-link" id="home" href="/"><i class="bi bi-house-door-fill"></i></a>
+<!-- Mobile Navigation Bar -->
+<div class="navigation-bar">
+    <div class="toggle_btn">
+        <i class="bi bi-list"></i>
+    </div>
+    <div class="dropdown_menu">
+        <li><a href="/"><i class="bi bi-house-door-fill"></i></a></li>
+        <li><a href="/logout"><i class="bi bi-box-arrow-right"></i></a></li>
+    </div>
+</div>
+<!-- Title and description of disagreement section -->
+<h1 class="title">You Disagree</h1>
+<div class="text">
+    <p>Disagree with the current definition? Articulate your reasoning and explore alternative definitions. Choose from the alternatives based on your articulated reason, or enter your own definition if none fit.</p>
+</div>
+<div id="loading-container">
+    <img src="{{ url_for('static', filename='picture/animated-loader-gif-n6b5x0-unscreen.gif') }}" alt="loading">
+    <p>Your action is currently being processed as the score for the definition is being adjusted...</p>
+</div>
+<!-- Current and alternative definitions section -->
+<div class="content" id="content">
+    <div class="current-definition">
+        <h3>Current Definition:</h3>
+        <p>{{ random_definition }}</p>
+    </div>
+    <form method="POST" id="responseForm">
+        <div class="scrollable-content">
+            <div class="alternative-definitions">
+                <h3>Alternative definitions:</h3>
+            </div>
+            <div class="definition-cards">
+                 <!-- Loop through relevant definitions and display as buttons -->
+                {% for definition in relevant_definitions %}
+                <div class="definition-card">
+                    <button type="submit" name="selectedDefinition" value="{{ definition.definition }}">{{ definition.definition }}</button>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="no-alt"><p>{{no_alt}}</p> </div>
+        </div>
+        <!-- Link to enter user's own definition -->
+        <a href="{{ url_for('views.enter_definition', question_number=question_number) }}" class="next-button">Enter your own definition</a>
+    </form>
+</div>
+
+<!-- Include ionicons library for icons -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<!-- JavaScript for adjusting scrollable-content height -->
+<script>
+    // Automatically adjust the scrollable-content height based on the content
+    document.addEventListener('DOMContentLoaded', function(event) {
+        const def_cards = document.getElementById('definition-cards');
+        def_cards.addEventListener('input', function (event) {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+
+        // Trigger an initial input event to set the initial height
+        textarea.dispatchEvent(new Event('input'));
+    });
+</script>
+
+<!-- Script for the loading progression status -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        var responseForm = document.getElementById('responseForm'); // Get the form element
+
+        // Event listener for form submission
+        responseForm.addEventListener('submit', function(event) {
+            const loadingContainer = document.getElementById('loading-container');
+            const textContent = document.getElementById('content');
+            loadingContainer.style.display = 'flex'; // Show the loading bar
+            textContent.style.display = 'none';
+        });
+    });
+</script>
+
+{% endblock %}
