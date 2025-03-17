@@ -18,9 +18,6 @@ basedir = os.path.dirname(__file__)
 @views.route('/', methods=['GET', 'POST'])
 @login_required
 def home():
-
-    remove_duplicate_definition_db() # Remove duplicates definition from the database
-    populate_definition_scores() # Populate definition scores from the ontologies
     remove_previous_entries(current_user.id) # Remove definitions and used words of the previous game
 
     #leaderboard_profiles = Profile.query.order_by(Profile.xp.desc()).limit(3).all() # Retrieve the top 3 leaderboard profiles

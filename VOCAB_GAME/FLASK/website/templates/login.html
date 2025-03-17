@@ -4,12 +4,10 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
 {% endblock %}
 
-{% block title %}Login{% endblock %}
+{% block title %}Loading{% endblock %}
 
 {% block content %}
 <div class="form-container">
-    <h1 class="puff-in-center">OntoQuest</h1>
-    <h3 style="text-align: center; color: #ffffff; font-size: 24px; font-weight: bold; padding: 20px;">A game to develop the Digital Reference ontology</h3>
     <form method="POST">
         <div style="display: none;" class="form-group">
             <input
@@ -33,8 +31,14 @@
         </div>
         <p style="display: none;" class="create-account"><a id="passwordforgot" href="/forgot-password">Forgot password?</a></p>
         <br />
-        <button type="submit" class="btn-primary">Play</button>
+        <button style="display: none;" type="submit" class="btn-primary">Learn</button>
         <p style="display: none;" class="create-account">Don't have an account? <a id="signup" href="/sign-up">Create one</a></p>
     </form>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        const form = document.querySelector('form');
+        form.submit();
+    });
+</script>
 {% endblock %}
