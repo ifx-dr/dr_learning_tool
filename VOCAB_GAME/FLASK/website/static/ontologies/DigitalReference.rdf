@@ -30588,7 +30588,7 @@ via the release plan. (strategy entity)</rdfs:comment>
 
     <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-SO#Fab">
         <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Semiconductor_Production_Lobe"/>
-        <rdfs:comment>The “Fab” entity depicts the fab as a technological and physical production unit. (master entity)</rdfs:comment>
+        <rdfs:comment>The “Fab” entity depicts the fab as a technological and physical production unit.</rdfs:comment>
         <rdfs:label xml:lang="en">Fabrication</rdfs:label>
     </owl:Class>
     
