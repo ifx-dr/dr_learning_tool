@@ -21,7 +21,7 @@ body {
     top: 10px;
     right: 10px;
     padding: 10px 20px;
-    background-color: #46336e;
+    background-color: #43a1f8;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -30,7 +30,7 @@ body {
 #home:hover {
     background-color: white;
     border: solid;
-    color: #46336e;
+    color: #43a1f8;
 }
 
 h1 {
@@ -148,7 +148,7 @@ h3 {
 }
 
 .definition-card:hover {
-    background-color: #2b0731;
+    background-color: #43a1f8;
     border:3px solid white;
     cursor: pointer;
     color: white; /* Change the text color on hover */
@@ -163,10 +163,10 @@ h3 {
     display: block;
     margin: 20px auto 10px;
     padding: 10px 10px;
-    background-color: #45336E;
-    color: white;
+    background-color: #b8b8b9;
+    color: rgb(50, 50, 50);
     text-decoration: none;
-    border: 2px solid white;
+    border: 2px solid rgb(50, 50, 50);
     border-radius: 35px;
     font-weight: bold;
     font-size: 25px;
@@ -175,7 +175,7 @@ h3 {
 }
 
 .next-button:hover {
-    background-color: #2b0731;
+    background-color: #43a1f8;
     text-decoration: none;
     cursor: pointer;
     color: white;
@@ -209,7 +209,7 @@ h3 {
 }
 
 .navigation-bar a:hover {
-    color: #2B0730;
+    color: #43a1f8;
 }
 
 .navigation-bar .toggle_btn {
@@ -243,7 +243,7 @@ h3 {
 .dropdown_menu li {
     padding: 10px;
     display: flex;
-    align items: center;
+    align-items: center;
     justify-content: center;
     font-size: 18px;
 }
@@ -267,7 +267,7 @@ h3 {
     .dropdown_menu {
         display: flex;
         flex-direction: column;
-    align items: center;
+    align-items: center;
     justify-content: center;
     }
 

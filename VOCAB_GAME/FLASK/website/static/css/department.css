@@ -18,7 +18,7 @@ body {
 
 .sidebar-navigation {
     width: 5%;
-    background-color: #64203F;
+    background: linear-gradient(0deg, #82a7c9, #ee8196);
     height: 100%;
     position: fixed;
     z-index: 1;
@@ -56,7 +56,7 @@ body {
 .sidebar-navigation ul li .tooltip {
     display: inline-block;
     position: absolute;
-    background-color: #64203F;
+    background: linear-gradient(0deg,#82a7c9, #ee8196);
     padding: 8px 15px;
     border-radius: 3px;
     margin-top: -26px;
@@ -65,7 +65,7 @@ body {
     visibility: hidden;
     font-size: 13px;
     letter-spacing: 0.5px;
-    color: white;
+    color: rgb(50, 50, 50);
     z-index: 1;
     transition: all ease 0.3s;
 }
@@ -83,7 +83,7 @@ body {
 }
 
 .sidebar-navigation ul li:hover {
-    background-color: #2b0730;
+    background-color: white;
 }
 
 .sidebar-navigation ul li:hover .tooltip {
@@ -92,12 +92,12 @@ body {
 }
 
 .sidebar-navigation ul li.active i {
-    color: white;
+    color: rgb(50, 50, 50);
 }
 
 .sidebar-navigation button{
     background: none;
-	color: white;
+	color: rgb(50, 50, 50);
 	border: none;
 	padding: 0;
 	font: inherit;
@@ -108,7 +108,7 @@ body {
 
 h1 {
     text-align: center;
-    color: white;
+    color: rgb(50, 50, 50);
     font-weight: bold;
     font-size: 60px;
     margin: 40px auto 20px ;
@@ -117,7 +117,7 @@ h1 {
 
 
 p {
-    color: white;
+    color: rgb(50, 50, 50);
     width: 50%;
     margin: 0 auto;
     display: block;
@@ -141,7 +141,7 @@ p {
     padding: 10px;
     border: 2px solid #000000;
     font-size: 16px;
-    color: white;
+    color: rgb(50, 50, 50);
     font-style: italic;
     margin: 20px auto;
     display: block;
@@ -161,10 +161,10 @@ p {
     display: block;
     margin:30px auto 0px;
     padding: 10px 20px;
-    background-color: #45336E;
-    color: white;
+    background: linear-gradient(90deg, #82a7c9, #ee8196);
+    color: rgb(50, 50, 50);;
     text-decoration: none;
-    border: 2px solid white;
+    border: 2px solid rgb(50, 50, 50);;
     border-radius: 35px;
     font-weight: bold;
     font-size: 25px;
@@ -177,10 +177,10 @@ p {
 }
 
 .next-button:hover {
-    background-color: #2b0731;
+    background: white;
     text-decoration: none;
     cursor: pointer;
-    color: white;
+    color: rgb(50, 50, 50)
 }
 
 
@@ -189,9 +189,9 @@ p {
     margin: 20px auto ;
     display: none;
     align-items: center;
-    border-radius: 15px;
-    background-color: #45336E;
-    border: 2px solid white;
+    border-radius: 5px;
+    background: (90deg, #82a7c9, #ee8196);
+    border: 2px solid rgb(50, 50, 50);
 }
 
 .navigation-bar li {
@@ -201,15 +201,15 @@ p {
 
 .navigation-bar a {
     text-decoration: none;
-    color: white;
+    color: rgb(50, 50, 50);
 }
 
 .navigation-bar a:hover {
-    color: #2B0730;
+    color: white;
 }
 
 .toggle_btn {
-    color: white;
+    color: rgb(50, 50, 50);
     cursor: pointer;
     font-size: 20px;
     padding-left: 10px
@@ -242,7 +242,7 @@ p {
 
 .dropdown_menu button{
     background: none;
-	color: white;
+	color: rgb(50, 50, 50);
 	border: none;
 	padding: 0;
 	font: inherit;
@@ -263,7 +263,7 @@ p {
     .dropdown_menu {
         display: flex;
         flex-direction: column;
-        align items: center;
+        align-items: center;
         justify-content: center;
     }
 

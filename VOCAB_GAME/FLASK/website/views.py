@@ -1,3 +1,4 @@
+import logging
 import owlready2
 from flask import Blueprint, render_template, url_for, request, jsonify, redirect, flash
 from flask_login import login_required, current_user
@@ -787,19 +788,15 @@ def handle_question(question_number):
 
     profile_game = GameInformation.query.filter_by(profile_id=current_user.id).first()  # Retrieve the user's game information
     ontology_selected, ontology_path, onto, classes = get_ontology_information(profile_game)  # Retrieve ontology information
-    
     fixed_words_map = {
-        1: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-DF#Supply_Chain"),
-        2: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-BMS#Semiconductor_Company"),
-        3: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SO#Fab"),
-        4: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-GDM#Equipment"),
-        5: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-GDM#Calendar")
-
+        1: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Die_Bank"),
+        2: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Consignment_Order"),
+        3: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-DF#Available_To_Promise"),
+        4: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Stocks"),
+        5: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Supply_Demand_Match")
     }
-
     if question_number == 1 and request.method == 'GET': # Means the user started a new game, reset the previous game's information
         remove_previous_entries(current_user.id) # Remove previous entries for the current user
-
     if request.method == 'GET':
 
         previous_used_classes = get_previous_used_classes(current_user.id, ontology_path) # Retrieve previous used classes in the last questions

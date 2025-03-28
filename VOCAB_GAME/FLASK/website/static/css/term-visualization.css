@@ -35,27 +35,31 @@ body {
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     text-decoration: none;
-    color: white;
+    color: rgb(50, 50, 50);
 }
 
 #home:hover, #back:hover {
-    background-color: white;
-    border: solid;
-    color: #46336e;
+    background: white;
+    border: 2px solid rgb(50, 50, 50);
+    color: rgb(50, 50, 50);
 }
 
 #home {
     position: absolute;
+    border: 2px solid rgb(50, 50, 50);
     top: 10px;
     right: 10px;
-    background-color: #46336e;
+    background: linear-gradient(#82a7c9, #ee8196);
+    color: rgb(50, 50, 50);
 }
 
 #back {
     position: absolute;
+    border: 2px solid rgb(50, 50, 50);
     top: 10px;
     left: 10px;
-    background-color: #46336e;
+    background: linear-gradient(90deg, #82a7c9, #ee8196);
+    color: rgb(50, 50, 50);
 }
 
 
@@ -83,9 +87,10 @@ h1 {
 }
 .visualization {
     padding: 10px; /* Add padding to the visualization for a consistent spacing */
-    background-color: #2B0730;
-    border: 1px solid white;
-    color: white;
+    background-color: white;
+    border: 2px solid rgb(50, 50, 50);
+    border-radius: 5px;
+    color: rgb(50, 50, 50);
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -138,10 +143,13 @@ h1 {
 .graph-container {
     width: 100%; /* Set the width to 100% */
     background-color: white;
+    border: 5px solid;
+    border-radius: 5px;
+    border-image: linear-gradient(#82a7c9, #ee8196) 1;
     color: white;
     position: relative;
     overflow: hidden; /* Prevent overflow of the graph visualization */
-    color: red;
+    color: linear-gradient(#82a7c9, #ee8196);
 }
 
 /* Ensure the height of the graph container matches the visualization image */
@@ -160,8 +168,8 @@ h1 {
 }
 
 .collapsible {
-  background-color: #64203F;
-  color: #818181;
+  background: linear-gradient(90deg, #82a7c9, #ee8196);
+  color: rgb(50, 50, 50);
   cursor: pointer;
   padding: 0 5px;
   margin: 10px auto;
@@ -179,7 +187,7 @@ h1 {
 
 .collapsible:after {
   content: '\25BE';
-  color: #818181;
+  color: rgb(50, 50, 50);
   font-weight: bold;
   float: right;
   margin-left: 5px;
@@ -187,7 +195,7 @@ h1 {
 }
 
 .collapsible:hover:after {
-  color: white;
+  color: rgb(50, 50, 50);
   outline: none;
 }
 
@@ -195,7 +203,7 @@ button:focus {outline:0;}
 
 .active:after {
   content: "\25B4";
-  color: white;
+  color: rgb(50, 50, 50);
 }
 
 .list-content {
@@ -204,7 +212,7 @@ button:focus {outline:0;}
   height: auto;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  background-color: #46336e;
+  background-color: white;
   display: block;
   font-size: 13px;
   text-align: justify;
@@ -215,7 +223,7 @@ button:focus {outline:0;}
 .list-content p {
     margin-top: 10px;
     margin-bottom: 10px;
-    color: white;
+    color: rgb(50, 50, 50);
 }
 
 .stat, .selected span {
@@ -253,14 +261,14 @@ button:focus {outline:0;}
 
 .zoom-element {
     height: 40px; /* Adjust the height of the range input as needed */
-    color: white;
-    background-color: #64203F; /* Element color */
+    color: rgb(50, 50, 50);
+    background-color: #b8b8b9; /* Element color */
     cursor: pointer;
     font-size: 25px; /* Adjust the font size as needed */
     display: flex; /* Use flexbox to center the content horizontally and vertically */
     justify-content: center; /* Center the content horizontally */
     align-items: center; /* Center the content vertically */
-    border: 1px solid white; /* Add border to the elements */
+    border: 1px solid rgb(50, 50, 50); /* Add border to the elements */
 
 }
 
@@ -274,8 +282,8 @@ button:focus {outline:0;}
 }
 
 .zoom-buttons button:hover {
-    background-color: white;
-    color: #64203F;
+    background: rgb(50, 50, 50);
+    color: #b8b8b9;
 }
 
 .slider {
@@ -283,7 +291,7 @@ button:focus {outline:0;}
   width: 150px;
   height: 5px;
   border-radius: 5px;
-  background: #d3d3d3;
+  background: white;
   outline: none;
   opacity: 0.7;
   -webkit-transition: .2s;
@@ -296,6 +304,6 @@ button:focus {outline:0;}
   width: 10px;
   height: 25px;
   border-radius: 20%;
-  background: #2B0730;
+  background: rgb(50, 50, 50);
   cursor: pointer;
 }

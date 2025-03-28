@@ -45,21 +45,21 @@ body {
 #home:hover, #back:hover {
     background-color: white;
     border: solid;
-    color: #46336e;
+    color: #43a1f8;
 }
 
 #home {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #46336e;
+    background-color: #43a1f8;
 }
 
 #back {
     position: absolute;
     top: 10px;
     left: 10px;
-    background-color: #46336e;
+    background-color: #43a1f8;
 }
 
 
@@ -271,7 +271,7 @@ form {
 }
 
 .navigation-bar a:hover {
-    color: #2B0730;
+    color: #43a1f8;
 }
 
 .toggle_btn {
@@ -333,7 +333,7 @@ form {
     .dropdown_menu {
         display: flex;
         flex-direction: column;
-        align items: center;
+        align-items: center;
         justify-content: center;
     }
 

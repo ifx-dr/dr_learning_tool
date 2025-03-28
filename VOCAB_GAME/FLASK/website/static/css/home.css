@@ -13,6 +13,7 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
+    border-radius: 4px;
 }
 
 
@@ -31,21 +32,21 @@ body {
 #information:hover, #logout:hover {
     background-color: white;
     border: solid;
-    color: #46336e;
+    color: #b8b8b9;
 }
 
 #logout {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #46336e;
+    background-color: #b8b8b9;
 }
 
 #information {
     position: absolute;
     top: 10px;
     left: 10px;
-    background-color: #46336e;
+    background-color: #b8b8b9;
 }
 
 
@@ -71,7 +72,7 @@ h1 {
     width: 25%; /* Adjust the width as needed */
     padding: 15px;
     border: 4px solid white;
-    border-radius: 20px;
+    border-radius: 5px;
     color: white;
     display: flex;
     flex-direction: column;
@@ -80,15 +81,15 @@ h1 {
 
 .title {
     position: absolute;
-    top: -20px; /* Adjust the vertical position as needed */
+    top: -10px; /* Adjust the vertical position as needed */
     left: 50%; /* Align the title horizontally */
     transform: translateX(-50%); /* Center the title horizontally */
     z-index: 1;
     font-weight: bold;
-    border: 4px solid white;
-    border-radius: 20px;
+    border: 4px solid rgb(0, 0, 0);
+    border-radius: 5px;
     padding: 5px 10px;
-    background-color: #45336E;
+    background-color: linear-gradient(to right, #82a7c9, #ee8196);
     font-size: 20px;
 }
 
@@ -125,9 +126,9 @@ h1 {
     flex: 1;
     margin: 0 50px;
     padding: 15px;
-    border: 4px solid #2B0730;
-    border-radius: 20px;
-    background-color: #45336E;
+    border: 2px solid rgb(50, 50, 50);
+    border-radius: 5px;
+    background: linear-gradient(90deg, #82a7c9, #ee8196);
     color: white;
     display: flex;
     flex-direction: column;
@@ -159,7 +160,7 @@ h1 {
     margin: 10px;
     cursor: pointer;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 5px;
 }
 
 
@@ -247,9 +248,9 @@ h1 {
     width: auto;
     height: auto;
     max-height: 80%;
-    border: 4px solid #2B0730;
-    border-radius: 20px;
-    background-color: #45336E;
+    border: 4px solid #b8b8b9;
+    border-radius: 5px;
+    background-color: #b8b8b9;
     color: white;
     padding: 10px;
     z-index: 1;
@@ -279,7 +280,7 @@ h1 {
 
 
 .close:hover {
-    color: black;
+    color: rgb(128, 128, 128);
     text-decoration: none;
     cursor: pointer;
 }
@@ -302,8 +303,8 @@ h1 {
 }
 
 .challenge {
-    background-color:#64203F;
-    border-radius: 25px;
+    background-color:#b8b8b9;
+    border-radius: 5px;
     padding: 5px 10px;
     margin-top: 10px;
     font-size: 15px;
@@ -312,10 +313,10 @@ h1 {
 #play {
     font-size: 25px;
     padding: 10px 10px;
-    background-color: #64203F;
-    color: white;
+    background: linear-gradient(to right, #82a7c9, #ee8196);
+    color: rgb(50, 50, 50);
     text-decoration: none;
-    border: 2px solid white;
+    border: 2px solid rgb(50, 50, 50);
     border-radius: 35px;
     font-weight: bold;
     text-align: center;
@@ -328,7 +329,7 @@ h1 {
 }
 
 #play:hover {
-    background-color: #2b0731;
+    background: white;
     text-decoration: none;
     cursor: pointer;
 }
@@ -338,8 +339,8 @@ h1 {
     margin: 20px auto ;
     display: none;
     align-items: center;
-    border-radius: 15px;
-    background-color: #45336E;
+    border-radius: 5px;
+    background-color: #b8b8b9;
     border: 2px solid white;
 }
 
@@ -354,7 +355,7 @@ h1 {
 }
 
 .navigation-bar a:hover {
-    color: #2B0730;
+    color: #43a1f8;
 }
 
 .toggle_btn {
@@ -443,6 +444,7 @@ h1 {
 }
 
 .scale-in-center {
+    color: rgb(50, 50, 50);
 	-webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     font-size: 3rem;

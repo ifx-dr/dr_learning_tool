@@ -30,13 +30,13 @@ body {
     position: absolute;
     top: 10px;
     left: 10px;
-    background-color: #46336e;
+    background-color: #43a1f8;
 }
 
 #home:hover {
     background-color: white;
     border: solid;
-    color: #46336e;
+    color: #43a1f8;
 }
 
 h1 {

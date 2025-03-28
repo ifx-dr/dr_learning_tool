@@ -41,21 +41,21 @@ body {
 #home:hover, #back:hover {
     background-color: white;
     border: solid;
-    color: #46336e;
+    color: #43a1f8;
 }
 
 #home {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #46336e;
+    background-color: #43a1f8;
 }
 
 #back {
     position: absolute;
     top: 10px;
     left: 10px;
-    background-color: #46336e;
+    background-color: #43a1f8;
 }
 
 #home, #back {
@@ -167,7 +167,7 @@ h1 {
 }
 
 .collapsible {
-  background-color: #64203F;
+  background-color: #b8b8b9;
   color: #818181;
   cursor: pointer;
   padding: 0 5px;
@@ -211,7 +211,7 @@ button:focus {outline:0;}
   height: auto;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  background-color: #46336e;
+  background-color: #43a1f8;
   display: block;
   font-size: 13px;
   text-align: justify;
@@ -261,7 +261,7 @@ button:focus {outline:0;}
 .zoom-element {
     height: 40px; /* Adjust the height of the range input as needed */
     color: white;
-    background-color: #64203F; /* Element color */
+    background-color: #b8b8b9; /* Element color */
     cursor: pointer;
     font-size: 25px; /* Adjust the font size as needed */
     display: flex; /* Use flexbox to center the content horizontally and vertically */
@@ -282,7 +282,7 @@ button:focus {outline:0;}
 
 .zoom-buttons button:hover {
     background-color: white;
-    color: #64203F;
+    color: #b8b8b9;
 }
 
 .slider {

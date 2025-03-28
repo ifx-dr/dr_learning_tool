@@ -11,13 +11,13 @@
 
 {% block content %}
 <!-- Sidebar navigation -->
-<a class="nav-item nav-link" id="home" href="/"><i class="bi bi-house-door-fill"></i></a>
+<a class="nav-item nav-link" id="home" href="/"><i class="bi bi-house-up-fill"></i></a>
 <div class="navigation-bar">
     <div class="toggle_btn">
         <i class="bi bi-list"></i>
     </div>
     <div class="dropdown_menu">
-        <li><a href="/"><i class="bi bi-house-door-fill"></i></a></li>
+        <li><a href="/"><i class="bi bi-house-up-fill"></i></a></li>
         <li><a href="/logout"><i class="bi bi-box-arrow-right"></i></a></li>
     </div>
 </div>
@@ -116,11 +116,30 @@
     </div>
     {% else %}
         <div class="response-options">
-            <button type="submit" name="validationResponse" value="pass" id="pass-btn" title="Continue">I understand</button>
+            <button type="submit" name="validationResponse" value="pass" id="pass-btn">I understand</button>
             <!--<button type="submit" name="validationResponse" value="agree" id="agree-btn" title="You agree with the definition">True</button>-->
             <!--<button type="submit" name="validationResponse" value="disagree" id="disagree-btn" title="You don’t agree with the definition or not sure about the definition">False</button>-->
         </div>
+        <!--
+        <div class="response-options">
+            <button type="button" name="validationResponse" value="pass" id="mail-btn">Suggest Improvement</button>
+        </div>
+        -->
+        <div class="response-options">
+            <button id="sug-btn">Suggest Improvement</button>              
+        </div>
     {% endif %}
+    <!-- Suggestion-Popup 
+    <div id="popup-container" class="popup hidden">
+        <div class="popup-content">
+            <textarea id="suggestion-text" placeholder="Enter your suggestion here..."></textarea>
+            <div class="popup-buttons">
+                <button id="submit-suggestion">Submit</button>
+                <button id="close-popup">Close</button>
+            </div>
+        </div>
+    </div>
+    -->
 </form>
 
 <!-- Modal for providing additional information -->
@@ -545,5 +564,57 @@ function openTab(evt, name) {
 <script>
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+</script>
+<script>
+// Get button elements
+const mailBtn = document.getElementById("mail-btn");
+const popupContainer = document.getElementById("popup-container");
+const closePopupBtn = document.getElementById("close-popup");
+const submitSuggestionBtn = document.getElementById("submit-suggestion");
+
+// Open Pop-Up when button is pressed
+mailBtn.addEventListener("click", () => {
+    popupContainer.classList.remove("hidden");
+});
+
+// Close Pop-Up
+closePopupBtn.addEventListener("click", () => {
+    event.preventDefault();
+    popupContainer.classList.add("hidden");
+});
+
+// Send Suggestion
+submitSuggestionBtn.addEventListener("click", () => {
+    const suggestionText = document.getElementById("suggestion-text").value;
+    if (suggestionText.trim() === "") {
+        alert("Please enter a suggestion");
+        event.preventDefault();
+        return;
+    }
+
+    console.log("Suggestion submitted:", suggestionText);
+
+    // Close Pop-Up after send
+    popupContainer.classList.add("hidden");
+    event.preventDefault();
+});
+</script>
+<script>
+    document.getElementById('sug-btn').addEventListener('click', function(event) {
+        // Prevents standard behavior
+        event.preventDefault();
+
+        // Retrieve class name
+        let word = "{{ word }}";
+        word = word.replace(/ /g, "_");
+        
+        // Mailto link generated
+        const mailtoLink = "mailto:DigitalReference@infineon.com"
+            + "?subject=" + encodeURIComponent(`Suggestion for class "${word}"`)
+            + "&body=";
+
+        // Open mailto link
+        window.location.href = mailtoLink;
+    });
 </script>
 {% endblock %}
