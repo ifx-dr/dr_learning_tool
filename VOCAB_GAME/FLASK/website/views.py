@@ -382,7 +382,10 @@ def construct_graph(random_word, onto):
                 if domain_cls == random_word:
                     for range_cls in prop.range:
                         range_str = str(range_cls)  # Convert to string representation
-                        data_type = range_str.split("'")[1]  # Extract the datatype from the string representation
+                        try:
+                            data_type = range_str.split("'")[1]  # Extract the datatype from the string representation
+                        except IndexError:
+                            data_Type = None
                         unique_data_type = f"{data_type}_{id(prop)}"  # Create a unique identifier for each data type
                         G.add_node(unique_data_type, name=data_type, definition="", type="owl:DatatypeProperty")  # Add a node for the unique data property type
                         G.add_edge(random_word.name, unique_data_type, label=prop.name, type="dataproperties")
@@ -789,12 +792,27 @@ def handle_question(question_number):
     profile_game = GameInformation.query.filter_by(profile_id=current_user.id).first()  # Retrieve the user's game information
     ontology_selected, ontology_path, onto, classes = get_ontology_information(profile_game)  # Retrieve ontology information
     fixed_words_map = {
-        1: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Die_Bank"),
-        2: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Consignment_Order"),
-        3: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-DF#Available_To_Promise"),
-        4: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Stocks"),
-        5: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Supply_Demand_Match")
-    }
+        1: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Criteria"),
+        2: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Customer"),
+        3: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Decision_Maker_Type"),
+        4: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Decision_Making_Initiative"),
+        5: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Decision_Making_Unit"),
+        6: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Open_Order_Book"),
+        7: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Order_Schedule_Line"),
+        8: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Plan_Execution"),
+        9: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Planning_Function"),
+        10: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Planning_Instance"),
+        11: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Planning_Object"),
+        12: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Planning_Process"),
+        13: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Planning_Situation"),
+        14: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Prioritized_Demand"),
+        15: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Prioritized_Orders"),
+        16: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Target"),
+        17: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Target_Allocation"),
+        18: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Bottleneck_Resource"),
+        19: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Max_Stock"),
+        20: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Forecast")
+        }
     if question_number == 1 and request.method == 'GET': # Means the user started a new game, reset the previous game's information
         remove_previous_entries(current_user.id) # Remove previous entries for the current user
     if request.method == 'GET':
@@ -802,8 +820,8 @@ def handle_question(question_number):
         previous_used_classes = get_previous_used_classes(current_user.id, ontology_path) # Retrieve previous used classes in the last questions
         random_word = select_random_word(classes, previous_used_classes) # Select a random word (class) to be displayed
         
-        #Get the fixed classes for the first 5 questions
-        if question_number <= 5:
+        #Get the fixed classes for the first 20 questions
+        if question_number <= 20:
             random_word = fixed_words_map.get(question_number)
             
         print(random_word)
