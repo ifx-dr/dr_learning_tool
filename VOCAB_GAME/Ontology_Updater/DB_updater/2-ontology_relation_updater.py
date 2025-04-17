@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import ttk
 
 # Connect to the database
-conn = sqlite3.connect("C:\\Users\\UribelarreaJ\\Desktop\\OntoQuest-main\\VOCAB_GAME\\FLASK\\website\\database.db")
+conn = sqlite3.connect("C:\\Users\\SeifertB\\Desktop\\dr_learning_tool\\VOCAB_GAME\\FLASK\\website\\database.sql")
 cursor = conn.cursor()
 
 # Create a Tkinter window for the pop-ups

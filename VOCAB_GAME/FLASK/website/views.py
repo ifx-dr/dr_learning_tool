@@ -5,6 +5,7 @@ from flask_login import login_required, current_user
 from flask import session
 from .models import Profile, DepartmentOntologyAssociation, GameInformation, UserDefinitions, UsedWord, ExtendedUserDefinitions
 from random import *
+import random
 import networkx as nx
 from .manage_db import *
 import json
@@ -809,6 +810,13 @@ def handle_question(question_number):
     profile_game = GameInformation.query.filter_by(profile_id=current_user.id).first()  # Retrieve the user's game information
     ontology_selected, ontology_path, onto, classes = get_ontology_information(profile_game)  # Retrieve ontology information
     fixed_words_map = {
+        1: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-DF#Supply_Chain"),
+        2: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-BMS#Semiconductor_Company"),
+        3: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SO#Fab"),
+        4: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-GDM#Equipment"),
+        5: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-GDM#Calendar")
+    }
+    random_words_map = {
         1: next(cls for cls in classes if cls.iri == "http://www.w3.org/2006/time#General_Duration_Description"),
         2: next(cls for cls in classes if cls.iri == "http://www.w3.org/2006/time#Date_Time_Interval"),
         3: next(cls for cls in classes if cls.iri == "http://www.w3.org/2006/time#General_Date_Time_Description"),
@@ -823,7 +831,49 @@ def handle_question(question_number):
         12: next(cls for cls in classes if cls.iri == "http://www.w3.org/2006/time#Duration"),
         13: next(cls for cls in classes if cls.iri == "http://www.w3.org/2006/time#Instant"),
         14: next(cls for cls in classes if cls.iri == "http://www.w3.org/2006/time#Interval"),
-        15: next(cls for cls in classes if cls.iri == "http://www.w3.org/2006/time#Time_Position")
+        15: next(cls for cls in classes if cls.iri == "http://www.w3.org/2006/time#Time_Position"),
+        16: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Forecast"),
+        17: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Criteria"),
+        18: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Bottleneck_Resource"),
+        19: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Customer"),
+        20: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Decision_Maker_Type"),
+        21: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Decision_Making_Initiative"),
+        22: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Decision_Making_Unit"),
+        23: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Max_Stock"),
+        24: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Open_Order_Book"),
+        25: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Order_Schedule_Line"),
+        26: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Plan_Execution"),
+        27: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Planning_Function"),
+        28: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Planning_Instance"),
+        29: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Planning_Object"),
+        30: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Planning_Process"),
+        31: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Planning_Situation"),
+        32: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Prioritized_Demand"),
+        33: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Prioritized_Orders"),
+        34: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Planning#Target"),
+        35: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Target_Allocation"),
+        36: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Die_Bank"),
+        37: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Consignment_Order"),
+        38: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-DF#Available_To_Promise"),
+        39: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Stocks"),
+        40: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SCP#Supply_Demand_Match"),
+        41: next(cls for cls in classes if cls.iri == "http://purl.org/dc/dcmitype/Software"),
+        42: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#AH_Local_Cloud"),
+        43: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Communication_Technology"),
+        44: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#System_Documentation"),
+        45: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Software_System"),
+        46: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#SoA_Property"),
+        47: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Service_Oriented_Architecture"),
+        48: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#System_Of_Systems"),
+        49: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Data_Format"),
+        50: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Data_Model"),
+        51: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Device"),
+        52: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Service_Documentation"),
+        53: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Service"),
+        54: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Method"),
+        55: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Local_Network"),
+        56: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Information_Model"),
+        57: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Documentation_Document")
         }
     if question_number == 1 and request.method == 'GET': # Means the user started a new game, reset the previous game's information
         remove_previous_entries(current_user.id) # Remove previous entries for the current user
@@ -832,9 +882,11 @@ def handle_question(question_number):
         previous_used_classes = get_previous_used_classes(current_user.id, ontology_path) # Retrieve previous used classes in the last questions
         random_word = select_random_word(classes, previous_used_classes) # Select a random word (class) to be displayed
         
-        #Get the fixed classes for the first 20 questions
-        if question_number <= 15:
+        #Get the fixed classes for the first 5 questions
+        if question_number <= 5:
             random_word = fixed_words_map.get(question_number)
+        elif question_number > 5:
+            random_word = random_words_map.get(random.randint(1, 57))
             
         print(random_word)
         store_used_word(random_word, current_user.id) #Store the used word in the database
