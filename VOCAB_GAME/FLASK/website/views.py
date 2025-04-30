@@ -17,6 +17,8 @@ from rdflib import RDFS
 views = Blueprint('views', __name__)
 basedir = os.path.dirname(__file__)
 
+persistence_variable = []
+
 @views.route('/', methods=['GET', 'POST'])
 @login_required
 def home():
@@ -873,22 +875,154 @@ def handle_question(question_number):
         54: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Method"),
         55: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Local_Network"),
         56: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Information_Model"),
-        57: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Documentation_Document")
+        57: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Communication_Security_Mechanism"),
+        58: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Data_Link_Media_Access_Technology"),
+        59: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#End_To_End_Communication_Technology"),
+        60: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Point_To_Point_Communication_Technology"),
+        61: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Transfer_Protocol"),
+        62: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Constrained_Device"),
+        63: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Illumination_Device"),
+        64: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Sensor_Device"),
+        65: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Switch_Device"),
+        66: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Gateway"),
+        67: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Industrial_Personal_Computer"),
+        68: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Personal_Computer"),
+        69: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Programmable_Logic_Controller"),
+        70: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Raspberry_Pi"),
+        71: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Smartphone"),
+        72: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Tablet_Computer"),
+        73: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#AH_Service_Documentation_Document"),
+        74: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Documentation_Document"),
+        75: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Communication_Profile_CP"),
+        76: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Interface_Design_Description_IDD"),
+        77: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#AH_Application_Servcice_IDD"),
+        78: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#AH_Mandatory_Core_Service_IDD"),
+        79: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Semantic_Profile_SP"),
+        80: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#Service_Description_SD"),
+        81: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#System_Web_Application_Description_WADL"),
+        82: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#AH_Application_Service"),
+        83: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AH#AH_Core_System"),
+        84: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Data_Transmission_Unit"),
+        85: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Communication_Device"),
+        86: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Repeater"),
+        87: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Computer"),
+        88: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Control_Device"),
+        89: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#ISA_95_Communication"),
+        90: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#IT_System"),
+        91: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#APS"),
+        92: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#BI_System"),
+        93: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#CAD_System"),
+        94: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Database_System"),
+        95: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#RDF_Graph_Store"),
+        96: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Relational_Database_System"),
+        97: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#ERP_System"),
+        98: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#LIMS"),
+        99: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#MES"),
+        100: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#MIS"),
+        101: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Message_Broker_System"),
+        102: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#PLM_System"),
+        103: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#SCADA_System"),
+        104: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Simulation_System"),
+        105: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#IT_Vendor"),
+        106: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Network_Layer_Model"),
+        107: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#OSI_1_2_Net_Access_Technology"),
+        108: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#OSI_5_7_Application_Protocol"),
+        109: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#MQTT"),
+        110: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#OSI_AL_2_Internet_Layer"),
+        111: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#SCTP"),
+        112: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#TCP"),
+        113: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#UDP"),
+        114: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#SoA_Client"),
+        115: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#SoA_Publisher"),
+        116: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#SoA_Server"),
+        117: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#SoA_Service_Broker"),
+        118: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#SoA_Service_Repository"),
+        119: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#SoA_Subscriber"),
+        120: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Service_Oriented_Architecture_Implementation"),
+        121: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Service_Oriented_Architecture_Protocols"),
+        122: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#B2MML_Based_Service"),
+        123: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Standard"),
+        124: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#ANSI_Standard"),
+        125: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#IEC_Standard"),
+        126: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#IEEE_Standard"),
+        127: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#IETF_Standard"),
+        128: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#ISA_Standard"),
+        129: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#ISO_Standard"),
+        130: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#MESA_Standard"),
+        131: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#OASIS_Standard"),
+        132: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#OMG_Standard"),
+        133: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#W3C_Standard"),
+        134: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#W3C_L1_Web_Platform"),
+        135: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Character_Set"),
+        136: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Web_Address"),
+        137: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Web_Application_Protocol"),
+        138: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#W3C_L2_Data_Syntax"),
+        139: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#ANSI_X12_Data_Format"),
+        140: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Comma_Separated_Values"),
+        141: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#EDIFACT_Data_Format"),
+        142: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#HTML"),
+        143: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#JSON"),
+        144: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#N3_TURTLE"),
+        145: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#RDFa"),
+        146: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#XHTML"),
+        147: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#XML"),
+        148: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#W3C_L3_Knowledge_Representation"),
+        149: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#RDF"),
+        150: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#SPARQL_Language"),
+        151: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Document_Type_Description"),
+        152: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#XML_Schema"),
+        153: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#OWL"),
+        154: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#RDFS"),
+        155: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Rosetta_Net_Specification"),
+        156: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#EDI_Specification"),
+        157: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#EDIFACT_Specification"),
+        158: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Markup_Language"),
+        159: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Ontology"),
+        160: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#SOSA"),
+        161: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#SSN"),
+        162: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Auto_Gration_Specification"),
+        163: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Incoterms#Incoterms_2020"),
+        164: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Incoterms#Incoterms_Application_Mode"),
+        165: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Incoterms#Only_Ship_Transport_Clause"),
+        166: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Incoterms#Universal_Transport_Clause"),
+        167: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Incoterms#Incoterms_Clause"),
+        168: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Incoterms#Incoterms_Group"),
+        169: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Incoterms#C_Main_Carriage_Paid"),
+        170: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Incoterms#D_Arrival"),
+        171: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Incoterms#E_Departure"),
+        172: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-Incoterms#F_Main_Carriage_Unpaid"),
+        173: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#Standardization_Organization"),
+        174: next(cls for cls in classes if cls.iri == "http://www.semanticweb.org/bonikmarta/ontologies/2022/10/Incoterms#ICC"),
+        175: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#ANSI"),
+        176: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#IETF"),
+        177: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#MESA"),
+        178: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#OCF"),
+        179: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-AT#OMG")
         }
+    
     if question_number == 1 and request.method == 'GET': # Means the user started a new game, reset the previous game's information
         remove_previous_entries(current_user.id) # Remove previous entries for the current user
     if request.method == 'GET':
 
         previous_used_classes = get_previous_used_classes(current_user.id, ontology_path) # Retrieve previous used classes in the last questions
         random_word = select_random_word(classes, previous_used_classes) # Select a random word (class) to be displayed
-        
+        #randomInteger = random.randint(1, 83)
         #Get the fixed classes for the first 5 questions
         if question_number <= 5:
             random_word = fixed_words_map.get(question_number)
         elif question_number > 5:
-            random_word = random_words_map.get(random.randint(1, 57))
-            
-        print(random_word)
+            #while randomInteger in persistence_variable:
+            #    randomInteger = random.randint(1, 83)
+            #persistence_variable.append(randomInteger)
+            #print(persistence_variable)
+            random_word = random_words_map.get(random.randint(1, 179))
+            #x = 0
+            while random_word in previous_used_classes:
+                random_word = random_words_map.get(random.randint(1, 179))
+                #x = x + 1
+                #print(random_word)
+                #print(x)
+        #print(random_word)
         store_used_word(random_word, current_user.id) #Store the used word in the database
         definition = get_highest_scored_definition(random_word) # Retrieve the highest scored definition associated to the random word
         profile_game.random_word = random_word.name # Update the user's game information with the current random word
@@ -925,7 +1059,7 @@ def handle_question(question_number):
         validation_response = request.form['validationResponse'] # Retrieve the user's validation response
         random_word = profile_game.random_word  # Retrieve the current random word from the user's game information
         highest_scored_definition = profile_game.random_definition # Retrieve the highest scored definition
-        print('profile word:', random_word)
+        #print('profile word:', random_word)
         alternative_name = request.form.get('alternativeName') # Retrieve the alternative name input from the form
         abbreviation = request.form.get('abbreviation') # Retrieve the abbreviation input from the form
         #german_name = request.form.get('germanName') # Retrieve the German name input from the form
