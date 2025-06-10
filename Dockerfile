@@ -26,5 +26,7 @@ COPY VOCAB_GAME/FLASK .
 # Set the environment variable for the Flask application
 ENV FLASK_APP=app.py
 
+ENV PYTHONPATH="${PYTHONPATH}:/app/VOCAB_GAME/FLASK"
+
 # Execute the command to start the Gunicorn application
 CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:8000", "--timeout", "300"]
