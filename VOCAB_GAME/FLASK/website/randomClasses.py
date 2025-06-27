@@ -217,5 +217,15 @@ random_words_map = {
     215: "http://www.w3id.org/ecsel-dr-SO#Furnace_Process",
     216: "http://www.w3id.org/ecsel-dr-SO#Priority_Class",
     217: "http://www.w3id.org/ecsel-dr-SO#Development",
-    218: "http://www.w3id.org/ecsel-dr-SO#Hot"
+    218: "http://www.w3id.org/ecsel-dr-SO#Hot",
+    219: "http://www.w3id.org/ecsel-dr-SO#Lot_Size",
+    220: "http://www.w3id.org/ecsel-dr-SO#Time_Coupling",
+    221: "http://www.w3id.org/ecsel-dr-SO#Product",
+    222: "http://www.w3id.org/ecsel-dr-SO#Purge",
+    223: "http://www.w3id.org/ecsel-dr-SO#Bottleneck",
+    224: "http://www.w3id.org/ecsel-dr-SO#Robot",
+    225: "http://www.w3id.org/ecsel-dr-SO#Capacity",
+    226: "http://www.w3id.org/ecsel-dr-SO#Supply_Chain",
+    227: "http://www.w3id.org/ecsel-dr-SO#Target_Costs",
+    228: "http://www.w3id.org/ecsel-dr-SO#Shift"
 }
