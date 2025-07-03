@@ -227,5 +227,27 @@ random_words_map = {
     225: "http://www.w3id.org/ecsel-dr-SO#Capacity",
     226: "http://www.w3id.org/ecsel-dr-SO#Supply_Chain",
     227: "http://www.w3id.org/ecsel-dr-SO#Target_Costs",
-    228: "http://www.w3id.org/ecsel-dr-SO#Shift"
+    228: "http://www.w3id.org/ecsel-dr-SO#Shift",
+    229: "http://www.w3id.org/ecsel-dr-SO#Current_WIP",
+    230: "http://www.w3id.org/ecsel-dr-SO#Cycle_Time_Commitment",
+    231: "http://www.w3id.org/ecsel-dr-SO#Delivery_Commitment",
+    232: "http://www.w3id.org/ecsel-dr-SO#EPA",
+    233: "http://www.w3id.org/ecsel-dr-SO#Equipment",
+    234: "http://www.w3id.org/ecsel-dr-SO#Equipment_Group",
+    235: "http://www.w3id.org/ecsel-dr-SO#Event_Calendar",
+    236: "http://www.w3id.org/ecsel-dr-SO#Tool",
+    237: "http://www.w3id.org/ecsel-dr-SO#Material_Transfer_Matrix",
+    238: "http://www.w3id.org/ecsel-dr-SO#Operation",
+    239: "http://www.w3id.org/ecsel-dr-SO#Operator",
+    240: "http://www.w3id.org/ecsel-dr-SO#Planning_Work_Center",
+    241: "http://www.w3id.org/ecsel-dr-SO#Plant",
+    242: "http://www.w3id.org/ecsel-dr-SO#Process",
+    243: "http://www.w3id.org/ecsel-dr-SO#Process_Flow",
+    244: "http://www.w3id.org/ecsel-dr-SO#Product_Level",
+    245: "http://www.w3id.org/ecsel-dr-SO#Product_Level_2",
+    246: "http://www.w3id.org/ecsel-dr-SO#Product_Level_3",
+    247: "http://www.w3id.org/ecsel-dr-SO#Target_Revenue",
+    248: "http://www.w3id.org/ecsel-dr-SO#Target_Service_Level"
+        
+
 }
