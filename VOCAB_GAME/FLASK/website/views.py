@@ -830,16 +830,20 @@ def handle_question(question_number):
             random_word = fixed_words_map.get(question_number)
         elif question_number > 5:
             #random_word = random_words_map.get(random.randint(1, 178))
-            iri = random_words_map.get(random.randint(16, 248))
+            iri = random_words_map.get(random.randint(16, 244))
             random_word = next(cls for cls in classes if cls.iri == iri)
             print(iri)
             while random_word in previous_used_classes:
                 #random_word = random_words_map.get(random.randint(1, 178))
-                iri = random_words_map.get(random.randint(16, 248))
+                iri = random_words_map.get(random.randint(16, 244))
                 random_word = next(cls for cls in classes if cls.iri == iri)
                 print(iri)
         store_used_word(random_word, current_user.id) #Store the used word in the database
-        definition = get_highest_scored_definition(random_word) # Retrieve the highest scored definition associated to the random word
+        try:
+            definition = get_highest_scored_definition(random_word) # Retrieve the highest scored definition associated to the random word
+        except ValueError as e:
+            print (f"Error when loading definition: {e}")
+            definition = None
         profile_game.random_word = random_word.name # Update the user's game information with the current random word
         profile_game.random_definition = definition
         db.session.commit() # Commit the updates to the database
