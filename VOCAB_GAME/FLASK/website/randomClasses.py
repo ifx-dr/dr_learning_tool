@@ -263,5 +263,16 @@ random_words_map = {
     261: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Savings_Of_One_Semiconductor_Solar",
     262: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Savings_Of_One_Semiconductor_Wind_Turbine",
     263: "http://www.w3id.org/ecsel-dr-CO2Savings#Distribution_Losses",
-    264: "http://www.w3id.org/ecsel-dr-CO2Savings#Delivery_Gross_Weight"
+    264: "http://www.w3id.org/ecsel-dr-CO2Savings#Delivery_Gross_Weight",
+    265: "http://www.w3id.org/ecsel-dr-SO#Tempering",
+    266: "http://www.w3id.org/ecsel-dr-SO#Work_In_Progress_Station",
+    267: "http://www.w3id.org/ecsel-dr-SO#Product_Class",
+    268: "http://www.w3id.org/ecsel-dr-SO#Product_Group",
+    269: "http://www.w3id.org/ecsel-dr-SO#Product_Line",
+    270: "http://www.w3id.org/ecsel-dr-SO#Product_Number",
+    271: "http://www.w3id.org/ecsel-dr-SO#Production_Request",
+    272: "http://www.w3id.org/ecsel-dr-SO#Shift",
+    273: "http://www.w3id.org/ecsel-dr-SO#Simulation_Part",
+    274: "http://www.w3id.org/ecsel-dr-SO#Simulation_Route"
+
 }
