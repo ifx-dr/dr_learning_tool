@@ -273,6 +273,18 @@ random_words_map = {
     271: "http://www.w3id.org/ecsel-dr-SO#Production_Request",
     272: "http://www.w3id.org/ecsel-dr-SO#Shift",
     273: "http://www.w3id.org/ecsel-dr-SO#Simulation_Part",
-    274: "http://www.w3id.org/ecsel-dr-SO#Simulation_Route"
-
+    274: "http://www.w3id.org/ecsel-dr-SO#Simulation_Route",
+    275: "http://www.w3id.org/ecsel-dr-OOSMP#Discrete_Power_Stage",
+    276: "http://www.w3id.org/ecsel-dr-SO#Dry_Etching",
+    277: "http://www.w3id.org/ecsel-dr-GDM#Equipment",
+    278: "http://www.w3id.org/ecsel-dr-PROD#Finished_Product",
+    279: "http://www.w3id.org/ecsel-dr-OOSMP#Gate_Driver",
+    280: "http://www.w3id.org/ecsel-dr-SO#Implantation",
+    281: "http://www.w3id.org/ecsel-dr-SO#Wet_Etching",
+    282: "http://www.w3id.org/ecsel-dr-SO#Product",
+    283: "http://www.w3id.org/ecsel-dr-SO#Productive",
+    284: "http://www.w3id.org/ecsel-dr-DF#Route",
+    285: "http://www.w3id.org/ecsel-dr-SO#Sputtering",
+    286: "http://www.w3id.org/ecsel-dr-SO#Wet_Etching",
+    287: "http://www.w3id.org/ecsel-dr-OOSMP#Semiconductor_Product" 
 }
