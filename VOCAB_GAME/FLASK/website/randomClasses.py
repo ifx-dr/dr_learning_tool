@@ -283,7 +283,7 @@ random_words_map = {
     281: "http://www.w3id.org/ecsel-dr-SO#Wet_Etching",
     282: "http://www.w3id.org/ecsel-dr-SO#Product",
     283: "http://www.w3id.org/ecsel-dr-SO#Productive",
-    284: "http://www.w3id.org/ecsel-dr-DF#Route",
+    284: "http://www.w3id.org/ecsel-dr-SO#EPA",
     285: "http://www.w3id.org/ecsel-dr-SO#Sputtering",
     286: "http://www.w3id.org/ecsel-dr-SO#Wet_Etching",
     287: "http://www.w3id.org/ecsel-dr-OOSMP#Semiconductor_Product",
