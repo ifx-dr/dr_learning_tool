@@ -301,6 +301,15 @@ random_words_map = {
     299: "http://www.w3id.org/ecsel-dr-SO#Rocket",
     300: "http://www.w3id.org/ecsel-dr-PROD#Sales_Product",
     301: "http://www.w3id.org/ecsel-dr-OOSMP#Smart_Driver",
-    302:"http://www.w3id.org/ecsel-dr-Incoterms#To_Location"
+    302: "http://www.w3id.org/ecsel-dr-Incoterms#To_Location",
+    303: "http://www.w3id.org/ecsel-dr-SCP#Aggregated_Capacity",
+    304: "http://www.w3id.org/ecsel-dr-DF#Allocation_Plan",
+    305: "http://www.w3id.org/ecsel-dr-SO#Mask",
+    306: "http://www.w3id.org/ecsel-dr-DF#Master_Plan",
+    307: "http://www.w3id.org/ecsel-dr-SCP#Operational_Demand",
+    308: "http://www.w3id.org/ecsel-dr-DF#Order_Delivery_Plan",
+    309: "http://www.w3id.org/ecsel-dr-DF#Order_Promising",
+    310: "http://www.w3id.org/ecsel-dr-SO#Time_Constraints",
+    311: "http://www.w3id.org/ecsel-dr-SO#Tool"
 
 }
