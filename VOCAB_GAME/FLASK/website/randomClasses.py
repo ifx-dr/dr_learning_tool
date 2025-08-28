@@ -307,4 +307,5 @@ random_words_map = {
     305: "http://www.w3id.org/ecsel-dr-SCP#Operational_Demand",
     306: "http://www.w3id.org/ecsel-dr-SO#Time_Constraints",
     307: "http://www.w3id.org/ecsel-dr-SO#Tool"
+    
 }
