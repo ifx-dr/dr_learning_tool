@@ -306,5 +306,18 @@ random_words_map = {
     304: "http://www.w3id.org/ecsel-dr-SO#Mask",
     305: "http://www.w3id.org/ecsel-dr-SCP#Operational_Demand",
     306: "http://www.w3id.org/ecsel-dr-SO#Time_Constraints",
-    307: "http://www.w3id.org/ecsel-dr-SO#Tool"    
+    307: "http://www.w3id.org/ecsel-dr-SO#Tool",
+    308: "http://www.w3id.org/ecsel-dr-SCP#Confirmation",
+    309: "http://www.w3id.org/ecsel-dr-Planning#Distributed_Hierarchical_Situation",
+    310: "http://www.w3id.org/ecsel-dr-Planning#Plan",
+    311: "http://www.w3id.org/ecsel-dr-Planning#Planning_Approach",
+    312: "http://www.w3id.org/ecsel-dr-Planning#Planning_Constraint",
+    313: "http://www.w3id.org/ecsel-dr-Planning#Planning_Decision" ,
+    314: "http://www.w3id.org/ecsel-dr-Planning#Planning_Purpose", 
+    315: "http://www.w3id.org/ecsel-dr-Planning#Product_Aggregate",
+    316: "http://www.w3id.org/ecsel-dr-Planning#Product_Hierarchy",
+    317: "http://www.w3id.org/ecsel-dr-Planning#Replanning_Degree",
+    318: "http://www.w3id.org/ecsel-dr-Planning#Resource_Availability_Constraints",
+    319: "http://www.w3id.org/ecsel-dr-Planning#Resource_Compatibility_Constraints"
+    
 }
