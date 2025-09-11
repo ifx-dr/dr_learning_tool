@@ -3790,12 +3790,12 @@ References to SPs are not necessarily unique for an IDD. That is, different meth
         <owl:disjointWith>
           <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Replenishment_Order">
             <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Order"/>
-            <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">This is an order that is initiated by an internal request of the semiconductor manufacturer to produce the order according to a MTS strategy. The replenishment order can be divided into different sub order types, depending on the purpose of order creation.</rdfs:comment>
+            <rdfs:comment >This is an order that is initiated by an internal request of the semiconductor manufacturer to produce the order according to a MTS strategy. The replenishment order can be divided into different sub order types, depending on the purpose of order creation.</rdfs:comment>
             <rdfs:label xml:lang="en">Replenishment Order</rdfs:label>
           </owl:Class>
         </owl:disjointWith>
 
-        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">This is an order that is initiated by a customer.</rdfs:comment>
+        <rdfs:comment >This is an order that is initiated by a customer.</rdfs:comment>
         <rdfs:label xml:lang="en">Customer Order</rdfs:label>
       </owl:Class>
     </rdfs:domain>
@@ -3929,7 +3929,7 @@ References to SPs are not necessarily unique for an IDD. That is, different meth
         <owl:equivalentClass rdf:resource="http://www.w3id.org/ecsel-dr-SO#Route"/>
         <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Semiconductor_Production_Lobe"/>
         <rdfs:comment xml:lang="en">Additional lobes: Semiconductor Production</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The term route can be considered on different levels. In the present situation, a route is associated with a product and describes its production flow on the production network level.</rdfs:comment>
+        <rdfs:comment >The term route can be considered on different levels. In the present situation, a route is associated with a product and describes its production flow on the production network level.</rdfs:comment>
       </owl:Class>
     </rdfs:range>
 
@@ -4009,7 +4009,7 @@ References to SPs are not necessarily unique for an IDD. That is, different meth
       <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Supplier">
         <owl:equivalentClass rdf:resource="http://www.w3id.org/ecsel-dr-OM#Supplier"/>
         <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Supply_Chain_Lobe"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">A Supplier fufills a demand for a specific product or service.</rdfs:comment>
+        <rdfs:comment >A Supplier fufills a demand for a specific product or service.</rdfs:comment>
       </owl:Class>
     </rdfs:range>
 
@@ -18231,7 +18231,7 @@ D.h. sie bewegen sich nicht nur entlang vorgegebener physischer (z.B. optimscher
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Allocation_Plan">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Plan"/>
     <owl:disjointWith rdf:resource="http://www.w3id.org/ecsel-dr-DF#Master_Plan"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">An allocation plan is a special plan, which deals with assigning ATP quantities to a customer or a customer class.</rdfs:comment>
+    <rdfs:comment >An allocation plan is a special plan, which deals with assigning ATP quantities to a customer or a customer class.</rdfs:comment>
     <rdfs:label xml:lang="en">Allocation Plan</rdfs:label>
   </owl:Class>
 
@@ -18254,50 +18254,50 @@ D.h. sie bewegen sich nicht nur entlang vorgegebener physischer (z.B. optimscher
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Complete_Delivery">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Delivery_Concept"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The normal case is that an order is completely delivered.</rdfs:comment>
+    <rdfs:comment >The normal case is that an order is completely delivered.</rdfs:comment>
     <rdfs:label xml:lang="en">Complete Delivery</rdfs:label>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Confirmed_Delivery_Date">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Date"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The CDD is the committed date for order delivery that is communicated to the costumer. It depends on the communication strategy between manufacturer and customer. For instance, the CDD is the PDD if order repromising takes place in the same frequency as the update interval of the CDD.</rdfs:comment>
+    <rdfs:comment >The CDD is the committed date for order delivery that is communicated to the costumer. It depends on the communication strategy between manufacturer and customer. For instance, the CDD is the PDD if order repromising takes place in the same frequency as the update interval of the CDD.</rdfs:comment>
     <rdfs:label xml:lang="en">Confirmed Delivery Date</rdfs:label>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Customer">
     <owl:equivalentClass rdf:resource="http://www.w3id.org/ecsel-dr-OM#Customer"/>
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Supply_Chain_Lobe"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">A customer can place orders. He raises a demand for a specific product or service. Internal and external customer demand can be distinguished.</rdfs:comment>
+    <rdfs:comment >A customer can place orders. He raises a demand for a specific product or service. Internal and external customer demand can be distinguished.</rdfs:comment>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Customer_Class">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Supply_Chain_Lobe"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The set of all customers is divided into different priority classes or segments based on certain criteria like profitability or importance of customer.</rdfs:comment>
+    <rdfs:comment >The set of all customers is divided into different priority classes or segments based on certain criteria like profitability or importance of customer.</rdfs:comment>
     <rdfs:label xml:lang="en">Customer Class</rdfs:label>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Date">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Time_Lobe"/>
     <rdfs:comment xml:lang="en">Additional lobe: Supply Chain</rdfs:comment>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The availability date defines the point in time when the supply is available to the customer. It can be distinguished between different availability dates. Not all availability dates are communicated to the customer.</rdfs:comment>
+    <rdfs:comment >The availability date defines the point in time when the supply is available to the customer. It can be distinguished between different availability dates. Not all availability dates are communicated to the customer.</rdfs:comment>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Delivery_Concept">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Supply_Chain_Lobe"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The deliver concept defines the terms and conditions for delivering an order to the customer. Especially partial and split delivery has to be taken into account.</rdfs:comment>
+    <rdfs:comment >The deliver concept defines the terms and conditions for delivering an order to the customer. Especially partial and split delivery has to be taken into account.</rdfs:comment>
     <rdfs:label xml:lang="en">Delivery Concept</rdfs:label>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Delivery_Date">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Date"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">This is the point in time when the customer received the requested order.</rdfs:comment>
+    <rdfs:comment >This is the point in time when the customer received the requested order.</rdfs:comment>
     <rdfs:label xml:lang="en">Delivery Date</rdfs:label>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Demand">
     <owl:equivalentClass rdf:resource="http://www.w3id.org/ecsel-dr-Planning#Demand"/>
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Supply_Chain_Lobe"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Demand is a production request for a specific product or service that can have different triggers. Either demand exists explicitly in form of customer orders or implicitly as expected customer need that have to be fulfilled by the semiconductor supply chain.</rdfs:comment>
+    <rdfs:comment >Demand is a production request for a specific product or service that can have different triggers. Either demand exists explicitly in form of customer orders or implicitly as expected customer need that have to be fulfilled by the semiconductor supply chain.</rdfs:comment>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Demand_Class">
@@ -18317,12 +18317,12 @@ D.h. sie bewegen sich nicht nur entlang vorgegebener physischer (z.B. optimscher
     <owl:disjointWith>
       <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Productive_Lot">
         <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Lot"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">A productive lot is created to fulfill a customer demand. The production process is carried out as it is defined during the production development phase.</rdfs:comment>
+        <rdfs:comment >A productive lot is created to fulfill a customer demand. The production process is carried out as it is defined during the production development phase.</rdfs:comment>
         <rdfs:label xml:lang="en">Productive Lot</rdfs:label>
       </owl:Class>
     </owl:disjointWith>
 
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">An engineering lot requires additional process development efforts and special attention during the production flow. Engineering lots have various functions, thus several engineering lot types can be differentiated.</rdfs:comment>
+    <rdfs:comment >An engineering lot requires additional process development efforts and special attention during the production flow. Engineering lots have various functions, thus several engineering lot types can be differentiated.</rdfs:comment>
     <rdfs:label xml:lang="en">Engineering Lot</rdfs:label>
   </owl:Class>
 
@@ -18340,25 +18340,25 @@ D.h. sie bewegen sich nicht nur entlang vorgegebener physischer (z.B. optimscher
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Firm_Order_Demand">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Demand_Class"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">This is a special demand class that is used for demand that is required to fulfill already committed/accepted orders.</rdfs:comment>
+    <rdfs:comment >This is a special demand class that is used for demand that is required to fulfill already committed/accepted orders.</rdfs:comment>
     <rdfs:label xml:lang="en">Firm Order Demand</rdfs:label>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#First_Promised_Delivery_Date">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Date"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Initially, the FPD is set for an order delivery within the online order confirmation process.</rdfs:comment>
+    <rdfs:comment >Initially, the FPD is set for an order delivery within the online order confirmation process.</rdfs:comment>
     <rdfs:label xml:lang="en">First Promised Delivery Date</rdfs:label>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Forecasted_Demand">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Demand_Class"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">This is a special demand class that is used for the projection of future demand.</rdfs:comment>
+    <rdfs:comment >This is a special demand class that is used for the projection of future demand.</rdfs:comment>
     <rdfs:label xml:lang="en">Forecasted Demand</rdfs:label>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Inventory_Replenishment_Demand">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Demand_Class"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">This is a special demand class that is used for replenishment of safety stock.</rdfs:comment>
+    <rdfs:comment >This is a special demand class that is used for replenishment of safety stock.</rdfs:comment>
     <rdfs:label xml:lang="en">Inventory Replenishment Demand</rdfs:label>
   </owl:Class>
 
@@ -18378,12 +18378,12 @@ D.h. sie bewegen sich nicht nur entlang vorgegebener physischer (z.B. optimscher
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Lot">
     <owl:equivalentClass rdf:resource="http://www.w3id.org/ecsel-dr-SO#Lot"/>
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Semiconductor_Production_Lobe"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">A lot is a set of wafers, substrates or modules that travel together through the FE or BE fab in order to fulfill a certain order.</rdfs:comment>
+    <rdfs:comment >A lot is a set of wafers, substrates or modules that travel together through the FE or BE fab in order to fulfill a certain order.</rdfs:comment>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Master_Plan">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Plan"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">A master plan is a specific plan which determines which quantity resulting from confirmed orders and from forecasted demand should be completed in which location in which period of the planning horizon. Moreover, outsourcing decisions have to be represented in master plans.</rdfs:comment>
+    <rdfs:comment >A master plan is a specific plan which determines which quantity resulting from confirmed orders and from forecasted demand should be completed in which location in which period of the planning horizon. Moreover, outsourcing decisions have to be represented in master plans.</rdfs:comment>
     <rdfs:label xml:lang="en">Master Plan</rdfs:label>
   </owl:Class>
 
@@ -18400,12 +18400,12 @@ D.h. sie bewegen sich nicht nur entlang vorgegebener physischer (z.B. optimscher
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Order">
     <owl:equivalentClass rdf:resource="http://www.w3id.org/ecsel-dr-Planning#Order"/>
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Supply_Chain_Lobe"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">An order contains at least one order position. An order has an order type and is associated to demand</rdfs:comment>
+    <rdfs:comment >An order contains at least one order position. An order has an order type and is associated to demand</rdfs:comment>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Order_Delivery_Plan">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Plan"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">This is the result of the order promise or repromise process for different sets of orders taking into account an allocation policy and the supply and allocation situation. Different order promising variants can be distinguished, for instance online order promising, batch order promising, and hybrid order promising. The same is true of repromising.</rdfs:comment>
+    <rdfs:comment >This is the result of the order promise or repromise process for different sets of orders taking into account an allocation policy and the supply and allocation situation. Different order promising variants can be distinguished, for instance online order promising, batch order promising, and hybrid order promising. The same is true of repromising.</rdfs:comment>
     <rdfs:label xml:lang="en">Order Delivery Plan</rdfs:label>
   </owl:Class>
 
@@ -18417,7 +18417,7 @@ D.h. sie bewegen sich nicht nur entlang vorgegebener physischer (z.B. optimscher
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Order_Promising">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Planning"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">This concept describes the process to promise an order considering allocation policy as well as supply and allocation situation. The order promising can be distinguished between different variants, for instance online order promising and batch order promising.</rdfs:comment>
+    <rdfs:comment >This concept describes the process to promise an order considering allocation policy as well as supply and allocation situation. The order promising can be distinguished between different variants, for instance online order promising and batch order promising.</rdfs:comment>
     <rdfs:label xml:lang="en">Order Promising</rdfs:label>
   </owl:Class>
 
@@ -18429,19 +18429,19 @@ D.h. sie bewegen sich nicht nur entlang vorgegebener physischer (z.B. optimscher
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Partial_Delivery">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Delivery_Concept"/>
     <owl:disjointWith rdf:resource="http://www.w3id.org/ecsel-dr-DF#Split_Delivery"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">It can be allowed that only parts of an order position of an order are delivered. Therefore, the customer is willing to waive parts of quantity belonging to an order position.</rdfs:comment>
+    <rdfs:comment >It can be allowed that only parts of an order position of an order are delivered. Therefore, the customer is willing to waive parts of quantity belonging to an order position.</rdfs:comment>
     <rdfs:label xml:lang="en">Partial Delivery</rdfs:label>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Period">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Time_Interval"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The concept period displays the sub unit of the planning horizon.</rdfs:comment>
+    <rdfs:comment >The concept period displays the sub unit of the planning horizon.</rdfs:comment>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Plan">
     <owl:equivalentClass rdf:resource="http://www.w3id.org/ecsel-dr-Planning#Plan"/>
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Planning_Lobe"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">A plan is an activity specification with an intended purpose. Planning is an activity with the purpose to determine a plan. Planning is associated with goals, in the present situation represented by objective functions to be optimized.</rdfs:comment>
+    <rdfs:comment >A plan is an activity specification with an intended purpose. Planning is an activity with the purpose to determine a plan. Planning is associated with goals, in the present situation represented by objective functions to be optimized.</rdfs:comment>
     <rdfs:comment>delete?</rdfs:comment>
     <skos:altLabel>_DR pl</skos:altLabel>
   </owl:Class>
@@ -18461,7 +18461,7 @@ D.h. sie bewegen sich nicht nur entlang vorgegebener physischer (z.B. optimscher
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Planning_Purpose">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Planning_Lobe"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The planning purpose describes a set of criteria that influence other concepts, e.g. product aggregate.</rdfs:comment>
+    <rdfs:comment >The planning purpose describes a set of criteria that influence other concepts, e.g. product aggregate.</rdfs:comment>
     <rdfs:label xml:lang="en">Planning Purpose</rdfs:label>
     <rdfs:label>delete?</rdfs:label>
     <skos:altLabel>_DR pl</skos:altLabel>
@@ -18477,44 +18477,44 @@ D.h. sie bewegen sich nicht nur entlang vorgegebener physischer (z.B. optimscher
     <owl:equivalentClass rdf:resource="http://www.w3id.org/ecsel-dr-OOSMP#Product"/>
     <owl:equivalentClass rdf:resource="http://www.w3id.org/ecsel-dr-Planning#Product"/>
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Product_Lobe"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">A product is a good that fulfills a prescribed set of requirements (for instance, form, fit, and function). A set of alternative BOMs might be associated with each product. The manufacturing process is complicated by binning and substitution (in production). Binning refers to the process that an item can become one of several products based on tested levels of performance, for instance, speed.</rdfs:comment>
+    <rdfs:comment >A product is a good that fulfills a prescribed set of requirements (for instance, form, fit, and function). A set of alternative BOMs might be associated with each product. The manufacturing process is complicated by binning and substitution (in production). Binning refers to the process that an item can become one of several products based on tested levels of performance, for instance, speed.</rdfs:comment>
     <skos:altLabel>_DR pl</skos:altLabel>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Product_Aggregate">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Product_Lobe"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The concept product aggregate is used to group different products based on certain criteria. The grouping criteria depend on the planning purpose (e.g. controlling, production). It is a certain view (external or internal) on a set of products.</rdfs:comment>
+    <rdfs:comment >The concept product aggregate is used to group different products based on certain criteria. The grouping criteria depend on the planning purpose (e.g. controlling, production). It is a certain view (external or internal) on a set of products.</rdfs:comment>
     <rdfs:label xml:lang="en">Product Aggregate</rdfs:label>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Product_Hierarchy">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Product_Lobe"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The concept characterizes the top-down and bottom-up relationship between different product aggregates. It organizes the product aggregates according to defined criteria.</rdfs:comment>
+    <rdfs:comment >The concept characterizes the top-down and bottom-up relationship between different product aggregates. It organizes the product aggregates according to defined criteria.</rdfs:comment>
     <rdfs:label xml:lang="en">Product Hierarchy</rdfs:label>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Production_Strategy">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Supply_Chain_Lobe"/>
     <rdfs:comment xml:lang="en">additional lobes: Semiaconductor Production</rdfs:comment>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The production strategy determining which portions of a supply chain should operate in make to stock (MTS) mode, where production is driven by the replenishment of inventories at specific locations, and which in make to order (MTO) mode, where production is initiated to fulfill specific customer orders. The production strategy is related to the question where the customer order decoupling point (CODP), also referred to as the push-pull interface (or boundary) has to be placed. The CODP denotes the point in the supply chain where material is dedicated to a specific customer order to the degree that it cannot be used for another.</rdfs:comment>
+    <rdfs:comment >The production strategy determining which portions of a supply chain should operate in make to stock (MTS) mode, where production is driven by the replenishment of inventories at specific locations, and which in make to order (MTO) mode, where production is initiated to fulfill specific customer orders. The production strategy is related to the question where the customer order decoupling point (CODP), also referred to as the push-pull interface (or boundary) has to be placed. The CODP denotes the point in the supply chain where material is dedicated to a specific customer order to the degree that it cannot be used for another.</rdfs:comment>
     <rdfs:label xml:lang="en">Production Strategy</rdfs:label>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Promised_Delivery_Date">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Date"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">This is the date for which eventually partial order delivery is confirmed. The PDD date can be changed over time. Within the repromising process there are typically different PDDs available.</rdfs:comment>
+    <rdfs:comment >This is the date for which eventually partial order delivery is confirmed. The PDD date can be changed over time. Within the repromising process there are typically different PDDs available.</rdfs:comment>
     <rdfs:label xml:lang="en">Promised Delivery Date</rdfs:label>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Requested_Delivery_Date">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Date"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The RDD is the point in time when the customer wants to get the order.</rdfs:comment>
+    <rdfs:comment >The RDD is the point in time when the customer wants to get the order.</rdfs:comment>
     <rdfs:label xml:lang="en">Requested Delivery Date</rdfs:label>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Split_Delivery">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Delivery_Concept"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">It can be allowed that order positions of an order are delivered in several portions.</rdfs:comment>
+    <rdfs:comment >It can be allowed that order positions of an order are delivered in several portions.</rdfs:comment>
     <rdfs:label xml:lang="en">Split Delivery</rdfs:label>
   </owl:Class>
 
@@ -18527,7 +18527,7 @@ D.h. sie bewegen sich nicht nur entlang vorgegebener physischer (z.B. optimscher
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Supply">
     <owl:equivalentClass rdf:resource="http://www.w3id.org/ecsel-dr-OM#Supply"/>
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Supply_Chain_Lobe"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">This is the total amount of specific products that is available to customers. Supply has the dimensions quantity, time, location, product, including aggregation of all dimensions. Supply is defined as inventory or plan replenishment.</rdfs:comment>
+    <rdfs:comment >This is the total amount of specific products that is available to customers. Supply has the dimensions quantity, time, location, product, including aggregation of all dimensions. Supply is defined as inventory or plan replenishment.</rdfs:comment>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Supply_Chain">
@@ -18546,26 +18546,26 @@ D.h. sie bewegen sich nicht nur entlang vorgegebener physischer (z.B. optimscher
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Assemble_To_Order_(ATO)">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Production_Strategy"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">In the case of ATO, products are produced forecast-driven until the point right before it comes to the assembly. Starting from there, the production continues based on a customer order.</rdfs:comment>
+    <rdfs:comment >In the case of ATO, products are produced forecast-driven until the point right before it comes to the assembly. Starting from there, the production continues based on a customer order.</rdfs:comment>
     <rdfs:label xml:lang="en">Assemble To Order</rdfs:label>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Bill_Of_Material_(BOM)">
     <owl:equivalentClass rdf:resource="http://www.w3id.org/ecsel-dr-Planning#Bill_Of_Material"/>
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Product_Lobe"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">A BOM describes components or rather semi-finished products that are part of the finished product. Substitution, often associated with binning, is based on the possibility that alternative items might be used to finish a process step. This leads to the notion of alternative BOMs.</rdfs:comment>
+    <rdfs:comment >A BOM describes components or rather semi-finished products that are part of the finished product. Substitution, often associated with binning, is based on the possibility that alternative items might be used to finish a process step. This leads to the notion of alternative BOMs.</rdfs:comment>
     <rdfs:label xml:lang="en">Bill Of Material (BOM)</rdfs:label>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Make_To_Order_(MTO)">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Production_Strategy"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">This is a strategy where production is initiated to fulfill specific customer orders. This strategy is characterized by an order-driven production.</rdfs:comment>
+    <rdfs:comment >This is a strategy where production is initiated to fulfill specific customer orders. This strategy is characterized by an order-driven production.</rdfs:comment>
     <rdfs:label xml:lang="en">Make To Order</rdfs:label>
   </owl:Class>
 
   <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Make_To_Stock_(MTS)">
     <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Production_Strategy"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">This is a strategy where production is driven by the replenishment of inventories at specific locations. Products are produced forecast-driven until they are completely finished in the case of MTS.</rdfs:comment>
+    <rdfs:comment >This is a strategy where production is driven by the replenishment of inventories at specific locations. Products are produced forecast-driven until they are completely finished in the case of MTS.</rdfs:comment>
     <rdfs:label xml:lang="en">Make To Stock</rdfs:label>
   </owl:Class>
 
