@@ -830,12 +830,12 @@ def handle_question(question_number):
             random_word = fixed_words_map.get(question_number)
         elif question_number > 5:
             #random_word = random_words_map.get(random.randint(1, 178))
-            iri = random_words_map.get(random.randint(16, 319))
+            iri = random_words_map.get(random.randint(16, 330))
             random_word = next(cls for cls in classes if cls.iri == iri)
             print(iri)
             while random_word in previous_used_classes:
                 #random_word = random_words_map.get(random.randint(1, 178))
-                iri = random_words_map.get(random.randint(16, 319 ))
+                iri = random_words_map.get(random.randint(16, 330))
                 random_word = next(cls for cls in classes if cls.iri == iri)
                 print(iri)
         store_used_word(random_word, current_user.id) #Store the used word in the database
