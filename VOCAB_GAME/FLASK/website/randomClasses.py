@@ -318,6 +318,17 @@ random_words_map = {
     316: "http://www.w3id.org/ecsel-dr-Planning#Product_Hierarchy",
     317: "http://www.w3id.org/ecsel-dr-Planning#Replanning_Degree",
     318: "http://www.w3id.org/ecsel-dr-Planning#Resource_Availability_Constraints",
-    319: "http://www.w3id.org/ecsel-dr-Planning#Resource_Compatibility_Constraints"
+    319: "http://www.w3id.org/ecsel-dr-Planning#Resource_Compatibility_Constraints",
+    320: "http://www.w3id.org/ecsel-dr-OM#Action",
+    321: "http://www.w3id.org/ecsel-dr-OM#Allocation",
+    322: "http://www.w3id.org/ecsel-dr-Incoterms#Exchange_Rate_Specification",
+    323: "http://www.w3id.org/ecsel-dr-DF#Complete_Delivery",
+    324: "http://www.w3id.org/ecsel-dr-DF#Customer_Class",
+    325: "http://www.w3id.org/ecsel-dr-DF#Firm_Order_Demand",
+    326: "http://www.w3id.org/ecsel-dr-DF#Forecasted_Demand",
+    327: "http://www.w3id.org/ecsel-dr-DF#Assemble_To_Order_(ATO)",
+    328: "http://www.w3id.org/ecsel-dr-DF#Customer_Order",
+    329: "http://www.w3id.org/ecsel-dr-DF#Delivery_Concept",
+    330: "http://www.w3id.org/ecsel-dr-DF#Demand_Class"
     
 }
