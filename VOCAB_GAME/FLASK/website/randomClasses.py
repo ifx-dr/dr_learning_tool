@@ -329,6 +329,24 @@ random_words_map = {
     327: "http://www.w3id.org/ecsel-dr-DF#Assemble_To_Order_(ATO)",
     328: "http://www.w3id.org/ecsel-dr-DF#Customer_Order",
     329: "http://www.w3id.org/ecsel-dr-DF#Delivery_Concept",
-    330: "http://www.w3id.org/ecsel-dr-DF#Demand_Class"
-    
+    330: "http://www.w3id.org/ecsel-dr-DF#Demand_Class",
+    331: "http://www.w3id.org/ecsel-dr-Planning#In_Transit_Inventory",
+    332: "http://www.w3id.org/ecsel-dr-DF#Inventory_Replenishment_Demand",
+    333: "http://www.w3id.org/ecsel-dr-Incoterms#Offer",
+    334: "http://www.w3id.org/ecsel-dr-DF#Order",
+    335: "http://www.w3id.org/ecsel-dr-DF#Supply",
+    336: "http://www.w3id.org/ecsel-dr-DF#Partial_Delivery",
+    337: "http://www.w3id.org/ecsel-dr-DF#Production_Strategy",
+    338: "http://www.w3id.org/ecsel-dr-DF#Replenishment_Order",
+    339: "http://www.w3id.org/ecsel-dr-Incoterms#Seller",
+    340: "http://www.w3id.org/ecsel-dr-DF#Split_Delivery",
+    341: "http://www.w3id.org/ecsel-dr-DF#Split_Order",
+    342: "http://www.w3id.org/ecsel-dr-DF#Supplier",
+    343: "http://www.w3id.org/ecsel-dr-OM#Supplier_Data",
+    344: "http://www.w3id.org/ecsel-dr-DF#Order_Position",
+    345: "http://www.w3id.org/ecsel-dr-Planning#Supply_Information",
+    346: "http://www.w3id.org/ecsel-dr-Incoterms#Transfer_Action",
+    347: "http://www.w3id.org/ecsel-dr-OM#User_Action",
+    348: "http://www.w3id.org/ecsel-dr-DF#Make_To_Order_(MTO)",
+    349: "http://www.w3id.org/ecsel-dr-DF#Make_To_Stock_(MTS)"
 }
