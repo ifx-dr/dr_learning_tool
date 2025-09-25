@@ -348,5 +348,18 @@ random_words_map = {
     346: "http://www.w3id.org/ecsel-dr-Incoterms#Transfer_Action",
     347: "http://www.w3id.org/ecsel-dr-OM#User_Action",
     348: "http://www.w3id.org/ecsel-dr-DF#Make_To_Order_(MTO)",
-    349: "http://www.w3id.org/ecsel-dr-DF#Make_To_Stock_(MTS)"
+    349: "http://www.w3id.org/ecsel-dr-DF#Make_To_Stock_(MTS)",
+    350: "http://www.w3id.org/ecsel-dr-DF#Planning",
+    351: "http://www.w3.org/2006/time#Time_Position",
+    352: "http://www.w3id.org/ecsel-dr#Public_Holiday",
+    353: "http://www.w3id.org/ecsel-dr-DF#Delivery_Date",
+    354: "http://www.w3id.org/ecsel-dr-DF#Batch_Interval",
+    355: "http://www.w3id.org/ecsel-dr-DF#First_Promised_Delivery_Date",
+    356: "http://www.w3id.org/ecsel-dr-DF#Last_Promised_Delivery_Date",
+    357: "http://www.w3id.org/ecsel-dr-DF#Confirmed_Delivery_Date",
+    358: "http://www.w3id.org/ecsel-dr-DF#Planning_Period",
+    359: "http://www.w3id.org/ecsel-dr-DF#Promised_Delivery_Date",
+    360: "http://www.w3id.org/ecsel-dr-DF#Best_Promised_Delivery_Date"
+
+
 }
