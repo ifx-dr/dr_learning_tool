@@ -359,7 +359,20 @@ random_words_map = {
     357: "http://www.w3id.org/ecsel-dr-DF#Confirmed_Delivery_Date",
     358: "http://www.w3id.org/ecsel-dr-DF#Planning_Period",
     359: "http://www.w3id.org/ecsel-dr-DF#Promised_Delivery_Date",
-    360: "http://www.w3id.org/ecsel-dr-DF#Best_Promised_Delivery_Date"
+    360: "http://www.w3id.org/ecsel-dr-DF#Best_Promised_Delivery_Date",
+    361: "http://www.w3id.org/ecsel-dr-ORG#Central_Function",
+    362: "http://www.w3id.org/ecsel-dr-ORG#Certification",
+    363: "http://www.w3id.org/ecsel-dr-ORG#Company_Project",
+    364: "http://www.w3id.org/ecsel-dr-ORG#Division",
+    365: "http://www.w3id.org/ecsel-dr#Geographical_Location",
+    366: "http://www.w3.org/ns/org#Organization",
+    367: "http://www.w3.org/ns/org#Organizational_Unit",
+    368: "http://www.w3id.org/ecsel-dr-ORG#Project",
+    369: "http://www.w3id.org/ecsel-dr-ORG#Project_Status",
+    370: "http://www.w3id.org/ecsel-dr-ORG#Region",
+    371: "http://www.w3id.org/ecsel-dr-ORG#Sub_Project",
+    372: "http://www.w3id.org/ecsel-dr-ORG#Training",
+    373: "http://www.w3id.org/ecsel-dr-ORG#Work_Package"
 
 
 }
