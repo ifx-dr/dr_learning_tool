@@ -372,7 +372,19 @@ random_words_map = {
     370: "http://www.w3id.org/ecsel-dr-ORG#Region",
     371: "http://www.w3id.org/ecsel-dr-ORG#Sub_Project",
     372: "http://www.w3id.org/ecsel-dr-ORG#Training",
-    373: "http://www.w3id.org/ecsel-dr-ORG#Work_Package"
+    373: "http://www.w3id.org/ecsel-dr-ORG#Work_Package",
+    374: "http://www.w3id.org/ecsel-dr-RAMI40#Admin_Shell",
+    375: "http://www.w3id.org/ecsel-dr-RAMI40#Standard_Version",
+    376: "http://www.w3id.org/ecsel-dr-PMV#Application_System_Type",
+    377: "http://www.w3id.org/ecsel-dr-RAMI40#Asset",
+    378: "http://www.w3id.org/ecsel-dr-RAMI40#Date",
+    379: "http://www.w3id.org/ecsel-dr-RAMI40#Dimension",
+    381: "http://www.w3id.org/ecsel-dr-RAMI40#Measure",
+    382: "http://www.w3id.org/ecsel-dr-RAMI40#View"
+   
+    
+   
+    
 
 
 }
