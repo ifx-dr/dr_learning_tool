@@ -380,7 +380,24 @@ random_words_map = {
     378: "http://www.w3id.org/ecsel-dr-RAMI40#Date",
     379: "http://www.w3id.org/ecsel-dr-RAMI40#Dimension",
     381: "http://www.w3id.org/ecsel-dr-RAMI40#Measure",
-    382: "http://www.w3id.org/ecsel-dr-RAMI40#View"
+    382: "http://www.w3id.org/ecsel-dr-RAMI40#View",
+    383: "http://www.w3id.org/ecsel-dr-RAMI40#Used_Date",
+    384: "http://www.w3id.org/ecsel-dr-SO#Lithography",
+    385: "http://www.w3id.org/ecsel-dr-SO#Furnace",
+    386: "http://www.w3id.org/ecsel-dr-ORG#Category",
+    387: "http://www.w3id.org/ecsel-dr-OOSMP#Business_Line",
+    388: "http://www.w3id.org/ecsel-dr-CO2Savings#Average_Weight_Of_Used_Material_Per_Chip",
+    389: "http://www.w3id.org/ecsel-dr-CO2Savings#Average_Usage_Time_Per_Year_Gcar",
+    390: "http://www.w3id.org/ecsel-dr-CO2Savings#Average_Usage_Time_Per_Year_Ecar",
+    391: "http://www.w3id.org/ecsel-dr-CO2Savings#Average_Speed_Of_An_Ecar",
+    392: "http://www.w3id.org/ecsel-dr-CO2Savings#Average_Speed_Of_A_Gcar",
+    393: "http://www.w3id.org/ecsel-dr-CO2Savings#Average_Driven_Km_Per_Year_Gcar",
+    394: "http://www.w3id.org/ecsel-dr-CO2Savings#Average_Driven_Km_Per_Year_Ecar",
+    395: "http://www.w3id.org/ecsel-dr-OOSMP#Application_Level_3",
+    396: "http://www.w3id.org/ecsel-dr-OOSMP#Application_Level_2",
+    397: "http://www.w3id.org/ecsel-dr-OOSMP#Application_Level_1",
+    398: "http://www.w3id.org/ecsel-dr-PWR#Application_Area",
+    399: "http://www.w3id.org/ecsel-dr#Application"
    
     
    
