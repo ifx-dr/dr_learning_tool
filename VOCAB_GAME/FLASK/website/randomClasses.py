@@ -397,7 +397,34 @@ random_words_map = {
     396: "http://www.w3id.org/ecsel-dr-OOSMP#Application_Level_2",
     397: "http://www.w3id.org/ecsel-dr-OOSMP#Application_Level_1",
     398: "http://www.w3id.org/ecsel-dr-PWR#Application_Area",
-    399: "http://www.w3id.org/ecsel-dr#Application"
+    399: "http://www.w3id.org/ecsel-dr#Application",
+    400: "http://www.w3id.org/ecsel-dr-CO2Savings#Chemicals_In_The_Front_End_Manufacturing",
+    401: "http://www.w3id.org/ecsel-dr-CO2Savings#Chipcard_Manufacturing",
+    402: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Burden_Of_Electricity",
+    403: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Burden_Of_Raw_Material",
+    404: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Equivalent_Per_Chemical",
+    405: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Equivalent_Per_Material",
+    406: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Equivalent_Per_Metal",
+    407: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Factor_Transportation",
+    408: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Savings_Of_A_Gcar",
+    409: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Savings_Of_A_Wind_Turbine",
+    410: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Savings_Of_An_Ecar",
+    411: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Savings_Of_Ecars_In_Company_Products",
+    412: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Savings_Of_Ecars_Sold_Worldwide_In_A_Year",
+    413: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Savings_Of_Gcars_In_Company_Products",
+    414: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Savings_Of_Gcars_Sold_Worldwide_In_A_Year",
+    415: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Savings_Of_One_Semiconductor_Gcar",
+    416: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Savings_Of_One_Solar_Panel",
+    417: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Savings_Of_Solar_Panel_In_Company_World",
+    418: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Savings_Of_Solar_Panels_Sold_Worldwide_In_A_Year",
+    419: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Savings_Of_Wind_Turbines_In_Company_Products",
+    420: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Savings_Of_Wind_Turbines_Sold_Worldwide_In_A_Year",
+    421: "http://www.w3id.org/ecsel-dr-CO2Savings#Data_From_50_Reference_Products",
+    422: "http://www.w3id.org/ecsel-dr-CO2Savings#Electric_Car",
+    423: "http://www.w3id.org/ecsel-dr-PWR#Electric_Vehicle_Charging",
+    424: "http://www.w3id.org/ecsel-dr-CO2Savings#Electricity",
+    425: "http://www.w3id.org/ecsel-dr-CO2Savings#Energy_Mix_Ecar"
+
    
     
    
