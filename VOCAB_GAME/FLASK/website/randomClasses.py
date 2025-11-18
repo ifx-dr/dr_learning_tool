@@ -423,12 +423,22 @@ random_words_map = {
     422: "http://www.w3id.org/ecsel-dr-CO2Savings#Electric_Car",
     423: "http://www.w3id.org/ecsel-dr-PWR#Electric_Vehicle_Charging",
     424: "http://www.w3id.org/ecsel-dr-CO2Savings#Electricity",
-    425: "http://www.w3id.org/ecsel-dr-CO2Savings#Energy_Mix_Ecar"
+    425: "http://www.w3id.org/ecsel-dr-CO2Savings#Energy_Mix_Ecar",
+    426: "http://www.w3id.org/ecsel-dr-CO2Savings#Energy_Mix_Electricity",
+    427: "http://www.w3id.org/ecsel-dr-CO2Savings#Energy_Mix_Gcar",
+    428: "http://www.w3id.org/ecsel-dr-CO2Savings#Energy_Mix_Solar_Panel",
+    429: "http://www.w3id.org/ecsel-dr-CO2Savings#Energy_Mix_Wind_Turbine",
+    430: "http://www.w3id.org/ecsel-dr-PWR#Energy_Storage",
+    431: "http://www.w3id.org/ecsel-dr-CO2Savings#Existence_Of_Fitting_CO2_Equivalent_Chemical",
+    432: "http://www.w3id.org/ecsel-dr-CO2Savings#Existence_Of_Fitting_CO2_Equivalent_Gas",
+    433: "http://www.w3id.org/ecsel-dr-CO2Savings#Existence_Of_Fitting_CO2_Equivalent_Metal",
+    434: "http://www.w3id.org/ecsel-dr-CO2Savings#Existence_Of_Front_End_Or_Back_End_Manufacturing",
+    435: "http://www.w3id.org/ecsel-dr-CO2Savings#Front_End_Manufacturing",
+    436: "http://www.w3id.org/ecsel-dr-BMS#Functional_Block",
+    437: "http://www.w3id.org/ecsel-dr-CO2Savings#Gases_In_The_Front_End_Manufacturing",
+    438: "http://www.w3id.org/ecsel-dr-CO2Savings#Gasoline_Car",
+    439: "http://www.w3id.org/ecsel-dr-OOSMP#Industry"
 
-   
-    
-   
-    
 
 
 }
