@@ -437,7 +437,27 @@ random_words_map = {
     436: "http://www.w3id.org/ecsel-dr-BMS#Functional_Block",
     437: "http://www.w3id.org/ecsel-dr-CO2Savings#Gases_In_The_Front_End_Manufacturing",
     438: "http://www.w3id.org/ecsel-dr-CO2Savings#Gasoline_Car",
-    439: "http://www.w3id.org/ecsel-dr-OOSMP#Industry"
+    439: "http://www.w3id.org/ecsel-dr-OOSMP#Industry",
+    440: "http://www.w3id.org/ecsel-dr-BMS#Longer_Lifespan",
+    441: "http://www.w3id.org/ecsel-dr-OOSMP#Main_Application",
+    442: "http://www.w3id.org/ecsel-dr-CO2Savings#Market_Share_Of_Company_In_Ecar_World",
+    443: "http://www.w3id.org/ecsel-dr-CO2Savings#Market_Share_Of_Company_In_Gcar_World",
+    444: "http://www.w3id.org/ecsel-dr-CO2Savings#Market_Share_Of_Company_In_Solar_Panel_World",
+    445: "http://www.w3id.org/ecsel-dr-CO2Savings#Market_Share_Of_Company_In_Wind_Turbine_World",
+    446: "http://www.w3id.org/ecsel-dr-CO2Savings#Number_Of_Chips_Produced_In_The_Back_End_Manufacturing",
+    447: "http://www.w3id.org/ecsel-dr-CO2Savings#Number_Of_Chips_Produced_In_The_Front_End_Manufacturing",
+    448: "http://www.w3id.org/ecsel-dr-CO2Savings#Number_Of_Company_Products_Sold_Worldwide_Ecar",
+    449: "http://www.w3id.org/ecsel-dr-CO2Savings#Number_Of_Company_Products_Sold_Worldwide_Gcar",
+    450: "http://www.w3id.org/ecsel-dr-CO2Savings#Number_Of_Company_Products_Sold_Worldwide_Solar",
+    451: "http://www.w3id.org/ecsel-dr-CO2Savings#Number_Of_Ecars_Sold_Worldwide_Per_Year",
+    452: "http://www.w3id.org/ecsel-dr-CO2Savings#Number_Of_Gcars_Sold_Worldwide_Per_Year",
+    453: "http://www.w3id.org/ecsel-dr-CO2Savings#Number_Of_Semiconductors_Per_Ecar",
+    454: "http://www.w3id.org/ecsel-dr-CO2Savings#Number_Of_Semiconductors_Per_Gcar",
+    455: "http://www.w3id.org/ecsel-dr-CO2Savings#Number_Of_Semiconductors_Per_Solar_Panel",
+    456: "http://www.w3id.org/ecsel-dr-CO2Savings#Number_Of_Semiconductors_Per_Wind_Turbine",
+    457: "http://www.w3id.org/ecsel-dr-CO2Savings#Number_Of_Solar_Panels_Sold_Worldwide_In_A_Year",
+    458: "http://www.w3id.org/ecsel-dr-CO2Savings#Number_Of_Wind_Turbines_Installed_Worldwide_In_A_Year",
+    459: "http://www.w3id.org/ecsel-dr-BMS#Optimized_Charging"
 
 
 
