@@ -457,7 +457,17 @@ random_words_map = {
     456: "http://www.w3id.org/ecsel-dr-CO2Savings#Number_Of_Semiconductors_Per_Wind_Turbine",
     457: "http://www.w3id.org/ecsel-dr-CO2Savings#Number_Of_Solar_Panels_Sold_Worldwide_In_A_Year",
     458: "http://www.w3id.org/ecsel-dr-CO2Savings#Number_Of_Wind_Turbines_Installed_Worldwide_In_A_Year",
-    459: "http://www.w3id.org/ecsel-dr-BMS#Optimized_Charging"
+    459: "http://www.w3id.org/ecsel-dr-BMS#Optimized_Charging",
+    460: "http://www.w3id.org/ecsel-dr-CO2Savings#Process_Material",
+    461: "http://www.w3id.org/ecsel-dr-CO2Savings#Raw_Material",
+    462: "http://www.w3id.org/ecsel-dr-CO2Savings#Saving_Rate_Ecar",
+    463: "http://www.w3id.org/ecsel-dr-CO2Savings#Saving_Rate_Gcar",
+    464: "http://www.w3id.org/ecsel-dr-BMS#Semiconductor",
+    465: "http://www.w3id.org/ecsel-dr-OOSMP#Sensor_Main_Application",
+    466: "http://www.w3id.org/ecsel-dr-OOSMP#Sensor_Sub_Application",
+    467: "http://www.w3id.org/ecsel-dr-PWR#Solar_Energy",
+    468: "http://www.w3id.org/ecsel-dr-CO2Savings#Solar_Panel",
+    469: "http://www.w3id.org/ecsel-dr-OOSMP#Sub_Application"
 
 
 
