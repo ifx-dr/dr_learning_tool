@@ -497,7 +497,21 @@ random_words_map = {
     496: "http://www.w3id.org/ecsel-dr-CO2Savings#Transportation",
     497: "http://www.w3id.org/ecsel-dr-CO2Savings#Type_Of_The_Transportation",
     498: "http://www.w3id.org/ecsel-dr-BMS#Vehicle",
-    499: "http://www.w3id.org/ecsel-dr-CO2Savings#Wind_Turbine"
+    499: "http://www.w3id.org/ecsel-dr-CO2Savings#Wind_Turbine",
+    500: "http://www.w3id.org/ecsel-dr-OOSMP#Motor_Control_And_Drive_Solution",
+    501: "http://www.w3id.org/ecsel-dr-Planning#Bill_Of_Material",
+    502: "http://www.w3id.org/ecsel-dr-Planning#Bin",
+    503: "http://www.w3id.org/ecsel-dr-Planning#Binning",
+    504: "http://www.w3id.org/ecsel-dr-OOSMP#Completely_Lead_Free_Status",
+    505: "http://www.w3id.org/ecsel-dr-PROD#Customer_Part_Number_Specification",
+    506: "http://www.w3id.org/ecsel-dr-OOSMP#Design_Target",
+    507: "http://www.w3id.org/ecsel-dr-PROD#Die_Representative",
+    508: "http://www.w3id.org/ecsel-dr-PROD#Fabrication_Position",
+    509: "http://www.w3id.org/ecsel-dr-PROD#Fabrication_Position",
+    510: "http://www.w3id.org/ecsel-dr-OOSMP#Halogen_Free_Status",
+    511: "http://www.w3id.org/ecsel-dr-OOSMP#Integration_Level",
+    512: "http://www.w3id.org/ecsel-dr-OOSMP#Main_Power_Device_Type"
+    
 
 
 
