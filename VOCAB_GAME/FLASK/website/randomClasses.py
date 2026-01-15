@@ -510,7 +510,28 @@ random_words_map = {
     509: "http://www.w3id.org/ecsel-dr-PROD#Fabrication_Position",
     510: "http://www.w3id.org/ecsel-dr-OOSMP#Halogen_Free_Status",
     511: "http://www.w3id.org/ecsel-dr-OOSMP#Integration_Level",
-    512: "http://www.w3id.org/ecsel-dr-OOSMP#Main_Power_Device_Type"
+    512: "http://www.w3id.org/ecsel-dr-OOSMP#Main_Power_Device_Type",
+    513: "http://www.w3id.org/ecsel-dr-OOSMP#Motor_Control_And_Drive_Solution_DC_Link_Voltage_155",
+    514: "http://www.w3id.org/ecsel-dr-OOSMP#Motor_Control_And_Drive_Solution_Electric_Power_Max_200",
+    515: "http://www.w3id.org/ecsel-dr-OOSMP#Motor_Control_And_Drive_Solution_Industrial_Qualification",
+    516: "http://www.w3id.org/ecsel-dr-OOSMP#Motor_Control_And_Drive_Solution_With_Sensor",
+    517: "http://www.w3id.org/ecsel-dr-OOSMP#Motor_Control_And_Drive_Solution_Without_Sensor",
+    518: "http://www.w3id.org/ecsel-dr-OOSMP#Motor_Type",
+    519: "http://www.w3id.org/ecsel-dr-OOSMP#OPN_Status",
+    520: "http://www.w3id.org/ecsel-dr-OOSMP#Packing_Type",
+    521: "http://www.w3id.org/ecsel-dr-Planning#Part",
+    522: "http://www.w3id.org/ecsel-dr-PROD#Plan_Position",
+    523: "http://www.w3id.org/ecsel-dr-OOSMP#Price_Indication",
+    524: "http://www.w3id.org/ecsel-dr-Planning#Projected_WIP",
+    525: "http://www.w3id.org/ecsel-dr-OOSMP#Qualification",
+    526: "http://www.w3id.org/ecsel-dr-PROD#Required_For_Plan",
+    527: "http://www.w3id.org/ecsel-dr-OOSMP#Ro_HS_Compliant_Status",
+    528: "http://www.w3id.org/ecsel-dr-OOSMP#Semiconductor_Product_Status",
+    529: "http://www.w3id.org/ecsel-dr-OOSMP#Semiconductor_Solution",
+    530: "http://www.w3id.org/ecsel-dr-OOSMP#Solution",
+    531: "http://www.w3id.org/ecsel-dr-Planning#Substitution",
+    532: "http://www.w3id.org/ecsel-dr-OOSMP#Topology",
+    533: "http://www.w3id.org/ecsel-dr-Planning#Yield"
     
 
 
