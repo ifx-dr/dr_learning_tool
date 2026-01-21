@@ -531,7 +531,15 @@ random_words_map = {
     530: "http://www.w3id.org/ecsel-dr-OOSMP#Solution",
     531: "http://www.w3id.org/ecsel-dr-Planning#Substitution",
     532: "http://www.w3id.org/ecsel-dr-OOSMP#Topology",
-    533: "http://www.w3id.org/ecsel-dr-Planning#Yield"
+    533: "http://www.w3id.org/ecsel-dr-Planning#Yield",
+    534: "http://www.w3id.org/ecsel-dr-RAMI40#Energy_Efficiency",
+    535: "http://www.w3id.org/ecsel-dr-RAMI40#MES_Connection",
+    536: "http://www.w3id.org/ecsel-dr-OOSMP#Mounting_Style",
+    537: "http://www.w3id.org/ecsel-dr-OOSMP#Sensing_Type",
+    538: "http://www.w3id.org/ecsel-dr-RAMI40#Sensor_Measurement",
+    539: "http://www.w3id.org/ecsel-dr-RAMI40#Structure",
+    540: "http://www.w3id.org/ecsel-dr-RAMI40#Submodel"
+    
     
 
 
