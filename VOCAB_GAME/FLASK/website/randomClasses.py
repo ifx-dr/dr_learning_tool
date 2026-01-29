@@ -538,10 +538,21 @@ random_words_map = {
     537: "http://www.w3id.org/ecsel-dr-OOSMP#Sensing_Type",
     538: "http://www.w3id.org/ecsel-dr-RAMI40#Sensor_Measurement",
     539: "http://www.w3id.org/ecsel-dr-RAMI40#Structure",
-    540: "http://www.w3id.org/ecsel-dr-RAMI40#Submodel"
+    540: "http://www.w3id.org/ecsel-dr-RAMI40#Submodel",
+    541: "http://www.w3id.org/ecsel-dr-PWR#Abstract",
+    542: "http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device",
+    543: "http://www.w3id.org/ecsel-dr-OOSMP#Angle_Sensor",
+    544: "http://www.w3id.org/ecsel-dr-PWR#Electronic_Components",
+    545: "http://www.w3id.org/ecsel-dr-PWR#Communication_Services",
+    546: "http://www.w3id.org/ecsel-dr-PWR#Constant_Resistance",
+    547: "http://www.w3id.org/ecsel-dr-PWR#Consumer_Discretionary",
+    548: "http://www.w3id.org/ecsel-dr-PWR#Consumer_Staples",
+    549: "http://www.w3id.org/ecsel-dr-PWR#Control_Method",
+    550: "http://www.w3id.org/ecsel-dr-PWR#Device_Configuration",
+    551: "http://www.w3id.org/ecsel-dr-PWR#Device_Element",
+    552: "http://www.w3id.org/ecsel-dr-OOSMP#Digital_Barometric_Pressure_Sensor",
+    553: "http://www.w3id.org/ecsel-dr-PWR#Document"
     
     
-
-
 
 }
