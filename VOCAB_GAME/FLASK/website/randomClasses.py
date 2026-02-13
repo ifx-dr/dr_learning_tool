@@ -592,7 +592,26 @@ random_words_map = {
     591: "http://www.w3.org/ns/ssn/Property",
     592: "http://www.w3id.org/ecsel-dr-PWR#Quality",
     593: "http://www.w3id.org/ecsel-dr-AT#Rack_Feeder",
-    594: "http://www.w3id.org/ecsel-dr-OOSMP#Radar"
+    594: "http://www.w3id.org/ecsel-dr-OOSMP#Radar",
+    595: "http://www.w3id.org/ecsel-dr-PWR#Resistance",
+    596: "http://www.w3id.org/ecsel-dr-PWR#Semiconductor_Product_Data_Sheet",
+    597: "http://www.w3id.org/ecsel-dr-PWR#Semiconductors",
+    598: "http://www.w3id.org/ecsel-dr-PWR#Semiconductors_And_Semiconductor_Equipment",
+    599: "http://www.w3.org/ns/sosa/Sensor",
+    600: "http://www.w3id.org/ecsel-dr-PWR#Sensors",
+    601: "http://www.w3id.org/ecsel-dr-PWR#SiC_MOSFET",
+    602: "http://www.w3id.org/ecsel-dr-PWR#Situation",
+    603: "http://www.w3id.org/ecsel-dr-PWR#Social_Object",
+    604: "http://www.w3id.org/ecsel-dr-PWR#Software_And_Services",
+    605: "http://www.w3id.org/ecsel-dr-PWR#Switcher",
+    606: "http://www.w3id.org/ecsel-dr-PWR#Switching_Value",
+    607: "http://www.w3.org/ns/ssn/System",
+    608: "http://www.w3id.org/ecsel-dr-PMV#Technical_Term",
+    609: "http://www.w3id.org/ecsel-dr-PWR#Technology_Hardware_And_Equipment",
+    610: "http://www.w3id.org/ecsel-dr-PWR#The_Device_Output",
+    611: "http://www.w3id.org/ecsel-dr-PWR#The_Method_Of_The_Device_Function",
+    612: "http://www.w3id.org/ecsel-dr-AT#Transport_Robot"
+
     
 
 }
