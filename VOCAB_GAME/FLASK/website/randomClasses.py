@@ -610,7 +610,18 @@ random_words_map = {
     609: "http://www.w3id.org/ecsel-dr-PWR#Technology_Hardware_And_Equipment",
     610: "http://www.w3id.org/ecsel-dr-PWR#The_Device_Output",
     611: "http://www.w3id.org/ecsel-dr-PWR#The_Method_Of_The_Device_Function",
-    612: "http://www.w3id.org/ecsel-dr-AT#Transport_Robot"
+    612: "http://www.w3id.org/ecsel-dr-AT#Transport_Robot",
+    613: "http://www.w3id.org/ecsel-dr-PMV#Function_Object",
+    614: "http://www.w3id.org/ecsel-dr-PMV#AND",
+    615: "http://www.w3id.org/ecsel-dr-PMV#Business_Process_Activity",
+    616: "http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow",
+    617: "http://www.w3id.org/ecsel-dr-PMV#Connector",
+    618: "http://www.w3.org/ns/ssn/Deployment",
+    619: "http://www.w3id.org/ecsel-dr-PWR#Deployment_Related_Process",
+    620: "http://www.w3id.org/ecsel-dr-PMV#End_Event",
+    621: "http://www.w3id.org/ecsel-dr-PMV#Event",
+    622: "http://www.w3id.org/ecsel-dr-PMV#Function"
+    
 
     
 
