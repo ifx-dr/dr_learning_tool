@@ -620,9 +620,41 @@ random_words_map = {
     619: "http://www.w3id.org/ecsel-dr-PWR#Deployment_Related_Process",
     620: "http://www.w3id.org/ecsel-dr-PMV#End_Event",
     621: "http://www.w3id.org/ecsel-dr-PMV#Event",
-    622: "http://www.w3id.org/ecsel-dr-PMV#Function"
+    622: "http://www.w3id.org/ecsel-dr-PMV#Function",
+    623: "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal",
+    624: "http://www.w3id.org/ecsel-dr-PMV#Human_Output",
+    625: "http://www.w3.org/ns/ssn/Input",
+    626: "http://www.w3id.org/ecsel-dr-PMV#Model",
+    627: "http://www.w3id.org/ecsel-dr-PMV#Model_Element",
+    628: "http://www.w3id.org/ecsel-dr-PMV#Modelling_Function_Object",
+    629: "http://www.w3id.org/ecsel-dr-PMV#OR",
+    630: "http://www.w3id.org/ecsel-dr-PMV#Other_Services",
+    631: "http://www.w3.org/ns/ssn/Output",
+    632: "http://www.w3id.org/ecsel-dr-PMV#Process",
+    633: "http://www.w3id.org/ecsel-dr-SO#Process_Class",
+    634: "http://www.w3id.org/ecsel-dr-PMV#Process_Diagram",
+    635: "http://www.w3id.org/ecsel-dr-SO#Process_Flow",
+    636: "http://www.w3id.org/ecsel-dr-SO#Process_Group",
+    637: "http://www.w3id.org/ecsel-dr-PMV#Process_Group_Map",
+    638: "http://www.w3id.org/ecsel-dr-PMV#Process_Group_Map",
+    639: "http://www.w3id.org/ecsel-dr-PMV#Process_Interface",
+    640: "http://www.w3id.org/ecsel-dr-SO#Process_Line",
+    641: "http://www.w3id.org/ecsel-dr-PMV#Process_Type",
+    642: "http://www.w3id.org/ecsel-dr-PMV#Process_Type_Map",
+    643: "http://www.w3id.org/ecsel-dr-ORG#Project_Manager",
+    644: "http://www.w3id.org/ecsel-dr-ORG#Project_Owner",
+    645: "http://www.w3id.org/ecsel-dr-ORG#Project_Team_Member",
+    646: "http://www.w3id.org/ecsel-dr-GDM#Recipe",
+    647: "http://www.w3id.org/ecsel-dr-PMV#Role",
+    648: "http://www.w3id.org/ecsel-dr-PMV#Rule",
+    649: "http://www.w3id.org/ecsel-dr-PMV#Screen",
+    650: "http://www.w3id.org/ecsel-dr-PMV#Start_Event",
+    651: "http://www.w3id.org/ecsel-dr-PMV#Structural_Function_Object",
+    652: "http://www.w3id.org/ecsel-dr-PMV#Subprocess",
+    653: "http://www.w3id.org/ecsel-dr-PMV#Subprocess_Diagram",
+    654: "http://www.w3id.org/ecsel-dr-PMV#Task",
+    655: "http://www.w3id.org/ecsel-dr-PWR#The_Process_Name_Of_The_Device_Function"
     
-
-    
+ 
 
 }
