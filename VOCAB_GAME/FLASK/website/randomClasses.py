@@ -653,7 +653,11 @@ random_words_map = {
     652: "http://www.w3id.org/ecsel-dr-PMV#Subprocess",
     653: "http://www.w3id.org/ecsel-dr-PMV#Subprocess_Diagram",
     654: "http://www.w3id.org/ecsel-dr-PMV#Task",
-    655: "http://www.w3id.org/ecsel-dr-PWR#The_Process_Name_Of_The_Device_Function"
+    655: "http://www.w3id.org/ecsel-dr-PWR#The_Process_Name_Of_The_Device_Function",
+    656: "http://www.w3id.org/ecsel-dr-CO2Savings#System_CO2",
+    657: "http://www.w3id.org/ecsel-dr-Planning#Trigger",
+    658: "http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram",
+    659: "http://www.w3id.org/ecsel-dr-PMV#XOR"
     
  
 
