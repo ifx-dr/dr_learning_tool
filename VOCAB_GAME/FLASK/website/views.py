@@ -777,12 +777,15 @@ def mobile_ontology_visualization():
 
     return render_template('mobile-ontology-visualization.html', user=current_user)
 
+#modification done for rdfs:description
+
 def get_definition_from_ontology(class_name):
     # Ruta a tu ontología
     ontology_path = "ruta/a/tu/ontologia.owl"
-    
+
     # Cargar la ontología
     onto = get_ontology("file://" + ontology_path).load()
+    graph = onto.world.as_rdflib_graph()  #added
     
     # Buscar la clase en la ontología
     for owl_class in onto.classes():
@@ -830,12 +833,12 @@ def handle_question(question_number):
             random_word = fixed_words_map.get(question_number)
         elif question_number > 5:
             #random_word = random_words_map.get(random.randint(1, 178))
-            iri = random_words_map.get(random.randint(16, 659))
+            iri = random_words_map.get(random.randint(16, 663))
             random_word = next(cls for cls in classes if cls.iri == iri)
             print(iri)
             while random_word in previous_used_classes:
                 #random_word = random_words_map.get(random.randint(1, 178))
-                iri = random_words_map.get(random.randint(16, 659))
+                iri = random_words_map.get(random.randint(16, 663))
                 random_word = next(cls for cls in classes if cls.iri == iri)
                 print(iri)
         store_used_word(random_word, current_user.id) #Store the used word in the database
