@@ -657,7 +657,11 @@ random_words_map = {
     656: "http://www.w3id.org/ecsel-dr-CO2Savings#System_CO2",
     657: "http://www.w3id.org/ecsel-dr-Planning#Trigger",
     658: "http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram",
-    659: "http://www.w3id.org/ecsel-dr-PMV#XOR"
+    659: "http://www.w3id.org/ecsel-dr-PMV#XOR",
+    660: "http://www.w3id.org/ecsel-dr-RAMI40#I_4.0_Component",
+    661: "http://www.w3id.org/ecsel-dr-RAMI40#RAMI_IT_Layer_Dimension",
+    662: "http://www.w3id.org/ecsel-dr-RAMI40#RAMI_Life_Cycle_Dimension",
+    663: "http://www.w3id.org/ecsel-dr-RAMI40#Version"
     
  
 
