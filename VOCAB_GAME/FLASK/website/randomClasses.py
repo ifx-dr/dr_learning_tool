@@ -661,8 +661,14 @@ random_words_map = {
     660: "http://www.w3id.org/ecsel-dr-RAMI40#I_4.0_Component",
     661: "http://www.w3id.org/ecsel-dr-RAMI40#RAMI_IT_Layer_Dimension",
     662: "http://www.w3id.org/ecsel-dr-RAMI40#RAMI_Life_Cycle_Dimension",
-    663: "http://www.w3id.org/ecsel-dr-RAMI40#Version"
+    663: "http://www.w3id.org/ecsel-dr-RAMI40#Version",
+    664: "http://www.w3id.org/ecsel-dr-AT#Digital_Factory_System",
+    665: "http://www.w3id.org/ecsel-dr-AT#Fieldbus_Communication_Profile_Family",
+    666: "http://www.w3id.org/ecsel-dr-AT#IEC_Standard",
+    667: "http://www.w3id.org/ecsel-dr-AT#IEEE_Standard",
+    668: "http://www.w3id.org/ecsel-dr-AT#ISA_95_Layer_4_ERP",
+    669: "http://www.w3id.org/ecsel-dr-AT#OCF_Standard"
+  
     
- 
 
 }
