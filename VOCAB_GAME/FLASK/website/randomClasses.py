@@ -682,7 +682,8 @@ random_words_map = {
     681: "http://www.w3id.org/digital-reference/quality/Step_D5",
     682: "http://www.w3id.org/digital-reference/quality/Step_D6",
     683: "http://www.w3id.org/digital-reference/quality/Step_D7",
-    684: "http://www.w3id.org/digital-reference/quality/Step_D8"
+    684: "http://www.w3id.org/digital-reference/quality/Step_D8",
+    685: "http://www.w3id.org/ecsel-dr-AT#Standardization_Organization"
  
 
 }
