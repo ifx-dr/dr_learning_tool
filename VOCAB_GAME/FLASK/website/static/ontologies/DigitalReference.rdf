@@ -27270,7 +27270,7 @@ D.h. sie bewegen sich nicht nur entlang vorgegebener physischer (z.B. optimscher
 
     <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Complete_Delivery">
         <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr-DF#Delivery_Concept"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The normal case is that an order is completely delivered.</rdfs:comment>
+        <rdfs:comment>The normal case is that an order is completely delivered.</rdfs:comment>
         <rdfs:label xml:lang="en">Complete Delivery</rdfs:label>
     </owl:Class>
     
@@ -27329,7 +27329,7 @@ A customer interacts with the organization through actions such as order placeme
     <owl:Class rdf:about="http://www.w3id.org/ecsel-dr-DF#Date">
         <rdfs:subClassOf rdf:resource="http://www.w3id.org/ecsel-dr#Time_Lobe"/>
         <rdfs:comment xml:lang="en">Additional lobe: Supply Chain</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The availability date defines the point in time when the supply is available to the customer. It can be distinguished between different availability dates. Not all availability dates are communicated to the customer.</rdfs:comment>
+        <rdfs:comment>The availability date defines the point in time when the supply is available to the customer. It can be distinguished between different availability dates. Not all availability dates are communicated to the customer.</rdfs:comment>
     </owl:Class>
     
 

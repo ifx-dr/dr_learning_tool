@@ -7,6 +7,7 @@ from sklearn.cluster import AgglomerativeClustering
 from . import db
 from .models import DefinitionScores
 import time
+import sys
 
 
 #nltk.download('punkt', force=True)
@@ -31,14 +32,36 @@ def get_highest_scored_definition(random_word):
     #    return highest_scored_definition.definition
     #else:
     #    flash('No definition for this term', category='error')  # Handle potential exceptions that could occur during the retrieval process
-    
-    definition = "No definition available"    
+    print(f"=== Processing class: {random_word.name} ===", flush=True)
+    print(f"IRI: {random_word.iri}", flush=True)
+    sys.stdout.flush()
     if random_word.comment:
-        definition = str(random_word.comment[0])
-    elif random_word.label:
-        definition = str(random_word.label[0])
-        
-    return definition
+        return str(random_word.comment[0])
+    
+    # Try to get all annotation properties and check them
+    onto = random_word.namespace.ontology
+    
+    # Check for SKOS definition
+    for prop in onto.annotation_properties():
+        prop_name = prop.name.lower()
+        if 'definition' in prop_name:
+            values = prop[random_word]
+            if values:
+                return str(values[0])
+    
+    # Check for description properties
+    for prop in onto.annotation_properties():
+        prop_name = prop.name.lower()
+        if 'description' in prop_name:
+            values = prop[random_word]
+            if values:
+                return str(values[0])
+    
+    # Try rdfs:label as fallback
+    if random_word.label:
+        return str(random_word.label[0])
+    
+    return "No definition available"
 
 def increase_score_for_definition(random_word, definition):
     """

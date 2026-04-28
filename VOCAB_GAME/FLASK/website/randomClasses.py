@@ -661,8 +661,28 @@ random_words_map = {
     660: "http://www.w3id.org/ecsel-dr-RAMI40#I_4.0_Component",
     661: "http://www.w3id.org/ecsel-dr-RAMI40#RAMI_IT_Layer_Dimension",
     662: "http://www.w3id.org/ecsel-dr-RAMI40#RAMI_Life_Cycle_Dimension",
-    663: "http://www.w3id.org/ecsel-dr-RAMI40#Version"
-    
+    663: "http://www.w3id.org/ecsel-dr-RAMI40#Version",
+    664: "http://www.w3id.org/digital-reference/quality/Step_D4",
+    665: "http://www.w3id.org/digital-reference/quality/Shipment",
+    666: "http://www.w3id.org/digital-reference/quality/Product_Marking",
+    667: "http://www.w3id.org/digital-reference/quality/Product_Instance",
+    668: "http://www.w3id.org/ecsel-dr-RAMI40#Machine",
+    669: "http://www.w3id.org/ecsel-dr-RAMI40#RAMI_Hierarchy_Level_Dimension",
+    670: "http://www.w3id.org/digital-reference/quality/Lot",
+    671: "http://www.w3id.org/digital-reference/quality/Product_Instance",
+    672: "http://www.w3id.org/digital-reference/quality/Product_Marking",
+    673: "http://www.w3id.org/digital-reference/quality/Quality_Complaint",
+    674: "http://www.w3id.org/digital-reference/quality/Quality_Complaint_8D",
+    675: "http://www.w3id.org/digital-reference/quality/Quality_Complaint_Line_Item",
+    676: "http://www.w3id.org/digital-reference/quality/Shipment",
+    677: "http://www.w3id.org/digital-reference/quality/Step_D1",
+    678: "http://www.w3id.org/digital-reference/quality/Step_D2",
+    679: "http://www.w3id.org/digital-reference/quality/Step_D3",
+    680: "http://www.w3id.org/digital-reference/quality/Step_D4",
+    681: "http://www.w3id.org/digital-reference/quality/Step_D5",
+    682: "http://www.w3id.org/digital-reference/quality/Step_D6",
+    683: "http://www.w3id.org/digital-reference/quality/Step_D7",
+    684: "http://www.w3id.org/digital-reference/quality/Step_D8"
  
 
 }

@@ -20,6 +20,8 @@ basedir = os.path.dirname(__file__)
 
 persistence_variable = []
 
+NUMBER_OF_CLASSES = 684
+
 @views.route('/', methods=['GET', 'POST'])
 @login_required
 def home():
@@ -313,88 +315,297 @@ def number_question():
     return render_template("number-question.html", user=current_user)
 
 
+# def construct_graph(random_word, onto):
+#     """
+#     Construct a directed graph representing the relationships between a selected class and other classes and properties within an ontology.
+
+#     Args:
+#     random_word: The selected class from the ontology.
+#     onto: The ontology containing the classes and properties.
+
+#     Returns:
+#     A directed graph (DiGraph) representing the relationships between the selected class and other classes and properties.
+#     """
+#     G = nx.DiGraph() # Initialize a directed graph
+
+
+#     # Add the selected class (random word) to the graph
+#     G.add_node(random_word.name, name=random_word.name, definition=get_highest_scored_definition(random_word), type="owl:Class")
+
+#     print(f"=== Processing class: {random_word.name} ===", flush=True)
+#     print(f"IRI: {random_word.iri}", flush=True)
+#     sys.stdout.flush()  
+#     # Add edges for the selected class (random word), its subclasses and superclasses, and their relationships
+#     for cls in onto.classes():
+#         if random_word in cls.is_a:
+#             G.add_node(cls.name, name=cls.name, definition=get_highest_scored_definition(cls), type="owl:Class")  # Add the superclass as a node
+#             G.add_edge(cls.name, random_word.name, label="Subclass of", type="subclass")  # Add edge for subclass relationship
+#         if cls in random_word.is_a:
+#             G.add_node(cls.name, name=cls.name, definition=get_highest_scored_definition(cls), type="owl:Class")  # Add the subclass as a node
+#             G.add_edge(random_word.name, cls.name, label="Subclass of",type="subclass" )  # Add edge for superclass relationship
+
+#         #TODO why is this commented out?? causes errors
+#         for prop in onto.object_properties(): # Add the object properties of the random word
+#             for domain_cls in prop.domain:
+#                 print("=== Processing prop:  ===", flush=True)
+#                 print(f"IRI: {prop.iri}", flush=True)
+#                 sys.stdout.flush()  
+#                 if domain_cls == random_word:
+#                     print("=== dom:  ===", flush=True)
+#                     print(f"IRI: {domain_cls.iri}", flush=True)
+#                     sys.stdout.flush()  
+#                     for range_cls in prop.range:
+#                         print("=== Processing range:  ===", flush=True)
+#                         print(f"IRI: {range_cls.iri}", flush=True)
+#                         sys.stdout.flush()  
+#                         G.add_node(range_cls.name, name=range_cls.name, definition=get_highest_scored_definition(range_cls),
+#                                     type="owl:Class")
+#                         G.add_edge(random_word.name, range_cls.name, label=prop.name, type="objectproperties")
+#             for range_cls in prop.range:
+#                 if range_cls == random_word:
+#                     for domain_cls in prop.domain:
+#                         G.add_node(domain_cls.name, name=domain_cls.name, definition=get_highest_scored_definition(domain_cls),
+#                                     type="owl:Class")
+#                         G.add_edge(domain_cls.name, random_word.name, label=prop.name, type="objectproperties")
+#         """
+#         for prop in onto.object_properties(): # Add the object properties of the random word
+#             for domain_cls in prop.domain:
+#                 if domain_cls == random_word:
+#                     for range_cls in prop.range:
+#                         if hasattr(range_cls, 'name'):
+#                             G.add_node(range_cls.name, name=range_cls.name, definition=get_highest_scored_definition(range_cls), type="owl:Class")
+#                             G.add_edge(random_word.name, range_cls.name, label=prop.name, type="objectproperties")
+#                         else:
+#                             if isinstance(range_cls, Or):
+#                                 # Handling case where range_cls is of type 'Or'
+#                                 print(f"Warning: Logical combination detected in range_cls - {range_cls}")
+#                             else:
+#                                 print(f"Error: range_cls doesn't have 'name' attribute")
+
+#             for range_cls in prop.range:
+#                 if range_cls == random_word:
+#                     for domain_cls in prop.domain:
+#                         if hasattr(domain_cls, 'name'):
+#                             G.add_node(domain_cls.name, name=domain_cls.name, definition=get_highest_scored_definition(domain_cls), type="owl:Class")
+#                             G.add_edge(domain_cls.name, random_word.name, label=prop.name, type="objectproperties")
+#                         else:
+#                             if isinstance(domain_cls, Or):
+#                                 # Handling case where domain_cls is of type 'Or'
+#                                 print(f"Warning: Logical combination detected in domain_cls - {domain_cls}")
+#                             else:
+#                                 print(f"Error: domain_cls doesn't have 'name' attribute")
+#         """
+#         for prop in onto.data_properties(): # Add the data properties of the random word
+#             for domain_cls in prop.domain:
+#                 if domain_cls == random_word:
+#                     for range_cls in prop.range:
+#                         range_str = str(range_cls)  # Convert to string representation
+#                         try:
+#                             data_type = range_str.split("'")[1]  # Extract the datatype from the string representation
+#                         except IndexError:
+#                             data_Type = None
+#                         unique_data_type = f"{data_type}_{id(prop)}"  # Create a unique identifier for each data type
+#                         G.add_node(unique_data_type, name=data_type, definition="", type="owl:DatatypeProperty")  # Add a node for the unique data property type
+#                         G.add_edge(random_word.name, unique_data_type, label=prop.name, type="dataproperties")
+
+#     return G # Return the constructed directed graph
+#this works locally
 def construct_graph(random_word, onto):
     """
-    Construct a directed graph representing the relationships between a selected class and other classes and properties within an ontology.
-
-    Args:
-    random_word: The selected class from the ontology.
-    onto: The ontology containing the classes and properties.
-
-    Returns:
-    A directed graph (DiGraph) representing the relationships between the selected class and other classes and properties.
+    Construct a small localized directed graph for a specific class.
+    Only includes direct relationships and properties.
     """
-    G = nx.DiGraph() # Initialize a directed graph
+    from owlready2 import ObjectPropertyClass, DataPropertyClass
+    
+    G = nx.DiGraph()
 
-
-    # Add the selected class (random word) to the graph
-    G.add_node(random_word.name, name=random_word.name, definition=get_highest_scored_definition(random_word), type="owl:Class")
-
-    # Add edges for the selected class (random word), its subclasses and superclasses, and their relationships
+    # print(f"=== Processing class: {random_word.name} ===", flush=True)
+    # print(f"IRI: {random_word.iri}", flush=True)
+    
+    # Add the central node
+    G.add_node(random_word.name, name=random_word.name, 
+               definition=get_highest_scored_definition(random_word), 
+               type="owl:Class")
+    
+    # Add only direct subclasses and superclasses
     for cls in onto.classes():
+        # Direct subclass: cls is a subclass of random_word
         if random_word in cls.is_a:
-            G.add_node(cls.name, name=cls.name, definition=get_highest_scored_definition(cls), type="owl:Class")  # Add the superclass as a node
-            G.add_edge(cls.name, random_word.name, label="Subclass of", type="subclass")  # Add edge for subclass relationship
-        if cls in random_word.is_a:
-            G.add_node(cls.name, name=cls.name, definition=get_highest_scored_definition(cls), type="owl:Class")  # Add the subclass as a node
-            G.add_edge(random_word.name, cls.name, label="Subclass of",type="subclass" )  # Add edge for superclass relationship
-
+            G.add_node(cls.name, name=cls.name, 
+                      definition=get_highest_scored_definition(cls), 
+                      type="owl:Class")
+            G.add_edge(cls.name, random_word.name, label="Subclass of", type="subclass")
         
-        #for prop in onto.object_properties(): # Add the object properties of the random word
-            for domain_cls in prop.domain:
-                if domain_cls == random_word:
-                    for range_cls in prop.range:
-                        G.add_node(range_cls.name, name=range_cls.name, definition=get_highest_scored_definition(range_cls),
-                                    type="owl:Class")
-                        G.add_edge(random_word.name, range_cls.name, label=prop.name, type="objectproperties")
-            for range_cls in prop.range:
-                if range_cls == random_word:
-                    for domain_cls in prop.domain:
-                        G.add_node(domain_cls.name, name=domain_cls.name, definition=get_highest_scored_definition(domain_cls),
-                                    type="owl:Class")
-                        G.add_edge(domain_cls.name, random_word.name, label=prop.name, type="objectproperties")
-        """
-        for prop in onto.object_properties(): # Add the object properties of the random word
-            for domain_cls in prop.domain:
-                if domain_cls == random_word:
-                    for range_cls in prop.range:
-                        if hasattr(range_cls, 'name'):
-                            G.add_node(range_cls.name, name=range_cls.name, definition=get_highest_scored_definition(range_cls), type="owl:Class")
-                            G.add_edge(random_word.name, range_cls.name, label=prop.name, type="objectproperties")
-                        else:
-                            if isinstance(range_cls, Or):
-                                # Handling case where range_cls is of type 'Or'
-                                print(f"Warning: Logical combination detected in range_cls - {range_cls}")
-                            else:
-                                print(f"Error: range_cls doesn't have 'name' attribute")
-
-            for range_cls in prop.range:
-                if range_cls == random_word:
-                    for domain_cls in prop.domain:
-                        if hasattr(domain_cls, 'name'):
-                            G.add_node(domain_cls.name, name=domain_cls.name, definition=get_highest_scored_definition(domain_cls), type="owl:Class")
-                            G.add_edge(domain_cls.name, random_word.name, label=prop.name, type="objectproperties")
-                        else:
-                            if isinstance(domain_cls, Or):
-                                # Handling case where domain_cls is of type 'Or'
-                                print(f"Warning: Logical combination detected in domain_cls - {domain_cls}")
-                            else:
-                                print(f"Error: domain_cls doesn't have 'name' attribute")
-        """
-        for prop in onto.data_properties(): # Add the data properties of the random word
-            for domain_cls in prop.domain:
-                if domain_cls == random_word:
-                    for range_cls in prop.range:
-                        range_str = str(range_cls)  # Convert to string representation
-                        try:
-                            data_type = range_str.split("'")[1]  # Extract the datatype from the string representation
-                        except IndexError:
-                            data_Type = None
-                        unique_data_type = f"{data_type}_{id(prop)}"  # Create a unique identifier for each data type
-                        G.add_node(unique_data_type, name=data_type, definition="", type="owl:DatatypeProperty")  # Add a node for the unique data property type
-                        G.add_edge(random_word.name, unique_data_type, label=prop.name, type="dataproperties")
-
-    return G # Return the constructed directed graph
+        # Direct superclass: random_word is a subclass of cls
+        if cls in random_word.is_a:
+            G.add_node(cls.name, name=cls.name, 
+                      definition=get_highest_scored_definition(cls), 
+                      type="owl:Class")
+            G.add_edge(random_word.name, cls.name, label="Subclass of", type="subclass")
+    
+    # Helper to check if it's an OWL class (not a datatype)
+    def is_owl_class(obj):
+        if obj is None or obj in (int, str, float, bool):
+            return False
+        try:
+            return hasattr(obj, 'name') and hasattr(obj, 'iri')
+        except:
+            return False
+    
+    # Get properties that are relevant to this specific class
+    # This includes properties defined on random_word or its ancestors
+    # print("\n=== Finding relevant object properties ===", flush=True)
+    
+    # Approach 1: Only check properties where random_word is explicitly in domain
+    for prop in onto.object_properties():
+        try:
+            # Safely get domain
+            prop_domain = []
+            try:
+                domain_attr = prop.domain
+                if domain_attr:
+                    prop_domain = domain_attr if isinstance(domain_attr, list) else [domain_attr]
+            except AttributeError:
+                continue
+            
+            # Skip if no domain
+            if not prop_domain:
+                continue
+            
+            # Check if random_word is explicitly in the domain
+            if random_word not in prop_domain:
+                continue  # Skip properties not relevant to this class
+            
+            # print(f"  Found relevant property: {prop.name}", flush=True)
+            
+            # Safely get range
+            prop_range = []
+            try:
+                range_attr = prop.range
+                if range_attr:
+                    prop_range = range_attr if isinstance(range_attr, list) else [range_attr]
+            except AttributeError:
+                # print(f"    No range defined - skipping", flush=True)
+                continue
+            
+            if not prop_range:
+                continue
+            
+            # Add edges to range classes
+            for range_cls in prop_range:
+                if is_owl_class(range_cls):
+                    # print(f"    Adding edge to: {range_cls.name}", flush=True)
+                    G.add_node(range_cls.name, name=range_cls.name, 
+                              definition=get_highest_scored_definition(range_cls),
+                              type="owl:Class")
+                    G.add_edge(random_word.name, range_cls.name, 
+                              label=prop.name, type="objectproperties")
+                else:
+                    print(f"    Skipping non-class range: {range_cls}", flush=True)
+        
+        except Exception as e:
+            print(f"  Error processing property: {e}", flush=True)
+            continue
+    
+    # Also check inverse: properties where random_word is in the range
+    # print("\n=== Finding inverse object properties ===", flush=True)
+    for prop in onto.object_properties():
+        try:
+            # Safely get range
+            prop_range = []
+            try:
+                range_attr = prop.range
+                if range_attr:
+                    prop_range = range_attr if isinstance(range_attr, list) else [range_attr]
+            except AttributeError:
+                continue
+            
+            # Skip if no range or random_word not in range
+            if not prop_range or random_word not in prop_range:
+                continue
+            
+            # print(f"  Found relevant inverse property: {prop.name}", flush=True)
+            
+            # Safely get domain
+            prop_domain = []
+            try:
+                domain_attr = prop.domain
+                if domain_attr:
+                    prop_domain = domain_attr if isinstance(domain_attr, list) else [domain_attr]
+            except AttributeError:
+                print(f"    No domain defined - skipping", flush=True)
+                continue
+            
+            if not prop_domain:
+                continue
+            
+            # Add edges from domain classes
+            for domain_cls in prop_domain:
+                if is_owl_class(domain_cls):
+                    # print(f"    Adding edge from: {domain_cls.name}", flush=True)
+                    G.add_node(domain_cls.name, name=domain_cls.name, 
+                              definition=get_highest_scored_definition(domain_cls),
+                              type="owl:Class")
+                    G.add_edge(domain_cls.name, random_word.name, 
+                              label=prop.name, type="objectproperties")
+                else:
+                    print(f"    Skipping non-class domain: {domain_cls}", flush=True)
+        
+        except Exception as e:
+            print(f"  Error processing inverse property: {e}", flush=True)
+            continue
+    
+    # Process data properties (only those with random_word in domain)
+    # print("\n=== Processing Data Properties ===", flush=True)
+    for prop in onto.data_properties():
+        try:
+            # Safely get domain
+            prop_domain = []
+            try:
+                domain_attr = prop.domain
+                if domain_attr:
+                    prop_domain = domain_attr if isinstance(domain_attr, list) else [domain_attr]
+            except AttributeError:
+                continue
+            
+            # Skip if random_word not in domain
+            if not prop_domain or random_word not in prop_domain:
+                continue
+            
+            # print(f"  Found relevant data property: {prop.name}", flush=True)
+            
+            # Safely get range
+            prop_range = []
+            try:
+                range_attr = prop.range
+                if range_attr:
+                    prop_range = range_attr if isinstance(range_attr, list) else [range_attr]
+            except AttributeError:
+                continue
+            
+            if not prop_range:
+                continue
+            
+            # Add datatype nodes
+            for range_cls in prop_range:
+                range_str = str(range_cls)
+                try:
+                    data_type = range_str.split("'")[1]
+                except IndexError:
+                    data_type = range_str
+                
+                unique_data_type = f"{data_type}_{id(prop)}"
+                G.add_node(unique_data_type, name=data_type, 
+                          definition="", type="owl:DatatypeProperty")
+                G.add_edge(random_word.name, unique_data_type, 
+                          label=prop.name, type="dataproperties")
+        
+        except Exception as e:
+            print(f"  Error processing data property: {e}", flush=True)
+            continue
+    
+    # print(f"\n=== Graph constructed with {G.number_of_nodes()} nodes and {G.number_of_edges()} edges ===", flush=True)
+    return G
 
 def construct_ontology_graph(onto):
     """
@@ -816,6 +1027,17 @@ def handle_question(question_number):
     profile_game = GameInformation.query.filter_by(profile_id=current_user.id).first()  # Retrieve the user's game information
     ontology_selected, ontology_path, onto, classes = get_ontology_information(profile_game)  # Retrieve ontology information
     fixed_words_map = {
+        # 1: next(cls for cls in classes if cls.iri == "http://www.w3id.org/digital-reference/quality/Step_D4"),
+        # 2: next(cls for cls in classes if cls.iri == "http://www.w3id.org/digital-reference/quality/Shipment"),
+        # 3: next(cls for cls in classes if cls.iri == "http://www.w3id.org/digital-reference/quality/Product_Marking"),
+        # 4: next(cls for cls in classes if cls.iri == "http://www.w3id.org/digital-reference/quality/Product_Instance"),
+
+        # 1: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SO#Shift"), #name eroor
+        # 2: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-DF#Last_Promised_Delivery_Date"), #ohne lit type
+        # 3: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-GDM#Shift_Attendance"), #name error?
+        # 4: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-DF#Delivery_Concept"), #ohne lit type
+        # 5: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-DF#Delivery_Date") #mit lit type
+
         1: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-DF#Supply_Chain"),
         2: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-BMS#Semiconductor_Company"),
         3: next(cls for cls in classes if cls.iri == "http://www.w3id.org/ecsel-dr-SO#Fab"),
@@ -833,12 +1055,12 @@ def handle_question(question_number):
             random_word = fixed_words_map.get(question_number)
         elif question_number > 5:
             #random_word = random_words_map.get(random.randint(1, 178))
-            iri = random_words_map.get(random.randint(16, 663))
+            iri = random_words_map.get(random.randint(16, NUMBER_OF_CLASSES))
             random_word = next(cls for cls in classes if cls.iri == iri)
             print(iri)
             while random_word in previous_used_classes:
                 #random_word = random_words_map.get(random.randint(1, 178))
-                iri = random_words_map.get(random.randint(16, 663))
+                iri = random_words_map.get(random.randint(16, NUMBER_OF_CLASSES))
                 random_word = next(cls for cls in classes if cls.iri == iri)
                 print(iri)
         store_used_word(random_word, current_user.id) #Store the used word in the database
