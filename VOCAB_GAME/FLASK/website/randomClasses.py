@@ -681,4 +681,13 @@ random_words_map = {
     681: "http://www.w3id.org/digital-reference/quality/Step_D6",
     682: "http://www.w3id.org/digital-reference/quality/Step_D7",
     683: "http://www.w3id.org/digital-reference/quality/Step_D8"
+    684: "http://www.w3id.org/ecsel-dr-AT#Digital_Factory_System",
+    685: "http://www.w3id.org/ecsel-dr-AT#Fieldbus_Communication_Profile_Family",
+    686: "http://www.w3id.org/ecsel-dr-AT#IEC_Standard",
+    687: "http://www.w3id.org/ecsel-dr-AT#IEEE_Standard",
+    688: "http://www.w3id.org/ecsel-dr-AT#ISA_95_Layer_4_ERP",
+    689: "http://www.w3id.org/ecsel-dr-AT#OCF_Standard"
+  
+    
+
 }
