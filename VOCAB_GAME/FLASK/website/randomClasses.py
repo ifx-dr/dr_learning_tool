@@ -680,7 +680,7 @@ random_words_map = {
     680: "http://www.w3id.org/digital-reference/quality/Step_D5",
     681: "http://www.w3id.org/digital-reference/quality/Step_D6",
     682: "http://www.w3id.org/digital-reference/quality/Step_D7",
-    683: "http://www.w3id.org/digital-reference/quality/Step_D8"
+    683: "http://www.w3id.org/digital-reference/quality/Step_D8",
     684: "http://www.w3id.org/ecsel-dr-AT#Digital_Factory_System",
     685: "http://www.w3id.org/ecsel-dr-AT#Fieldbus_Communication_Profile_Family",
     686: "http://www.w3id.org/ecsel-dr-AT#IEC_Standard",
