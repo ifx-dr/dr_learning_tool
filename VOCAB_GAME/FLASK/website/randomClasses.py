@@ -687,16 +687,17 @@ random_words_map = {
     687: "http://www.w3id.org/ecsel-dr-AT#IEEE_Standard",
     688: "http://www.w3id.org/ecsel-dr-AT#ISA_95_Layer_4_ERP",
     689: "http://www.w3id.org/ecsel-dr-AT#OCF_Standard",
-    690: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Burden_Of_Chemicals_In_The_Front_End_Manufacturing",
-    691: "http://www.w3id.org/ecsel-dr-CO2Savings#Average_Lifetime_Of_A_Wind_Turbine",
-    692: "http://www.w3id.org/ecsel-dr-CO2Savings#Average_Lifetime_Solar_Panel",
-    693: "http://www.w3id.org/ecsel-dr-CO2Savings#Average_Usage_Time_Per_Year_Solar_Panel",
-    694: "http://www.w3id.org/ecsel-dr-CO2Savings#Back_End_Manufacturing",
-    695: "http://www.w3id.org/ecsel-dr-BMS#Battery_CO2_Savings",
-    696: "http://www.w3id.org/ecsel-dr-DF#Bill_Of_Material_(BOM)",
-    697: "http://www.w3id.org/ecsel-dr-SO#Bottleneck",
-    698: "http://www.w3id.org/ecsel-dr-CO2Savings#CO2_Burden_Of_Gases_In_The_Front_End_Manufacturing",
-    699: "http://www.w3id.org/ecsel-dr-BMS#Cells"
+    690: "http://www.w3id.org/ecsel-dr-Planning#Automated",
+    691: "http://www.w3id.org/ecsel-dr-DF#Bill_Of_Material_(BOM)",
+    692: "http://www.w3id.org/ecsel-dr-Planning#Autonomous",
+    693: "http://www.w3id.org/ecsel-dr-GDM#Capability_Snapshot",
+    694: "http://www.w3id.org/ecsel-dr-GDM#Demand_Trace",
+    695: "http://www.w3id.org/ecsel-dr-GDM#Chamber",
+    696: "http://www.w3id.org/ecsel-dr-OM#Contact_Person_Data",
+    697: "http://www.w3id.org/ecsel-dr-OM#Customer_Data",
+    698: "http://www.w3id.org/ecsel-dr-OM#Customer_Plant",
+    699: "http://www.w3id.org/ecsel-dr-OM#Customer_Plant_Data"
+   
   
     
 }
