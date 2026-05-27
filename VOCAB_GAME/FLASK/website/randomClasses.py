@@ -696,7 +696,18 @@ random_words_map = {
     696: "http://www.w3id.org/ecsel-dr-OM#Contact_Person_Data",
     697: "http://www.w3id.org/ecsel-dr-OM#Customer_Data",
     698: "http://www.w3id.org/ecsel-dr-OM#Customer_Plant",
-    699: "http://www.w3id.org/ecsel-dr-OM#Customer_Plant_Data"
+    699: "http://www.w3id.org/ecsel-dr-OM#Customer_Plant_Data",
+    700: "http://www.w3id.org/ecsel-dr-GDM#Cluster",
+    701: "http://www.w3id.org/ecsel-dr-Planning#Dependent",
+    702: "http://www.w3id.org/ecsel-dr-Planning#Edge",
+    703: "http://www.w3id.org/ecsel-dr-GDM#Equipment_State",
+    704: "http://www.w3id.org/ecsel-dr-Planning#Lot_Sizing_Rule",
+    705: "http://www.w3id.org/ecsel-dr-Planning#Heterarchical_Situation",
+    706: "http://www.w3id.org/ecsel-dr-Planning#Hierarchical_Situation",
+    707: "http://www.w3id.org/ecsel-dr-Planning#Human",
+    708: "http://www.w3id.org/ecsel-dr-Planning#Inventory",
+    709: "http://www.w3id.org/ecsel-dr-Planning#Inventory_Policy",
+    710: "http://www.w3id.org/ecsel-dr-GDM#Location"
    
   
     
