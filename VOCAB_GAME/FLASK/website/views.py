@@ -20,7 +20,7 @@ basedir = os.path.dirname(__file__)
 
 persistence_variable = []
 
-NUMBER_OF_CLASSES = 699
+NUMBER_OF_CLASSES = 710
 
 @views.route('/', methods=['GET', 'POST'])
 @login_required
